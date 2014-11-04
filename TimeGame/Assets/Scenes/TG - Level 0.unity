@@ -849,6 +849,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1295061425}
+  MaxHorizonView: 2
+  MaxVerticalView: 2
 --- !u!1001 &2009384433
 Prefab:
   m_ObjectHideFlags: 0
