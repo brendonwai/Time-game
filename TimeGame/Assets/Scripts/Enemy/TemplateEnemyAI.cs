@@ -62,12 +62,13 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	//Determines enemies attack actions
 	void Attack(float howFar){
-		if(howFar <= attackRadius)
-		{
+		if(howFar <= attackRadius){
 			anim.SetBool("IsAttacking", true);
+			Debug.Log("Attack!");
 			//INSERT ATTACKING CODE HERE
 		}
-		else
+		else{
 			anim.SetBool("IsAttacking", false);
+		}
 	}
 }
