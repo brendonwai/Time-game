@@ -3,7 +3,6 @@ using System.Collections;
 
 public class TemplateEnemyAI : MonoBehaviour {
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
-	public float attackRadius = 0.5f;	//Sets when enemy starts attacking
 	public float closeEnough = 0.9f;	//Determines when enemy is close enough to
 											//to player to stop moving towards player
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
@@ -51,8 +50,6 @@ public class TemplateEnemyAI : MonoBehaviour {
 			                                         moveSpeed * Time.deltaTime); 
 			anim.SetFloat ("Speed", 1);		//Tells animator enemy is moving	
 		}
-		Attack(distance);
-		
 	}
 
 	//Faces enemy towards target
@@ -69,17 +66,5 @@ public class TemplateEnemyAI : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-	}
-
-	//Determines enemies attack actions
-	void Attack(float howFar){
-		if(howFar <= attackRadius){
-			anim.SetBool("IsAttacking", true);
-			Debug.Log("Attack!");
-			//INSERT ATTACKING CODE HERE
-		}
-		else{
-			anim.SetBool("IsAttacking", false);
-		}
-	}
+	}	
 }
