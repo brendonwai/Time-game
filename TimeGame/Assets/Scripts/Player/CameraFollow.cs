@@ -29,57 +29,6 @@ public class CameraFollow : MonoBehaviour {
 
 		//Set camera pos to midpoint between player and cursor. Has problems if you try to change the 2s
 		transform.position = new Vector3 ((x + mouseX)/2, (y + mouseY)/2, z);
-
-		/*
-		//Tried to make the camera have a max distance from the player but it didn't really work out
-		if ((mouseX - x) >= maxHorizUnits){
-			//
-			if ((mouseY - y) >= maxVertUnits){
-				//
-				transform.position = new Vector3 ((x + maxHorizUnits)/2, (x + maxVertUnits)/2, z);
-			}
-			else if ((mouseY - y) <= -maxVertUnits){
-				//
-				transform.position = new Vector3 ((x + maxHorizUnits)/2, (x - maxVertUnits)/2, z);
-			}
-			else{
-				//
-				transform.position = new Vector3 ((x + maxHorizUnits)/2, (y + mouseY)/2, z);
-			}
-		}
-		else if ((mouseX - x) <= -maxHorizUnits){
-			//
-			if ((mouseY - y) >= maxVertUnits){
-				//
-				transform.position = new Vector3 ((x - maxHorizUnits)/2, (x + maxVertUnits)/2, z);
-			}
-			else if ((mouseY + y) <= -maxVertUnits){
-				//
-				transform.position = new Vector3 ((x - maxHorizUnits)/2, (x - maxVertUnits)/2, z);
-			}
-			else{
-				//
-				transform.position = new Vector3 ((x - maxHorizUnits)/2, (y + mouseY)/2, z);
-			}
-		}
-		else{
-			//
-			if ((mouseY - y) >= maxVertUnits){
-				//
-				transform.position = new Vector3 ((x + mouseX)/2, (x + maxVertUnits)/2, z);
-			}
-			else if ((mouseY - y) <= -maxVertUnits){
-				//
-				transform.position = new Vector3 ((x + mouseX)/2, (x - maxVertUnits)/2, z);
-			}
-			else{
-				//Sets camera pos to midpoint between player and cursor. Has problems if you try to change the 2s
-				transform.position = new Vector3 ((x + mouseX)/2, (y + mouseY)/2, z);
-			}
-		}
-		*/
-		//Debug for camera/mouse/player pos
-		//Debug.Log ("Camera" + transform.position + "Mouse: " + mouseX + ", " + mouseY + "Player: " + x + ", " + y);
 	}
 
 	//Sets camera position to be within max range
