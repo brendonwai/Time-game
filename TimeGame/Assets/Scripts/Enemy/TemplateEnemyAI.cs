@@ -23,16 +23,23 @@ public class TemplateEnemyAI : MonoBehaviour {
 			TargetInSight = true;
 	}
 
+	// Activates while target is in trigger collider radius
+	void OnTriggerStay2D(Collider2D other){
+		if(other.tag == "Player")
+			TargetInSight = true;
+	}
+
 	//Determines what target leaves field of view
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Player"){
+			Debug.Log ("Lost Sight");
 			TargetInSight = false;
 			anim.SetFloat("Speed", 0);
 		}
 	}
 
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 		if(TargetInSight){
 			ApproachTarget();
 		}
