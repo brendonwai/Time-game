@@ -3,6 +3,9 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - Background
+  - Environment
+  - Enemy
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -48,4 +51,8 @@ TagManager:
   - name: Player
     userID: 1
     uniqueID: 715744389
+    locked: 0
+  - name: Enemy
+    userID: 3
+    uniqueID: 1684355751
     locked: 0
