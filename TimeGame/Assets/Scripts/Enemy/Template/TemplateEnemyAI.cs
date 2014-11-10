@@ -5,13 +5,10 @@ public class TemplateEnemyAI : MonoBehaviour {
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
 	public bool stopMove = false;		//Determines if enemy can stop moving towards player
 											//Set by child script and collider
-											//Made public so it's viewable by child
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
 	bool facingRight = true;			//Determines direction enemy facing
 	Animator anim;						//For controlling animation
 	GameObject target;					//Enemy's target
-	bool TargetInSight = false;			//Determines if target is in sight
-
 
 	// Use this for initialization
 	void Awake () {
@@ -22,27 +19,40 @@ public class TemplateEnemyAI : MonoBehaviour {
 	// Activates when target enters trigger collider
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player")
-			TargetInSight = true;
+			GetComponent<EnemyInfo>().TargetInSight = true;
+		if(other.tag == "Enemy")
+			GetComponent<EnemyInfo>().Alerted = (other.gameObject.GetComponent<EnemyInfo>().TargetInSight ||
+			                                     other.gameObject.GetComponent<EnemyInfo>().Alerted);
 	}
 
 	// Activates while target is in trigger collider radius
 	void OnTriggerStay2D(Collider2D other){
 		if(other.tag == "Player")
-			TargetInSight = true;
+			GetComponent<EnemyInfo>().TargetInSight = true;
+		if(other.tag == "Enemy"){
+			GetComponent<EnemyInfo>().Alerted = (other.gameObject.GetComponent<EnemyInfo>().TargetInSight ||
+			                                     other.gameObject.GetComponent<EnemyInfo>().Alerted);
+		}
 	}
 
 	//Determines what target leaves field of view
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Player"){
-			TargetInSight = false;
-			anim.SetFloat("Speed", 0);
+			GetComponent<EnemyInfo>().TargetInSight = false;
+		}
+		if(other.tag == "Enemy"){
+			GetComponent<EnemyInfo>().Alerted = false;
 		}
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(TargetInSight){
+		if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
 			ApproachTarget();
+		}
+		else{
+			//Random movement script reference here?
+			anim.SetFloat("Speed",0);	//Defaults to setting Idle state
 		}
 	}
 
@@ -55,6 +65,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 			                                         target.transform.position,
 			                                         moveSpeed * Time.deltaTime); 
 			anim.SetFloat ("Speed", 1);		//Tells animator enemy is moving	
+
 		}
 	}
 
