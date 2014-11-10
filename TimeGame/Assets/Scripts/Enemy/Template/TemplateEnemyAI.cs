@@ -18,9 +18,8 @@ public class TemplateEnemyAI : MonoBehaviour {
 	
 	// Activates when target enters trigger collider
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.tag == "Player"){
+		if(other.tag == "Player")
 			GetComponent<EnemyInfo>().TargetInSight = true;
-		}
 		if(other.tag == "Enemy"){
 			GetComponent<EnemyInfo>().Alerted = (other.gameObject.GetComponent<EnemyInfo>().TargetInSight ||
 			                                     other.gameObject.GetComponent<EnemyInfo>().Alerted);
@@ -32,11 +31,8 @@ public class TemplateEnemyAI : MonoBehaviour {
 		if(other.tag == "Player")
 			GetComponent<EnemyInfo>().TargetInSight = true;
 		if(other.tag == "Enemy"){
-			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
-				GetComponent<EnemyInfo>().Alerted = false;
-			else
-				GetComponent<EnemyInfo>().Alerted = (other.gameObject.GetComponent<EnemyInfo>().TargetInSight ||
-			                                         other.gameObject.GetComponent<EnemyInfo>().Alerted);
+			GetComponent<EnemyInfo>().Alerted = (other.gameObject.GetComponent<EnemyInfo>().TargetInSight ||
+			                                     other.gameObject.GetComponent<EnemyInfo>().Alerted);
 		}
 	}
 
@@ -52,8 +48,6 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		ReportToGlobal();
-		Debug.Log(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer);
 		if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
 			ApproachTarget();
 		}
@@ -91,10 +85,4 @@ public class TemplateEnemyAI : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}	
-
-	//Reports if enemy can see player or not
-	void ReportToGlobal(){
-		if(GetComponent<EnemyInfo>().TargetInSight)
-			GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer +=1;
-	}
 }
