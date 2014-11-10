@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TemplateEnemyAI : MonoBehaviour {
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
@@ -18,11 +19,12 @@ public class TemplateEnemyAI : MonoBehaviour {
 	
 	// Activates when target enters trigger collider
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.tag == "Player")
-			GetComponent<EnemyInfo>().TargetInSight = true;
-		if(other.tag == "Enemy")
-			GetComponent<EnemyInfo>().Alerted = (other.gameObject.GetComponent<EnemyInfo>().TargetInSight ||
-			                                     other.gameObject.GetComponent<EnemyInfo>().Alerted);
+		if(other.tag == "Enemy"){
+			if(other.gameObject.GetComponentInParent<EnemyInfo>().TargetInSight ||
+			   other.gameObject.GetComponentInParent<EnemyInfo>().Alerted){
+				GetComponent<EnemyInfo>().Alerted = true;
+			}
+		}
 	}
 
 	// Activates while target is in trigger collider radius
@@ -33,8 +35,11 @@ public class TemplateEnemyAI : MonoBehaviour {
 			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
 				GetComponent<EnemyInfo>().Alerted = false;
 			else
-				GetComponent<EnemyInfo>().Alerted = (other.gameObject.GetComponent<EnemyInfo>().TargetInSight ||
-			                                         other.gameObject.GetComponent<EnemyInfo>().Alerted);
+				if(other.gameObject.GetComponentInParent<EnemyInfo>().TargetInSight ||
+				   other.gameObject.GetComponentInParent<EnemyInfo>().Alerted){
+					GetComponent<EnemyInfo>().Alerted = true;	//Not redundant. Requires multiple
+																	//enemy alert states
+			}
 		}
 	}
 
