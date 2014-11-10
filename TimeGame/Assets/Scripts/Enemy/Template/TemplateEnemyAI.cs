@@ -30,8 +30,11 @@ public class TemplateEnemyAI : MonoBehaviour {
 		if(other.tag == "Player")
 			GetComponent<EnemyInfo>().TargetInSight = true;
 		if(other.tag == "Enemy"){
-			GetComponent<EnemyInfo>().Alerted = (other.gameObject.GetComponent<EnemyInfo>().TargetInSight ||
-			                                     other.gameObject.GetComponent<EnemyInfo>().Alerted);
+			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
+				GetComponent<EnemyInfo>().Alerted = false;
+			else
+				GetComponent<EnemyInfo>().Alerted = (other.gameObject.GetComponent<EnemyInfo>().TargetInSight ||
+			                                         other.gameObject.GetComponent<EnemyInfo>().Alerted);
 		}
 	}
 
