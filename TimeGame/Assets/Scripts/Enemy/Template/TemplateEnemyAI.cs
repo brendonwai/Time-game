@@ -20,10 +20,9 @@ public class TemplateEnemyAI : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player")
 			GetComponent<EnemyInfo>().TargetInSight = true;
-		if(other.tag == "Enemy"){
+		if(other.tag == "Enemy")
 			GetComponent<EnemyInfo>().Alerted = (other.gameObject.GetComponent<EnemyInfo>().TargetInSight ||
 			                                     other.gameObject.GetComponent<EnemyInfo>().Alerted);
-		}
 	}
 
 	// Activates while target is in trigger collider radius
