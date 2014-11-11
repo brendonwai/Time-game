@@ -7,10 +7,4 @@ public class EnemyInfo : MonoBehaviour {
 	public bool TargetInSight = false;			//Determines if target is in sight
 	public bool Alerted = false;				//Triggers alert state from other enemies
 
-	void FixedUpdate(){
-
-		if(TargetInSight)
-			GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer += 1;
-	}
-
 }

@@ -11,9 +11,8 @@ public class TemplateEnemyAttack : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D other){
-		if(other.tag == "Player"){
+		if(other.tag == "Player")
 			TargetInRange = true;
-		}
 	}
 
 	void OnTriggerExit2D(Collider2D other){

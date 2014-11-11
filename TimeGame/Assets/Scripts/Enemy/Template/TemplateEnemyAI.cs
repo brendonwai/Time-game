@@ -10,6 +10,8 @@ public class TemplateEnemyAI : MonoBehaviour {
 	bool facingRight = true;			//Determines direction enemy facing
 	Animator anim;						//For controlling animation
 	GameObject target;					//Enemy's target
+	
+	bool informedGlobal = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -29,8 +31,13 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	// Activates while target is in trigger collider radius
 	void OnTriggerStay2D(Collider2D other){
-		if(other.tag == "Player")
+		if(other.tag == "Player"){
 			GetComponent<EnemyInfo>().TargetInSight = true;
+			if(!informedGlobal){
+				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer += 1;
+				informedGlobal = true;
+			}
+		}
 		if(other.tag == "Enemy"){
 			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
 				GetComponent<EnemyInfo>().Alerted = false;
@@ -47,9 +54,14 @@ public class TemplateEnemyAI : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Player"){
 			GetComponent<EnemyInfo>().TargetInSight = false;
+			if(informedGlobal){
+				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer -= 1;
+				informedGlobal = false;
+			}
 		}
 		if(other.tag == "Enemy"){
-			GetComponent<EnemyInfo>().Alerted = false;
+			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
+				GetComponent<EnemyInfo>().Alerted = false;
 		}
 	}
 
