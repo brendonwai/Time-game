@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class TemplateStopApproach : MonoBehaviour {
-	//Used to stop enemy from approaching
+	//Used to stop enemy from approaching player any further
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
@@ -19,4 +19,5 @@ public class TemplateStopApproach : MonoBehaviour {
 			transform.parent.GetComponent<TemplateEnemyAI>().stopMove = false;
 		}
 	}
+
 }
