@@ -2,10 +2,7 @@
 using System.Collections;
 
 public class GlobalEnemyInfo : MonoBehaviour {
-	public int CanSeePlayer;
+	//Information that must be accessed by all enemies
 
-	// Update is called once per frame
-	void FixedUpdate () {
-		CanSeePlayer = 0;
-	}
+	public int CanSeePlayer = 0;	//Records how many enemies can see the player at the moment
 }

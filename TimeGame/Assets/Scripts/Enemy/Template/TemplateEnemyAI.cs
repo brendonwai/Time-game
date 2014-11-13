@@ -10,6 +10,8 @@ public class TemplateEnemyAI : MonoBehaviour {
 	bool facingRight = true;			//Determines direction enemy facing
 	Animator anim;						//For controlling animation
 	GameObject target;					//Enemy's target
+	
+	bool informedGlobal = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -29,8 +31,13 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	// Activates while target is in trigger collider radius
 	void OnTriggerStay2D(Collider2D other){
-		if(other.tag == "Player")
+		if(other.tag == "Player"){
 			GetComponent<EnemyInfo>().TargetInSight = true;
+			if(!informedGlobal){
+				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer += 1;
+				informedGlobal = true;
+			}
+		}
 		if(other.tag == "Enemy"){
 			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
 				GetComponent<EnemyInfo>().Alerted = false;
@@ -47,15 +54,22 @@ public class TemplateEnemyAI : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Player"){
 			GetComponent<EnemyInfo>().TargetInSight = false;
+			if(informedGlobal){
+				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer -= 1;
+				informedGlobal = false;
+			}
 		}
 		if(other.tag == "Enemy"){
-			GetComponent<EnemyInfo>().Alerted = false;
+			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
+				GetComponent<EnemyInfo>().Alerted = false;
 		}
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
+		if(GetComponent<EnemyInfo>().Health <= 0) //Delete if statement once destroy() turned on
+			Dead();
+		else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
 			ApproachTarget();
 		}
 		else{
@@ -91,5 +105,10 @@ public class TemplateEnemyAI : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-	}	
+	}
+
+	void Dead(){
+		anim.SetBool("IsDead", true);
+		Destroy (gameObject,2);
+	}
 }

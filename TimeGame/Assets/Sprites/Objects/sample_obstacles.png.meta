@@ -76,7 +76,7 @@ TextureImporter:
     21300142: sample_obstacles_71
     21300144: sample_obstacles_72
     21300146: sample_obstacles_73
-    21300148: sample_obstacles_74
+    21300148: PatrolSample
     21300150: sample_obstacles_75
     21300152: sample_obstacles_76
     21300154: sample_obstacles_77
@@ -952,7 +952,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sample_obstacles_74
+    - name: PatrolSample
       rect:
         serializedVersion: 2
         x: 144
