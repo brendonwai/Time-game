@@ -30,4 +30,5 @@ public class TemplateEnemyAttack : MonoBehaviour {
 		anim.SetBool("IsAttacking", true);
 		//INSERT ATTACKING CODE
 	}
+	
 }
