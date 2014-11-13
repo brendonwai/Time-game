@@ -21,6 +21,7 @@ public class Player2DController : MonoBehaviour {
 		//Changes value of Speed
 		//*Speed defined in Unity Animator Controller
 		anim.SetFloat ("Speed", Mathf.Abs (move_x));
+		anim.SetFloat ("YSpeed", Mathf.Abs (move_y));
 
 		//Makes character move based on inputs
 		rigidbody2D.velocity = new Vector2 (move_x * maxSpeed, move_y * maxSpeed);
