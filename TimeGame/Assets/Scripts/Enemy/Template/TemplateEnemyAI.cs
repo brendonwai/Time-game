@@ -10,13 +10,18 @@ public class TemplateEnemyAI : MonoBehaviour {
 	bool facingRight = true;			//Determines direction enemy facing
 	Animator anim;						//For controlling animation
 	GameObject target;					//Enemy's target
-	
+	float randX;                        // randX and randY is a random coordinate that 
+	float randY;                            // the enemy will move towards when the target is not in sight
+	float randInterval = 0;             // The interval between the points of time when the enemy changes direction
+	float timeCount;                    // Last update for random movement
+
 	bool informedGlobal = false;
 
 	// Use this for initialization
 	void Awake () {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
+		timeCount = Time.time;
 	}
 	
 	// Activates when target enters trigger collider
@@ -67,14 +72,23 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(GetComponent<EnemyInfo>().Health <= 0) //Delete if statement once destroy() turned on
-			Dead();
+		if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
+			Dead ();
+		}
 		else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
 			ApproachTarget();
 		}
 		else{
-			//Random movement script reference here?
-			anim.SetFloat("Speed",0);	//Defaults to setting Idle state
+			if (Time.time - timeCount >= randInterval){
+				// Creates a random target point in an arbitrary rectangle to move towards
+				randX = Random.Range(-750,750);
+				randY = Random.Range(-600,600);
+				randInterval = Random.Range(1.0f, 2.5f);
+				timeCount = Time.time;
+			}
+			else{
+				RandomMovement();
+			}
 		}
 	}
 
@@ -88,6 +102,16 @@ public class TemplateEnemyAI : MonoBehaviour {
 			                                         moveSpeed * Time.deltaTime); 
 			anim.SetFloat ("Speed", 1);		//Tells animator enemy is moving	
 
+		}
+	}
+
+	// Enemy moves towards arbitrary point
+	void RandomMovement() {
+		FaceTarget ();
+		if (!stopMove) {
+			transform.position = Vector2.MoveTowards(transform.position, new Vector2(randX, randY), 
+			                                         moveSpeed * Time.deltaTime);
+			anim.SetFloat ("Speed", 1);
 		}
 	}
 
