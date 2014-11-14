@@ -22,7 +22,10 @@ public class Spawner : MonoBehaviour {
 				Random.Range(-worldBounds.extents.y, worldBounds.extents.y),
 				0f);
 		
-			Instantiate(obj, location, Quaternion.identity);
+			GameObject clone = (GameObject) Instantiate(obj, location, Quaternion.identity);
+
+			clone.transform.parent = obj.transform.parent;
+
 			// Random enemy within the specified time frame
 			yield return new WaitForSeconds(Random.Range(timeMin, timeMax));
 		}
