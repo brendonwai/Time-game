@@ -5,19 +5,8 @@ public class Player2DController : MonoBehaviour {
 
 	//Movement/Animations
 	public float maxSpeed = 5f;			//Sets momvement speed
-	bool facingRight = true;			//Determines direction character facing
+	public bool facingRight = true;		//Determines direction character facing
 	Animator anim;						//Animation object
-	public int health = 1;
-
-	//Hacking
-	public BoxCollider2D sword;
-	bool isHacking = false;
-
-
-	//Keys
-	public KeyCode hackKey;
-
-
 
 	// Use this for initialization
 	void Start () {
@@ -50,34 +39,18 @@ public class Player2DController : MonoBehaviour {
 		else if((move_x < 0) && facingRight){
 			Flip();
 		}
-		if (Input.GetKey(hackKey))
-		{
-
-		}
+	}
+	void Update() {
+	
 	}
 
 	//Flips character sprite to face direction of movement also flips attached colliders
-	void Flip() {
+	public void Flip() {
 		facingRight = !facingRight;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-	}
-
-	//Hack function
-	//shouldn't work well since
-	void OnTriggerEnter2D(Collider2D other) {
-		if (isHacking == true) {
-			transform.position = other.transform.position;
-			//if sword's collider is within enemy's collider
-		}
-		else if (isHacking==false) {
-		
-		}
-		else {
-			
-			
-		}
+		GetComponentInChildren<SwordObjectScript> ().AntiFlipSword();
 	}
 
 

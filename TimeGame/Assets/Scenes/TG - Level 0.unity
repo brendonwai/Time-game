@@ -846,6 +846,57 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_Radius: .300000012
   m_Center: {x: 0, y: 0}
+--- !u!1 &831234949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 831234950}
+  - 114: {fileID: 831234952}
+  - 61: {fileID: 831234951}
+  m_Layer: 0
+  m_Name: Swordobj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &831234950
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 831234949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1295061425}
+  m_RootOrder: 0
+--- !u!61 &831234951
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 831234949}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .400000006, y: .100000001}
+  m_Center: {x: .200000003, y: 0}
+--- !u!114 &831234952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 831234949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b3175fea139784d8118d438c87df62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &836647776
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +948,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   Health: 100
+  Name: Enemy
 --- !u!114 &836647779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,6 +1508,8 @@ GameObject:
   - 50: {fileID: 1295061428}
   - 114: {fileID: 1295061427}
   - 61: {fileID: 1295061429}
+  - 114: {fileID: 1295061432}
+  - 114: {fileID: 1295061431}
   m_Layer: 0
   m_Name: playerSprite
   m_TagString: Player
@@ -1495,7 +1549,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 831234950}
   m_Father: {fileID: 351034641}
   m_RootOrder: 0
 --- !u!95 &1295061426
@@ -1527,6 +1582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 2
+  facingRight: 1
 --- !u!50 &1295061428
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1555,6 +1611,33 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .200000003, y: .400000006}
   m_Center: {x: 0, y: 0}
+--- !u!114 &1295061431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295061423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe45f90a5adcc94fbd35dec35dbdecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
+  Mana: 0
+  HackCD: 0
+  isHacking: 0
+  hackKey: 113
+--- !u!114 &1295061432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295061423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6a4d8679c7ada418b9b300978c1af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1381516073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,6 +2010,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   Health: 100
+  Name: Enemy
 --- !u!1001 &1735450390
 Prefab:
   m_ObjectHideFlags: 0
@@ -2072,6 +2156,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   Health: 100
+  Name: Enemy
 --- !u!114 &1884963917
 MonoBehaviour:
   m_ObjectHideFlags: 0

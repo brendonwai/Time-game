@@ -10,5 +10,6 @@ public class EnemyInfo : MonoBehaviour {
 
 	//Enemy Stats
 	public int Health = 100;					//Enemy health
+	public string Name = "Enemy";
 
 }
