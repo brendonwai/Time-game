@@ -642,7 +642,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Size: {x: .5, y: .5}
-  m_Center: {x: 0, y: 0}
+  m_Center: {x: 0, y: -.100000001}
 --- !u!1001 &527019847
 Prefab:
   m_ObjectHideFlags: 0
@@ -897,7 +897,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1
+  m_Radius: .5
   m_Center: {x: 0, y: 0}
 --- !u!1 &836647776
 GameObject:
@@ -949,6 +949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetInSight: 0
   Alerted: 0
+  enemyType: 0
   Health: 100
   Type: Enemy
 --- !u!114 &836647779
@@ -1340,6 +1341,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
   m_RootGameObject: {fileID: 1884963914}
@@ -1540,7 +1545,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 715744389
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300004, guid: 0bc467795f27a08459326d8fbda495c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 579ff10ba5064fb42b18c97c067affcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1295061425
 Transform:
@@ -1619,7 +1624,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1295061423}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbe45f90a5adcc94fbd35dec35dbdecb, type: 3}
   m_Name: 
@@ -1635,6 +1640,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6a4d8679c7ada418b9b300978c1af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  health: 0
+  energy: 0
+  hackHealth: 0
 --- !u!1 &1381516073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetInSight: 0
   Alerted: 0
+  enemyType: 0
   Health: 100
   Type: Enemy
 --- !u!1001 &1735450390
@@ -2046,6 +2056,10 @@ Prefab:
     - target: {fileID: 400006, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
@@ -2152,6 +2166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetInSight: 0
   Alerted: 0
+  enemyType: 0
   Health: 100
   Type: Enemy
 --- !u!114 &1884963917
@@ -2273,6 +2288,18 @@ Prefab:
     - target: {fileID: 400006, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
+      propertyPath: m_Center.y
+      value: -.100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}

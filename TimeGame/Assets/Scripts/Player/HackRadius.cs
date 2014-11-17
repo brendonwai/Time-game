@@ -11,16 +11,16 @@ public class HackRadius : MonoBehaviour {
 	public int HackCD;
 	public KeyCode hackKey;
 	List<GameObject> InHackRadiusList;
-	List<string> HackableObjectNames;
+	List<string> HackableObjectTags;
 
 	void Start() {
 		anim = GetComponentInParent<Animator> ();
 		//anglesign = 1;
 		HackCD = 10;
 		InHackRadiusList = new List<GameObject>();
-		HackableObjectNames.Add ("Basic Enemy");
-		HackableObjectNames.Add ("ranged");
-		HackableObjectNames.Add ("Gate");
+		HackableObjectTags = new List<string> ();
+		HackableObjectTags.Add("Enemy");
+		HackableObjectTags.Add("Gate");
 		isHacking = false;
 	}
 	void Update() {
@@ -72,34 +72,54 @@ public class HackRadius : MonoBehaviour {
 			Debug.Log("Hack Key Pressed");
 			if (HackCD == 10) {		//Change this once we add in cooldowns
 				Debug.Log("Hacking");
-				HackObject();
+				ChooseHackObject();
 			}
 		}
 
 	}
 
 	void FixedUpdate(){
-		//do cooldown here I think
+		//do cooldown iteration here I think
 	}
 
 	//Calls when objects enter the collider
-	void OnTriggerEnter2D(Collider2D other) {		//NOTE: I think it triggers on the player's 2D collider as well
-		Debug.Log ("Object in Hack Radius");
-		if (!HackableObjectNames.Contains(other.gameObject.ToString())) {
-			InHackRadiusList.Add (other.gameObject);
-			Debug.Log ("Added" + other.gameObject.ToString());
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "Enemy") {										//Checks for Enemy Tags
+			InHackRadiusList.Add (other.transform.parent.gameObject);				//Adds Enemy GameObject to the list of hackable objects in range with all it's components and children.
+			Debug.Log ("Added " + other.transform.parent.gameObject.ToString());
 		}
-	}
-	void OnTriggerExit2D(Collider2D other){
-		if (InHackRadiusList.Contains (other.gameObject)) {
-			InHackRadiusList.Remove (other.gameObject);
-			Debug.Log ("Removed" + other.gameObject.ToString());
+		else if (other.gameObject.tag == "Gate") {									//Checks for Gate Tags
+			InHackRadiusList.Add (other.transform.parent.gameObject);				//Adds Gate GameObject to the list of hackable objects in range iwth all it's components and children.
 		}
 	}
 
-	void HackObject() {
+	void OnTriggerExit2D(Collider2D other){
+		if (InHackRadiusList.Contains (other.transform.parent.gameObject)) {
+			InHackRadiusList.Remove (other.transform.parent.gameObject);
+			Debug.Log ("Removed " + other.transform.parent.gameObject.ToString());
+		}
+	}
+
+	void ChooseHackObject() {
+		//Decide on which hack object you want to select with some menu (Think Assassin's Creed weapon select or like a left and right inventory)
+		while (isHacking == true) {
+			int hackselection = 0;
+
+			InHackRadiusList.Find ("Basic Enemy");
+			if (Input.GetKey(hackKey)){
+
+			}
+		}
+		InHackRadiusList.Find ("Basic Enemy");
+		HackObject (InHackRadiusList.Find(""));
+	}
+
+	void HackObject(GameObject other) {
 		//Go SlowMo/Freeze and Display List or GUI of hackable objects
 
+		//INSERT BRING UP HACK MENU HERE
+
+		//InHackRadiusList.Find
 
 
 
