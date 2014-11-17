@@ -50,7 +50,7 @@ public class Player2DController : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-		GetComponentInChildren<SwordObjectScript> ().AntiFlipSword();
+		//GetComponentInChildren<SwordObjectScript> ().AntiFlipSword();
 	}
 
 

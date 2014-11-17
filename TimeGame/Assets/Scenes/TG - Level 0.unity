@@ -855,9 +855,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 831234950}
   - 114: {fileID: 831234952}
-  - 61: {fileID: 831234951}
+  - 58: {fileID: 831234953}
   m_Layer: 0
-  m_Name: Swordobj
+  m_Name: HackRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -875,17 +875,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1295061425}
   m_RootOrder: 0
---- !u!61 &831234951
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 831234949}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Size: {x: .400000006, y: .100000001}
-  m_Center: {x: .200000003, y: 0}
 --- !u!114 &831234952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,6 +886,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b3175fea139784d8118d438c87df62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HackCD: 0
+  hackKey: 113
+--- !u!58 &831234953
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 831234949}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: 1
+  m_Center: {x: 0, y: 0}
 --- !u!1 &836647776
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +950,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   Health: 100
-  Name: Enemy
+  Type: Enemy
 --- !u!114 &836647779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1622,11 +1624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe45f90a5adcc94fbd35dec35dbdecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
-  Mana: 0
-  HackCD: 0
-  isHacking: 0
-  hackKey: 113
 --- !u!114 &1295061432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2010,7 +2007,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   Health: 100
-  Name: Enemy
+  Type: Enemy
 --- !u!1001 &1735450390
 Prefab:
   m_ObjectHideFlags: 0
@@ -2156,7 +2153,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   Health: 100
-  Name: Enemy
+  Type: Enemy
 --- !u!114 &1884963917
 MonoBehaviour:
   m_ObjectHideFlags: 0
