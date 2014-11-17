@@ -939,6 +939,7 @@ MonoBehaviour:
   world: {fileID: 330942414}
   timeMin: 20
   timeMax: 25
+  countMax: 5
 --- !u!1 &643900728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2891,3 +2892,4 @@ MonoBehaviour:
   world: {fileID: 330942414}
   timeMin: 15
   timeMax: 20
+  countMax: 5
