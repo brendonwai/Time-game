@@ -15,8 +15,8 @@ public class Spawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		worldBounds = world.GetComponent<EdgeCollider2D>().bounds;
-		StartCoroutine(Spawn());
 		objects = new List<GameObject>();
+		StartCoroutine(Spawn());
 	}
 	
 	IEnumerator Spawn() {
