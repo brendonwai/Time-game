@@ -21,6 +21,7 @@ public class Player2DController : MonoBehaviour {
 		//Changes value of Speed
 		//*Speed defined in Unity Animator Controller
 		anim.SetFloat ("Speed", Mathf.Abs (move_x));
+		anim.SetFloat ("YSpeed", Mathf.Abs (move_y));
 
 		//Makes character move based on inputs
 		rigidbody2D.velocity = new Vector2 (move_x * maxSpeed, move_y * maxSpeed);
@@ -35,6 +36,16 @@ public class Player2DController : MonoBehaviour {
 		else if((move_x < 0) && facingRight){
 			Flip();
 		}
+	}
+
+	// Call this when damage dealt to enemy
+	IEnumerator takeDamage(int damage){
+		//reduce health by amount of damage
+		GetComponent<PlayerInfo>().Health -= damage;
+		//sprite flashes red upon taking damage
+		renderer.material.color = Color.red;
+		yield return new WaitForSeconds (.1f);
+		renderer.material.color=Color.white;
 	}
 
 	//Flips character sprite to face direction of movement

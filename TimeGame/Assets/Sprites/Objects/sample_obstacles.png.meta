@@ -16,7 +16,7 @@ TextureImporter:
     21300022: sample_obstacles_11
     21300024: sample_obstacles_12
     21300026: sample_obstacles_13
-    21300028: sample_obstacles_14
+    21300028: DialogueSample
     21300030: sample_obstacles_15
     21300032: sample_obstacles_16
     21300034: sample_obstacles_17
@@ -31,7 +31,7 @@ TextureImporter:
     21300052: sample_obstacles_26
     21300054: sample_obstacles_27
     21300056: sample_obstacles_28
-    21300058: sample_obstacles_29
+    21300058: Dialogue Sample
     21300060: sample_obstacles_30
     21300062: sample_obstacles_31
     21300064: sample_obstacles_32
@@ -352,7 +352,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sample_obstacles_14
+    - name: DialogueSample
       rect:
         serializedVersion: 2
         x: 4
@@ -502,7 +502,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sample_obstacles_29
+    - name: Dialogue Sample
       rect:
         serializedVersion: 2
         x: 24

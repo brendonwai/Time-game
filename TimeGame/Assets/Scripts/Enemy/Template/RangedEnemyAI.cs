@@ -11,13 +11,32 @@ public class RangedEnemyAI : MonoBehaviour {
 	Animator anim;						//For controlling animation
 	GameObject target;					//Enemy's target
 	bool TargetInSight = false;			//Determines if target is in sight
-	
+
 	
 	// Use this for initialization
 	void Awake () {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
 	}
+
+	// Call this when damage dealt to enemy
+	IEnumerator takeDamage(int damage){
+		//reduce health by amount of damage
+		GetComponent<EnemyInfo>().Health -= damage;
+		//sprite flashes red upon taking damage
+		renderer.material.color = Color.red;
+		yield return new WaitForSeconds (.1f);
+		renderer.material.color=Color.white;
+	}
+
+	//Deals damage to Player when touches him
+	void OnCollisionEnter2D(Collision2D col){
+		if (col.gameObject.tag=="Player"){
+			//change amount of damage deal here
+			col.gameObject.SendMessage("takeDamage",10);
+		}
+	}
+
 	
 	// Activates when target enters trigger collider
 	void OnTriggerEnter2D(Collider2D other){
