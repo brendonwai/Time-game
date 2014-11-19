@@ -115,7 +115,7 @@ GameObject:
   - 61: {fileID: 90001615}
   m_Layer: 0
   m_Name: BlueBox
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 1601640623}
   m_GameObject: {fileID: 90001614}
-  m_Mass: 40
+  m_Mass: 9999
   m_LinearDrag: 20
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -224,7 +224,7 @@ GameObject:
   - 61: {fileID: 265234888}
   m_Layer: 0
   m_Name: BlueBox
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,7 +248,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 923782789}
   m_GameObject: {fileID: 265234884}
-  m_Mass: 40
+  m_Mass: 9999
   m_LinearDrag: 20
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -536,7 +536,7 @@ GameObject:
   - 68: {fileID: 330942417}
   m_Layer: 0
   m_Name: placeholder_Background
-  m_TagString: MainCamera
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -724,6 +724,14 @@ Prefab:
     - target: {fileID: 400000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
+      propertyPath: m_Mass
+      value: 9999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
@@ -1281,6 +1289,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
+      propertyPath: m_Mass
+      value: 9999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
   m_RootGameObject: {fileID: 265234884}
@@ -1323,9 +1339,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 990256754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e33ea86460a38f4d964b48414a12abe, type: 3}
+  m_Script: {fileID: 11500000, guid: 4317c06a12dbc44e980293698bc31834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 100000, guid: 84424360eedba41d8a451ed38efdafe4, type: 2}
+  player: {fileID: 1295061423}
 --- !u!58 &990256757
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1350,7 +1368,7 @@ GameObject:
   - 61: {fileID: 1002929712}
   m_Layer: 0
   m_Name: BlueBox
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1374,7 +1392,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 527019847}
   m_GameObject: {fileID: 1002929711}
-  m_Mass: 40
+  m_Mass: 9999
   m_LinearDrag: 20
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -1519,7 +1537,7 @@ GameObject:
   - 50: {fileID: 1055086981}
   m_Layer: 0
   m_Name: sample_obstacles_21
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1530,7 +1548,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1055086980}
-  m_Mass: 20
+  m_Mass: 9999
   m_LinearDrag: 10
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -2329,7 +2347,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5000000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
       propertyPath: m_Mass
-      value: 40
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
