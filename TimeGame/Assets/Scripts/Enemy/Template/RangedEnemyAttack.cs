@@ -31,15 +31,11 @@ public class RangedEnemyAttack : MonoBehaviour {
 	
 	void Attack(){
 		anim.SetBool("IsAttacking", true);
-		Instantiate (bullet, transform.position, transform.rotation);
-		Vector2 v = bullet.rigidbody2D.velocity;
-		v.y = bulletspeed;
-		bullet.rigidbody2D.velocity = v;
-		bullet.renderer.material.color = Color.blue;
+		Shoot ();
 	}
 
-	void GenerateBullets(){
-
-
+	void Shoot(){
+		Instantiate (bullet, transform.position, transform.rotation);
+		bullet.renderer.material.color = Color.blue;
 	}
 }

@@ -6,6 +6,11 @@ public class bullets : MonoBehaviour {
 	public int speed = 6;
 	public int damage = 10;
 
+	void Start(){
+		Vector2 v = rigidbody2D.velocity;
+		v.y = speed;
+		rigidbody2D.velocity = v;
+	}
 	// deal damage to collided target depending on color of bullet
 	// enemy shoot blue bullets --> damage player
 	// player hacked robots shoot red bullets --> damage enemies
