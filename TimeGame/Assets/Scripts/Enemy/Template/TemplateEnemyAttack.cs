@@ -29,7 +29,6 @@ public class TemplateEnemyAttack : MonoBehaviour {
 	void Attack(){
 		anim.SetBool("IsAttacking", true);
 		//INSERT ATTACKING CODE
-		Debug.Log (gameObject.name);
 	}
 	
 }
