@@ -34,7 +34,5 @@ public class bullets : MonoBehaviour {
 	}
 
 
-	void OnBecameInvisible(){
-			Destroy (gameObject);
-	}
+
 }
