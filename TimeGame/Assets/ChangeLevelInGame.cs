@@ -9,7 +9,4 @@ public class ChangeLevelInGame : MonoBehaviour {
 		if(other.tag == "Player")
 			Application.LoadLevel(Level);
 	}
-
-	
-
 }
