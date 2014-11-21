@@ -10,17 +10,10 @@ public class GateBehavior : MonoBehaviour {
 
 	int length;							//Length of list
 	bool hacked = false;
-	bool positionReached = true;
-	float startX, startY;
-	float destinationX,destinationY;
 
 	// Use this for initialization
 	void Start () {
 		length = connectors.Length;
-		startX = transform.position.x;
-		startY = transform.position.y;
-		destinationX = startX + XDirection;
-		destinationY = startY + YDirection;
 	}
 	
 	// Update is called once per frame
@@ -29,9 +22,7 @@ public class GateBehavior : MonoBehaviour {
 			hacked = (length == CountHacked());
 		}
 		else{
-			transform.position = Vector2.MoveTowards(transform.position,
-			                                         new Vector2(destinationX,destinationY),
-			                                         moveSpeed * Time.deltaTime);
+			Destroy(gameObject,2);
 		}
 	}
 

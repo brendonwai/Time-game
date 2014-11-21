@@ -113,7 +113,6 @@ GameObject:
   - 114: {fileID: 72774740}
   - 212: {fileID: 72774739}
   - 95: {fileID: 72774738}
-  - 114: {fileID: 72774742}
   - 61: {fileID: 72774743}
   m_Layer: 0
   m_Name: gateConnectorLeftRightBotKey
@@ -182,22 +181,10 @@ Transform:
   m_GameObject: {fileID: 72774737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.36000013, y: .159999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 783497187}
   m_RootOrder: 1
---- !u!114 &72774742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 9c7369e875c22e2428fe376f17096299,
-    type: 2}
-  m_PrefabInternal: {fileID: 854857311}
-  m_GameObject: {fileID: 72774737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f3b0f07eeed96840b2a1bfbe41cb674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &72774743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -953,7 +940,6 @@ GameObject:
   - 114: {fileID: 596639667}
   - 212: {fileID: 596639666}
   - 95: {fileID: 596639665}
-  - 114: {fileID: 596639664}
   - 61: {fileID: 596639669}
   m_Layer: 0
   m_Name: gateConnectorLeftRightBotKey
@@ -962,18 +948,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &596639664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 9c7369e875c22e2428fe376f17096299,
-    type: 2}
-  m_PrefabInternal: {fileID: 770969565}
-  m_GameObject: {fileID: 596639663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f3b0f07eeed96840b2a1bfbe41cb674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &596639665
 Animator:
   serializedVersion: 3
@@ -1034,7 +1008,7 @@ Transform:
   m_GameObject: {fileID: 596639663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.03999996, y: .159999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 783497187}
   m_RootOrder: 2
@@ -2370,6 +2344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
+  Energy: 0
+  EnergyRegen: 1
 --- !u!1 &1381516073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,7 +3374,6 @@ GameObject:
   - 212: {fileID: 2041150972}
   - 114: {fileID: 2041150971}
   - 95: {fileID: 2041150974}
-  - 114: {fileID: 2041150973}
   - 61: {fileID: 2041150975}
   m_Layer: 0
   m_Name: gateConnectorSideBotKey
@@ -3415,7 +3390,7 @@ Transform:
   m_GameObject: {fileID: 2041150969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.72000003, y: .159999996, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: -2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 783497187}
   m_RootOrder: 3
@@ -3455,18 +3430,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ed554c70a9092a6468d3200adf27d32d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &2041150973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 0fc3c8caf6826504898d42ebd8b04418,
-    type: 2}
-  m_PrefabInternal: {fileID: 1604192522}
-  m_GameObject: {fileID: 2041150969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f3b0f07eeed96840b2a1bfbe41cb674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2041150974
 Animator:
   serializedVersion: 3
@@ -3506,7 +3469,6 @@ GameObject:
   - 212: {fileID: 2108510201}
   - 114: {fileID: 2108510200}
   - 95: {fileID: 2108510199}
-  - 114: {fileID: 2108510198}
   - 61: {fileID: 2108510197}
   m_Layer: 0
   m_Name: gateConnectorSideBotKey
@@ -3523,7 +3485,7 @@ Transform:
   m_GameObject: {fileID: 2108510195}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.63999987, y: .159999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 783497187}
   m_RootOrder: 4
@@ -3539,18 +3501,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .319999993, y: .419999987}
   m_Center: {x: 0, y: -.25999999}
---- !u!114 &2108510198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 0fc3c8caf6826504898d42ebd8b04418,
-    type: 2}
-  m_PrefabInternal: {fileID: 257011577}
-  m_GameObject: {fileID: 2108510195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f3b0f07eeed96840b2a1bfbe41cb674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2108510199
 Animator:
   serializedVersion: 3
