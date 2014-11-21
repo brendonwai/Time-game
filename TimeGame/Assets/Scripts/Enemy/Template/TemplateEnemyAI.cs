@@ -70,6 +70,14 @@ public class TemplateEnemyAI : MonoBehaviour {
 		}
 	}
 
+	//Deals damage to Player when touches him
+	void OnCollisionEnter2D(Collision2D col){
+		if (col.gameObject.tag=="Player"){
+			//change amount of damage deal here
+			col.gameObject.SendMessage("takeDamage",10);
+		}
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on

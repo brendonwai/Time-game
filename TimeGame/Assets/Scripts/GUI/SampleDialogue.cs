@@ -7,7 +7,6 @@ public class SampleDialogue : MonoBehaviour {
 	bool display = false;
 
 	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log ("TESFSDFSd");
 		if(other.tag == "Player"){
 			display = true;
 		}

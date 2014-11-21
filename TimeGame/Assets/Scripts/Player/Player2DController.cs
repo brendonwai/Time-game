@@ -4,7 +4,7 @@ using System.Collections;
 public class Player2DController : MonoBehaviour {
 
 	public float maxSpeed = 5f;			//Sets momvement speed
-	bool facingRight = true;			//Determines direction character facing
+	bool facingLeft = true;			//Determines direction character facing
 	Animator anim;						//Animation object
 	
 	// Use this for initialization
@@ -30,17 +30,27 @@ public class Player2DController : MonoBehaviour {
 		 * If moving in the positive x direction (right) and the character is not
 		 * facing right, makes the character sprite flip to face the right.
 		 */	
-		if((move_x > 0) && !facingRight){
+		if((move_x < 0) && !facingLeft){
 			Flip();
 		}
-		else if((move_x < 0) && facingRight){
+		else if((move_x > 0) && facingLeft){
 			Flip();
 		}
 	}
 
+	// Call this when damage dealt to enemy
+	IEnumerator takeDamage(int damage){
+		//reduce health by amount of damage
+		GetComponent<PlayerInfo>().Health -= damage;
+		//sprite flashes red upon taking damage
+		renderer.material.color = Color.red;
+		yield return new WaitForSeconds (.1f);
+		renderer.material.color=Color.white;
+	}
+
 	//Flips character sprite to face direction of movement
 	void Flip() {
-		facingRight = !facingRight;
+		facingLeft = !facingLeft;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
