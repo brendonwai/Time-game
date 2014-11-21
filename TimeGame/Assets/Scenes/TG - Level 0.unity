@@ -289,6 +289,8 @@ GameObject:
   - 212: {fileID: 153389623}
   - 50: {fileID: 153389626}
   - 58: {fileID: 153389625}
+  - 114: {fileID: 153389629}
+  - 95: {fileID: 153389628}
   - 114: {fileID: 153389627}
   m_Layer: 0
   m_Name: PickUpIdle
@@ -319,7 +321,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c4501aeaf8bd34c63bfafe273a103a11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .984786987, g: 1, b: .741379261, a: 1}
 --- !u!4 &153389624
 Transform:
   m_ObjectHideFlags: 0
@@ -342,7 +344,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: .210519671
+  m_Radius: .0904188156
   m_Center: {x: 0, y: 0}
 --- !u!50 &153389626
 Rigidbody2D:
@@ -365,6 +367,35 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 153389622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4448841275c98405e8499297d839b9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: 20
+--- !u!95 &153389628
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9500000, guid: c06764808c4d945a481cc49d4d06a98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1372659867}
+  m_GameObject: {fileID: 153389622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d3ea9350fc0d42809473920e17d377b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &153389629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: c06764808c4d945a481cc49d4d06a98d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1372659867}
   m_GameObject: {fileID: 153389622}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1300,7 +1331,6 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
 --- !u!114 &643900730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,12 +1342,6 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &643900731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,8 +1353,6 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
 --- !u!4 &643900732
 Transform:
   m_ObjectHideFlags: 0
