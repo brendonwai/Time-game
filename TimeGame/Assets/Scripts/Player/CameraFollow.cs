@@ -3,48 +3,38 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour {
 
-	public Transform Player;		//Player object
-	static float z = -10f; 			//Camera z position
+	public Transform Player;
+	static float z = -1000f;
 
-	//Camera constraints
-	public float MaxHorizonView = 0f;		//Max distance in x direction
-	public float MaxVerticalView = 0f;		//Max distance in y direction
+    public float radius = 0f;
+    public float lerp = 0f;
 
+    private Vector2 previousPosition;
 
 	// Use this for initialization
 	void Start () {
-		//Screen.showCursor = true;		//not sure if this works
+        previousPosition = new Vector2(Player.position.x, Player.position.y);
 		transform.position = new Vector3(Player.position.x, Player.position.y, z);
 	}
+
 	// Update is called once per frame
 	void Update () {
-		float x = Player.position.x;
-		float y = Player.position.y;
+        Vector2 playerPosition = new Vector2(Player.position.x, Player.position.y);
+		Vector2 mouse = new Vector2(Camera.main.ScreenToWorldPoint (Input.mousePosition).x,
+                                    Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
 
-		float mouseX = Camera.main.ScreenToWorldPoint (Input.mousePosition).x;
-		float mouseY = Camera.main.ScreenToWorldPoint (Input.mousePosition).y;
+        Vector2 distance = mouse - playerPosition;
 
-		maxViewSet(ref mouseX, ref mouseY, x,y);	//Prevents camera from going beyond max constraints
+        if(distance.sqrMagnitude > radius * radius)
+        {
+            distance.Normalize();
+            distance *= radius;
+        }
 
+        Vector2 targetPosition = playerPosition += distance;
+        Vector2 lerpedPosition = Vector2.Lerp(previousPosition, targetPosition, lerp);
 
-		//Set camera pos to midpoint between player and cursor. Has problems if you try to change the 2s
-		transform.position = new Vector3 ((x + mouseX)/2, (y + mouseY)/2, z);
-	}
-
-	//Sets camera position to be within max range
-	void maxViewSet(ref float cam_x, ref float cam_y, float char_x, float char_y)
-	{
-		if(cam_x > MaxHorizonView+char_x){
-			cam_x = MaxHorizonView + char_x;
-		}
-		if(cam_x < char_x-MaxHorizonView){
-			cam_x = char_x-MaxHorizonView;
-		}
-		if(cam_y > MaxVerticalView+char_y){
-			cam_y = MaxVerticalView + char_y;
-		}
-		if(cam_y < char_y-MaxVerticalView){
-			cam_y = char_y-MaxVerticalView;
-		}
+        transform.position = new Vector3(lerpedPosition.x, lerpedPosition.y, z);
+        previousPosition = lerpedPosition;
 	}
 }
