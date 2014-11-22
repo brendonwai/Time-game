@@ -464,8 +464,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282108260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -1.99885929, z: 0}
+  m_LocalScale: {x: 1, y: .992640555, z: 1}
   m_Children:
   - {fileID: 990256755}
   - {fileID: 1995829854}
@@ -510,19 +510,21 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_Poly:
     m_Paths:
-    - - {x: -.150923207, y: .309999943}
-      - {x: -.360000014, y: .230000004}
-      - {x: -.330218524, y: .0597230196}
-      - {x: -.166626051, y: -.0880925655}
-      - {x: -.192409262, y: -.148835421}
-      - {x: -.197755471, y: -.183670044}
-      - {x: -.0410035998, y: -.318594456}
-      - {x: .114216775, y: -.279919386}
-      - {x: .158031717, y: -.0281925201}
-      - {x: .293105274, y: -.0239005089}
-      - {x: .351405501, y: .148253441}
-      - {x: .308433592, y: .217108488}
-      - {x: .144136488, y: .305702686}
+    - - {x: .00120159518, y: .157036424}
+      - {x: -.0681252182, y: .150429457}
+      - {x: -.166395217, y: .127836227}
+      - {x: -.176391035, y: .0504016355}
+      - {x: -.130771518, y: -.00653030258}
+      - {x: -.0709664971, y: -.0264921784}
+      - {x: -.0742356107, y: -.106000781}
+      - {x: -.0273143705, y: -.158886433}
+      - {x: .0548966192, y: -.152153015}
+      - {x: .0771239549, y: -.0233330727}
+      - {x: .130653158, y: -.0145032406}
+      - {x: .156212687, y: -.00564813614}
+      - {x: .168882072, y: .0410208702}
+      - {x: .164696425, y: .103031397}
+      - {x: .100787185, y: .132305384}
 --- !u!212 &282108265
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -651,7 +653,7 @@ GameObject:
   - 68: {fileID: 330942417}
   m_Layer: 0
   m_Name: placeholder_Background
-  m_TagString: MainCamera
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1179,7 +1181,6 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
 --- !u!114 &643900730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1191,12 +1192,6 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &643900731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1208,8 +1203,6 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
 --- !u!4 &643900732
 Transform:
   m_ObjectHideFlags: 0
@@ -1662,9 +1655,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 990256754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e33ea86460a38f4d964b48414a12abe, type: 3}
+  m_Script: {fileID: 11500000, guid: 4317c06a12dbc44e980293698bc31834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 5000000, guid: 84424360eedba41d8a451ed38efdafe4, type: 2}
+  player: {fileID: 1295061423}
 --- !u!58 &990256757
 CircleCollider2D:
   m_ObjectHideFlags: 0
