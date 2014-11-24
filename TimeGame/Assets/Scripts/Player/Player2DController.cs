@@ -42,6 +42,11 @@ public class Player2DController : MonoBehaviour {
 	IEnumerator takeDamage(int damage){
 		//reduce health by amount of damage
 		GetComponent<PlayerInfo>().Health -= damage;
+		if (GetComponent<PlayerInfo>().Health<=0){
+			GetComponent<PlayerInfo>().Health=0;
+			anim.SetBool("IsDead",true);
+
+		}
 		//sprite flashes red upon taking damage
 		renderer.material.color = Color.red;
 		yield return new WaitForSeconds (.1f);
