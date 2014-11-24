@@ -12,19 +12,21 @@ public class bullets : MonoBehaviour {
 	// player hacked robots shoot red bullets --> damage enemies
 	// destroy 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.tag=="Environment"){
+		//Tag obstacles as Environment to destroy bullets on contact
+		if(other.tag=="Environment"){
 			Destroy(gameObject);
 		}
 		if (other.tag=="Background"){
 			Destroy (gameObject);
 		}
 		if (other.tag=="Player"){
-			if (renderer.material.color==Color.blue){
+			if (renderer.material.color==Color.cyan){
 				other.SendMessage("takeDamage",damage);
 				Destroy (gameObject);
 			}
 		}
 		if (other.tag=="Enemy"){
+			Debug.Log ("triggered");
 			if (renderer.material.color==Color.red){
 				other.SendMessage("takeDamage",damage);
 				Destroy (gameObject);
