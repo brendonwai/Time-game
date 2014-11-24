@@ -40,17 +40,19 @@ public class Player2DController : MonoBehaviour {
 
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
+		//sprite flashes red upon taking damage
+		renderer.material.color = Color.red;
+		yield return new WaitForSeconds (.1f);
+		renderer.material.color=Color.white;
 		//reduce health by amount of damage
 		GetComponent<PlayerInfo>().Health -= damage;
 		if (GetComponent<PlayerInfo>().Health<=0){
 			GetComponent<PlayerInfo>().Health=0;
 			anim.SetBool("IsDead",true);
+			Application.LoadLevel ("GameOverScene");
 
 		}
-		//sprite flashes red upon taking damage
-		renderer.material.color = Color.red;
-		yield return new WaitForSeconds (.1f);
-		renderer.material.color=Color.white;
+
 	}
 
 	//Flips character sprite to face direction of movement
