@@ -263,7 +263,7 @@ GameObject:
   - 61: {fileID: 90001615}
   m_Layer: 0
   m_Name: BlueBox
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,7 +287,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 1601640623}
   m_GameObject: {fileID: 90001614}
-  m_Mass: 40
+  m_Mass: 1e+06
   m_LinearDrag: 20
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -424,7 +424,7 @@ GameObject:
   - 61: {fileID: 265234888}
   m_Layer: 0
   m_Name: BlueBox
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -448,7 +448,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 923782789}
   m_GameObject: {fileID: 265234884}
-  m_Mass: 40
+  m_Mass: 1e+06
   m_LinearDrag: 20
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -914,6 +914,14 @@ Prefab:
     - target: {fileID: 400000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
+      propertyPath: m_Mass
+      value: 1e+06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
@@ -1814,6 +1822,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
+      propertyPath: m_Mass
+      value: 1e+06
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
   m_RootGameObject: {fileID: 265234884}
@@ -1885,7 +1901,7 @@ GameObject:
   - 61: {fileID: 1002929712}
   m_Layer: 0
   m_Name: BlueBox
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1909,7 +1925,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 527019847}
   m_GameObject: {fileID: 1002929711}
-  m_Mass: 40
+  m_Mass: 1e+06
   m_LinearDrag: 20
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -2062,7 +2078,7 @@ GameObject:
   - 50: {fileID: 1055086981}
   m_Layer: 0
   m_Name: sample_obstacles_21
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2073,7 +2089,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1055086980}
-  m_Mass: 20
+  m_Mass: 1e+06
   m_LinearDrag: 10
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -3061,7 +3077,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5000000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
       propertyPath: m_Mass
-      value: 40
+      value: 1e+06
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c750d4933f3ca78448e0941d4f43a40c, type: 2}
