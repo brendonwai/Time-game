@@ -49,10 +49,14 @@ public class Player2DController : MonoBehaviour {
 		if (GetComponent<PlayerInfo>().Health<=0){
 			GetComponent<PlayerInfo>().Health=0;
 			anim.SetBool("IsDead",true);
-			Application.LoadLevel ("GameOverScene");
+			PlayerDeath();
 
 		}
 
+	}
+
+	void PlayerDeath(){
+		Application.LoadLevel ("GameOverScene");
 	}
 
 	//Flips character sprite to face direction of movement
