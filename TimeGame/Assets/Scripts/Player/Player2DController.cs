@@ -6,6 +6,7 @@ public class Player2DController : MonoBehaviour {
 	public float maxSpeed = 5f;			//Sets momvement speed
 	bool facingLeft = true;			//Determines direction character facing
 	Animator anim;						//Animation object
+	public GameObject redscreen;
 	
 	// Use this for initialization
 	void Start () {
@@ -39,10 +40,10 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	// Call this when damage dealt to enemy
-	IEnumerator takeDamage(int damage){
+	void takeDamage(int damage){
 		//sprite flashes red upon taking damage
 		renderer.material.color = Color.red;
-		yield return new WaitForSeconds (.1f);
+		redscreen.SendMessage ("FlashRedScreen");
 		renderer.material.color=Color.white;
 		//reduce health by amount of damage
 		GetComponent<PlayerInfo>().Health -= damage;
