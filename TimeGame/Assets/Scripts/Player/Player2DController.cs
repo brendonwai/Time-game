@@ -6,7 +6,6 @@ public class Player2DController : MonoBehaviour {
 	public float maxSpeed = 5f;			//Sets momvement speed
 	bool facingLeft = true;			//Determines direction character facing
 	Animator anim;						//Animation object
-	public GameObject redscreen;
 	bool death=false;
 	
 	// Use this for initialization
@@ -47,7 +46,6 @@ public class Player2DController : MonoBehaviour {
 		if(!death){
 			//sprite flashes red upon taking damage
 			renderer.material.color = Color.red;
-			redscreen.SendMessage ("FlashRedScreen");
 			yield return new WaitForSeconds(.1f);
 			renderer.material.color=Color.white;
 		}
@@ -64,7 +62,6 @@ public class Player2DController : MonoBehaviour {
 		death = true;
 		rigidbody2D.velocity = new Vector2 (0,0);
 		anim.SetBool("IsDead",true);
-		redscreen.SendMessage("DeathRedScreen");
 		yield return new WaitForSeconds(2.583f);
 		Application.LoadLevel ("GameOverScene");
 	}
