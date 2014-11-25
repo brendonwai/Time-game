@@ -43,11 +43,14 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	// Call this when damage dealt to enemy
-	void takeDamage(int damage){
-		//sprite flashes red upon taking damage
-		renderer.material.color = Color.red;
-		redscreen.SendMessage ("FlashRedScreen");
-		renderer.material.color=Color.white;
+	IEnumerator takeDamage(int damage){
+		if(!death){
+			//sprite flashes red upon taking damage
+			renderer.material.color = Color.red;
+			redscreen.SendMessage ("FlashRedScreen");
+			yield return new WaitForSeconds(.1f);
+			renderer.material.color=Color.white;
+		}
 		//reduce health by amount of damage
 		GetComponent<PlayerInfo>().Health -= damage;
 		if (GetComponent<PlayerInfo>().Health<=0){
@@ -61,7 +64,8 @@ public class Player2DController : MonoBehaviour {
 		death = true;
 		rigidbody2D.velocity = new Vector2 (0,0);
 		anim.SetBool("IsDead",true);
-		yield return new WaitForSeconds(2.083f);
+		redscreen.SendMessage("DeathRedScreen");
+		yield return new WaitForSeconds(2.583f);
 		Application.LoadLevel ("GameOverScene");
 	}
 

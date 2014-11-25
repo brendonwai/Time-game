@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class redScreen : MonoBehaviour {
-	Color toColor = new Color (255, 0, 0, .005f);
+	Color toColor = new Color (255, 0, 0, 1);
 	Color blendColor = new Color (255, 0, 0, 0);
-	float speed=2;
+	public bool playerdeath=false;
 	
 	// Use this for initialization
 	void Start () {
@@ -18,7 +18,9 @@ public class redScreen : MonoBehaviour {
 	}
 
 	void DeathRedScreen(){
-		renderer.material.color=Color.Lerp(blendColor,toColor,Time.deltaTime*speed);
+
+		renderer.material.color=new Color(255, 255, 255, .005f);
+
 	}
 
 }
