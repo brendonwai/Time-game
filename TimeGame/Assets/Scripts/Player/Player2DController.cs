@@ -51,6 +51,7 @@ public class Player2DController : MonoBehaviour {
 		}
 		//reduce health by amount of damage
 		GetComponent<PlayerInfo>().Health -= damage;
+		GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
 		if (GetComponent<PlayerInfo>().Health<=0){
 			GetComponent<PlayerInfo>().Health=0;
 			StartCoroutine(PlayerDeath());
