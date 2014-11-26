@@ -12,14 +12,14 @@ public class redScreen : MonoBehaviour {
 	}
 
 	IEnumerator FlashRedScreen(){
-		renderer.material.color=new Color(255, 255, 255, .005f);
+		renderer.material.color=new Color(255, 255, 255, .3f);
 		yield return new WaitForSeconds(.1f);
 		renderer.material.color=new Color(255, 255, 255, 0);
 	}
 
 	void DeathRedScreen(){
 
-		renderer.material.color=new Color(255, 255, 255, .005f);
+		renderer.material.color=new Color(255, 255, 255, .3f);
 
 	}
 
