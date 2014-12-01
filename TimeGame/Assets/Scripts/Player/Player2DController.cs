@@ -7,7 +7,7 @@ public class Player2DController : MonoBehaviour {
 	bool facingLeft = true;			//Determines direction character facing
 	Animator anim;						//Animation object
 	bool death=false;
-	
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
