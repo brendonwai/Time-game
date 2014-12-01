@@ -1,7 +1,32 @@
 fileFormatVersion: 2
 guid: 705a0c2de47d79144b78d94543fa9436
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: death sprite sheet_0
+    21300002: death sprite sheet_1
+    21300004: death sprite sheet_2
+    21300006: death sprite sheet_3
+    21300008: death sprite sheet_4
+    21300010: death sprite sheet_5
+    21300012: death sprite sheet_6
+    21300014: death sprite sheet_7
+    21300016: death sprite sheet_8
+    21300018: death sprite sheet_9
+    21300020: death sprite sheet_10
+    21300022: death sprite sheet_11
+    21300024: death sprite sheet_12
+    21300026: death sprite sheet_13
+    21300028: death sprite sheet_14
+    21300030: death sprite sheet_15
+    21300032: death sprite sheet_16
+    21300034: death sprite sheet_17
+    21300036: death sprite sheet_18
+    21300038: death sprite sheet_19
+    21300040: death sprite sheet_20
+    21300042: death sprite sheet_21
+    21300044: death sprite sheet_22
+    21300046: death sprite sheet_23
+    21300048: death sprite sheet_24
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -24,13 +49,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-<<<<<<< HEAD
-    filterMode: 1
-    aniso: 1
-=======
     filterMode: -1
-    aniso: 16
->>>>>>> 2f24b64a1cc95cb88264ebd4eef4e23630522c9f
+    aniso: 1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -47,6 +67,256 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: death sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 109
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 109
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 109
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 109
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 109
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 109
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 109
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 73
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_8
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 73
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 73
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 73
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 73
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_12
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 73
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_13
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 73
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_14
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 37
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_15
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 37
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_16
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 37
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_17
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 37
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 37
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_19
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 37
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_20
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 37
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_21
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_22
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_23
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death sprite sheet_24
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

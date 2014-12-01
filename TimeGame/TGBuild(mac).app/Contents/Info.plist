@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>TGBuild(mac)</string>
+	<string>TGBuild(Mac)</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Unity Player version 4.6.0b20 (a3ecf55f1347). (c) 2014 Unity Technologies ApS. All rights reserved.</string>
+	<string>Unity Player version 4.6.0f3 (30840d631a27). (c) 2014 Unity Technologies ApS. All rights reserved.</string>
 	<key>CFBundleIconFile</key>
 	<string>PlayerIcon.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -15,20 +15,20 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>TGBuild(mac)</string>
+	<string>TGBuild(Mac)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>Unity Player version 4.6.0b20</string>
+	<string>Unity Player version 4.6.0f3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>4.6.0b20</string>
+	<string>4.6.0f3</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>PlayerApplication</string>
 	<key>UnityBuildNumber</key>
-	<string>a3ecf55f1347</string>
+	<string>30840d631a27</string>
 </dict>
 </plist>
