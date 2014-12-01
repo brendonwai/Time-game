@@ -1,28 +1,39 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerInfo : MonoBehaviour {
+
+
 	public int Health=100;
-	Animator anim;
-	int health;
-	int energy;
-	int hackHealth;
-	
-	// Use this for initialization
-	void Start () {
-		anim = GetComponent<Animator> ();
-		health = 10;
-		energy = 5;
+	public Slider healthBar;
+	//Hacking Energy, max=100
+	public int Energy=0;
+	public Slider energyBar;
+	//Amount of energy regenerated per second
+	public int EnergyRegen=1;
+
+	void Start(){
+		InvokeRepeating("RegenerateEnergy",1,1);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
-	void FixedUpdate() {
-		if (health <= 0) {
-			anim.SetBool("isDead", true);
+
+	void RegenerateEnergy(){
+		if (Energy<100){
+			Energy+=EnergyRegen;
+			energyBar.value=Energy;
 		}
 	}
+	void GainEnergyBoost(int EnergyBoost){
+		if (Energy+EnergyBoost<=100)
+		{
+			Energy+=EnergyBoost;
+			energyBar.value=Energy;
+		}
+		else
+		{
+			Energy=100;
+			energyBar.value = Energy;
+		}
+	}
+
 }

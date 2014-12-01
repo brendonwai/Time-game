@@ -3,55 +3,75 @@ using System.Collections;
 
 public class Player2DController : MonoBehaviour {
 
-	//Movement/Animations
 	public float maxSpeed = 5f;			//Sets momvement speed
-	public bool facingRight = true;		//Determines direction character facing
+	bool facingLeft = true;			//Determines direction character facing
 	Animator anim;						//Animation object
-
+	bool death=false;
+	
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 	}
 	
 	void FixedUpdate () {
+		if (!death){
 
-		//Directional command handlers
-		float move_x = Input.GetAxis ("Horizontal");    //Get input for x-axis
-		float move_y = Input.GetAxis ("Vertical");      //Get input for y-axis
-		
-		//Changes value of Speed
-		//*Speed defined in Unity Animator Controller
-		anim.SetFloat ("Speed", Mathf.Abs (move_x));
+			//Directional command handlers
+			float move_x = Input.GetAxis ("Horizontal");    //Get input for x-axis
+			float move_y = Input.GetAxis ("Vertical");      //Get input for y-axis
+			
+			//Changes value of Speed
+			//*Speed defined in Unity Animator Controller
+			anim.SetFloat ("Speed", Mathf.Abs (move_x));
+			anim.SetFloat ("YSpeed", Mathf.Abs (move_y));
 
-		//Changes value of Health
-		//anim.SetFloat ("Health", health); 
+			//Makes character move based on inputs
+			rigidbody2D.velocity = new Vector2 (move_x * maxSpeed, move_y * maxSpeed);
 
-		//Makes character move based on inputs
-		rigidbody2D.velocity = new Vector2 (move_x * maxSpeed, move_y * maxSpeed);
-
-		/*
-		 * If moving in the positive x direction (right) and the character is not
-		 * facing right, makes the character sprite flip to face the right.
-		 */	
-		if((move_x > 0) && !facingRight){
-			Flip();
-		}
-		else if((move_x < 0) && facingRight){
-			Flip();
+			/*
+			 * If moving in the positive x direction (right) and the character is not
+			 * facing right, makes the character sprite flip to face the right.
+			 */	
+			if((move_x < 0) && !facingLeft){
+				Flip();
+			}
+			else if((move_x > 0) && facingLeft){
+				Flip();
+			}
 		}
 	}
-	void Update() {
-	
+
+	// Call this when damage dealt to enemy
+	IEnumerator takeDamage(int damage){
+		if(!death){
+			//sprite flashes red upon taking damage
+			renderer.material.color = Color.red;
+			yield return new WaitForSeconds(.1f);
+			renderer.material.color=Color.white;
+		}
+		//reduce health by amount of damage
+		GetComponent<PlayerInfo>().Health -= damage;
+		GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
+		if (GetComponent<PlayerInfo>().Health<=0){
+			GetComponent<PlayerInfo>().Health=0;
+			StartCoroutine(PlayerDeath());
+		}
+
 	}
 
-	//Flips character sprite to face direction of movement also flips attached colliders
-	public void Flip() {
-		facingRight = !facingRight;
+	IEnumerator PlayerDeath(){
+		death = true;
+		rigidbody2D.velocity = new Vector2 (0,0);
+		anim.SetBool("IsDead",true);
+		yield return new WaitForSeconds(2.583f);
+		Application.LoadLevel ("GameOverScene");
+	}
+
+	//Flips character sprite to face direction of movement
+	void Flip() {
+		facingLeft = !facingLeft;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-		//GetComponentInChildren<SwordObjectScript> ().AntiFlipSword();
 	}
-
-
 }
