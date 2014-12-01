@@ -1,7 +1,40 @@
 fileFormatVersion: 2
 guid: f112942d57dec6744a10d72083683b90
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: gate hack sprite sheet_0
+    21300002: gate hack sprite sheet_1
+    21300004: gate hack sprite sheet_2
+    21300006: gate hack sprite sheet_3
+    21300008: gate hack sprite sheet_4
+    21300010: gate hack sprite sheet_5
+    21300012: gate hack sprite sheet_6
+    21300014: gate hack sprite sheet_7
+    21300016: gate hack sprite sheet_8
+    21300018: gate hack sprite sheet_9
+    21300020: gate hack sprite sheet_10
+    21300022: gate hack sprite sheet_11
+    21300024: gate hack sprite sheet_12
+    21300026: gate hack sprite sheet_13
+    21300028: gate hack sprite sheet_14
+    21300030: gate hack sprite sheet_15
+    21300032: gate hack sprite sheet_16
+    21300034: gate hack sprite sheet_17
+    21300036: gate hack sprite sheet_18
+    21300038: gate hack sprite sheet_19
+    21300040: gate hack sprite sheet_20
+    21300042: gate hack sprite sheet_21
+    21300044: gate hack sprite sheet_22
+    21300046: gate hack sprite sheet_23
+    21300048: gate hack sprite sheet_24
+    21300050: gate hack sprite sheet_25
+    21300052: gate hack sprite sheet_26
+    21300054: gate hack sprite sheet_27
+    21300056: gate hack sprite sheet_28
+    21300058: gate hack sprite sheet_29
+    21300060: gate hack sprite sheet_30
+    21300062: gate hack sprite sheet_31
+    21300064: gate hack sprite sheet_32
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +58,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +75,336 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: gate hack sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 109
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 109
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 109
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 109
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 109
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 109
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 109
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 71
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 71
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_11
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 71
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_12
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 71
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_13
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 71
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_14
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 71
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_15
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 71
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 33
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_17
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 33
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_18
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_20
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1
+        width: 1
+        height: 0
+      alignment: 0
+      pivot: {x: .5, y: NaN}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_21
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 33
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_22
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 33
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_23
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 33
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_24
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_25
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1
+        width: 1
+        height: 0
+      alignment: 0
+      pivot: {x: .5, y: NaN}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_26
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 0
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_27
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 8
+        width: 0
+        height: 1
+      alignment: 0
+      pivot: {x: NaN, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_28
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_29
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_30
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gate hack sprite sheet_32
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: NaN, y: NaN}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
