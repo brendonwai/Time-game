@@ -2624,7 +2624,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1110550310}
-  - 114: {fileID: 1110550309}
   m_Layer: 0
   m_Name: _Manager
   m_TagString: Untagged
@@ -2632,18 +2631,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1110550309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1110550308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40034556b410ab94792f1fcaf0ec1fb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPanel: {fileID: 0}
 --- !u!4 &1110550310
 Transform:
   m_ObjectHideFlags: 0
