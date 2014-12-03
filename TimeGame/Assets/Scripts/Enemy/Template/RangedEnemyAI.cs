@@ -137,7 +137,7 @@ public class RangedEnemyAI : MonoBehaviour {
 		if (!stopMove) {
 			transform.position = Vector2.MoveTowards(transform.position, new Vector2(randX, randY), 
 			                                         moveSpeed * Time.deltaTime);
-			anim.SetFloat ("Speed", 1);
+			//anim.SetFloat ("Speed", 1);	//I don't know if this is supposed to be here or not it wasn't doing anything -Chris
 		}
 	}
 
