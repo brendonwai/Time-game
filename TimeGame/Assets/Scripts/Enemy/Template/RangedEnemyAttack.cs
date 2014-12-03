@@ -42,9 +42,9 @@ public class RangedEnemyAttack : MonoBehaviour {
 
 	void Shoot(){
 		Vector2 bulletClonePos = transform.position;
-		bulletClonePos.x -= .2f;
+		bulletClonePos.x -= .1f;
 		Vector2 bulletClone2Pos = transform.position;
-		bulletClone2Pos.x += .2f;
+		bulletClone2Pos.x += .1f;
 		Rigidbody2D bulletClone=Instantiate (bullet, bulletClonePos, transform.rotation) as Rigidbody2D;
 		Rigidbody2D bulletClone2=Instantiate (bullet, bulletClone2Pos, transform.rotation) as Rigidbody2D;
 		Vector2 dir = (player.transform.position - bulletClone.transform.position).normalized;
