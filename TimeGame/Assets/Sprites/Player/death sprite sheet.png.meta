@@ -111,7 +111,7 @@ TextureImporter:
     - name: death sprite sheet_4
       rect:
         serializedVersion: 2
-        x: 134
+        x: 135
         y: 111
         width: 19
         height: 31
@@ -121,7 +121,7 @@ TextureImporter:
     - name: death sprite sheet_5
       rect:
         serializedVersion: 2
-        x: 162
+        x: 163
         y: 111
         width: 19
         height: 31
@@ -131,7 +131,7 @@ TextureImporter:
     - name: death sprite sheet_6
       rect:
         serializedVersion: 2
-        x: 192
+        x: 193
         y: 111
         width: 19
         height: 31
@@ -151,7 +151,7 @@ TextureImporter:
     - name: death sprite sheet_8
       rect:
         serializedVersion: 2
-        x: 44
+        x: 43
         y: 79
         width: 19
         height: 31
@@ -161,7 +161,7 @@ TextureImporter:
     - name: death sprite sheet_9
       rect:
         serializedVersion: 2
-        x: 74
+        x: 73
         y: 79
         width: 19
         height: 31
@@ -181,7 +181,7 @@ TextureImporter:
     - name: death sprite sheet_11
       rect:
         serializedVersion: 2
-        x: 136
+        x: 135
         y: 79
         width: 19
         height: 31
@@ -221,7 +221,7 @@ TextureImporter:
     - name: death sprite sheet_15
       rect:
         serializedVersion: 2
-        x: 44
+        x: 43
         y: 47
         width: 19
         height: 31
@@ -231,7 +231,7 @@ TextureImporter:
     - name: death sprite sheet_16
       rect:
         serializedVersion: 2
-        x: 74
+        x: 73
         y: 47
         width: 19
         height: 31
@@ -251,7 +251,7 @@ TextureImporter:
     - name: death sprite sheet_18
       rect:
         serializedVersion: 2
-        x: 136
+        x: 135
         y: 47
         width: 19
         height: 31
@@ -262,7 +262,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 163
-        y: 46
+        y: 47
         width: 19
         height: 31
       alignment: 0
@@ -272,7 +272,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 193
-        y: 46
+        y: 47
         width: 19
         height: 31
       alignment: 0
@@ -282,7 +282,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 12
-        y: 13
+        y: 15
         width: 19
         height: 31
       alignment: 0
@@ -291,8 +291,8 @@ TextureImporter:
     - name: death sprite sheet_22
       rect:
         serializedVersion: 2
-        x: 45
-        y: 12
+        x: 44
+        y: 15
         width: 19
         height: 31
       alignment: 0
@@ -301,8 +301,8 @@ TextureImporter:
     - name: death sprite sheet_23
       rect:
         serializedVersion: 2
-        x: 74
-        y: 12
+        x: 73
+        y: 15
         width: 19
         height: 31
       alignment: 0
@@ -311,8 +311,8 @@ TextureImporter:
     - name: death sprite sheet_24
       rect:
         serializedVersion: 2
-        x: 104
-        y: 12
+        x: 107
+        y: 15
         width: 19
         height: 31
       alignment: 0

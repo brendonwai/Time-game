@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RangedEnemyAI : MonoBehaviour {
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
@@ -11,12 +12,19 @@ public class RangedEnemyAI : MonoBehaviour {
 	Animator anim;						//For controlling animation
 	GameObject target;					//Enemy's target
 	bool TargetInSight = false;			//Determines if target is in sight
+	float randX;                        // randX and randY is a random coordinate that 
+	float randY;                        // the enemy will move towards when the target is not in sight
+	float randInterval = 0;             // The interval between the points of time when the enemy changes direction
+	float timeCount;                    // Last update for random movement
+
+	bool informedGlobal = false;
 
 	
 	// Use this for initialization
 	void Awake () {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
+		timeCount = Time.time;
 	}
 
 	// Call this when damage dealt to enemy
@@ -29,6 +37,18 @@ public class RangedEnemyAI : MonoBehaviour {
 		renderer.material.color=Color.white;
 	}
 
+	// Activates when enemy enters trigger collider
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.tag == "Enemy"){
+			if(other.gameObject.GetComponentInParent<EnemyInfo>().TargetInSight ||
+			   other.gameObject.GetComponentInParent<EnemyInfo>().Alerted){
+				GetComponent<EnemyInfo>().Alerted = true;
+			}
+		}
+		if(other.tag == "Player")
+			TargetInSight = true;
+	}
+
 	//Deals damage to Player when touches him
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.tag=="Player"){
@@ -36,31 +56,59 @@ public class RangedEnemyAI : MonoBehaviour {
 			col.gameObject.SendMessage("takeDamage",10);
 		}
 	}
-
-	
-	// Activates when target enters trigger collider
-	void OnTriggerEnter2D(Collider2D other){
-		if(other.tag == "Player")
-			TargetInSight = true;
-	}
 	
 	// Activates while target is in trigger collider radius
 	void OnTriggerStay2D(Collider2D other){
-		if(other.tag == "Player")
-			TargetInSight = true;
+		if(other.tag == "Player"){
+			GetComponent<EnemyInfo>().TargetInSight = true;
+			if(!informedGlobal){
+				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer += 1;
+				informedGlobal = true;
+			}
+		}
+		if(other.tag == "Enemy"){
+			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
+				GetComponent<EnemyInfo>().Alerted = false;
+			else
+				if(other.gameObject.GetComponentInParent<EnemyInfo>().TargetInSight ||
+				  other.gameObject.GetComponentInParent<EnemyInfo>().Alerted){
+				GetComponent<EnemyInfo>().Alerted = true;	//Not redundant. Requires multiple
+				//enemy alert states
+			}
+		}
 	}
 	
 	//Determines what target leaves field of view
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Player"){
-			TargetInSight = false;
+			GetComponent<EnemyInfo>().TargetInSight = false;
+			if(informedGlobal){
+				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer -= 1;
+				informedGlobal = false;
+			}
+		}
+		if(other.tag == "Enemy"){
+			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
+				GetComponent<EnemyInfo>().Alerted = false;
 		}
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(TargetInSight){
+		if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
 			ApproachTarget();
+		}
+		else{
+			if (Time.time - timeCount >= randInterval){
+				// Creates a random target point in an arbitrary rectangle to move towards
+				randX = Random.Range(-750,750);
+				randY = Random.Range(-600,600);
+				randInterval = Random.Range(1.0f, 2.5f);
+				timeCount = Time.time;
+			}
+			else{
+				RandomMovement();
+			}
 		}
 	}
 	
@@ -82,7 +130,17 @@ public class RangedEnemyAI : MonoBehaviour {
 			anim.SetBool("movingup",false);
 		}
 	}
-	
+
+	// Enemy moves towards arbitrary point
+	void RandomMovement() {
+		FaceTarget ();
+		if (!stopMove) {
+			transform.position = Vector2.MoveTowards(transform.position, new Vector2(randX, randY), 
+			                                         moveSpeed * Time.deltaTime);
+			anim.SetFloat ("Speed", 1);
+		}
+	}
+
 	//Faces enemy towards target
 	void FaceTarget(){
 		if((target.transform.position.x >= transform.position.x) && !facingRight)

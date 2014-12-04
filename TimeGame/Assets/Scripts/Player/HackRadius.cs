@@ -91,7 +91,6 @@ public class HackRadius : MonoBehaviour {
 		//do cooldown iteration here I think
 		//Hacking
 		//NOTE: poss move to FixedUpdate()
-
 		//NOTE YOU CAN STILL HACK WHILE DEAD TAKE THAT OUT
 		if (isHacking == true) {
 			if (InHackRadiusList.Count <= 0) {
@@ -99,9 +98,9 @@ public class HackRadius : MonoBehaviour {
 				//Debug.Log ("Nothing in Radius. Hacking stopped.");
 			}
 			else if (Input.GetKeyDown(hackLockInKey)) {				//Locks-in Selection
-				//Debug.Log ("Hack Lock in: " + hackselection + ", Name: " + InHackRadiusList[hackselection].ToString());
+				//Debug.Log ("Hack Lock in: " + hackselection + ", Name: " + InHackRadiusList[hackselection].name);
 				isHacking = false;
-//				HackCD = 10; 										//Change to max CD
+				//HackCD = 10; 										//Change to max CD
 				HackObject(InHackRadiusList[hackselection]);
 			}
 			else if (Input.GetKeyDown(selectRight)) {				//Press Right Key move selection right
@@ -111,7 +110,7 @@ public class HackRadius : MonoBehaviour {
 				else {												//Increase selection by 1
 					hackselection ++;
 				}
-				//Debug.Log ("Curr: " + hackselection + ", Max:" + InHackRadiusList.Count + ", Name: " + InHackRadiusList[hackselection].ToString());
+				//Debug.Log ("Curr: " + hackselection + ", Max:" + InHackRadiusList.Count + ", Name: " + InHackRadiusList[hackselection].name);
 			}
 			else if (Input.GetKeyDown(selectLeft)) {				//Press Left Key move selection left
 				if (InHackRadiusList.Count == 0) {
@@ -123,7 +122,7 @@ public class HackRadius : MonoBehaviour {
 				else {												//Decreases selection by 1
 					hackselection--;
 				}
-				//Debug.Log ("Curr: " + hackselection + ", Max:" + InHackRadiusList.Count + ", Name: " + InHackRadiusList[hackselection].ToString());
+				//Debug.Log ("Curr: " + hackselection + ", Max:" + InHackRadiusList.Count + ", Name: " + InHackRadiusList[hackselection].name);
 			}
 			if (isHacking == true && InHackRadiusList.Count != 0) {
 				ShowHackSprite(InHackRadiusList[hackselection]);
@@ -136,6 +135,7 @@ public class HackRadius : MonoBehaviour {
 				//Debug.Log("Hack Key Pressed");
 				if (HackCD == 10) {										//Change this once you add in cooldowns
 					isHacking = true;
+					anim.SetBool ("HackedEnemyDead", false);
 					hacksprite.enabled = true;
 					//Debug.Log("Now Hacking");
 				}
@@ -149,7 +149,7 @@ public class HackRadius : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Enemy") {										//Checks for Enemy Tags
 			InHackRadiusList.Add (other.transform.parent.gameObject);				//Adds Enemy GameObject to the list of hackable objects in range with all it's components and children.
-			//Debug.Log ("Added " + other.transform.parent.gameObject.ToString());
+			//Debug.Log ("Added " + other.transform.parent.gameObject.name);
 		}
 		else if (other.gameObject.tag == "Gate") {									//Checks for Gate Tags
 			InHackRadiusList.Add (other.transform.parent.gameObject);				//Adds Gate GameObject to the list of hackable objects in range iwth all it's components and children.
@@ -164,7 +164,7 @@ public class HackRadius : MonoBehaviour {
 					hackselection--;
 					//Debug.Log ("Hackselection decreased by 1 (Obj left) at max: " + hackselection);
 				}
-				//Debug.Log ("Removed " + other.transform.parent.gameObject.ToString());
+				//Debug.Log ("Removed " + other.transform.parent.gameObject.name);
 			}
 		}
 		else if (other.gameObject.tag == "Gate") {								//Checks for Gate Tags
@@ -177,15 +177,46 @@ public class HackRadius : MonoBehaviour {
 
 	void ShowHackSprite(GameObject other){										//Display current hackselection above player's head
 		hacksprite.sprite = other.GetComponent<SpriteRenderer> ().sprite;		//NOTE: May need to flip sprite when char flips
-		//string newspritename = other.GetComponent<SpriteRenderer> ().sprite.ToString ();
+		//string newspritename = other.GetComponent<SpriteRenderer> ().sprite.name;
 		//Debug.Log (newspritename);
 	}
 
 	void HackObject(GameObject other) {
-		//Debug.Log ("HackObject()");
-		Vector3 temppos = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);//Store enemy/gate position
+		Vector3 otherpos = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);//Store enemy/gate position
+
+		//NOTE: make player face hackobject
+		if (otherpos.x < PlayerTrans.position.x) {											//If player is to the right of target
+			PlayerTrans.position = new Vector3(otherpos.x + 0.5f, otherpos.y, otherpos.z);
+		}
+		else {
+			PlayerTrans.position = new Vector3(otherpos.x - 0.5f, otherpos.y, otherpos.z);
+		}
+
+		string objtag = other.transform.FindChild ("ObjectTag").tag;		//Note every enemy and gate should have an ObjecTag gameobject with tag
+
+		//Debug.Log ("Tag: " + objtag);
+		if (objtag == "Enemy") {
+			string hackname = other.name;
+			anim.SetBool ("IsHackingEnemy", true);
+			anim.SetBool ("HackedEnemyDead", false);
+			if (hackname == "BasicEnemy") {
+				anim.SetInteger ("EnemyType", 0);
+			}
+			else if (hackname == "ranged") {
+				anim.SetInteger ("EnemyType", 1);
+			}
+			//Insert more enemies here
+
+		}
+		else if (objtag == "Gate") {
+			anim.SetBool ("IsHackingGate", true);
+
+		}
+
+		//PlayerTrans.position = otherpos;
+
 		//Debug.Log ("temppos " + temppos);
-		//Debug.Log ("Name: " + other.ToString());
+		//Debug.Log ("Name: " + other.name);
 
 		//Will need to put position horizontally to the side of hacked game object here then  
 		//PlayerTrans.position = new Vector3(temppos.x, temppos.y, temppos.z)
@@ -194,10 +225,10 @@ public class HackRadius : MonoBehaviour {
 		//NOTE: with gates will probably need to store gate facing direction to position player next to it.
 
 		InHackRadiusList.Remove (other);
-		//Debug.Log ("Hacked and removed from list: " + other.ToString());
+		//Debug.Log ("Hacked and removed from list: " + other.name);
 
 		Destroy (other);
-		PlayerTrans.position = temppos;
+		//PlayerTrans.position = otherpos;
 
 		/*if(hackedname == "enemy") {
 			Vector3 hackedpos = other.transform.position;
