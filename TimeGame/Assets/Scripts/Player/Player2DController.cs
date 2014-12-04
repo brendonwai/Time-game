@@ -41,6 +41,7 @@ public class Player2DController : MonoBehaviour {
 		}
 	}
 
+
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
 		if(!death){
@@ -68,6 +69,7 @@ public class Player2DController : MonoBehaviour {
 
 	IEnumerator PlayerDeath(){
 		death = true;
+		gameObject.tag = "Untagged";
 		rigidbody2D.velocity = new Vector2 (0,0);
 		anim.SetBool("IsDead",true);
 		yield return new WaitForSeconds(2.583f);
