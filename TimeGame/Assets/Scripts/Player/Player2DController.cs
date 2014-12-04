@@ -43,6 +43,7 @@ public class Player2DController : MonoBehaviour {
 
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
+		SendMessage ("CamShakeOnDamage", damage);
 		if(!death){
 			//sprite flashes red upon taking damage
 			renderer.material.color = Color.red;
