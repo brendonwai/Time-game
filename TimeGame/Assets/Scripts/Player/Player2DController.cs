@@ -14,7 +14,7 @@ public class Player2DController : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator> ();
 	}
-	
+
 	void FixedUpdate () {
 		if (!death){
 
