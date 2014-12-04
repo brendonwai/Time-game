@@ -7,6 +7,7 @@ TagManager:
   - Environment
   - Enemy
   - Bullet
+  - GameOverUI
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: 
+  User Layer 8: GameOverUI
   User Layer 9: 
   User Layer 10: 
   User Layer 11: 
@@ -56,4 +57,8 @@ TagManager:
   - name: Enemy
     userID: 3
     uniqueID: 1684355751
+    locked: 0
+  - name: Menu
+    userID: 4
+    uniqueID: 3340300203
     locked: 0

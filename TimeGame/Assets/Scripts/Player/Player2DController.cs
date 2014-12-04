@@ -8,6 +8,8 @@ public class Player2DController : MonoBehaviour {
 	Animator anim;						//Animation object
 	bool death=false;
 
+	public bool GameOver = false;
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -62,9 +64,6 @@ public class Player2DController : MonoBehaviour {
 				StartCoroutine(PlayerDeath());
 			}
 		}
-		else{
-
-			}
 		}
 
 	IEnumerator PlayerDeath(){
@@ -73,7 +72,8 @@ public class Player2DController : MonoBehaviour {
 		rigidbody2D.velocity = new Vector2 (0,0);
 		anim.SetBool("IsDead",true);
 		yield return new WaitForSeconds(2.583f);
-		Application.LoadLevel ("GameOverScene");
+		GameOver = true;
+		//Application.LoadLevel ("GameOverScene");
 	}
 
 	//Flips character sprite to face direction of movement
