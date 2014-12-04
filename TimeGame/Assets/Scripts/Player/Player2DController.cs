@@ -68,7 +68,7 @@ public class Player2DController : MonoBehaviour {
 
 	IEnumerator PlayerDeath(){
 		death = true;
-		gameObject.tag = "Untagged";
+		gameObject.rigidbody2D.isKinematic = true;	//Prevents enemy from pushing player after death
 		rigidbody2D.velocity = new Vector2 (0,0);
 		anim.SetBool("IsDead",true);
 		yield return new WaitForSeconds(2.583f);
