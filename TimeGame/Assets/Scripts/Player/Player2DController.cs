@@ -43,22 +43,28 @@ public class Player2DController : MonoBehaviour {
 
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
-		SendMessage ("CamShakeOnDamage", damage);
 		if(!death){
+			//trigger camera shake.
+			//shake magnitude based on damage taken
+			SendMessage ("CamShakeOnDamage", damage);
 			//sprite flashes red upon taking damage
 			renderer.material.color = Color.red;
 			yield return new WaitForSeconds(.1f);
 			renderer.material.color=Color.white;
+			//reduce health by amount of damage
+			GetComponent<PlayerInfo>().Health -= damage;
+			GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
+			if (GetComponent<PlayerInfo>().Health<=0){
+				GetComponent<PlayerInfo>().Health=0;
+				//trigger camera shake
+				SendMessage ("CamShakeOnDamage", damage+50);
+				StartCoroutine(PlayerDeath());
+			}
 		}
-		//reduce health by amount of damage
-		GetComponent<PlayerInfo>().Health -= damage;
-		GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
-		if (GetComponent<PlayerInfo>().Health<=0){
-			GetComponent<PlayerInfo>().Health=0;
-			StartCoroutine(PlayerDeath());
-		}
+		else{
 
-	}
+			}
+		}
 
 	IEnumerator PlayerDeath(){
 		death = true;
