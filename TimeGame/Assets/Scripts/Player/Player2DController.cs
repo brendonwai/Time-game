@@ -4,10 +4,10 @@ using System.Collections;
 public class Player2DController : MonoBehaviour {
 
 	public float maxSpeed = 5f;			//Sets momvement speed
-	bool facingLeft = true;			//Determines direction character facing
+	public bool facingLeft = true;			//Determines direction character facing
 	Animator anim;						//Animation object
 	bool death=false;
-
+	float KnockBackForce=500;
 	public bool GameOver = false;
 
 	// Use this for initialization
@@ -43,6 +43,18 @@ public class Player2DController : MonoBehaviour {
 		}
 	}
 
+	void Update(){
+		if(Input.GetKeyDown(KeyCode.Z)){
+			StartCoroutine("Attack");
+		}
+	}
+
+	IEnumerator Attack(){
+		Debug.Log ("triggered");
+		anim.SetBool ("IsAttacking", true);
+		yield return new WaitForSeconds (.4f);
+		anim.SetBool ("IsAttacking", false);
+	}
 
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
@@ -65,6 +77,13 @@ public class Player2DController : MonoBehaviour {
 			}
 		}
 		}
+
+	void KnockBack(Vector2 dir){
+		//rigidbody2D.isKinematic = true;
+		rigidbody2D.AddForce (dir.normalized * KnockBackForce);
+		//yield return new WaitForSeconds (.1f);
+		//rigidbody2D.isKinematic = false;
+	}
 
 	IEnumerator PlayerDeath(){
 		death = true;

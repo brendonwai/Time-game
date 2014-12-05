@@ -22,6 +22,8 @@ public class bullets : MonoBehaviour {
 		if (other.tag=="Player"){
 			if (renderer.material.color==Color.cyan){
 				other.SendMessage("takeDamage",damage);
+				Vector2 dir=rigidbody2D.velocity;
+				other.gameObject.SendMessage("KnockBack",dir);
 				Destroy (gameObject);
 			}
 		}

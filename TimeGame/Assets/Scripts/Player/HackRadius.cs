@@ -102,6 +102,8 @@ public class HackRadius : MonoBehaviour {
 				isHacking = false;
 				//HackCD = 10; 										//Change to max CD
 				HackObject(InHackRadiusList[hackselection]);
+				//change facing direction for the change of sprite
+				GetComponentInParent<Player2DController> ().facingLeft = false;
 			}
 			else if (Input.GetKeyDown(selectRight)) {				//Press Right Key move selection right
 				if (hackselection+1 >= InHackRadiusList.Count){		//If increasing selection is over the limit go back to start
