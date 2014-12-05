@@ -4,7 +4,7 @@ using System.Collections;
 public class Player2DController : MonoBehaviour {
 
 	public float maxSpeed = 5f;			//Sets momvement speed
-	public bool facingLeft = true;			//Determines direction character facing
+	public bool facingLeft = true;		//Determines direction character facing
 	Animator anim;						//Animation object
 	bool death=false;
 	float KnockBackForce=500;

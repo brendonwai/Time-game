@@ -35,7 +35,7 @@ public class HackRadius : MonoBehaviour {
 		//HackableObjectList
 		HackableObjectTags = new List<string> ();
 		HackableObjectTags.Add("Enemy");
-		HackableObjectTags.Add("Gate");
+		HackableObjectTags.Add("GateConnector");
 
 		isHacking = false;
 		hackselection = 0;
@@ -149,17 +149,14 @@ public class HackRadius : MonoBehaviour {
 	//Calls when objects enter the collider
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "Enemy") {										//Checks for Enemy Tags
+		if (HackableObjectTags.Contains(other.gameObject.tag)) {										//Checks for Enemy Tags
 			InHackRadiusList.Add (other.transform.parent.gameObject);				//Adds Enemy GameObject to the list of hackable objects in range with all it's components and children.
 			//Debug.Log ("Added " + other.transform.parent.gameObject.name);
-		}
-		else if (other.gameObject.tag == "Gate") {									//Checks for Gate Tags
-			InHackRadiusList.Add (other.transform.parent.gameObject);				//Adds Gate GameObject to the list of hackable objects in range iwth all it's components and children.
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other){
-		if (other.gameObject.tag == "Enemy") {										//Checks for Enemy Tags
+		if (HackableObjectTags.Contains(other.gameObject.tag)) {										//Checks for Enemy Tags
 			if (InHackRadiusList.Contains (other.transform.parent.gameObject)) {	//Unsure if you can take out "transform.parent." part
 				InHackRadiusList.Remove (other.transform.parent.gameObject);
 				if (hackselection >= InHackRadiusList.Count && InHackRadiusList.Count >= 1) {
@@ -168,9 +165,6 @@ public class HackRadius : MonoBehaviour {
 				}
 				//Debug.Log ("Removed " + other.transform.parent.gameObject.name);
 			}
-		}
-		else if (other.gameObject.tag == "Gate") {								//Checks for Gate Tags
-			InHackRadiusList.Add (other.transform.parent.gameObject);			//Adds Gate GameObject to the list of hackable objects in range iwth all it's components and children.
 		}
 
 
@@ -186,62 +180,50 @@ public class HackRadius : MonoBehaviour {
 	void HackObject(GameObject other) {
 		Vector3 otherpos = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);//Store enemy/gate position
 
-		//NOTE: make player face hackobject
-		if (otherpos.x < PlayerTrans.position.x) {											//If player is to the right of target
-			PlayerTrans.position = new Vector3(otherpos.x + 0.5f, otherpos.y, otherpos.z);
-		}
-		else {
-			PlayerTrans.position = new Vector3(otherpos.x - 0.5f, otherpos.y, otherpos.z);
-		}
+		//NOTE: make player face enemy hackobject. for gates only care if horizontal
 
 		string objtag = other.transform.FindChild ("ObjectTag").tag;		//Note every enemy and gate should have an ObjecTag gameobject with tag
 
 		//Debug.Log ("Tag: " + objtag);
 		if (objtag == "Enemy") {
+			if (otherpos.x < PlayerTrans.position.x) {											//If player is to the right of target
+				PlayerTrans.position = new Vector3(otherpos.x + 0.5f, otherpos.y, otherpos.z);
+			}
+			else {
+				PlayerTrans.position = new Vector3(otherpos.x - 0.5f, otherpos.y, otherpos.z);
+			}
+
 			string hackname = other.name;
 			anim.SetBool ("IsHackingEnemy", true);
 			anim.SetBool ("HackedEnemyDead", false);
-			if (hackname == "BasicEnemy") {
+			switch(hackname) {
+			case "BasicEnemy":
 				anim.SetInteger ("EnemyType", 0);
-			}
-			else if (hackname == "ranged") {
+				break;
+			case "ranged":
 				anim.SetInteger ("EnemyType", 1);
-			}
+				break;
 			//Insert more enemies here
-
+			
+			}
+			InHackRadiusList.Remove (other);
+			Destroy (other);
 		}
-		else if (objtag == "Gate") {
+		else if (objtag == "GateConnector") {		//Take out second part if you don't need
+			//Note: must check if gate is horizontal facing but that's for later once/if we add them in.
+
+			PlayerTrans.position = new Vector3(otherpos.x, otherpos.y - 0.65f, otherpos.z);		//For vertical GateConnectors only
+
 			anim.SetBool ("IsHackingGate", true);
-
+			other.GetComponent<ObjectInfo>().Hacked();
+			InHackRadiusList.Remove (other);			//Don't know if need or not
+			anim.SetBool ("IsHackingGate", false);
 		}
-
-		//PlayerTrans.position = otherpos;
-
-		//Debug.Log ("temppos " + temppos);
-		//Debug.Log ("Name: " + other.name);
 
 		//Will need to put position horizontally to the side of hacked game object here then  
 		//PlayerTrans.position = new Vector3(temppos.x, temppos.y, temppos.z)
-		//put animation here
 
-		//NOTE: with gates will probably need to store gate facing direction to position player next to it.
 
-		InHackRadiusList.Remove (other);
-		//Debug.Log ("Hacked and removed from list: " + other.name);
-
-		Destroy (other);
-		//PlayerTrans.position = otherpos;
-
-		/*if(hackedname == "enemy") {
-			Vector3 hackedpos = other.transform.position;
-			Destroy(other.gameObject);
-			transform.position = hackedpos;
-			
-		}
-		else if (hackedname == "gate") {
-			//gate open commands	
-		}
-		*/
 	}
 	/*public void AntiFlipSword() {	//not needed for now
 		Vector3 theScale = transform.localScale;

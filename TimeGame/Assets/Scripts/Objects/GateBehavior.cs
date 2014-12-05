@@ -28,7 +28,7 @@ public class GateBehavior : MonoBehaviour {
 
 	int CountHacked(){
 		int result = 0;
-		for (int i = 0; i <length; i++){
+		for (int i = 0; i < length; i++){
 			if(connectors[i].GetComponent<ObjectInfo>().hacked)
 				result += 1;
 		}
