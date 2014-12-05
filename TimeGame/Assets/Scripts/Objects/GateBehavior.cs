@@ -4,9 +4,6 @@ using System.Collections;
 public class GateBehavior : MonoBehaviour {
 
 	public GameObject[] connectors;		//Stores connectors needed to be hacked
-	public float XDirection = 0.0f;		//How far to move in x direction
-	public float YDirection = 0.0f;		//How far to move in y direction
-	public float moveSpeed = 1.0f;		//How fast gate moves
 
 	int length;							//Length of list
 	bool hacked = false;
