@@ -7,11 +7,12 @@ public class RangedEnemyAttack : MonoBehaviour {
 	bool TargetInRange = false;
 	public Rigidbody2D bullet;
 	int bulletspeed=10;
-	public GameObject player;
-	private float timestamp=0.0f;
+	GameObject player;
+	float timestamp=0.0f;
 	
 	void Awake(){
 		anim = GetComponentInParent<Animator>();
+		player = GameObject.Find ("playerSprite");
 	}
 	
 	void OnTriggerStay2D(Collider2D other){
