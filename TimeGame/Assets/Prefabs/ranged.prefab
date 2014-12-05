@@ -33,7 +33,7 @@ GameObject:
   - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: ranged
-  m_TagString: Untagged
+  m_TagString: EnemyCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5000000, guid: 84424360eedba41d8a451ed38efdafe4, type: 2}
-  player: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

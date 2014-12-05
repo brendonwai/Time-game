@@ -10,6 +10,9 @@ public class Player2DController : MonoBehaviour {
 	float KnockBackForce=500;
 	public bool GameOver = false;
 
+
+	bool invincible = false;			//Makes player invincible
+	float invinTime = 1.0f;				//Sets time player is invincible for
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -41,6 +44,8 @@ public class Player2DController : MonoBehaviour {
 				Flip();
 			}
 		}
+		if(invincible)
+			StartCoroutine(InvincibilityFlash());
 	}
 
 	void Update(){
@@ -50,15 +55,24 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	IEnumerator Attack(){
-		Debug.Log ("triggered");
 		anim.SetBool ("IsAttacking", true);
 		yield return new WaitForSeconds (.4f);
 		anim.SetBool ("IsAttacking", false);
 	}
 
+	//Makes player flash while in invincible state
+	IEnumerator InvincibilityFlash(){
+		renderer.material.color=Color.cyan;
+		yield return new WaitForSeconds(invinTime);	
+		renderer.material.color = Color.white;
+	}
+	
+	
+	
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
-		if(!death){
+		
+		if(!death && !invincible){
 			//trigger camera shake.
 			//shake magnitude based on damage taken
 			SendMessage ("CamShakeOnDamage", damage);
@@ -75,8 +89,12 @@ public class Player2DController : MonoBehaviour {
 				SendMessage ("CamShakeOnDamage", damage+50);
 				StartCoroutine(PlayerDeath());
 			}
+			
+			invincible = true;
+			yield return new WaitForSeconds(invinTime);		//Temporarily makes player invulnerable
+			invincible = false; 
 		}
-		}
+	}
 
 	void KnockBack(Vector2 dir){
 		//rigidbody2D.isKinematic = true;
