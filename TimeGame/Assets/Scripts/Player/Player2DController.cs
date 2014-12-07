@@ -114,8 +114,14 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	//Flips character sprite to face direction of movement
-	void Flip() {
+	public void Flip() {
 		facingLeft = !facingLeft;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+		GetComponentInChildren<AntiFlip> ().Flip();		//Changes direction of hacksprite
+	}
+	public void HackFlip() {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
