@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="floor" tilewidth="32" tileheight="32">
+  <image source="../../Time-game/game assets/Tiles/floor.png" width="288" height="96"/>
+ </tileset>
+ <tileset firstgid="28" name="wall" tilewidth="32" tileheight="32">
+  <image source="../../Time-game/game assets/Tiles/wall.png" width="192" height="96"/>
+  <tile id="14">
+   <objectgroup draworder="index">
+    <object x="0.125" y="0.125" width="32" height="31.875"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="46" name="wall_2" tilewidth="32" tileheight="32">
+  <tile id="0">
+   <image width="32" height="32" source="../../Time-game/game assets/Tiles/Wall/wallCornerBotLeftTopRight.png"/>
+  </tile>
+  <tile id="1">
+   <image width="32" height="32" source="../../Time-game/game assets/Tiles/Wall/wallCornerTopLeftBottomRight.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="48" name="gate" tilewidth="32" tileheight="32">
+  <image source="../../Time-game/game assets/Tiles/gate.png" width="256" height="192"/>
+ </tileset>
+ <layer name="Blank Space" width="60" height="60" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKHr8v07rsdQcNVUVVVVVVVVVVVVVVVV1VcPAibsQA==
+  </data>
+ </layer>
+ <layer name="Floor" width="60" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztmctSwzAMRQ0UFiXQRQn0/7+UeEAzGiHLL8lWSe7MXdC0tk5s+SFCOLQXnTJ+3vwyLTp9vQlO8eLPU/YqHPsnMTzLjf2FsVdJcxaexbF+QH7c/LT5Pfyw3Rjj91ISQ4tbROcm9yyO9Rn5dfOy+Qux0fmP48LvSItVg/cS8vmI5zvOdfgbxpzycvOjh7WVG/PeAp+LqXyk+R6Nxxx8Dvz80OKtYcZjwuUhOCcplivxx+ZVmbeUGY8Jnmu1e0pLHDN4sfbIK62l2r+fzXsO8vqZO1vC70uZZ/New9+9g8Yv8cbf03cmaTZvCH/3Dhq/xIu/B5bkgZfuHTDmOV6Odcn05YE3xSLNUcq6/HotaNsjby4n8TPgLGEFeeOl4yc9B9bW/kew0rE7BT4fUzmJvwtnxV6NYE15CXJO9pxRauJM7ZG17eDc47wGOSdH8HL7JNyzakTf1coY7hOpe1Jr35ys1yy69pbe/7DwHa9HI9Zpep7QiFOjDStmuhZbxKjVzsHbx2t9r/HCGw1325L/n/xHXon5nnnjHMY1SmDFc1urbpzKl5G8cf/FNUqoN+NzW67OU8NrWXcv4b0SXjA+t0GdprdOPqLunuPFwu+cq3P01sk91d0prySLOPbG29NuC2vUbN6S+HK1ltr2as6VozhBdJ3rvX9650312aqWe4MlW66v3n41akJWsphHPTWhe+RtrcvcE69GG5r1upQ88WrV6yR5Oc9Y7ENW/XrktezbmreW27rfg3cc74x+R/GOquF44R1Vw/HCy2lvvCPewcHrg9MiJsu2NXk14jq0L30DUoEnFA==
+  </data>
+ </layer>
+ <layer name="Walls" width="60" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztW4tu1DAQzIcUOMohSsvj//+OW9EVw7DPxIlzqCOthA7H9tj7tN1lWZaHm7xryvvlfvF4kw83uRTl402u8H1lvc60PsL3mrb6gy/QXrjKWn0NhNdnNtbwfVl+79v3wrfa/turWHv9AP+/Vqo6ZPFFHeV+npa/9+856R/bW3stY8m6dWyKpaNDFl/57dOrjNRF1A0V5ZqtW4RH6Dfb5yP5yl5fDNnCFfuVfRbeEWeLL+ogz4X98Zl8r8w749z1V7j3o/d/BJSzNy+Z/+dGf8xXfW9lr61YvYd+RHuItm7Ngeco/kW5ok+VNc3WjXObvWJzxJfjC8+B99PT5YqecBvMXUaiY6PcVu2hwteLCaojohtn5ytgHbD04Mn5XSC8NO98pt/PyLfTzvrd43WvfNGn/Vz+jdln54v5vZeTY5/qd718+sx8LVv1/PbV+LeFiG+W/61BN4eywHMewRd93EjO2XwqZxRc647gqxDeP5YxOZfWl9F4aH+RPNM3GV+Mu5l+oR0J904Nj+Np/pfx7eTQ+k3EV8YWX109F+C+MTevnGEgV/02qpFG813rM3SdLoZEa2blxR5ni29m06ijo/gq1631vyCqhZkv66In6mMs+2QflPmikVxxDlZ+y3yre+PlxTjeZclrxj24Kjzd6/Dt+F0eR32Ql6uNRpUvngFY+h/tqwevhprNNzsz3jo//n4230r7/5kvx/2u3Xp9ernqSHT5evXSFl9q9bmHbxZ0+d473vj6cTG6p9xasx1x7u7VhnjfxHHYqhMrZ+sRMC9T2eucI7p7lHkwX4sXt+vCqv813x7FuVL3z+Sr4/HdTvVNCNte5V65w9ey9ww6J2/dvdinNoT3VsyD70Eqd+hVvtFdQta/3pd14y3eY3nfIudqfVfhy/1X36Dw/VEHme/hOVXG6fLV/i3finuJsjaP6viMaN64D7z+nDt7tmrNZatPq4zhIasHMBbi+nNd6PVxL3wrMQr78O6VLLusvDPzsNX2vXxRbaxiU1GssOobPLvq+PHo/VnV9jF+oG8ZrXMe8J1Z5cx86/szBZ/JHsUX1zsar6NvnbF13KP4KnA8q0baEp8jqP+awRff1lq1115n0DP4dt/WjsIsvrPwxvcYzHpbO9NfqY/SuHjU+9HZ8ch6+731XMzD0XzxXCPLN0af22nOdiTf6rlG5X16B5yfcg2zl3TyJuTc/bs3K1/D/DSreUbKmnvi0eP+Au1Sosg=
+  </data>
+ </layer>
+ <objectgroup name="collision">
+  <object gid="38" x="1186" y="380"/>
+  <object gid="38" x="1338" y="273"/>
+  <object gid="38" x="1334" y="370"/>
+  <object gid="38" x="1299" y="554"/>
+  <object gid="38" x="1606" y="385"/>
+  <object gid="38" x="1421" y="493"/>
+  <object gid="38" x="1519" y="553"/>
+  <object gid="38" x="1605" y="455"/>
+  <object gid="38" x="1453" y="617"/>
+  <object gid="38" x="1506" y="342"/>
+  <object gid="38" x="1185" y="519"/>
+  <object gid="38" x="1217" y="232"/>
+ </objectgroup>
+</map>
