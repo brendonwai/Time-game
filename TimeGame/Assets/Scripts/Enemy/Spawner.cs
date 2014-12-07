@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour {
 	public float timeMin;
 	public float timeMax;
 	public int countMax;
+	public GameObject parent;
 	Bounds worldBounds;
 	List<GameObject> objects; // to keep track how many objects have spanwed
 
@@ -27,7 +28,7 @@ public class Spawner : MonoBehaviour {
 				0f);
 
 			// if an object has been killed/picked up, remove it from the list
-			for(int i = objects.Count - 1; i > -1; i--) { 
+			for(int i = objects.Count - 1; i > -1; i--) {
 				if(objects[i] == null){
 					objects.RemoveAt(i);
 				}
@@ -37,7 +38,7 @@ public class Spawner : MonoBehaviour {
 			if(objects.Count < countMax) {
 				GameObject clone = (GameObject) Instantiate(obj, location, Quaternion.identity);
 
-				clone.transform.parent = obj.transform.parent;
+				clone.transform.parent = parent.transform;
 				objects.Add (clone);
 			}
 

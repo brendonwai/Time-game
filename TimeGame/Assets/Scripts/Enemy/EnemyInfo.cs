@@ -22,6 +22,7 @@ public class EnemyInfo : MonoBehaviour {
 		
 	 */
 	public int Health = 100;					//Enemy health
+	public string Type = "Enemy";
 
 
 }
