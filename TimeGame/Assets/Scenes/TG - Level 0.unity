@@ -2696,6 +2696,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1051654951}
   - 212: {fileID: 1051654952}
+  - 114: {fileID: 1051654953}
   m_Layer: 0
   m_Name: hackSprite
   m_TagString: Untagged
@@ -2737,6 +2738,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1051654953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1051654950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afaf2b30df151b94785f08e4e3bc59bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1055086980
 GameObject:
   m_ObjectHideFlags: 0
@@ -4569,9 +4581,6 @@ MonoBehaviour:
   - {fileID: 596639663}
   - {fileID: 2041150969}
   - {fileID: 2108510195}
-  XDirection: 1
-  YDirection: 0
-  moveSpeed: 1
 --- !u!212 &1640431962
 SpriteRenderer:
   m_ObjectHideFlags: 0

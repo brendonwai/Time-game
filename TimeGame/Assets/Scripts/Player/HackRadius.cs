@@ -4,16 +4,19 @@ using System.Collections.Generic;
 using System.Collections;
 
 public class HackRadius : MonoBehaviour {
-	bool isHacking;							//True if player is in process of hacking
-	//float angle;							
-	Animator anim;							//
+
+
+	//float angle;		
 	//int anglesign;
+
+	Animator anim;							//
 	public int HackCD;						//Hacking ability Cooldown
 	List<GameObject> InHackRadiusList;		//List of objects in hack radius
 	List<string> HackableObjectTags;		//List of Hackable Object Tags
 	int hackselection;						//Hack selection number for menu
 	SpriteRenderer hacksprite;				//CHILD. Hacking sprite displayed above player head
-	Transform PlayerTrans;
+	Vector3 PlayerTrans;
+	bool isHacking;							//True if player is in process of hacking
 
 
 	//Keys
@@ -27,7 +30,7 @@ public class HackRadius : MonoBehaviour {
 	void Start() {
 		anim = this.transform.parent.GetComponent<Animator> ();
 		hacksprite = GetComponentInChildren<SpriteRenderer> ();
-		PlayerTrans = this.transform.parent.transform;
+		PlayerTrans = this.transform.parent.transform.position;
 		//anglesign = 1;
 		HackCD = 10;
 		InHackRadiusList = new List<GameObject>();
@@ -100,9 +103,7 @@ public class HackRadius : MonoBehaviour {
 				//Debug.Log ("Hack Lock in: " + hackselection + ", Name: " + InHackRadiusList[hackselection].name);
 				isHacking = false;
 				//HackCD = 10; 										//Change to max CD
-				HackObject(InHackRadiusList[hackselection]);
-				//change facing direction for the change of sprite
-				GetComponentInParent<Player2DController> ().facingLeft = false;
+				HackObject(InHackRadiusList[hackselection]);			
 			}
 			else if (Input.GetKeyDown(selectRight)) {				//Press Right Key move selection right
 				if (hackselection+1 >= InHackRadiusList.Count){		//If increasing selection is over the limit go back to start
@@ -175,13 +176,19 @@ public class HackRadius : MonoBehaviour {
 
 		string objtag = other.transform.FindChild ("ObjectTag").tag;		//Note every enemy and gate should have an ObjecTag gameobject with tag
 
+		PlayerTrans = this.transform.parent.transform.position;
+
 		if (objtag == "Enemy") {
-			if (otherpos.x < PlayerTrans.position.x) {											//If player is to the right of target
-				PlayerTrans.position = new Vector3(otherpos.x + 0.5f, otherpos.y, otherpos.z);
+			/*if (this.GetComponentInParent<Player2DController> ().facingLeft) {
+				this.GetComponentInParent<Player2DController> ().Flip();
+			}*/
+			if (otherpos.x < PlayerTrans.x) {											//If player is to the right of target
+				PlayerTrans = new Vector3(otherpos.x + 0.5f, otherpos.y, otherpos.z);
 			}
 			else {
-				PlayerTrans.position = new Vector3(otherpos.x - 0.5f, otherpos.y, otherpos.z);
+				PlayerTrans = new Vector3(otherpos.x - 0.5f, otherpos.y, otherpos.z);
 			}
+
 
 			string hackname = other.name;
 			anim.SetBool ("IsHackingEnemy", true);
@@ -198,22 +205,20 @@ public class HackRadius : MonoBehaviour {
 			}
 			InHackRadiusList.Remove (other);
 			Destroy (other);
+
+			this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.
+
 		}
 		else if (objtag == "GateConnector") {		//Take out second part if you don't need
 			//Note: must check if gate is horizontal facing but that's for later once/if we add them in.
 
-			PlayerTrans.position = new Vector3(otherpos.x, otherpos.y - 0.65f, otherpos.z);		//For vertical GateConnectors only
+			PlayerTrans = new Vector3(otherpos.x, otherpos.y - 0.65f, otherpos.z);		//For vertical GateConnectors only
 
 			anim.SetBool ("IsHackingGate", true);
 			other.GetComponent<ObjectInfo>().Hacked();
 			InHackRadiusList.Remove (other);			//Don't know if need or not
 			anim.SetBool ("IsHackingGate", false);
 		}
-
-		//Will need to put position horizontally to the side of hacked game object here then  
-		//PlayerTrans.position = new Vector3(temppos.x, temppos.y, temppos.z)
-
-
 	}
 	/*public void AntiFlipSword() {	//not needed for now
 		Vector3 theScale = transform.localScale;
