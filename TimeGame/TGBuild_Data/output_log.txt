@@ -2,7 +2,6 @@ Initialize engine version: 4.6.0b20 (a3ecf55f1347)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-<<<<<<< HEAD
     Renderer: Intel(R) HD Graphics 4600 (ID=0x416)
     Vendor:   Intel
     VRAM:     0 MB
@@ -13,120 +12,46 @@ Platform assembly: C:\Users\igolf_000\Desktop\Time-game\TimeGame\TGBuild_Data\Ma
 Loading C:\Users\igolf_000\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\igolf_000\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\igolf_000\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.047 seconds
+- Completed reload, in  0.235 seconds
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\igolf_000\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\igolf_000\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 8.905870 ms
+UnloadTime: 3.027356 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 364.
-Total: 1.857296 ms (FindLiveObjects: 0.037633 ms CreateObjectMapping: 0.028652 ms MarkObjects: 0.306199 ms  DeleteObjects: 0.022665 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 422.
+Total: 0.557231 ms (FindLiveObjects: 0.012401 ms CreateObjectMapping: 0.021382 ms MarkObjects: 0.113328 ms  DeleteObjects: 0.007270 ms)
 
-TESFSDFSd
+NullReferenceException: Object reference not set to an instance of an object
+  at GUIPanelToggle.Update () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+(Filename:  Line: -1)
 
-TESFSDFSd
+NullReferenceException: Object reference not set to an instance of an object
+  at GUIPanelToggle.Update () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+(Filename:  Line: -1)
 
-TESFSDFSd
+NullReferenceException: Object reference not set to an instance of an object
+  at GUIPanelToggle.Update () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+(Filename:  Line: -1)
 
-TESFSDFSd
+NullReferenceException: Object reference not set to an instance of an object
+  at GUIPanelToggle.Update () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+(Filename:  Line: -1)
 
-TESFSDFSd
+NullReferenceException: Object reference not set to an instance of an object
+  at GUIPanelToggle.Update () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+(Filename:  Line: -1)
 
-TESFSDFSd
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-TESFSDFSd
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-=======
-    Renderer: NVIDIA GeForce GTX 670 (ID=0x1189)
-    Vendor:   NVIDIA
-    VRAM:     1990 MB
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Administrator\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Administrator\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Administrator\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Administrator\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Administrator\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Administrator\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.650 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initializing input.
-<RI> Input initialized.
-Platform assembly: C:\Users\Administrator\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Administrator\Desktop\Time-game\TimeGame\TGBuild_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 30.433756 ms
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 179.
-Total: 2.706768 ms (FindLiveObjects: 0.044977 ms CreateObjectMapping: 0.039669 ms MarkObjects: 0.607898 ms  DeleteObjects: 0.015644 ms)
-
-UnloadTime: 0.902908 ms
+UnloadTime: 1.940689 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 422.
-Total: 1.092876 ms (FindLiveObjects: 0.034920 ms CreateObjectMapping: 0.025142 ms MarkObjects: 0.241930 ms  DeleteObjects: 0.016482 ms)
-
-UnloadTime: 2.232685 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 112 unused Assets to reduce memory usage. Loaded Objects now: 151.
-Total: 3.646832 ms (FindLiveObjects: 0.040507 ms CreateObjectMapping: 0.059225 ms MarkObjects: 0.336914 ms  DeleteObjects: 1.452698 ms)
-
-UnloadTime: 0.245003 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 181.
-Total: 0.802615 ms (FindLiveObjects: 0.011733 ms CreateObjectMapping: 0.014247 ms MarkObjects: 0.265955 ms  DeleteObjects: 0.040507 ms)
-
-UnloadTime: 0.393346 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 428.
-Total: 0.687517 ms (FindLiveObjects: 0.019834 ms CreateObjectMapping: 0.016761 ms MarkObjects: 0.197790 ms  DeleteObjects: 0.011453 ms)
-
-UnloadTime: 0.746184 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 102 unused Assets to reduce memory usage. Loaded Objects now: 157.
-Total: 0.994819 ms (FindLiveObjects: 0.011733 ms CreateObjectMapping: 0.017041 ms MarkObjects: 0.159517 ms  DeleteObjects: 0.339149 ms)
-
-UnloadTime: 0.272939 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 431.
-Total: 0.806806 ms (FindLiveObjects: 0.019555 ms CreateObjectMapping: 0.019555 ms MarkObjects: 0.220139 ms  DeleteObjects: 0.045257 ms)
-
-UnloadTime: 1.182552 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 102 unused Assets to reduce memory usage. Loaded Objects now: 157.
-Total: 1.478400 ms (FindLiveObjects: 0.017879 ms CreateObjectMapping: 0.026539 ms MarkObjects: 0.237460 ms  DeleteObjects: 0.465142 ms)
-
-UnloadTime: 0.261485 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 431.
-Total: 0.715454 ms (FindLiveObjects: 0.018717 ms CreateObjectMapping: 0.017600 ms MarkObjects: 0.205612 ms  DeleteObjects: 0.042463 ms)
-
-UnloadTime: 2.363149 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 134 unused Assets to reduce memory usage. Loaded Objects now: 146.
-Total: 3.530895 ms (FindLiveObjects: 0.043022 ms CreateObjectMapping: 0.076825 ms MarkObjects: 0.432736 ms  DeleteObjects: 1.378666 ms)
->>>>>>> 7dfcaf374025666abad8cc32047b5580f0f223bb
+Unloading 110 unused Assets to reduce memory usage. Loaded Objects now: 140.
+Total: 2.651021 ms (FindLiveObjects: 0.024803 ms CreateObjectMapping: 0.032929 ms MarkObjects: 0.279257 ms  DeleteObjects: 0.759084 ms)
 
