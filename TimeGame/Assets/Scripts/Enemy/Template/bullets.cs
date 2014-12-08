@@ -5,7 +5,7 @@ public class bullets : MonoBehaviour {
 	public int damage = 10;
 
 	void Start(){
-
+		StartCoroutine(SelfDestruction());
 	}
 	// deal damage to collided target depending on color of bullet
 	// enemy shoot blue bullets --> damage player
@@ -34,6 +34,12 @@ public class bullets : MonoBehaviour {
 			}
 		}
 
+	}
+
+
+	IEnumerator SelfDestruction() {
+		yield return new WaitForSeconds(1);
+		Destroy (gameObject, 2);
 	}
 
 

@@ -44,8 +44,6 @@ public class Player2DController : MonoBehaviour {
 				Flip();
 			}
 		}
-		if(invincible)
-			StartCoroutine(InvincibilityFlash());
 	}
 
 	void Update(){
@@ -60,12 +58,6 @@ public class Player2DController : MonoBehaviour {
 		anim.SetBool ("IsAttacking", false);
 	}
 
-	//Makes player flash while in invincible state
-	IEnumerator InvincibilityFlash(){
-		renderer.material.color=Color.cyan;
-		yield return new WaitForSeconds(invinTime);	
-		renderer.material.color = Color.white;
-	}
 	
 	
 	
