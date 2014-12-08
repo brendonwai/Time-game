@@ -289,7 +289,7 @@
  </tileset>
  <layer name="Blank Space" width="60" height="60">
   <data encoding="base64" compression="zlib">
-   eJztwwEJAAAMBKHr8v07rsdQcNVUVVVVVVVVVVVVVVVV1VcPAibsQA==
+   eJztl0sOwzAIRHuX3P+OVXZVVanhMwOYeZJ3NvAcxTbXy881dER8rfM7DC/bfCOgapjgi4rbyRfNNt+bbb438o3F6o5882J51qJB3E/yxazxgPR9sp59N6B8vfnRyFe+1n2Y6BuNGcmPpKMv0rmrL9K9wjd6RkRh+la7/qqDDdv1O+eTOZnfZJpvdg0MrPXLN68GBvI9G/mejXzPZrOv9Z01kQ6+rD20vosZvihnT7/D8s3uxbwx0f2gfHG+6BgeN/n6QJ073vzZ/8m/vGwqXD9zV8F2rWajrxBCCFHNtvto43tjg++2fqG6H3wDSKRcbQ==
   </data>
  </layer>
  <layer name="Floor" width="60" height="60">
