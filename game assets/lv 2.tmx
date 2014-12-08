@@ -5,32 +5,298 @@
  </tileset>
  <tileset firstgid="28" name="wall" tilewidth="32" tileheight="32">
   <image source="Tiles/wall.png" width="192" height="96"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="1">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="2">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="3">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="4">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="5">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="6">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="7">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="8">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="9">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="10">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="11">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="12">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="13">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="14">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="15">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="16">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="17">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
  </tileset>
  <tileset firstgid="46" name="wall_2" tilewidth="32" tileheight="32">
   <tile id="0">
    <image width="32" height="32" source="Tiles/Wall/wallCornerBotLeftTopRight.png"/>
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
   </tile>
   <tile id="1">
    <image width="32" height="32" source="Tiles/Wall/wallCornerTopLeftBottomRight.png"/>
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
   </tile>
  </tileset>
  <tileset firstgid="48" name="gate" tilewidth="32" tileheight="32">
   <image source="Tiles/gate.png" width="256" height="192"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="1">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="2">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="3">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="4">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="6">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="7">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="8">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="10">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="11">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="12">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="13">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="14">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="15">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="16">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="17">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="18">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="19">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="24">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="25">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="26">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="27">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="28">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="30">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="31">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="32">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="34">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="35">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="36">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="38">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="39">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="40">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="41">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="42">
+   <objectgroup draworder="index">
+    <object x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
  </tileset>
  <tileset firstgid="96" name="chest" tilewidth="32" tileheight="32">
   <image source="Tiles/chest.png" width="64" height="32"/>
  </tileset>
- <layer name="Blank Space" width="60" height="60">
+ <layer name="Blank Space" width="60" height="60" visible="0">
   <data encoding="base64" compression="zlib">
    eJztwwEJAAAMBKHr8v07rsdQcNVUVVVVVVVVVVVVVVVV1VcPAibsQA==
   </data>
  </layer>
  <layer name="Floor" width="60" height="60">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
- <objectgroup name="Wall">
+ <objectgroup name="Wall" visible="0">
   <object gid="28" x="1024" y="320"/>
   <object gid="28" x="1248" y="800"/>
   <object gid="28" x="1216" y="832"/>
@@ -1197,7 +1463,12 @@
   <object gid="38" x="1696" y="1920"/>
   <object gid="38" x="1728" y="1920"/>
  </objectgroup>
- <objectgroup name="Blocks">
+ <layer name="Walls" width="60" height="60" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAA8GY4QAAB
+  </data>
+ </layer>
+ <objectgroup name="Blocks" visible="0">
   <object gid="28" x="832" y="960"/>
   <object gid="28" x="1024" y="960"/>
   <object gid="42" x="1088" y="1024"/>
@@ -1326,7 +1597,7 @@
   <object gid="38" x="1088" y="1760"/>
   <object gid="38" x="832" y="1760"/>
  </objectgroup>
- <objectgroup name="Gate Active">
+ <objectgroup name="Gate Active" visible="0">
   <object gid="50" x="1504" y="1536"/>
   <object gid="50" x="1600" y="928"/>
   <object gid="50" x="1216" y="928"/>
@@ -1451,7 +1722,7 @@
   <object gid="54" x="1184" y="928"/>
   <object gid="54" x="1184" y="1056"/>
  </objectgroup>
- <objectgroup name="Gate Deactive" opacity="0.9">
+ <objectgroup name="Gate Deactive" visible="0" opacity="0.9">
   <object gid="74" x="1600" y="928"/>
   <object gid="74" x="1216" y="928"/>
   <object gid="74" x="1504" y="1536"/>
