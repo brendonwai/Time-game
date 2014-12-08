@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -8,10 +8,12 @@ public class PlayerInfo : MonoBehaviour {
 	public int Health = 100;
 	public int PreHackHealth = 100;
 	public Slider healthBar;
+	public Text healthNum;
 
 	//Hacking Energy, max=100
 	public int Energy = 0;
 	public Slider energyBar;
+	public Text energyNum;
 	//Amount of energy regenerated per second
 	public int EnergyRegen = 1;
 
@@ -23,6 +25,7 @@ public class PlayerInfo : MonoBehaviour {
 		if (Energy < 100){
 			Energy += EnergyRegen;
 			energyBar.value = Energy;
+			energyNum.text = Energy.ToString();
 		}
 	}
 	void GainEnergyBoost(int EnergyBoost){
@@ -30,17 +33,20 @@ public class PlayerInfo : MonoBehaviour {
 		{
 			Energy += EnergyBoost;
 			energyBar.value = Energy;
+			energyNum.text = Energy.ToString();
 		}
 		else
 		{
 			Energy = 100;
 			energyBar.value = Energy;
+			energyNum.text = Energy.ToString();
 		}
 	}
 	public void SwapPlayerToEnemyHealth(int EnemyHealth) {
 		PreHackHealth = Health;
 		Health = EnemyHealth;
 		//healthBar.transform.FindChild ("Fill").GetComponent<Image> ().color = Color.white;			//This and the one under mess stuff up for some reason
+
 	}
 	public void SwapToPreHackHealth () {
 		Health = PreHackHealth;

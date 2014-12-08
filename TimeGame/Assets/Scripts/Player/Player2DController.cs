@@ -76,6 +76,7 @@ public class Player2DController : MonoBehaviour {
 			if (anim.GetBool ("IsHackingEnemy")){			//If you are controlling a hacked enemy
 				GetComponent<PlayerInfo> ().Health -= damage;
 				GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
+				GetComponent<PlayerInfo> ().healthNum.text = GetComponent<PlayerInfo> ().Health.ToString();
 				if (GetComponent<PlayerInfo> ().Health <= 0){
 					GetComponent<PlayerInfo> ().Health = 0;
 					//trigger camera shake
@@ -86,6 +87,7 @@ public class Player2DController : MonoBehaviour {
 			else {											//If you are human
 				GetComponent<PlayerInfo> ().Health -= damage;
 				GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
+				GetComponent<PlayerInfo> ().healthNum.text = GetComponent<PlayerInfo> ().Health.ToString();
 				if (GetComponent<PlayerInfo> ().Health <= 0){
 					GetComponent<PlayerInfo> ().Health = 0;
 					//trigger camera shake
