@@ -6,8 +6,8 @@ public class Player2DController : MonoBehaviour {
 	public float maxSpeed = 5f;			//Sets momvement speed
 	public bool facingLeft = true;		//Determines direction character facing
 	Animator anim;						//Animation object
-	bool death=false;
-	float KnockBackForce=500;
+	bool death = false;
+	float KnockBackForce = 500;
 	public bool GameOver = false;
 
 
@@ -79,16 +79,29 @@ public class Player2DController : MonoBehaviour {
 			//sprite flashes red upon taking damage
 			renderer.material.color = Color.red;
 			yield return new WaitForSeconds(.1f);
-			renderer.material.color=Color.white;
+			renderer.material.color = Color.white;
 			//reduce health by amount of damage
-			GetComponent<PlayerInfo>().Health -= damage;
-			GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
-			if (GetComponent<PlayerInfo>().Health<=0){
-				GetComponent<PlayerInfo>().Health=0;
-				//trigger camera shake
-				SendMessage ("CamShakeOnDamage", damage+50);
-				StartCoroutine(PlayerDeath());
+			if (anim.GetBool ("IsHackingEnemy")){			//If you are controlling a hacked enemy
+				GetComponent<PlayerInfo> ().Health -= damage;
+				GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
+				if (GetComponent<PlayerInfo> ().Health <= 0){
+					GetComponent<PlayerInfo> ().Health = 0;
+					//trigger camera shake
+					SendMessage ("CamShakeOnDamage", damage + 50);		//Not sure if we should have this here
+					StartCoroutine(HackDeath());
+				}
 			}
+			else {											//If you are human
+				GetComponent<PlayerInfo> ().Health -= damage;
+				GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
+				if (GetComponent<PlayerInfo> ().Health <= 0){
+					GetComponent<PlayerInfo> ().Health = 0;
+					//trigger camera shake
+					SendMessage ("CamShakeOnDamage", damage + 50);
+					StartCoroutine(PlayerDeath());
+				}
+			}
+
 			
 			invincible = true;
 			yield return new WaitForSeconds(invinTime);		//Temporarily makes player invulnerable
@@ -111,6 +124,19 @@ public class Player2DController : MonoBehaviour {
 		yield return new WaitForSeconds(2.583f);
 		GameOver = true;
 		//Application.LoadLevel ("GameOverScene");
+	}
+
+	IEnumerator HackDeath () {
+		HackFlip ();				//This is here because of sprite direction differences
+		rigidbody2D.velocity = new Vector2 (0,0);
+		anim.SetBool ("HackedEnemyDead", true);
+		anim.SetBool ("IsHackingEnemy", false);
+		anim.SetInteger ("EnemyType", -1);
+		GetComponent<PlayerInfo> ().SwapToPreHackHealth();
+		GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
+		yield return new WaitForSeconds(.1f);
+		anim.SetBool ("HackedEnemyDead", false);
+
 	}
 
 	//Flips character sprite to face direction of movement
