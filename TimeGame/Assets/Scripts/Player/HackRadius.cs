@@ -95,57 +95,59 @@ public class HackRadius : MonoBehaviour {
 		//Hacking
 		//NOTE: poss move to FixedUpdate()
 		//NOTE YOU CAN STILL HACK WHILE DEAD TAKE THAT OUT
-		if (isHacking == true) {
-			if (InHackRadiusList.Count <= 0) {
-				isHacking = false;
-			}
-			else if (Input.GetKeyDown(hackLockInKey)) {				//Locks-in Selection
-				//Debug.Log ("Hack Lock in: " + hackselection + ", Name: " + InHackRadiusList[hackselection].name);
-				isHacking = false;
-				//HackCD = 10; 										//Change to max CD
-				HackObject(InHackRadiusList[hackselection]);			
-			}
-			else if (Input.GetKeyDown(selectRight)) {				//Press Right Key move selection right
-				if (hackselection+1 >= InHackRadiusList.Count){		//If increasing selection is over the limit go back to start
-					hackselection = 0;
+		if (!anim.GetBool ("IsHackingEnemy")) {				//If you aren't controlling an enemy
+			
+			if (isHacking == true) {
+				if (InHackRadiusList.Count <= 0) {
+					isHacking = false;
 				}
-				else {												//Increase selection by 1
-					hackselection ++;
+				else if (Input.GetKeyDown(hackLockInKey)) {				//Locks-in Selection
+					//Debug.Log ("Hack Lock in: " + hackselection + ", Name: " + InHackRadiusList[hackselection].name);
+					isHacking = false;
+					//HackCD = 10; 										//Change to max CD
+					HackObject(InHackRadiusList[hackselection]);			
+				}
+				else if (Input.GetKeyDown(selectRight)) {				//Press Right Key move selection right
+					if (hackselection+1 >= InHackRadiusList.Count){		//If increasing selection is over the limit go back to start
+						hackselection = 0;
+					}
+					else {												//Increase selection by 1
+						hackselection ++;
+					}
+				}
+				else if (Input.GetKeyDown(selectLeft)) {				//Press Left Key move selection left
+					if (InHackRadiusList.Count == 0) {
+						
+					}
+					else if(hackselection == 0){						//If decreasing selection is less than 0 go to end of list
+						hackselection = InHackRadiusList.Count-1;
+					}
+					else {												//Decreases selection by 1
+						hackselection--;
+					}
+				}
+				if (isHacking == true && InHackRadiusList.Count != 0) {
+					ShowHackSprite(InHackRadiusList[hackselection]);
 				}
 			}
-			else if (Input.GetKeyDown(selectLeft)) {				//Press Left Key move selection left
-				if (InHackRadiusList.Count == 0) {
-
-				}
-				else if(hackselection == 0){						//If decreasing selection is less than 0 go to end of list
-					hackselection = InHackRadiusList.Count-1;
-				}
-				else {												//Decreases selection by 1
-					hackselection--;
+			else {
+				hacksprite.enabled = false;
+				if (Input.GetKey(hackKey) && InHackRadiusList.Count > 0)	//Insert hack cooldown here
+				{
+					if (HackCD == 10) {										//Change this once you add in cooldowns
+						isHacking = true;
+						anim.SetBool ("HackedEnemyDead", false);
+						hacksprite.enabled = true;
+					}
 				}
 			}
-			if (isHacking == true && InHackRadiusList.Count != 0) {
-				ShowHackSprite(InHackRadiusList[hackselection]);
-			}
-		}
-		else {
+		} else {		//If you are controlling an enemy
 			hacksprite.enabled = false;
-			if (Input.GetKey(hackKey) && InHackRadiusList.Count > 0)	//Insert hack cooldown here
-			{
-				if (HackCD == 10) {										//Change this once you add in cooldowns
-					isHacking = true;
-					anim.SetBool ("HackedEnemyDead", false);
-					hacksprite.enabled = true;
-				}
-			}
 		}
-		//IF NEEDED: put InHackRadiusList.Sort (); here
 	}
 
-	//Calls when objects enter the collider
-
 	void OnTriggerEnter2D(Collider2D other) {
-		if (HackableObjectTags.Contains(other.gameObject.tag)) {										//Checks for Enemy Tags
+		if (HackableObjectTags.Contains(other.gameObject.tag)) {					//Checks for Enemy Tags
 			InHackRadiusList.Add (other.transform.parent.gameObject);				//Adds Enemy GameObject to the list of hackable objects in range with all it's components and children.
 		}
 	}
@@ -188,7 +190,7 @@ public class HackRadius : MonoBehaviour {
 			else {
 				PlayerTrans = new Vector3(otherpos.x - 0.5f, otherpos.y, otherpos.z);
 			}
-
+			
 
 			string hackname = other.name;
 			anim.SetBool ("IsHackingEnemy", true);
@@ -201,8 +203,9 @@ public class HackRadius : MonoBehaviour {
 				anim.SetInteger ("EnemyType", 1);
 				break;
 			//Insert more enemies here
-			
 			}
+			GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
+			GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
 			InHackRadiusList.Remove (other);
 			Destroy (other);
 
