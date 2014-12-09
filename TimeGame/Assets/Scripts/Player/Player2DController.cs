@@ -10,9 +10,10 @@ public class Player2DController : MonoBehaviour {
 	float KnockBackForce = 500;
 	public bool GameOver = false;
 
-
+	//Invincibility Handlers
 	bool invincible = false;			//Makes player invincible
 	float invinTime = 1.0f;				//Sets time player is invincible for
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -44,10 +45,7 @@ public class Player2DController : MonoBehaviour {
 				Flip();
 			}
 		}
-	}
-
-	void Update(){
-		if(Input.GetKeyDown(KeyCode.Z)){
+		if(Input.GetKeyDown(KeyCode.Z)||Input.GetMouseButtonDown(0)){
 			StartCoroutine("Attack");
 		}
 	}
@@ -57,9 +55,6 @@ public class Player2DController : MonoBehaviour {
 		yield return new WaitForSeconds (.4f);
 		anim.SetBool ("IsAttacking", false);
 	}
-
-	
-	
 	
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){

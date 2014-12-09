@@ -29,7 +29,6 @@ public class ObjectInfo : MonoBehaviour {
 			}
 			else
 				renderer.material.color = OutOfHackRadius;
-
 	}
 
 	void OnMouseExit(){
