@@ -3,8 +3,9 @@ using System.Collections;
 
 public class ObjectInfo : MonoBehaviour {
 
-	public bool hacked = false;	//Determines hacked state
-	public bool inRadius = false;
+	public bool hacked = false;		//Determines hacked state
+	public bool inRadius = false;	//Determines if object is in Hack Radius
+	public int EnergyCost = 0;		//How much energy needs to be spent to hack
 
 	Animator anim;				//Sets sprite image after hack
 	GameObject player;			//Gets player info to determine if in or out of hack radius		
@@ -21,8 +22,11 @@ public class ObjectInfo : MonoBehaviour {
 
 	void OnMouseOver(){
 		if(!hacked)
-			if(inRadius)
+			if(inRadius){
 				renderer.material.color = InHackRadius;
+				if(Input.GetMouseButtonDown(1))
+					Hacked();
+			}
 			else
 				renderer.material.color = OutOfHackRadius;
 

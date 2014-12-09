@@ -661,6 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &108367813
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1000,6 +1001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &208204476
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1744,6 +1746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &336243224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2288,6 +2291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &488102003
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3191,6 +3195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &736141037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4511,6 +4516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &1107832352
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4647,6 +4653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &1108386956
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5080,6 +5087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &1153477391
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5730,6 +5738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &1233605351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7719,6 +7728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &1569277466
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8955,6 +8965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &1782184016
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9672,6 +9683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hacked: 0
   inRadius: 0
+  EnergyCost: 0
 --- !u!212 &1912051864
 SpriteRenderer:
   m_ObjectHideFlags: 0
