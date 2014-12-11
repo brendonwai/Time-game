@@ -149,8 +149,6 @@ public class HackRadius : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (HackableObjectTags.Contains(other.gameObject.tag)) {					//Checks for Enemy Tags
 			InHackRadiusList.Add (other.transform.parent.gameObject);				//Adds Enemy GameObject to the list of hackable objects in range with all it's components and children.
-			if(other.gameObject.tag == "GateConnector")
-				other.gameObject.GetComponentInParent<ObjectInfo>().inRadius = true;
 		}
 	}
 
@@ -161,8 +159,6 @@ public class HackRadius : MonoBehaviour {
 				if (hackselection >= InHackRadiusList.Count && InHackRadiusList.Count >= 1) {
 					hackselection--;
 				}
-				if(other.gameObject.tag == "GateConnector")
-					other.gameObject.GetComponentInParent<ObjectInfo>().inRadius = false;
 			}
 		}
 	}

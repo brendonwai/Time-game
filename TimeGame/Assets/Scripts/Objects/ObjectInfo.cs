@@ -4,15 +4,15 @@ using System.Collections;
 public class ObjectInfo : MonoBehaviour {
 
 	public bool hacked = false;		//Determines hacked state
-	public bool inRadius = false;	//Determines if object is in Hack Radius
-	public int EnergyCost = 0;		//How much energy needs to be spent to hack
+	public bool inRange = false;	//Determines if object is in hacking range
+	public int EnergyCost = 5;		//How much energy needs to be spent to hack
 
 	Animator anim;				//Sets sprite image after hack
 	GameObject player;			//Gets player info to determine if in or out of hack radius		
 
 	//Colors
-	Color OutOfHackRadius = new Color(.6f, .1f, .1f, 1f);
-	Color InHackRadius = new Color(0f, .4f, .5f, 1f);
+	Color OutOfHackRange = new Color(.6f, .1f, .1f, 1f);
+	Color InHackRange = new Color(0f, .4f, .5f, 1f);
 
 	// Use this for initialization
 	void Start () {
@@ -22,17 +22,48 @@ public class ObjectInfo : MonoBehaviour {
 
 	void OnMouseOver(){
 		if(!hacked)
-			if(inRadius){
-				renderer.material.color = InHackRadius;
+			if(inRange){
 				if(Input.GetMouseButtonDown(1))
 					Hacked();
 			}
 			else
-				renderer.material.color = OutOfHackRadius;
+				renderer.material.color = OutOfHackRange;
 	}
 
 	void OnMouseExit(){
-		renderer.material.color = Color.white;
+		if(!inRange)	//Prevents color from turning white on mouser over while still in range
+			renderer.material.color = Color.white;
+	}
+
+	//Checks if player is in front of keyboard
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.gameObject.tag == "Player"){
+			renderer.material.color = InHackRange;
+			inRange = true;
+		}
+	}
+
+	void OnTriggerStay2D(Collider2D other){
+		if(other.gameObject.tag == "Player" && !hacked)
+			if(Input.GetKeyDown(KeyCode.X) && CanSpendEnergy())
+				Hacked();
+	}
+
+	void OnTriggerExit2D(Collider2D other){
+		if(other.gameObject.tag == "Player"){
+			inRange = false;
+			renderer.material.color = Color.white;
+		}
+	}
+
+	//Player has the energy to spend for hacking
+	bool CanSpendEnergy(){
+		if(player.GetComponent<PlayerInfo>().Energy >= EnergyCost){
+			player.GetComponent<PlayerInfo>().Energy -= EnergyCost;
+			return true;
+		}
+		else
+			return false;
 	}
 
 
