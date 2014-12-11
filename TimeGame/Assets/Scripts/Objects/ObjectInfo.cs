@@ -35,6 +35,7 @@ public class ObjectInfo : MonoBehaviour {
 		renderer.material.color = Color.white;
 	}
 
+
 	//Accessed by player to run hacked behavior
 	public void Hacked(){
 		anim.SetBool("IsHacked", true);
