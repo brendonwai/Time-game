@@ -38,7 +38,7 @@ public class HackRadius : MonoBehaviour {
 		//HackableObjectList
 		HackableObjectTags = new List<string> ();
 		HackableObjectTags.Add("Enemy");
-		HackableObjectTags.Add("GateConnector");
+		//HackableObjectTags.Add("GateConnector");	//Unneccessary. Gates will handle hacking themselves now.
 
 		isHacking = false;
 		hackselection = 0;
