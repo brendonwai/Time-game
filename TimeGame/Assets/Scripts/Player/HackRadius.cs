@@ -193,20 +193,23 @@ public class HackRadius : MonoBehaviour {
 		else {
 			PlayerTrans = new Vector3(otherpos.x - 0.5f, otherpos.y, otherpos.z);
 		}
-		
-		
-		string hackname = other.name;
+
+		int hackType = other.GetComponent<EnemyInfo>().enemyType;
 		anim.SetBool ("IsHackingEnemy", true);
 		anim.SetBool ("HackedEnemyDead", false);
-		switch(hackname) {
-		case "BasicEnemy":
-			anim.SetInteger ("EnemyType", 0);
-			break;
-		case "ranged":
-			anim.SetInteger ("EnemyType", 1);
-			break;
-			//Insert more enemies here
+		anim.SetInteger("EnemyType", hackType);
+	
+		//Allows player to inherit/use enemy behaviors and abilities
+		switch(hackType){
+			case 0:
+			    	//Insert code for basic basic enemy attacks/actions. Preferably in a different function
+			        //Ex: BasicEnemyAction();
+			    	break;
+			case 1:
+					//Insert code for basic ranged enemy attacks and actions. Etc...
+					break;
 		}
+
 		GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
 		GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
 		InHackRadiusList.Remove (other);
