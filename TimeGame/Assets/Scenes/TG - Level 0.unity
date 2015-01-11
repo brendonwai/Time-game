@@ -1063,7 +1063,7 @@ GameObject:
   - 60: {fileID: 238349458}
   m_Layer: 0
   m_Name: Collision
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2232,6 +2232,30 @@ Prefab:
     - target: {fileID: 100004, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
+      propertyPath: m_TagString
+      value: Background
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
@@ -6362,7 +6386,7 @@ GameObject:
   - 60: {fileID: 1467442201}
   m_Layer: 0
   m_Name: Collision
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
