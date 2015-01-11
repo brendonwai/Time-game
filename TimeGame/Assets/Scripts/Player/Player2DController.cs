@@ -9,7 +9,7 @@ public class Player2DController : MonoBehaviour {
 	bool death = false;
 	float KnockBackForce = 500;
 	public bool GameOver = false;
-	float attackRate=1f;
+	float attackRate=1.0f;
 	float nextAttack=0;
 
 	bool invincible = false;			//Makes player invincible
@@ -48,7 +48,7 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	void Update(){
-		if(Input.GetKeyDown(KeyCode.Z)&&Time.time>=nextAttack){
+		if(Input.GetMouseButtonDown(0) && Time.time>=nextAttack && !anim.GetBool("IsAttacking")){
 			nextAttack+=attackRate;
 			StartCoroutine("Attack");
 		}
