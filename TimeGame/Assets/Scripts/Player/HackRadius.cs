@@ -9,21 +9,21 @@ public class HackRadius : MonoBehaviour {
 	//float angle;		
 	//int anglesign;
 
-	Animator anim;							//
-	public int HackCD;						//Hacking ability Cooldown
-	List<GameObject> InHackRadiusList;		//List of objects in hack radius
-	List<string> HackableObjectTags;		//List of Hackable Object Tags
-	int hackselection;						//Hack selection number for menu
-	SpriteRenderer hacksprite;				//CHILD. Hacking sprite displayed above player head
+	Animator anim;									//
+	public int HackCD;								//Hacking ability Cooldown
+	public List<GameObject> InHackRadiusList;		//List of objects in hack radius
+	List<string> HackableObjectTags;				//List of Hackable Object Tags
+	int hackselection;								//Hack selection number for menu
+	SpriteRenderer hacksprite;						//CHILD. Hacking sprite displayed above player head
 	Vector3 PlayerTrans;
-	bool isHacking;							//True if player is in process of hacking
+	bool isHacking;									//True if player is in process of hacking
 
 
 	//Keys
-	public KeyCode hackKey;					//Button to start Hack ability
-	public KeyCode hackLockInKey;			//Locks in choice of Hack ability
-	public KeyCode selectLeft;				//Moves Hack choice left (Decrease by 1)
-	public KeyCode selectRight;				//Moves Hack hcoice right (Increase by 1)
+	public KeyCode hackKey;							//Button to start Hack ability
+	public KeyCode hackLockInKey;					//Locks in choice of Hack ability
+	public KeyCode selectLeft;						//Moves Hack choice left (Decrease by 1)
+	public KeyCode selectRight;						//Moves Hack hcoice right (Increase by 1)
 
 
 
@@ -38,7 +38,7 @@ public class HackRadius : MonoBehaviour {
 		//HackableObjectList
 		HackableObjectTags = new List<string> ();
 		HackableObjectTags.Add("Enemy");
-		HackableObjectTags.Add("GateConnector");
+		//HackableObjectTags.Add("GateConnector");	//Unneccessary. Gates will handle hacking themselves now.
 
 		isHacking = false;
 		hackselection = 0;
@@ -161,14 +161,10 @@ public class HackRadius : MonoBehaviour {
 				}
 			}
 		}
-
-
-
 	}
 
 	void ShowHackSprite(GameObject other){										//Display current hackselection above player's head
 		hacksprite.sprite = other.GetComponent<SpriteRenderer> ().sprite;		//NOTE: May need to flip sprite when char flips
-		//string newspritename = other.GetComponent<SpriteRenderer> ().sprite.name;
 	}
 
 	void HackObject(GameObject other) {
@@ -180,49 +176,60 @@ public class HackRadius : MonoBehaviour {
 
 		PlayerTrans = this.transform.parent.transform.position;
 
-		if (objtag == "Enemy") {
-			/*if (this.GetComponentInParent<Player2DController> ().facingLeft) {
+		if (objtag == "Enemy")
+			HackEnemy(other, otherpos);
+		else if (objtag == "GateConnector")		//Take out second part if you don't need
+			HackGate(other, otherpos);
+	}
+
+	//For hacking enemies
+	void HackEnemy(GameObject other, Vector3 otherpos){
+		/*if (this.GetComponentInParent<Player2DController> ().facingLeft) {
 				this.GetComponentInParent<Player2DController> ().Flip();
 			}*/
-			if (otherpos.x < PlayerTrans.x) {											//If player is to the right of target
-				PlayerTrans = new Vector3(otherpos.x + 0.5f, otherpos.y, otherpos.z);
-			}
-			else {
-				PlayerTrans = new Vector3(otherpos.x - 0.5f, otherpos.y, otherpos.z);
-			}
-			
-
-			string hackname = other.name;
-			anim.SetBool ("IsHackingEnemy", true);
-			anim.SetBool ("HackedEnemyDead", false);
-			switch(hackname) {
-			case "BasicEnemy":
-				anim.SetInteger ("EnemyType", 0);
-				break;
-			case "ranged":
-				anim.SetInteger ("EnemyType", 1);
-				break;
-			//Insert more enemies here
-			}
-			GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
-			GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
-			InHackRadiusList.Remove (other);
-			Destroy (other);
-
-			this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.
-
+		if (otherpos.x < PlayerTrans.x) {											//If player is to the right of target
+			PlayerTrans = new Vector3(otherpos.x + 0.5f, otherpos.y, otherpos.z);
 		}
-		else if (objtag == "GateConnector") {		//Take out second part if you don't need
-			//Note: must check if gate is horizontal facing but that's for later once/if we add them in.
-
-			PlayerTrans = new Vector3(otherpos.x, otherpos.y - 0.65f, otherpos.z);		//For vertical GateConnectors only
-
-			anim.SetBool ("IsHackingGate", true);
-			other.GetComponent<ObjectInfo>().Hacked();
-			InHackRadiusList.Remove (other);			//Don't know if need or not
-			anim.SetBool ("IsHackingGate", false);
+		else {
+			PlayerTrans = new Vector3(otherpos.x - 0.5f, otherpos.y, otherpos.z);
 		}
+
+		int hackType = other.GetComponent<EnemyInfo>().enemyType;
+		anim.SetBool ("IsHackingEnemy", true);
+		anim.SetBool ("HackedEnemyDead", false);
+		anim.SetInteger("EnemyType", hackType);
+	
+		//Allows player to inherit/use enemy behaviors and abilities
+		switch(hackType){
+			case 0:
+			    	//Insert code for basic basic enemy attacks/actions. Preferably in a different function
+			        //Ex: BasicEnemyAction();
+			    	break;
+			case 1:
+					//Insert code for basic ranged enemy attacks and actions. Etc...
+					break;
+		}
+
+		GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
+		GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
+		InHackRadiusList.Remove (other);
+		Destroy (other);
+		
+		this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.
+
 	}
+
+	//For hacking gates
+	void HackGate(GameObject other, Vector3 otherpos){
+		//Note: must check if gate is horizontal facing but that's for later once/if we add them in.
+		PlayerTrans = new Vector3(otherpos.x, otherpos.y - 0.65f, otherpos.z);		//For vertical GateConnectors only
+		
+		anim.SetBool ("IsHackingGate", true);
+		other.GetComponent<ObjectInfo>().Hacked();
+		InHackRadiusList.Remove (other);			//Don't know if need or not
+		anim.SetBool ("IsHackingGate", false);
+	}
+
 	/*public void AntiFlipSword() {	//not needed for now
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
