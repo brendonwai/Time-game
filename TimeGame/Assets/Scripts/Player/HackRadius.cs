@@ -195,21 +195,13 @@ public class HackRadius : MonoBehaviour {
 		}
 
 		int hackType = other.GetComponent<EnemyInfo>().enemyType;
+
 		anim.SetBool ("IsHackingEnemy", true);
 		anim.SetBool ("HackedEnemyDead", false);
 		anim.SetInteger("EnemyType", hackType);
-	
-		//Allows player to inherit/use enemy behaviors and abilities
-		switch(hackType){
-			case 0:
-			    	//Insert code for basic basic enemy attacks/actions. Preferably in a different function
-			        //Ex: BasicEnemyAction();
-			    	break;
-			case 1:
-					//Insert code for basic ranged enemy attacks and actions. Etc...
-					break;
-		}
 
+		GetComponentInParent<Player2DController>().hackState = hackType;
+	
 		GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
 		GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
 		InHackRadiusList.Remove (other);
@@ -218,6 +210,7 @@ public class HackRadius : MonoBehaviour {
 		this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.
 
 	}
+
 
 	//For hacking gates
 	void HackGate(GameObject other, Vector3 otherpos){

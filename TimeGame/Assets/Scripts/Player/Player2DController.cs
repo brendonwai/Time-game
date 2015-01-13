@@ -5,15 +5,26 @@ public class Player2DController : MonoBehaviour {
 
 	public float maxSpeed = 5f;			//Sets momvement speed
 	public bool facingLeft = true;		//Determines direction character facing
-	Animator anim;						//Animation object
-	bool death = false;
-	float KnockBackForce = 500;
-	public bool GameOver = false;
-	float attackRate=1.0f;
-	float nextAttack=0;
+	public int hackState = -1;			//Determines action of player depending on hacked enemy
 
+	public Rigidbody2D rangedBullet;	//Bullet from basic ranged enemy
+	int bulletspeed=10;					//Speed of bullet
+	float timestamp=0.0f;				//Variable for managing bullet release
+	
+	Animator anim;						//Animation object
+	
+	public bool GameOver = false;		//For activating game over 
+	bool death = false;					//Determines if player is dead
+	
+	float KnockBackForce = 500;			//Knockback distance
+	
+	float attackRate=1.0f;				//Attack handlers
+	float nextAttack=0;
+	
 	bool invincible = false;			//Makes player invincible
 	float invinTime = 1.0f;				//Sets time player is invincible for
+
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -48,6 +59,11 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	void Update(){
+		HackStateActions();
+	}
+
+	//Handles player attack in default state
+	void PlayerAttack(){
 		if(Input.GetMouseButtonDown(0) && Time.time>=nextAttack && !anim.GetBool("IsAttacking")){
 			nextAttack+=attackRate;
 			StartCoroutine("Attack");
@@ -59,10 +75,8 @@ public class Player2DController : MonoBehaviour {
 		yield return new WaitForSeconds (.4f);
 		anim.SetBool ("IsAttacking", false);
 	}
+	
 
-	
-	
-	
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
 		
@@ -97,7 +111,6 @@ public class Player2DController : MonoBehaviour {
 					StartCoroutine(PlayerDeath());
 				}
 			}
-
 			
 			invincible = true;
 			yield return new WaitForSeconds(invinTime);		//Temporarily makes player invulnerable
@@ -119,7 +132,6 @@ public class Player2DController : MonoBehaviour {
 		anim.SetBool("IsDead",true);
 		yield return new WaitForSeconds(2.583f);
 		GameOver = true;
-		//Application.LoadLevel ("GameOverScene");
 	}
 
 	IEnumerator HackDeath () {
@@ -128,11 +140,12 @@ public class Player2DController : MonoBehaviour {
 		anim.SetBool ("HackedEnemyDead", true);
 		anim.SetBool ("IsHackingEnemy", false);
 		anim.SetInteger ("EnemyType", -1);
+		hackState = -1;
+		timestamp = 0.0f;
 		GetComponent<PlayerInfo> ().SwapToPreHackHealth();
 		GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;
 		yield return new WaitForSeconds(.1f);
 		anim.SetBool ("HackedEnemyDead", false);
-
 	}
 
 	//Flips character sprite to face direction of movement
@@ -147,5 +160,49 @@ public class Player2DController : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	//Sets player moveset based on what enemy currently hacked if any.
+	void HackStateActions(){
+		switch(hackState){
+
+			//BASIC ENEMY
+			case 0:
+				break;
+			//BASIC RANGED ENEMY
+			case 1:
+				if (Time.time>=timestamp){
+					RangedEnemyShoot ();
+					timestamp=Time.time+.5f;
+					}
+				break;
+			default:
+				PlayerAttack();
+				break;
+			      
+		}
+	}
+	
+
+	//Mimics ranged enemy shooting
+	void RangedEnemyShoot(){
+		//Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		Vector2 bulletClonePos = transform.position;
+		bulletClonePos.x -= .1f;
+		Vector2 bulletClone2Pos = transform.position;
+		bulletClone2Pos.x += .1f;
+		Rigidbody2D bulletClone=Instantiate (rangedBullet, bulletClonePos, transform.rotation) as Rigidbody2D;
+		Rigidbody2D bulletClone2=Instantiate (rangedBullet, bulletClone2Pos, transform.rotation) as Rigidbody2D;
+
+		Vector2 temp = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+
+		Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+		Vector2 dir = (mousePos- bulletClonePos).normalized;
+		Vector2 dir2 = (mousePos - bulletClone2Pos).normalized;
+
+		bulletClone.AddForce (dir*bulletspeed);
+		bulletClone2.AddForce (dir2*bulletspeed);
+		bulletClone.renderer.material.color = Color.red;
+		bulletClone2.renderer.material.color = Color.red;
 	}
 }

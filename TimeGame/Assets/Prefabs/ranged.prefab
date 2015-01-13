@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 61: {fileID: 6100000}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: ObjectTag
   m_TagString: Enemy
@@ -273,6 +274,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44c4d5747c21c464fb9b970c67776566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056c35a290641a04aa7d5e87b148a039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21200000
