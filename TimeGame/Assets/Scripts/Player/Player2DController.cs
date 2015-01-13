@@ -140,6 +140,7 @@ public class Player2DController : MonoBehaviour {
 		anim.SetBool ("HackedEnemyDead", true);
 		anim.SetBool ("IsHackingEnemy", false);
 		anim.SetInteger ("EnemyType", -1);
+		anim.SetBool("IsAttacking", false);
 		hackState = -1;
 		timestamp = 0.0f;
 		GetComponent<PlayerInfo> ().SwapToPreHackHealth();
@@ -171,6 +172,7 @@ public class Player2DController : MonoBehaviour {
 				break;
 			//BASIC RANGED ENEMY
 			case 1:
+				anim.SetBool("IsAttacking", true);
 				if (Time.time>=timestamp){
 					RangedEnemyShoot ();
 					timestamp=Time.time+.5f;
