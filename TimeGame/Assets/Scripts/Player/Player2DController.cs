@@ -10,7 +10,7 @@ public class Player2DController : MonoBehaviour {
 	public Rigidbody2D rangedBullet;	//Bullet from basic ranged enemy
 	int bulletspeed=10;					//Speed of bullet
 	float timestamp=0.0f;				//Variable for managing bullet release
-	
+	public GameObject PushBack;
 	Animator anim;						//Animation object
 	
 	public bool GameOver = false;		//For activating game over 
@@ -28,6 +28,7 @@ public class Player2DController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+		PushBack.SetActive (false);
 	}
 
 	void FixedUpdate () {
@@ -72,7 +73,11 @@ public class Player2DController : MonoBehaviour {
 
 	IEnumerator Attack(){
 		anim.SetBool ("IsAttacking", true);
-		yield return new WaitForSeconds (.4f);
+		yield return new WaitForSeconds (.1f);
+		PushBack.SetActive (true);
+		yield return new WaitForSeconds (.1f);
+		PushBack.SetActive (false);
+		yield return new WaitForSeconds (.2f);
 		anim.SetBool ("IsAttacking", false);
 	}
 	
