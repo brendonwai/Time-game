@@ -20,13 +20,13 @@ public class bullets : MonoBehaviour {
 			if (renderer.material.color==Color.cyan){
 				other.SendMessage("takeDamage",damage);
 				Vector2 dir=rigidbody2D.velocity;
-				other.gameObject.SendMessage("KnockBack",dir);
+				other.SendMessage("KnockBack",dir);
 				Destroy (gameObject);
 			}
 		}
 		if (other.tag=="Enemy"){
 			if (renderer.material.color==Color.red){
-				other.SendMessage("takeDamage",damage);
+				other.gameObject.SendMessage("takeDamage",damage);
 				Destroy (gameObject);
 			}
 		}
