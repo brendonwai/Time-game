@@ -9,13 +9,14 @@ public class Player2DController : MonoBehaviour {
 	bool death = false;
 	float KnockBackForce = 500;
 	public bool GameOver = false;
-	float attackRate=1f;
+	public GameObject PushBack;
+	public float attackRate;
 	float nextAttack=0;
-
 	bool invincible = false;			//Makes player invincible
 	float invinTime = 1.0f;				//Sets time player is invincible for
 	// Use this for initialization
 	void Start () {
+		PushBack.SetActive (false);
 		anim = GetComponent<Animator> ();
 	}
 
@@ -56,8 +57,13 @@ public class Player2DController : MonoBehaviour {
 
 	IEnumerator Attack(){
 		anim.SetBool ("IsAttacking", true);
-		yield return new WaitForSeconds (.4f);
+		yield return new WaitForSeconds (.15f);
+		PushBack.SetActive (true);
+		yield return new WaitForSeconds (.1f);
+		PushBack.SetActive (false);
+		yield return new WaitForSeconds (.15f);
 		anim.SetBool ("IsAttacking", false);
+
 	}
 
 	

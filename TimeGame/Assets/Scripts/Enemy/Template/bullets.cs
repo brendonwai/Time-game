@@ -16,9 +16,6 @@ public class bullets : MonoBehaviour {
 		if(other.tag=="Environment"){
 			Destroy(gameObject);
 		}
-		if (other.tag=="Background"){
-			Destroy (gameObject);
-		}
 		if (other.tag=="Player"){
 			if (renderer.material.color==Color.cyan){
 				other.SendMessage("takeDamage",damage);
