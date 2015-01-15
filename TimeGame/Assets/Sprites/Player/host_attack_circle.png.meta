@@ -1,13 +1,7 @@
 fileFormatVersion: 2
 guid: 49e191d70b39fbc49b985faaa6fd84b8
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: host_attack_circle_0
-    21300002: host_attack_circle_1
-    21300004: host_attack_circle_2
-    21300006: host_attack_circle_3
-    21300008: host_attack_circle_4
-    21300010: host_attack_circle_5
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -31,13 +25,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,66 +42,6 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: host_attack_circle_0
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 0
-        width: 69
-        height: 62
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: host_attack_circle_1
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 0
-        width: 69
-        height: 62
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: host_attack_circle_2
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 0
-        width: 77
-        height: 62
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: host_attack_circle_3
-      rect:
-        serializedVersion: 2
-        x: 235
-        y: 0
-        width: 69
-        height: 62
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: host_attack_circle_4
-      rect:
-        serializedVersion: 2
-        x: 317
-        y: 0
-        width: 58
-        height: 62
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: host_attack_circle_5
-      rect:
-        serializedVersion: 2
-        x: 394
-        y: 0
-        width: 59
-        height: 62
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
