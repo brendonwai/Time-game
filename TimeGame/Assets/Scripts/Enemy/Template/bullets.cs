@@ -26,7 +26,7 @@ public class bullets : MonoBehaviour {
 		}
 		if (other.tag=="Enemy"){
 			if (renderer.material.color==Color.red){
-				other.gameObject.SendMessage("takeDamage",damage);
+				other.SendMessage("takeDamage",damage);
 				Destroy (gameObject);
 			}
 		}

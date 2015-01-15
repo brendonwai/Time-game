@@ -5,8 +5,6 @@ public class EnemyHack : MonoBehaviour {
 	
 	public bool inRadius = false;	//Determines if enemy is in Hack Radius
 	public int EnergyCost = 0;		//How much energy needs to be spent to hack
-
-	GameObject player;			//Gets player info to determine if in or out of hack radius		
 	
 	//Colors
 	Color OutOfHackRadius = new Color(.6f, .1f, .1f, 1f);
@@ -14,7 +12,6 @@ public class EnemyHack : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	void OnMouseOver(){
