@@ -85,7 +85,10 @@ public class RangedEnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
+		if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
+			Dead ();
+		}
+		else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
 			ApproachTarget();
 		}
 		else{
@@ -145,5 +148,11 @@ public class RangedEnemyAI : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-	}	
+	}
+
+	//Activates death sequence
+	void Dead(){
+		anim.SetBool("IsDead", true);
+		Destroy (gameObject,2);
+	}
 }

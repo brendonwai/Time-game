@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ranged enemy attack
+  m_Name: ranged enemy dead
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -18,18 +18,12 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 1917545741c604ccd9bb0b0811245927, type: 3}
-    - time: .0833333358
-      value: {fileID: 21300000, guid: af0a7501e60d44b4dab65a8a174c1d2c, type: 3}
-    - time: .166666672
-      value: {fileID: 21300000, guid: 3423463effc32427da6c4375d3a42c4e, type: 3}
-    - time: .25
-      value: {fileID: 21300000, guid: c3be4c01460ee459daebded020374785, type: 3}
+      value: {fileID: 21300000, guid: 9e0ac6cd2a90244649dc73fa518dfe96, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 12
+  m_SampleRate: 1
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -43,14 +37,11 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 1917545741c604ccd9bb0b0811245927, type: 3}
-    - {fileID: 21300000, guid: af0a7501e60d44b4dab65a8a174c1d2c, type: 3}
-    - {fileID: 21300000, guid: 3423463effc32427da6c4375d3a42c4e, type: 3}
-    - {fileID: 21300000, guid: c3be4c01460ee459daebded020374785, type: 3}
+    - {fileID: 21300000, guid: 9e0ac6cd2a90244649dc73fa518dfe96, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .333333343
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

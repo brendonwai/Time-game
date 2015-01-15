@@ -80,7 +80,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
+		if (GetComponent<EnemyInfo> ().Health <= 0) {
 			Dead ();
 		}
 		else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
@@ -151,6 +151,6 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	void Dead(){
 		anim.SetBool("IsDead", true);
-		Destroy (gameObject,2);
+		Destroy (gameObject,1);
 	}
 }
