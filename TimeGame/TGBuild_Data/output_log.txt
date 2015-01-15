@@ -2,31 +2,31 @@ Initialize engine version: 4.6.0b20 (a3ecf55f1347)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
-    Vendor:   Intel
-    VRAM:     0 MB
+    Renderer: NVIDIA GeForce GT 720M (ID=0x1140)
+    Vendor:   NVIDIA
+    VRAM:     1999 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.101 seconds
+Platform assembly: C:\Users\Nina\Desktop\TimeGame\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Nina\Desktop\TimeGame\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Nina\Desktop\TimeGame\Time-game\TimeGame\TGBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Nina\Desktop\TimeGame\Time-game\TimeGame\TGBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Nina\Desktop\TimeGame\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Nina\Desktop\TimeGame\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.416 seconds
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 3.564079 ms
+Platform assembly: C:\Users\Nina\Desktop\TimeGame\Time-game\TimeGame\TGBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Nina\Desktop\TimeGame\Time-game\TimeGame\TGBuild_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 11.507741 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 823.
-Total: 0.634212 ms (FindLiveObjects: 0.029080 ms CreateObjectMapping: 0.025659 ms MarkObjects: 0.185602 ms  DeleteObjects: 0.004704 ms)
+Total: 0.681196 ms (FindLiveObjects: 0.047136 ms CreateObjectMapping: 0.012164 ms MarkObjects: 0.212493 ms  DeleteObjects: 0.005701 ms)
 
-UnloadTime: 2.573201 ms
+UnloadTime: 6.748486 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 198 unused Assets to reduce memory usage. Loaded Objects now: 150.
-Total: 0.880114 ms (FindLiveObjects: 0.008125 ms CreateObjectMapping: 0.010263 ms MarkObjects: 0.085531 ms  DeleteObjects: 0.447755 ms)
+Unloading 190 unused Assets to reduce memory usage. Loaded Objects now: 150.
+Total: 2.734670 ms (FindLiveObjects: 0.029650 ms CreateObjectMapping: 0.035352 ms MarkObjects: 0.268753 ms  DeleteObjects: 1.141536 ms)
 
