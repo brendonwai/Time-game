@@ -13,23 +13,20 @@ public class bullets : MonoBehaviour {
 	// destroy 
 	void OnTriggerEnter2D(Collider2D other){
 		//Tag obstacles as Environment to destroy bullets on contact
-		if(other.tag=="Environment"){
+		if(other.tag=="Background"){
 			Destroy(gameObject);
-		}
-		if (other.tag=="Background"){
-			Destroy (gameObject);
 		}
 		if (other.tag=="Player"){
 			if (renderer.material.color==Color.cyan){
 				other.SendMessage("takeDamage",damage);
 				Vector2 dir=rigidbody2D.velocity;
-				other.gameObject.SendMessage("KnockBack",dir);
+				other.SendMessage("KnockBack",dir);
 				Destroy (gameObject);
 			}
 		}
 		if (other.tag=="Enemy"){
 			if (renderer.material.color==Color.red){
-				other.SendMessage("takeDamage",damage);
+				other.gameObject.SendMessage("takeDamage",damage);
 				Destroy (gameObject);
 			}
 		}

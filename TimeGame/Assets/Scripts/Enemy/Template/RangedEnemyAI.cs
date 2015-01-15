@@ -27,16 +27,6 @@ public class RangedEnemyAI : MonoBehaviour {
 		timeCount = Time.time;
 	}
 
-	// Call this when damage dealt to enemy
-	IEnumerator takeDamage(int damage){
-		//reduce health by amount of damage
-		GetComponent<EnemyInfo>().Health -= damage;
-		//sprite flashes red upon taking damage
-		renderer.material.color = Color.red;
-		yield return new WaitForSeconds (.1f);
-		renderer.material.color=Color.white;
-	}
-
 	// Activates when enemy enters trigger collider
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Enemy"){
