@@ -73,11 +73,11 @@ public class Player2DController : MonoBehaviour {
 
 	IEnumerator Attack(){
 		anim.SetBool ("IsAttacking", true);
-		yield return new WaitForSeconds (.1f);
+		yield return new WaitForSeconds (.15f);
 		PushBack.SetActive (true);
 		yield return new WaitForSeconds (.1f);
 		PushBack.SetActive (false);
-		yield return new WaitForSeconds (.2f);
+		yield return new WaitForSeconds (.15f);
 		anim.SetBool ("IsAttacking", false);
 	}
 	
