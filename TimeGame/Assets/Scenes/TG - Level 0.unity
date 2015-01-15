@@ -170,11 +170,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 27909807}
-  - 58: {fileID: 27909808}
   - 114: {fileID: 27909809}
+  - 58: {fileID: 27909808}
   m_Layer: 0
   m_Name: hackRadius
-  m_TagString: HackRadius
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,7 +215,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HackCD: 0
-  hackKey: 324
+  InHackRadiusList: []
+  hackKey: 49
+  hackLockInKey: 102
+  selectLeft: 113
+  selectRight: 101
 --- !u!1 &44719585
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +316,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 55477251}
-  m_HideIfInvisible: 0
 --- !u!1 &63819022
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +377,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63819022}
-  m_HideIfInvisible: 0
 --- !u!1 &67025109
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +492,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 67025109}
-  m_HideIfInvisible: 0
 --- !u!1 &90001614
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +707,10 @@ GameObject:
   - 95: {fileID: 131982903}
   - 114: {fileID: 131982902}
   - 114: {fileID: 131982901}
+<<<<<<< HEAD
   - 114: {fileID: 458865750}
+=======
+>>>>>>> parent of 9b7c413... Right click to hack enemies. If you mouse over enemies while they are within hacking range, they will turn blue.
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: EnemyCollision
@@ -1422,8 +1426,11 @@ GameObject:
   - 60: {fileID: 282108264}
   - 58: {fileID: 282108267}
   - 114: {fileID: 282108268}
+<<<<<<< HEAD
   - 114: {fileID: 918940253}
   - 114: {fileID: 282108269}
+=======
+>>>>>>> parent of 9b7c413... Right click to hack enemies. If you mouse over enemies while they are within hacking range, they will turn blue.
   m_Layer: 0
   m_Name: ranged
   m_TagString: EnemyCollision
@@ -1523,7 +1530,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1684355751
-  m_SortingOrder: 6
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c3be4c01460ee459daebded020374785, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!50 &282108266
@@ -1571,19 +1578,6 @@ MonoBehaviour:
   enemyType: 1
   Health: 50
   Type: Enemy
---- !u!114 &282108269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400008, guid: 9e350d33cb9be8b4b9e8e66050d42c4b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1204494242}
-  m_GameObject: {fileID: 282108260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3bf302f90018f42b78a30f73c14366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inRange: 0
 --- !u!1001 &301383889
 Prefab:
   m_ObjectHideFlags: 0
@@ -2787,7 +2781,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565508846}
-  m_HideIfInvisible: 0
 --- !u!1 &569060688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3157,6 +3150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
+  m_DragThreshold: 5
 --- !u!4 &643900732
 Transform:
   m_ObjectHideFlags: 0
@@ -3695,7 +3689,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 802445086}
-  m_HideIfInvisible: 0
 --- !u!1 &808734934
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,7 +3810,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 843002264}
-  m_HideIfInvisible: 0
 --- !u!1 &850362232
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,7 +3911,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 852542221}
-  m_HideIfInvisible: 0
 --- !u!1 &870400198
 GameObject:
   m_ObjectHideFlags: 0
@@ -3986,7 +3977,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 870400198}
-  m_HideIfInvisible: 0
 --- !u!1 &911999918
 GameObject:
   m_ObjectHideFlags: 0
@@ -4037,7 +4027,7 @@ Transform:
   m_PrefabInternal: {fileID: 377948579}
   m_GameObject: {fileID: 918940250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 282108261}
@@ -4260,7 +4250,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 943654067}
-  m_HideIfInvisible: 0
 --- !u!1 &990256754
 GameObject:
   m_ObjectHideFlags: 0
@@ -4514,18 +4503,6 @@ Prefab:
     - target: {fileID: 400006, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800004, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 21200000, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
@@ -5697,22 +5674,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 21200000, guid: 9e350d33cb9be8b4b9e8e66050d42c4b, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 9e350d33cb9be8b4b9e8e66050d42c4b, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000000, guid: 9e350d33cb9be8b4b9e8e66050d42c4b, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800000, guid: 9e350d33cb9be8b4b9e8e66050d42c4b, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e350d33cb9be8b4b9e8e66050d42c4b, type: 2}
   m_RootGameObject: {fileID: 2130546877}
@@ -5928,7 +5889,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1220809794}
-  m_HideIfInvisible: 0
 --- !u!1 &1223797623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5988,7 +5948,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -6008,6 +5967,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!224 &1232390341
@@ -6041,9 +6001,6 @@ MonoBehaviour:
   m_Script: {fileID: -990768443, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Resolution: {x: 800, y: 600}
-  m_CanvasScaleMode: 0
-  m_MatchWidthOrHeight: 0
 --- !u!1 &1233605345
 GameObject:
   m_ObjectHideFlags: 0
@@ -6584,7 +6541,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1398690817}
-  m_HideIfInvisible: 0
 --- !u!224 &1398690820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7953,7 +7909,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1518308464}
-  m_HideIfInvisible: 0
 --- !u!1 &1527632786
 GameObject:
   m_ObjectHideFlags: 0
@@ -8595,7 +8550,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1610361638}
-  m_HideIfInvisible: 0
 --- !u!1 &1615298535
 GameObject:
   m_ObjectHideFlags: 0
@@ -8610,7 +8564,10 @@ GameObject:
   - 95: {fileID: 1615298541}
   - 114: {fileID: 1615298539}
   - 114: {fileID: 1615298543}
+<<<<<<< HEAD
   - 114: {fileID: 422685655}
+=======
+>>>>>>> parent of 9b7c413... Right click to hack enemies. If you mouse over enemies while they are within hacking range, they will turn blue.
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: EnemyCollision
@@ -8816,7 +8773,10 @@ GameObject:
   - 95: {fileID: 1631199087}
   - 114: {fileID: 1631199086}
   - 114: {fileID: 1631199085}
+<<<<<<< HEAD
   - 114: {fileID: 749322812}
+=======
+>>>>>>> parent of 9b7c413... Right click to hack enemies. If you mouse over enemies while they are within hacking range, they will turn blue.
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: EnemyCollision
@@ -9102,7 +9062,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1688697230}
-  m_HideIfInvisible: 0
 --- !u!1 &1695988900
 GameObject:
   m_ObjectHideFlags: 0
@@ -9222,7 +9181,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699327095}
-  m_HideIfInvisible: 0
 --- !u!1 &1725016484
 GameObject:
   m_ObjectHideFlags: 0
@@ -9338,7 +9296,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1725016484}
-  m_HideIfInvisible: 0
 --- !u!1 &1742098737
 GameObject:
   m_ObjectHideFlags: 0
@@ -9684,7 +9641,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785269294}
-  m_HideIfInvisible: 0
 --- !u!1 &1795184096
 GameObject:
   m_ObjectHideFlags: 0
@@ -9784,7 +9740,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1826682267}
-  m_HideIfInvisible: 0
 --- !u!1001 &1839920245
 Prefab:
   m_ObjectHideFlags: 0
@@ -9822,18 +9777,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800004, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6100000, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
-      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9920,8 +9863,11 @@ GameObject:
   - 95: {fileID: 1884963918}
   - 114: {fileID: 1884963917}
   - 114: {fileID: 1884963916}
+<<<<<<< HEAD
   - 114: {fileID: 1026173454}
   - 114: {fileID: 1884963922}
+=======
+>>>>>>> parent of 9b7c413... Right click to hack enemies. If you mouse over enemies while they are within hacking range, they will turn blue.
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: EnemyCollision
@@ -10042,19 +9988,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af3ea3c5ba066cb439e1d6a4fed6750a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &1884963922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400008, guid: 53a1142077567684a95465f8e1d3bf23,
-    type: 2}
-  m_PrefabInternal: {fileID: 1842173449}
-  m_GameObject: {fileID: 1884963914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3bf302f90018f42b78a30f73c14366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inRange: 0
 --- !u!1 &1909239663
 GameObject:
   m_ObjectHideFlags: 0
