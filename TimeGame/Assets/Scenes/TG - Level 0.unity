@@ -2324,6 +2324,10 @@ Prefab:
       propertyPath: m_TagString
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
   m_RootGameObject: {fileID: 468167803}
@@ -3137,7 +3141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e56885daf304494d86ef8315995bc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 6
 --- !u!58 &649581860
 CircleCollider2D:
   m_ObjectHideFlags: 0
