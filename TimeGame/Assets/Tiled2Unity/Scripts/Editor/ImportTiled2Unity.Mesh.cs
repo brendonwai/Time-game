@@ -14,9 +14,10 @@ namespace Tiled2Unity
     // At this point we should have everything we need to build out any prefabs for the tiled map object
     partial class ImportTiled2Unity
     {
+        // By the time this is called, our assets should be ready to create the map prefab
         public void MeshImported(string objPath)
         {
-            string xmlPath = ImportUtils.GetXmlPath(objPath);
+            string xmlPath = ImportUtils.GetXmlPathFromFile(objPath);
             XDocument doc = XDocument.Load(xmlPath);
             foreach (var xmlPrefab in doc.Root.Elements("Prefab"))
             {
@@ -32,6 +33,7 @@ namespace Tiled2Unity
             string prefabName = xmlPrefab.Attribute("name").Value;
             float prefabScale = ImportUtils.GetAttributeAsFloat(xmlPrefab, "scale", 1.0f);
             GameObject tempPrefab = new GameObject(prefabName);
+            HandleTiledAttributes(tempPrefab, xmlPrefab);
             HandleCustomProperties(tempPrefab, xmlPrefab, customImporters);
 
             // Part 2: Build out the prefab
@@ -47,7 +49,7 @@ namespace Tiled2Unity
             tempPrefab.transform.localScale = new Vector3(prefabScale, prefabScale, prefabScale);
 
             // Part 4: Save the prefab, keeping references intact.
-            string prefabPath = ImportUtils.GetPrefabPath(prefabName);
+            string prefabPath = ImportUtils.GetPrefabPathFromName(prefabName);
             UnityEngine.Object finalPrefab = AssetDatabase.LoadAssetAtPath(prefabPath, typeof(GameObject));
 
             if (finalPrefab == null)
@@ -295,6 +297,24 @@ namespace Tiled2Unity
                     frame.DurationMs = ImportUtils.GetAttributeAsInt(frameXml, "duration");
                     tileAnimator.frames.Add(frame);
                 }
+            }
+        }
+
+        private void HandleTiledAttributes(GameObject gameObject, XElement goXml)
+        {
+            // Add the TiledMap component
+            TiledMap map = gameObject.AddComponent<TiledMap>();
+            try
+            {
+                map.NumTilesWide = ImportUtils.GetAttributeAsInt(goXml, "numTilesWide");
+                map.NumTilesHigh = ImportUtils.GetAttributeAsInt(goXml, "numTilesHigh");
+                map.TileWidth = ImportUtils.GetAttributeAsInt(goXml, "tileWidth");
+                map.TileHeight = ImportUtils.GetAttributeAsInt(goXml, "tileHeight");
+            }
+            catch
+            {
+                Debug.LogWarning(String.Format("Error adding TiledMap component. Are you using an old version of Tiled2Unity in your Unity project?"));
+                GameObject.DestroyImmediate(map);
             }
         }
 
