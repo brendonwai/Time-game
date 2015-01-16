@@ -815,6 +815,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   enemyType: 0
+  requiredEnergy: 10
   Health: 100
   Type: Enemy
 --- !u!114 &131982902
@@ -1692,6 +1693,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   enemyType: 1
+  requiredEnergy: 10
   Health: 50
   Type: Enemy
 --- !u!114 &282108269
@@ -2007,7 +2009,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 351034640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: -7.46740007, z: 0}
+  m_LocalPosition: {x: -5.69059992, y: -6.98140001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1295061425}
@@ -9237,6 +9239,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   enemyType: 0
+  requiredEnergy: 10
   Health: 100
   Type: Enemy
 --- !u!1 &1616248382
@@ -9362,6 +9365,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   enemyType: 0
+  requiredEnergy: 10
   Health: 100
   Type: Enemy
 --- !u!114 &1631199086
@@ -10511,6 +10515,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   enemyType: 0
+  requiredEnergy: 10
   Health: 100
   Type: Enemy
 --- !u!114 &1884963917
@@ -11305,6 +11310,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   enemyType: 1
+  requiredEnergy: 10
   Health: 50
   Type: Enemy
 --- !u!58 &2130546880

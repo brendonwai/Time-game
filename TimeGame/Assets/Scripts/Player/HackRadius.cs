@@ -77,6 +77,7 @@ public class HackRadius : MonoBehaviour {
 		//do cooldown iteration here I think
 		//Hacking
 		//NOTE YOU CAN STILL HACK WHILE DEAD TAKE THAT OUT
+		// Check the energy and subtract the energy
 		if (!anim.GetBool ("IsHackingEnemy")) {				//If you aren't controlling an enemy			
 			if (Input.GetKeyDown(hackKey)) {
 				// Checks whether you click on the enemy and not one of its larger, surrounding colliders
@@ -84,8 +85,11 @@ public class HackRadius : MonoBehaviour {
 				for(int i = 0; i < hits.Length; i++) {
 					if(hits[i].collider != null) {
 						GameObject hitObject = hits[i].collider.gameObject;
-						if(hitObject.transform.tag == "Enemy" && inRange(hitObject.transform.parent.gameObject))
-							HackObject (hitObject.transform.parent.gameObject);
+						if(hitObject.transform.tag == "Enemy" && inRange(hitObject.transform.parent.gameObject)) {
+							if(enoughEnergy(hitObject.transform.parent.gameObject)) {
+								HackObject (hitObject.transform.parent.gameObject);
+							}
+						}
 					}
 				}
 			}
@@ -109,7 +113,11 @@ public class HackRadius : MonoBehaviour {
 			objectsInRange.Remove (other.transform.parent.gameObject);
 		}
 	}
-	
+
+	public bool enoughEnergy(GameObject other) {
+		return GetComponentInParent<PlayerInfo> ().Energy >= other.GetComponentInParent<EnemyInfo> ().requiredEnergy;
+	}
+
 	// Keeping the method HackObject even though this doesn't take care of gates anymore because the player may still
 	//    be able to hack a health drone which is different from an enemy
 	void HackObject(GameObject other) {
@@ -129,8 +137,9 @@ public class HackRadius : MonoBehaviour {
 		
 		if (objtag == "Enemy")
 			HackEnemy(other, otherpos);
+		GetComponentInParent<PlayerInfo>().Energy -= other.GetComponentInParent<EnemyInfo>().requiredEnergy;
 	}
-	
+
 	//For hacking enemies
 	void HackEnemy(GameObject other, Vector3 otherpos){
 		/*if (this.GetComponentInParent<Player2DController> ().facingLeft) {

@@ -10,7 +10,8 @@ public class EnemyInfo : MonoBehaviour {
 	
 
 	//Player Accessible
-	public int enemyType = 0;	
+	public int enemyType = 0;
+	public int requiredEnergy;
 	/*
 		*Tells the player which enemy is being hacked/interacted
 		*with.

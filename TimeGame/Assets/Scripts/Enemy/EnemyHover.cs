@@ -9,6 +9,7 @@ public class EnemyHover : MonoBehaviour {
 	private HackRadius hackRadius;		//Script needed in order to check whether the enemy is within the hackRadius
 	
 	private Color InHackRange = new Color(0f, .4f, .5f, 1f);
+	private Color NotHackable = new Color(.6f, .1f, .1f, 1f);
 	
 	// Use this for initialization
 	void Start () {
@@ -25,7 +26,13 @@ public class EnemyHover : MonoBehaviour {
 			if(hits[i].collider != null) {
 				GameObject hitObject = hits[i].collider.gameObject;
 				if(hitObject.transform.tag == "Enemy" && hackRadius.inRange(this.gameObject)) {
-					renderer.material.color = InHackRange;
+					if(hackRadius.enoughEnergy(this.gameObject)) {
+						renderer.material.color = InHackRange;
+					}
+					else {
+						renderer.material.color = NotHackable;
+					}
+			
 					mousingOver = true;
 				}
 			}
