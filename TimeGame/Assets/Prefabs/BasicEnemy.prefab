@@ -247,6 +247,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   enemyType: 0
+  requiredEnergy: 10
   Health: 100
   Type: Enemy
 --- !u!114 &11400008

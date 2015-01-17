@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5, y: .159999996, z: 0}
+  m_LocalPosition: {x: -13.8980961, y: -7.77199602, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -69,7 +69,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .319999993, y: .200000003}
   m_Center: {x: 0, y: -.159999996}
 --- !u!61 &6100002
@@ -80,7 +80,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .319999993, y: .400000006}
   m_Center: {x: 0, y: -.25999999}
 --- !u!61 &6100004
@@ -92,8 +92,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .400000006, y: .600000024}
-  m_Center: {x: 0, y: -.319999993}
+  m_Size: {x: .200000003, y: .550000012}
+  m_Center: {x: 0, y: -.370000005}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hacked: 0
+  inRange: 0
+  EnergyCost: 5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

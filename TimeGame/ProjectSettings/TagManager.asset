@@ -10,6 +10,10 @@ TagManager:
   - GameOverUI
   - EnemyCollision
   - GateConnector
+  - Connector2LinkBot
+  - Connector1LinkBotRight
+  - Connector1LinkBotLeft
+  - Gate
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -20,7 +24,7 @@ TagManager:
   Builtin Layer 6: 
   Builtin Layer 7: 
   User Layer 8: GameOverUI
-  User Layer 9: 
+  User Layer 9: Gate
   User Layer 10: 
   User Layer 11: 
   User Layer 12: 
