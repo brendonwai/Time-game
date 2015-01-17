@@ -1693,7 +1693,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   enemyType: 1
-  requiredEnergy: 10
+  requiredEnergy: 25
   Health: 50
   Type: Enemy
 --- !u!114 &282108269
@@ -6845,6 +6845,8 @@ MonoBehaviour:
   Energy: 0
   energyBar: {fileID: 1725016486}
   energyNum: {fileID: 802445088}
+  hundred: {fileID: 55477253}
+  maxEnergy: 200
   EnergyRegen: 1
 --- !u!114 &1295061431
 MonoBehaviour:
@@ -11310,7 +11312,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   enemyType: 1
-  requiredEnergy: 10
+  requiredEnergy: 25
   Health: 50
   Type: Enemy
 --- !u!58 &2130546880
