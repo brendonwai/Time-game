@@ -16,7 +16,7 @@ public class EnemyInfo : MonoBehaviour {
 		*with.
 		0 = Basic Melee
 		1 = Basic Ranged
-		2 = To be determined
+		2 = Health Drone
 		. . .
 		n = etc
 		

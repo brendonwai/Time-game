@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HealthDroneAI : MonoBehaviour {
 
-	public float moveSpeed = 0.1f;	 	//Sets momvement speed
+	public float moveSpeed = 1f;	 	//Sets momvement speed
 	public bool stopMove = false;		//Determines if enemy can stop moving towards player
 	//Set by child script and collider
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
@@ -16,7 +16,7 @@ public class HealthDroneAI : MonoBehaviour {
 	float timeCount;                    // Last update for random movement
 	
 	bool informedGlobal = false;
-	
+
 	// Use this for initialization
 	void Awake () {
 		target = GameObject.FindGameObjectWithTag("Player");
@@ -25,10 +25,9 @@ public class HealthDroneAI : MonoBehaviour {
 	}
 
 
-	/*	//Should the HealthDrone be alerted by other enemies
-	 * 
+
 	// Activates when target enters trigger collider
-	void OnTriggerEnter2D(Collider2D other){
+	void OnTriggerEnter2D(Collider2D other){									//Gets alerted if an enemy in the Radius is also alerted or
 		if(other.tag == "Enemy"){
 			if(other.gameObject.GetComponentInParent<EnemyInfo>().TargetInSight ||
 			   other.gameObject.GetComponentInParent<EnemyInfo>().Alerted){
@@ -38,7 +37,7 @@ public class HealthDroneAI : MonoBehaviour {
 	}
 	
 	// Activates while target is in trigger collider radius
-	void OnTriggerStay2D(Collider2D other){
+	void OnTriggerStay2D(Collider2D other){										//Sets TargetInSight to true if It can see the player and lets GlobalEnemyInfo know
 		if(other.tag == "Player"){
 			GetComponent<EnemyInfo>().TargetInSight = true;
 			if(!informedGlobal){
@@ -46,7 +45,7 @@ public class HealthDroneAI : MonoBehaviour {
 				informedGlobal = true;
 			}
 		}
-		if(other.tag == "Enemy"){
+		if(other.tag == "Enemy"){												//Similar to the OnTriggerEnter2D above
 			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
 				GetComponent<EnemyInfo>().Alerted = false;
 			else
@@ -72,13 +71,13 @@ public class HealthDroneAI : MonoBehaviour {
 				GetComponent<EnemyInfo>().Alerted = false;
 		}
 	}
-	*/
+
 	
 	//Deals damage to Player when touches him
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.tag=="Player"){
 			//change amount of damage deal here
-			col.gameObject.SendMessage("takeDamage",10);
+			col.gameObject.SendMessage("takeDamage", 10);
 		}
 	}
 	
@@ -88,7 +87,7 @@ public class HealthDroneAI : MonoBehaviour {
 			Dead ();
 		}
 		else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
-			ApproachTarget();
+			RunAway();
 		}
 		else{
 			if (Time.time - timeCount >= randInterval){
@@ -113,35 +112,34 @@ public class HealthDroneAI : MonoBehaviour {
 		yield return new WaitForSeconds (.1f);
 		renderer.material.color=Color.white;
 	}
-	
+
 	//Moves enemy closer to target
-	void ApproachTarget(){
-		FaceTarget();
-		
+	void RunAway(){
+		FaceAwayFromTarget();
 		if(!stopMove){
-			transform.position = Vector2.MoveTowards(transform.position,
-			                                         target.transform.position,
-			                                         moveSpeed * Time.deltaTime); 
-			anim.SetFloat ("Speed", 1);		//Tells animator enemy is moving	
+			transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x - (target.transform.position.x - transform.position.x),
+			                                                                         transform.position.y - (target.transform.position.y - transform.position.y)),
+			                                                                         moveSpeed * Time.deltaTime);
+			//anim.SetFloat ("Speed", 1);		//Tells animator enemy is moving. Only need if you have an Idle animation
 			
 		}
 	}
 	
 	// Enemy moves towards arbitrary point
 	void RandomMovement() {
-		FaceTarget ();
+		FaceAwayFromTarget();
 		if (!stopMove) {
 			transform.position = Vector2.MoveTowards(transform.position, new Vector2(randX, randY), 
 			                                         moveSpeed * Time.deltaTime);
-			anim.SetFloat ("Speed", 1);
+			//anim.SetFloat ("Speed", 1);	//Again only need if you have an Idle animation
 		}
 	}
 	
-	//Faces enemy towards target
-	void FaceTarget(){
-		if((target.transform.position.x >= transform.position.x) && !facingRight)
+	//Faces enemy away from target
+	void FaceAwayFromTarget(){
+		if((target.transform.position.x >= transform.position.x) && facingRight)
 			Flip();
-		if((target.transform.position.x < transform.position.x) && facingRight)
+		if((target.transform.position.x < transform.position.x) && !facingRight)
 			Flip ();
 	}
 	
@@ -155,6 +153,6 @@ public class HealthDroneAI : MonoBehaviour {
 	
 	void Dead(){
 		anim.SetBool("IsDead", true);
-		Destroy (gameObject,2);
+		Destroy (gameObject, 2);
 	}
 }
