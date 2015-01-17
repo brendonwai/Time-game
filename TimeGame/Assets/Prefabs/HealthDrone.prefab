@@ -224,6 +224,7 @@ MonoBehaviour:
   TargetInSight: 0
   Alerted: 0
   enemyType: 2
+  requiredEnergy: 0
   Health: 100
   Type: Enemy
 --- !u!114 &11400004
@@ -256,7 +257,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b41ca9817e032ef43a3fa642d67b00be, type: 3}
+  m_Script: {fileID: 11500000, guid: c4152f7f03ca1f34a8793e8254852df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
