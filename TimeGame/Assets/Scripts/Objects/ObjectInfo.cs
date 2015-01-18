@@ -8,7 +8,8 @@ public class ObjectInfo : MonoBehaviour {
 	public int EnergyCost = 5;		//How much energy needs to be spent to hack
 
 	Animator anim;				//Sets sprite image after hack
-	GameObject player;			//Gets player info to determine if in or out of hack radius		
+	GameObject player;			//Gets player info to determine if in or out of hack radius
+	PlayerInfo playerscript;
 
 	//Colors
 	Color OutOfHackRange = new Color(.6f, .1f, .1f, 1f);
@@ -18,6 +19,7 @@ public class ObjectInfo : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator>();
 		player = GameObject.FindGameObjectWithTag("Player");
+		playerscript = player.GetComponent<PlayerInfo>();
 	}
 
 	void OnMouseOver(){
@@ -58,8 +60,8 @@ public class ObjectInfo : MonoBehaviour {
 
 	//Player has the energy to spend for hacking
 	bool CanSpendEnergy(){
-		if(player.GetComponent<PlayerInfo>().Energy >= EnergyCost){
-			player.GetComponent<PlayerInfo>().Energy -= EnergyCost;
+		if(playerscript.Energy >= EnergyCost){
+			playerscript.Energy -= EnergyCost;
 			return true;
 		}
 		else
