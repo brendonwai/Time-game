@@ -8,6 +8,7 @@ public class SkillButtonHandler : MonoBehaviour {
 	public Image[] buttons;				//Stores cooldown image over buttons
 	public float[] CoolDownDuration;	//Duration of cooldown
 	public bool[] onCD;					//Determines if button is on CD
+	float timestamp = 0.0f;
 	
 
 	// Use this for initialization
@@ -25,15 +26,19 @@ public class SkillButtonHandler : MonoBehaviour {
 	void Update () {
 		int i = 0;
 		foreach(Image cover in buttons){
-			if(cover.fillAmount > 0.0f){
-				cover.fillAmount = cover.fillAmount - CoolDownDuration[i];
+			if(Time.time>=timestamp){
+				if(cover.fillAmount > 0.0f){
+					cover.fillAmount = cover.fillAmount - CoolDownDuration[i]/20.0f;
+				}
+				else
+					onCD[i] = false;
+				i++;
+				timestamp = Time.time + .05f;
 			}
-			else
-				onCD[i] = false;
-			i++;
 		}
 	}
 
+	//Starts skill cool dow 
 	public void StartCD(int skill){
 		if(!onCD[skill]){
 			buttons[skill].fillAmount = 1.0f;

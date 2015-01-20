@@ -5612,7 +5612,7 @@ MonoBehaviour:
   buttons:
   - {fileID: 50488311}
   CoolDownDuration:
-  - 30
+  - 5
   onCD: 00
 --- !u!1 &1115977682
 GameObject:
