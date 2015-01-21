@@ -5612,7 +5612,7 @@ MonoBehaviour:
   buttons:
   - {fileID: 50488311}
   CoolDownDuration:
-  - 5
+  - .5
   onCD: 00
 --- !u!1 &1115977682
 GameObject:
@@ -7002,6 +7002,7 @@ MonoBehaviour:
   hundred: {fileID: 55477253}
   maxEnergy: 200
   EnergyRegen: 1
+  RegenTime: 2
 --- !u!114 &1295061431
 MonoBehaviour:
   m_ObjectHideFlags: 0

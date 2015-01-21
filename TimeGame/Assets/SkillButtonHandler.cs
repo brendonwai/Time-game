@@ -28,12 +28,12 @@ public class SkillButtonHandler : MonoBehaviour {
 		foreach(Image cover in buttons){
 			if(Time.time>=timestamp){
 				if(cover.fillAmount > 0.0f){
-					cover.fillAmount = cover.fillAmount - CoolDownDuration[i]/20.0f;
+					cover.fillAmount = cover.fillAmount - CoolDownDuration[i]/200.0f;
 				}
 				else
 					onCD[i] = false;
 				i++;
-				timestamp = Time.time + .05f;
+				timestamp = Time.time + .005f;
 			}
 		}
 	}

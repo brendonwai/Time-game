@@ -18,6 +18,9 @@ public class PlayerInfo : MonoBehaviour {
 	public int maxEnergy;
 	//Amount of energy regenerated per second
 	public int EnergyRegen = 1;
+	public float RegenTime = 2.0f;
+
+	float timestamp = 0.0f;			//Keeps updates in sync with game time
 
 	void Start(){
 		InvokeRepeating("RegenerateEnergy", 1, 1.5F);
@@ -25,10 +28,11 @@ public class PlayerInfo : MonoBehaviour {
 	}
 
 	void RegenerateEnergy(){
-		if (Energy < maxEnergy){
+		if (Energy < maxEnergy && Time.time >= timestamp){
 			Energy += EnergyRegen;
 			energyBar.value = Energy;
 			energyNum.text = Energy.ToString();
+			timestamp = Time.time + RegenTime;
 		}
 	}
 	void GainEnergyBoost(int EnergyBoost){
