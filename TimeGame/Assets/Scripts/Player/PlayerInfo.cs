@@ -18,11 +18,10 @@ public class PlayerInfo : MonoBehaviour {
 	public int maxEnergy;
 	//Amount of energy regenerated per second
 	public int EnergyRegen = 1;
-	public float RegenTime = 2.0f;
 	
 
 	void Start(){
-		InvokeRepeating("RegenerateEnergy", 1, 1.5F);
+		InvokeRepeating("RegenerateEnergy", 1, 3.0f);
 		hundred.text = "/ " + maxEnergy.ToString();
 	}
 
