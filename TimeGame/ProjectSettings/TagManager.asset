@@ -24,6 +24,8 @@ TagManager:
   - Connector1LinkTopLeft
   - Connector1LinkTopRight
   - Connector1LinkLeftTop
+  - GateH
+  - GateV
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

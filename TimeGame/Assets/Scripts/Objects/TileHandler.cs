@@ -3,16 +3,26 @@ using System.Collections;
 
 public class TileHandler : MonoBehaviour {
 
-	public GameObject Connector2LinkBot;		//For creating connectors in Tiled Objects
-	public GameObject Connector1LinkBotLeft;
+	//Connectors
+	public GameObject Connector2LinkBot;		//For creating connector with 2 links
+	public GameObject Connector1LinkBotLeft;	//For creating connector with 1 link
+
+	//Gate
+	public GameObject Gate;						//For creating gate
 
 	GameObject[] connectors;
 	int i = 0;
 
 	void Awake(){
-
 		CreateConnectors();
+		CreateGate();
+	}
 
+	//Creates Gate of all types on map
+	//NOTE: NEVER CALL BEFORE CONNECTORS ARE CREATED
+	void CreateGate(){
+		CreateObjectAtTag(Gate, "GateH",1,1, Quaternion.identity,.48f,-.16f);
+		CreateObjectAtTag(Gate, "GateV",1,1, Quaternion.Euler(0,0,90),.16f,-.48f);
 	}
 
 
@@ -41,6 +51,8 @@ public class TileHandler : MonoBehaviour {
 			clone.transform.parent = temp.transform.parent;
 			SetXScale(clone,x_scale);
 			SetYScale(clone,y_scale);
+			if(object_tag == "Gate")
+				Debug.Log(clone.transform.parent.name);
 
 		}
 	}
