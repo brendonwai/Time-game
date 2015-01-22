@@ -69,10 +69,9 @@ public class ObjectInfo : MonoBehaviour {
 	}
 
 
-	//Accessed by player to run hacked behavior
+	//Run hacked behavior
 	public void Hacked(){
 		anim.SetBool("IsHacked", true);
-		hacked = true;		//Uncomment this later once player can hack
-		transform.FindChild ("ObjectTag").tag = "Untagged";
+		hacked = true;
 	}
 }

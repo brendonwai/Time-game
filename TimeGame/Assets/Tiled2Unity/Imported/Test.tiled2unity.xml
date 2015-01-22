@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 1/16/2015 9:47:50 AM-->
+<!--Last exported: 1/22/2015 11:27:07 AM-->
 <Tiled2Unity version="0.9.7.4">
   <AssignMaterial mesh="mesh_[00]_[00]" material="floor" sortingLayerName="" sortingOrder="0" />
   <AssignMaterial mesh="mesh_[01]_[02]" material="wall" sortingLayerName="" sortingOrder="1" />
@@ -18,25 +18,53 @@
         </PolygonCollider2D>
       </GameObject>
     </GameObject>
-    <GameObject name="Gates_02" />
     <GameObject name="ObjectGate">
       <GameObject name="Connector" x="384" y="-256" isTrigger="true" tag="Connector1LinkBotLeft">
-        <BoxCollider2D width="32" height="64" />
+        <BoxCollider2D width="32" height="32" />
       </GameObject>
       <GameObject name="Connector" x="512" y="-64" isTrigger="true" tag="Connector2LinkBot">
-        <BoxCollider2D width="32" height="64" />
+        <BoxCollider2D width="32" height="32" />
       </GameObject>
       <GameObject name="Connector" x="224" y="-256" isTrigger="true" tag="Connector2LinkBot">
-        <BoxCollider2D width="32" height="64" />
+        <BoxCollider2D width="32" height="32" />
       </GameObject>
       <GameObject name="Connector" x="192" y="-256" isTrigger="true" tag="Connector1LinkBotRight">
-        <BoxCollider2D width="32" height="64" />
+        <BoxCollider2D width="32" height="32" />
       </GameObject>
       <GameObject name="Gate" x="256" y="-256" isTrigger="true" tag="Gate">
         <BoxCollider2D width="96" height="32" />
       </GameObject>
       <GameObject name="Connector" x="352" y="-256" isTrigger="true" tag="Connector2LinkBot">
-        <BoxCollider2D width="32" height="64" />
+        <BoxCollider2D width="32" height="32" />
+      </GameObject>
+    </GameObject>
+    <GameObject name="ObjectGate1">
+      <GameObject name="Connector" x="384" y="-160" isTrigger="true" tag="Connector2LinkRight">
+        <BoxCollider2D width="32" height="32" />
+      </GameObject>
+      <GameObject name="Connector" x="384" y="-128" isTrigger="true" tag="Connector1LinkRightBot">
+        <BoxCollider2D width="32" height="32" />
+      </GameObject>
+      <GameObject name="Connector" x="384" y="-192" isTrigger="true" tag="Connector1LinkRightTop">
+        <BoxCollider2D width="32" height="32" />
+      </GameObject>
+      <GameObject name="Connector" x="800" y="-128" isTrigger="true" tag="Connector1LinkLeftBot">
+        <BoxCollider2D width="32" height="32" />
+      </GameObject>
+      <GameObject name="Connector" x="800" y="-160" isTrigger="true" tag="Connector2LinkLeft">
+        <BoxCollider2D width="32" height="32" />
+      </GameObject>
+      <GameObject name="Connector" x="800" y="-192" isTrigger="true" tag="Connector1LinkLeftTop">
+        <BoxCollider2D width="32" height="32" />
+      </GameObject>
+      <GameObject name="Connector" x="576" y="-480" isTrigger="true" tag="Connector1LinkTopRight">
+        <BoxCollider2D width="32" height="32" />
+      </GameObject>
+      <GameObject name="Connector" x="608" y="-480" isTrigger="true" tag="Connector2LinkTop">
+        <BoxCollider2D width="32" height="32" />
+      </GameObject>
+      <GameObject name="Connector" x="640" y="-480" isTrigger="true" tag="Connector1LinkTopLeft">
+        <BoxCollider2D width="32" height="32" />
       </GameObject>
     </GameObject>
   </Prefab>
