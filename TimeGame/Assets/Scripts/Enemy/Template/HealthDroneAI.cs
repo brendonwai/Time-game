@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class HealthDroneAI : MonoBehaviour {
 
 	public float moveSpeed = 1f;	 	//Sets momvement speed
 	public bool stopMove = false;		//Determines if enemy can stop moving towards player
+	public static int HealthGain = 25;
 	//Set by child script and collider
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
 	bool facingRight = true;			//Determines direction enemy facing
@@ -85,6 +87,10 @@ public class HealthDroneAI : MonoBehaviour {
 	void FixedUpdate () {
 		if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
 			Dead ();
+		}
+		else if (anim.GetBool ("isHacked")) {
+			//ADD IN HP GAIN HERE
+			target.GetComponent<PlayerInfo> ().Health += HealthGain;
 		}
 		else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
 			RunAway();
