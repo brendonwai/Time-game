@@ -6,7 +6,8 @@ public class HealthDroneAI : MonoBehaviour {
 
 	public float moveSpeed = 1f;	 	//Sets momvement speed
 	public bool stopMove = false;		//Determines if enemy can stop moving towards player
-	public static int HealthGain = 25;
+	public int HealthGain = 25;
+
 	//Set by child script and collider
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
 	bool facingRight = true;			//Determines direction enemy facing
@@ -16,7 +17,9 @@ public class HealthDroneAI : MonoBehaviour {
 	float randY;                            // the enemy will move towards when the target is not in sight
 	float randInterval = 0;             // The interval between the points of time when the enemy changes direction
 	float timeCount;                    // Last update for random movement
-	
+
+	bool isHacked;
+
 	bool informedGlobal = false;
 
 	// Use this for initialization
@@ -24,6 +27,7 @@ public class HealthDroneAI : MonoBehaviour {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
 		timeCount = Time.time;
+		isHacked = false;
 	}
 
 
@@ -85,30 +89,46 @@ public class HealthDroneAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
-			Dead ();
-		}
-		else if (anim.GetBool ("isHacked")) {
-			//ADD IN HP GAIN HERE
-			target.GetComponent<PlayerInfo> ().Health += HealthGain;
-		}
-		else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
-			RunAway();
-		}
-		else{
-			if (Time.time - timeCount >= randInterval){
-				// Creates a random target point in an arbitrary rectangle to move towards
-				randX = Random.Range(-750,750);
-				randY = Random.Range(-600,600);
-				randInterval = Random.Range(1.0f, 2.5f);
-				timeCount = Time.time;
+		if (!anim.GetBool("isHacked")) {
+			if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
+				Dead ();
+			}
+			else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
+				RunAway();		//Flee from Player if in sight/alerted
 			}
 			else{
-				RandomMovement();
+				if (Time.time - timeCount >= randInterval){
+					// Creates a random target point in an arbitrary rectangle to move towards
+					randX = Random.Range(-750,750);
+					randY = Random.Range(-600,600);
+					randInterval = Random.Range(1.0f, 2.5f);
+					timeCount = Time.time;
+				}
+				else{
+					RandomMovement();
+				}
+			}
+		}
+		else {
+			if (!isHacked) {				//So that it heals only once
+				StartCoroutine(HealPlayer());
 			}
 		}
 	}
-	
+
+	IEnumerator HealPlayer() {		//Heals the player
+		isHacked = true;
+		if (target.GetComponent<PlayerInfo> ().Health >= (100 - HealthGain)) {	//Limits Heal to Max HP
+			target.GetComponent<PlayerInfo> ().Health = 100;
+		}
+		else {			//Heal for flat value, HealthGain
+			target.GetComponent<PlayerInfo> ().Health += HealthGain;
+		}
+		target.GetComponent<PlayerInfo> ().healthBar.value = target.GetComponent<PlayerInfo> ().Health;
+		target.GetComponent<PlayerInfo> ().healthNum.text = target.GetComponent<PlayerInfo> ().Health.ToString();
+		yield return new WaitForSeconds (0.45f);
+		Dead ();		//Dies after it is hacked
+	}
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
 		//reduce health by amount of damage
@@ -121,9 +141,9 @@ public class HealthDroneAI : MonoBehaviour {
 
 	//Moves enemy closer to target
 	void RunAway(){
-		FaceAwayFromTarget();
+		FaceAwayFromTarget();		//Faces away from player
 		if(!stopMove){
-			transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x - (target.transform.position.x - transform.position.x),
+			transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x - (target.transform.position.x - transform.position.x),		//Runs in opposite direction of Player
 			                                                                         transform.position.y - (target.transform.position.y - transform.position.y)),
 			                                                                         moveSpeed * Time.deltaTime);
 			//anim.SetFloat ("Speed", 1);		//Tells animator enemy is moving. Only need if you have an Idle animation
@@ -141,7 +161,7 @@ public class HealthDroneAI : MonoBehaviour {
 		}
 	}
 	
-	//Faces enemy away from target
+	//Faces enemy away from target.
 	void FaceAwayFromTarget(){
 		if((target.transform.position.x >= transform.position.x) && facingRight)
 			Flip();
@@ -157,8 +177,8 @@ public class HealthDroneAI : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 	
-	void Dead(){
-		anim.SetBool("IsDead", true);
-		Destroy (gameObject, 2);
+	void Dead() {
+		anim.SetBool("isDead", true);
+		Destroy (gameObject, 0.3f);
 	}
 }

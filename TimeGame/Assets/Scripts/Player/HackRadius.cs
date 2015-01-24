@@ -163,11 +163,9 @@ public class HackRadius : MonoBehaviour {
 		if (hackType == 2) {
 			other.GetComponent<Animator> ().SetBool("isHacked", true);
 		}
-		
-		GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
-		GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
-
-		if (hackType != 2) {
+		else {
+			GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
+			GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
 			Destroy (other);
 		}
 		
