@@ -153,6 +153,22 @@ public class HackRadius : MonoBehaviour {
 		}
 		
 		int hackType = other.GetComponent<EnemyInfo>().enemyType;
+
+		if(hackType != 2){
+			anim.SetBool ("IsHackingEnemy", true);
+			anim.SetBool ("HackedEnemyDead", false);
+			anim.SetInteger("EnemyType", hackType);
+			this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.
+			GetComponentInParent<Player2DController>().hackState = hackType;
+			GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
+			GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
+			Destroy (other);
+		}
+		//Exception for health drone
+		else{
+			other.GetComponent<Animator> ().SetBool("isHacked", true);
+		}
+	
 		
 		anim.SetBool ("IsHackingEnemy", true);
 		anim.SetBool ("HackedEnemyDead", false);
@@ -166,6 +182,7 @@ public class HackRadius : MonoBehaviour {
 		Destroy (other);
 		
 		this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.
+
 		
 	}
 	

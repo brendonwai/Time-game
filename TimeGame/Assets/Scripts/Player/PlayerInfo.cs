@@ -12,7 +12,7 @@ public class PlayerInfo : MonoBehaviour {
 	public bool HealthDrainActive;
 
 	//Hacking Energy, max=100
-	public int Energy = 0;
+	public int Energy = 20;
 	public Slider energyBar;
 	public Text energyNum;
 	public Text hundred;

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 1/22/2015 1:45:40 PM-->
+<!--Last exported: 1/23/2015 8:32:44 AM-->
 <Tiled2Unity version="0.9.7.4">
   <AssignMaterial mesh="mesh_[00]_[00]" material="floor" sortingLayerName="" sortingOrder="0" />
   <AssignMaterial mesh="mesh_[01]_[02]" material="wall" sortingLayerName="" sortingOrder="1" />
@@ -17,6 +17,7 @@
         </PolygonCollider2D>
       </GameObject>
     </GameObject>
+    <GameObject name="Gates_02" />
     <GameObject name="ObjectGate">
       <GameObject name="Connector" x="384" y="-256" isTrigger="true" tag="Connector1LinkBotLeft">
         <BoxCollider2D width="32" height="32" />
