@@ -18,7 +18,7 @@ public class HealthDroneAI : MonoBehaviour {
 	float randInterval = 0;             // The interval between the points of time when the enemy changes direction
 	float timeCount;                    // Last update for random movement
 
-	bool isHacked;
+	public bool isHacked;
 
 	bool informedGlobal = false;
 

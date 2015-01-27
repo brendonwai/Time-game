@@ -47,16 +47,16 @@ public class Player2DController : MonoBehaviour {
 			//Makes character move based on inputs
 			if (!inHackingAnim) {
 				rigidbody2D.velocity = new Vector2 (move_x * maxSpeed, move_y * maxSpeed);
-			}
-			/*
-			 * If moving in the positive x direction (right) and the character is not
-			 * facing right, makes the character sprite flip to face the right.
-			 */	
-			if((move_x < 0) && !facingLeft){
-				Flip();
-			}
-			else if((move_x > 0) && facingLeft){
-				Flip();
+				/*
+			 	* If moving in the positive x direction (right) and the character is not
+			 	* facing right, makes the character sprite flip to face the right.
+			 	*/
+				if((move_x < 0) && !facingLeft){
+					Flip();
+				}
+				else if((move_x > 0) && facingLeft){
+					Flip();
+				}
 			}
 		}
 	}

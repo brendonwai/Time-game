@@ -145,26 +145,35 @@ public class HackRadius : MonoBehaviour {
 		/*if (this.GetComponentInParent<Player2DController> ().facingLeft) {
 				this.GetComponentInParent<Player2DController> ().Flip();
 			}*/
-		other.GetComponent<TemplateEnemyAI> ().isHacked = true;	//So the enemy stops moving
-		transform.parent.GetComponent<Player2DController> ().inHackingAnim = true;
+
+		transform.parent.GetComponent<Player2DController> ().inHackingAnim = true;	//Stop player from moving while hacking anim is playing
 		transform.parent.rigidbody2D.velocity = new Vector2 (0f, 0f);
 		if (otherpos.x < transform.position.x) {											//If player is to the right of target
+			if (!transform.parent.GetComponent<Player2DController> ().facingLeft) {	//If player is on the right while not facing left then flip to face left.
+				transform.parent.GetComponent<Player2DController> ().Flip();
+			}
 			transform.parent.transform.position = new Vector3(otherpos.x + HorizHackTeleport, otherpos.y, transform.position.z);
 		}
 		else {
+			if (transform.parent.GetComponent<Player2DController> ().facingLeft) {	//If player is on the left while facing left then flip to face right.
+				transform.parent.GetComponent<Player2DController> ().Flip();
+			}
 			transform.parent.transform.position = new Vector3(otherpos.x - HorizHackTeleport, otherpos.y, transform.position.z);
 		}
 		
 		int hackType = other.GetComponent<EnemyInfo>().enemyType;
 
 		if(hackType != 2){
+			other.GetComponent<TemplateEnemyAI> ().isHacked = true;	//So the enemy stops moving
 			anim.SetBool ("IsHackingEnemy", true);
 			anim.SetBool ("HackedEnemyDead", false);
 
 			StartCoroutine(HackEnemyAnim(other, hackType));
 		}
 		else{
+			anim.SetBool("IsHackingEnemy", true);
 			other.GetComponent<Animator> ().SetBool("isHacked", true);
+			StartCoroutine(HackHealthDroneAnim());
 		}
 	
 		
@@ -172,14 +181,21 @@ public class HackRadius : MonoBehaviour {
 
 	IEnumerator HackEnemyAnim (GameObject other, int hackType) {
 		//StartCoroutine(StopHackedEnemyMovement (other));
-		yield return new WaitForSeconds (2f);//0.61f
-		transform.parent.GetComponent<Player2DController> ().inHackingAnim = false;
+		yield return new WaitForSeconds (0.61f);
+		transform.parent.GetComponent<Player2DController> ().inHackingAnim = false;	//Allows player to move after hacking anim is done
 		anim.SetInteger("EnemyType", hackType);
 		this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.
 		GetComponentInParent<Player2DController>().hackState = hackType;
 		GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
 		GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
 		Destroy (other);
+	}
+
+	IEnumerator HackHealthDroneAnim () {	//Special case because we're not taking over the HP drone just hacking it for HP
+		yield return new WaitForSeconds (0.75f);
+		anim.SetBool ("IsHackingEnemy", false);
+		transform.parent.GetComponent<Player2DController> ().inHackingAnim = false;	//Allows player to move after hacking anim is done
+		//It'll destroy itself after being hacked
 	}
 
 	/*public void AntiFlipSword() {	//not needed for now
