@@ -24,7 +24,7 @@ public class Player2DController : MonoBehaviour {
 	bool invincible = false;			//Makes player invincible
 	float invinTime = 1.0f;				//Sets time player is invincible for
 
-	public bool inHackingAnim;
+	public bool inHackingAnim;			//If the player is in the middle of the Hacking animation so you don't move or change your direction while it's playing.
 
 	// Use this for initialization
 	void Start () {
@@ -45,7 +45,7 @@ public class Player2DController : MonoBehaviour {
 			anim.SetFloat ("YSpeed", Mathf.Abs (move_y));
 
 			//Makes character move based on inputs
-			if (!inHackingAnim) {
+			if (!inHackingAnim) {		//So you don't move or change direction while hacking.
 				rigidbody2D.velocity = new Vector2 (move_x * maxSpeed, move_y * maxSpeed);
 				/*
 			 	* If moving in the positive x direction (right) and the character is not

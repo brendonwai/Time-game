@@ -73,12 +73,24 @@ public class ObjectInfo : MonoBehaviour {
 	public void Hacked(){
 		anim.SetBool("IsHacked", true);
 		hacked = true;
-		StartCoroutine (GateHackAnim());
+		StartCoroutine (GateHackAnim());	//For gates if ObjectInfo needs to be in other gameobjects then add an if statement here.
 	}
 
 	IEnumerator GateHackAnim() {
+		player.GetComponent<Player2DController> ().inHackingAnim = true;
+		if (transform.position.x < player.transform.position.x) {											//If player is to the right of target
+			if (!player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the right while not facing left then flip to face left.
+				player.GetComponent<Player2DController> ().Flip();
+			}
+		}
+		else {
+			if (player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the left while facing left then flip to face right.
+				player.GetComponent<Player2DController> ().Flip();
+			}
+		}
 		player.GetComponent<Animator> ().SetBool ("IsHackingGate", true);
-		yield return new WaitForSeconds (1.017f);
+		yield return new WaitForSeconds (0.433f);
+		player.GetComponent<Player2DController> ().inHackingAnim = false;
 		player.GetComponent<Animator> ().SetBool ("IsHackingGate", false);
 	}
 }
