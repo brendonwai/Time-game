@@ -137,6 +137,9 @@ public class HackRadius : MonoBehaviour {
 		
 		if (objtag == "Enemy")
 			HackEnemy(other, otherpos);
+		else if (objtag == "gate") {
+			HackGate(other, otherpos);
+		}
 		GetComponentInParent<PlayerInfo>().Energy -= other.GetComponentInParent<EnemyInfo>().requiredEnergy;
 	}
 
