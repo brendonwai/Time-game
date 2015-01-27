@@ -73,5 +73,12 @@ public class ObjectInfo : MonoBehaviour {
 	public void Hacked(){
 		anim.SetBool("IsHacked", true);
 		hacked = true;
+		StartCoroutine (GateHackAnim());
+	}
+
+	IEnumerator GateHackAnim() {
+		player.GetComponent<Animator> ().SetBool ("IsHackingGate", true);
+		yield return new WaitForSeconds (1.017f);
+		player.GetComponent<Animator> ().SetBool ("IsHackingGate", false);
 	}
 }

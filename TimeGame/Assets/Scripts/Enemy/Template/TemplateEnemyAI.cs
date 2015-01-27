@@ -17,11 +17,14 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	bool informedGlobal = false;
 
+	public bool isHacked;
+
 	// Use this for initialization
 	void Awake () {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
 		timeCount = Time.time;
+		isHacked = false;
 	}
 	
 	// Activates when target enters trigger collider
@@ -80,22 +83,24 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (GetComponent<EnemyInfo> ().Health <= 0) {
-			Dead ();
-		}
-		else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
-			ApproachTarget();
-		}
-		else{
-			if (Time.time - timeCount >= randInterval){
-				// Creates a random target point in an arbitrary rectangle to move towards
-				randX = Random.Range(-750,750);
-				randY = Random.Range(-600,600);
-				randInterval = Random.Range(1.0f, 2.5f);
-				timeCount = Time.time;
+		if (!isHacked) {
+			if (GetComponent<EnemyInfo> ().Health <= 0) {
+				Dead ();
+			}
+			else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
+				ApproachTarget();
 			}
 			else{
-				RandomMovement();
+				if (Time.time - timeCount >= randInterval){
+					// Creates a random target point in an arbitrary rectangle to move towards
+					randX = Random.Range(-750,750);
+					randY = Random.Range(-600,600);
+					randInterval = Random.Range(1.0f, 2.5f);
+					timeCount = Time.time;
+				}
+				else{
+					RandomMovement();
+				}
 			}
 		}
 	}

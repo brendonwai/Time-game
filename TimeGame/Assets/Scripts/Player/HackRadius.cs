@@ -10,6 +10,8 @@ public class HackRadius : MonoBehaviour {
 	SpriteRenderer hacksprite;						//CHILD. Hacking sprite displayed above player head
 	Vector3 PlayerTrans;
 	ArrayList objectsInRange;
+
+	float HorizHackTeleport = 0.3f;
 	
 	
 	//Keys
@@ -132,14 +134,9 @@ public class HackRadius : MonoBehaviour {
 				objtag = other.transform.GetChild(i).gameObject.tag;
 			}
 		}
-		
-		PlayerTrans = this.transform.parent.transform.position;
-		
+
 		if (objtag == "Enemy")
 			HackEnemy(other, otherpos);
-		else if (objtag == "gate") {
-			HackGate(other, otherpos);
-		}
 		GetComponentInParent<PlayerInfo>().Energy -= other.GetComponentInParent<EnemyInfo>().requiredEnergy;
 	}
 
@@ -148,11 +145,14 @@ public class HackRadius : MonoBehaviour {
 		/*if (this.GetComponentInParent<Player2DController> ().facingLeft) {
 				this.GetComponentInParent<Player2DController> ().Flip();
 			}*/
-		if (otherpos.x < PlayerTrans.x) {											//If player is to the right of target
-			PlayerTrans = new Vector3(otherpos.x + 0.5f, otherpos.y, otherpos.z);
+		other.GetComponent<TemplateEnemyAI> ().isHacked = true;	//So the enemy stops moving
+		transform.parent.GetComponent<Player2DController> ().inHackingAnim = true;
+		transform.parent.rigidbody2D.velocity = new Vector2 (0f, 0f);
+		if (otherpos.x < transform.position.x) {											//If player is to the right of target
+			transform.parent.transform.position = new Vector3(otherpos.x + HorizHackTeleport, otherpos.y, transform.position.z);
 		}
 		else {
-			PlayerTrans = new Vector3(otherpos.x - 0.5f, otherpos.y, otherpos.z);
+			transform.parent.transform.position = new Vector3(otherpos.x - HorizHackTeleport, otherpos.y, transform.position.z);
 		}
 		
 		int hackType = other.GetComponent<EnemyInfo>().enemyType;
@@ -160,12 +160,8 @@ public class HackRadius : MonoBehaviour {
 		if(hackType != 2){
 			anim.SetBool ("IsHackingEnemy", true);
 			anim.SetBool ("HackedEnemyDead", false);
-			anim.SetInteger("EnemyType", hackType);
-			this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.
-			GetComponentInParent<Player2DController>().hackState = hackType;
-			GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
-			GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
-			Destroy (other);
+
+			StartCoroutine(HackEnemyAnim(other, hackType));
 		}
 		else{
 			other.GetComponent<Animator> ().SetBool("isHacked", true);
@@ -173,7 +169,19 @@ public class HackRadius : MonoBehaviour {
 	
 		
 	}
-	
+
+	IEnumerator HackEnemyAnim (GameObject other, int hackType) {
+		//StartCoroutine(StopHackedEnemyMovement (other));
+		yield return new WaitForSeconds (2f);//0.61f
+		transform.parent.GetComponent<Player2DController> ().inHackingAnim = false;
+		anim.SetInteger("EnemyType", hackType);
+		this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.
+		GetComponentInParent<Player2DController>().hackState = hackType;
+		GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
+		GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
+		Destroy (other);
+	}
+
 	/*public void AntiFlipSword() {	//not needed for now
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;

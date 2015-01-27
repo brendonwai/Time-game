@@ -716,7 +716,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Hacking Gate
-  m_Speed: .00999999978
+  m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 3d279fdbef28ff24abe21ac3e0aed12d, type: 2}
@@ -764,7 +764,7 @@ State:
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: b5d107f856b11f449a9f68bb16697a91, type: 2}
+  - {fileID: 7400000, guid: 0c943450e2f1ba3488050785da35061e, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 420, y: -96, z: 0}
   m_IKOnFeet: 0

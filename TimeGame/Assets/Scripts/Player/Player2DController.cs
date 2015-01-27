@@ -24,6 +24,7 @@ public class Player2DController : MonoBehaviour {
 	bool invincible = false;			//Makes player invincible
 	float invinTime = 1.0f;				//Sets time player is invincible for
 
+	public bool inHackingAnim;
 
 	// Use this for initialization
 	void Start () {
@@ -44,8 +45,9 @@ public class Player2DController : MonoBehaviour {
 			anim.SetFloat ("YSpeed", Mathf.Abs (move_y));
 
 			//Makes character move based on inputs
-			rigidbody2D.velocity = new Vector2 (move_x * maxSpeed, move_y * maxSpeed);
-
+			if (!inHackingAnim) {
+				rigidbody2D.velocity = new Vector2 (move_x * maxSpeed, move_y * maxSpeed);
+			}
 			/*
 			 * If moving in the positive x direction (right) and the character is not
 			 * facing right, makes the character sprite flip to face the right.
