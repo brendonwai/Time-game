@@ -13,7 +13,7 @@ public class bullets : MonoBehaviour {
 	// destroy 
 	void OnTriggerEnter2D(Collider2D other){
 		//Tag obstacles as Environment to destroy bullets on contact
-		if(other.tag=="Background"){
+		if(other.tag=="Background"||other.tag=="Gate"){
 			Destroy(gameObject);
 		}
 		if (other.tag=="Player"){
