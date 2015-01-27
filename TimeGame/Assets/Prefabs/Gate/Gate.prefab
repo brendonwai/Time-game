@@ -15,7 +15,7 @@ GameObject:
   - 61: {fileID: 6100000}
   m_Layer: 0
   m_Name: Gate
-  m_TagString: Untagged
+  m_TagString: Gate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,6 +70,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hacked: 0
+  inRange: 0
+  EnergyCost: 5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,9 +88,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  XDirection: 2
-  YDirection: 0
-  moveSpeed: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

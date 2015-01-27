@@ -12,6 +12,9 @@ public class PushBack : MonoBehaviour {
 			Vector2 endPosition=enemy.position+(enemy.position-transform.position).normalized;
 			enemy.position=Vector3.Lerp (enemy.position,endPosition,speed*Time.deltaTime);
 		}
+		if (other.tag=="Bullet"){
+			Destroy(other.gameObject);
+		}
 	}
 
 }
