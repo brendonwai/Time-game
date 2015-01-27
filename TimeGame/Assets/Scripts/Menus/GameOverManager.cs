@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameOverManager : MonoBehaviour {
 
-	GameObject PlayerStatus;
+	public GameObject PlayerStatus;
 	GameObject UI_GameOver;
 
 	void Awake(){
