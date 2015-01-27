@@ -162,6 +162,7 @@ public class HackRadius : MonoBehaviour {
 		
 		GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
 		GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
+		GetComponentInParent<PlayerInfo> ().StartCoroutine (GetComponentInParent<PlayerInfo> ().HealthDrain ());
 		Destroy (other);
 		
 		this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.

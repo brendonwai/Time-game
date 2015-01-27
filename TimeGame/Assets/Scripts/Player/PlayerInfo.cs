@@ -6,9 +6,10 @@ public class PlayerInfo : MonoBehaviour {
 
 	//Health
 	public int Health = 100;
-	public int PreHackHealth = 100;
+	public int PreHackHealth;
 	public Slider healthBar;
 	public Text healthNum;
+	public bool HealthDrainActive;
 
 	//Hacking Energy, max=100
 	public int Energy = 0;
@@ -43,8 +44,24 @@ public class PlayerInfo : MonoBehaviour {
 		{
 			Energy = maxEnergy;
 			energyBar.value = Energy;
-			energyNum.text = Energy.ToString();
+			energyNum.text = Energy.ToString(); 
 		}
+	}
+	public IEnumerator HealthDrain() {
+		HealthDrainActive = true;
+		bool notDead = true;
+		while (notDead) {
+			Health -= 20;
+			if(Health <= 0) {
+				Health = 0;
+				notDead = false;
+			}
+			healthBar.value = Health;
+			healthNum.text = Health.ToString();
+			yield return new WaitForSeconds (1f);
+		}
+		HealthDrainActive = false;
+		StartCoroutine(GetComponent<Player2DController>().HackDeath());
 	}
 	public void SwapPlayerToEnemyHealth(int EnemyHealth) {
 		PreHackHealth = Health;
@@ -54,7 +71,6 @@ public class PlayerInfo : MonoBehaviour {
 	}
 	public void SwapToPreHackHealth () {
 		Health = PreHackHealth;
-		PreHackHealth = 100;
 		//healthBar.transform.FindChild ("Fill").GetComponent<Image> ().color = Color.red;				//This breaks some stuff
 	}
 
