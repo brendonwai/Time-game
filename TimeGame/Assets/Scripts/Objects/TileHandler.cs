@@ -11,7 +11,6 @@ public class TileHandler : MonoBehaviour {
 	public GameObject Gate;						//For creating gate
 
 	GameObject[] connectors;
-	int i = 0;
 
 	void Awake(){
 		CreateConnectors();

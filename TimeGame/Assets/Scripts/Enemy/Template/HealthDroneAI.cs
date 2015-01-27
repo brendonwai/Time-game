@@ -5,7 +5,6 @@ using System.Collections;
 public class HealthDroneAI : MonoBehaviour {
 
 	public float moveSpeed = 1f;	 	//Sets momvement speed
-	public bool stopMove = false;		//Determines if enemy can stop moving towards player
 	public int HealthGain = 25;
 
 	//Set by child script and collider
@@ -142,23 +141,15 @@ public class HealthDroneAI : MonoBehaviour {
 	//Moves enemy closer to target
 	void RunAway(){
 		FaceAwayFromTarget();		//Faces away from player
-		if(!stopMove){
-			transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x - (target.transform.position.x - transform.position.x),		//Runs in opposite direction of Player
-			                                                                         transform.position.y - (target.transform.position.y - transform.position.y)),
-			                                                                         moveSpeed * Time.deltaTime);
-			//anim.SetFloat ("Speed", 1);		//Tells animator enemy is moving. Only need if you have an Idle animation
-			
-		}
+		transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x - (target.transform.position.x - transform.position.x),		//Runs in opposite direction of Player
+			                                                                     transform.position.y - (target.transform.position.y - transform.position.y)),			                                                                     moveSpeed * Time.deltaTime);
 	}
 	
 	// Enemy moves towards arbitrary point
 	void RandomMovement() {
 		FaceAwayFromTarget();
-		if (!stopMove) {
-			transform.position = Vector2.MoveTowards(transform.position, new Vector2(randX, randY), 
-			                                         moveSpeed * Time.deltaTime);
-			//anim.SetFloat ("Speed", 1);	//Again only need if you have an Idle animation
-		}
+		transform.position = Vector2.MoveTowards(transform.position, new Vector2(randX, randY), 
+			                                     moveSpeed * Time.deltaTime);
 	}
 	
 	//Faces enemy away from target.

@@ -204,15 +204,12 @@ public class Player2DController : MonoBehaviour {
 
 	//Mimics ranged enemy shooting
 	void RangedEnemyShoot(){
-		//Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 		Vector2 bulletClonePos = transform.position;
 		bulletClonePos.x -= .1f;
 		Vector2 bulletClone2Pos = transform.position;
 		bulletClone2Pos.x += .1f;
 		Rigidbody2D bulletClone=Instantiate (rangedBullet, bulletClonePos, transform.rotation) as Rigidbody2D;
 		Rigidbody2D bulletClone2=Instantiate (rangedBullet, bulletClone2Pos, transform.rotation) as Rigidbody2D;
-
-		Vector2 temp = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 
 		Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 		Vector2 dir = (mousePos- bulletClonePos).normalized;

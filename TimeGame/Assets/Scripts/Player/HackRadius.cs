@@ -8,7 +8,6 @@ public class HackRadius : MonoBehaviour {
 	Animator anim;								     
 	public int HackCD;								//Hacking ability Cooldown
 	SpriteRenderer hacksprite;						//CHILD. Hacking sprite displayed above player head
-	Vector3 PlayerTrans;
 	ArrayList objectsInRange;
 
 	float HorizHackTeleport = 0.3f;
@@ -16,67 +15,16 @@ public class HackRadius : MonoBehaviour {
 	
 	//Keys
 	public KeyCode hackKey;							//Button to Hack an enemy
-	
-	
+
 	
 	void Start() {
 		anim = this.transform.parent.GetComponent<Animator> ();
 		hacksprite = GetComponentInChildren<SpriteRenderer> ();
-		PlayerTrans = this.transform.parent.transform.position;
 		objectsInRange = new ArrayList ();
-		//anglesign = 1;
 		HackCD = 10;
 	}
 	
-	void Update() {
-		
-		/*
-		//Scrapped but can be used for something else
-		//Angle of mouse around object
-		//Box Collider for sword was center(0.2, 0) size(0.4, 0.1)
-		Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);											//Mouse Transform
-		float sign = Mathf.Sign (mouse.y - transform.position.y);														//Sign of y of mouse
-		angle = Vector2.Angle (Vector2.right, mouse-transform.position) * Mathf.Sign (mouse.y - transform.position.y);	//Get angle from transform to mouse
-		angle *= anglesign;
-		if (angle > -22.5 && angle < 22.5) {
-			//Right
-			transform.rotation = Quaternion.AngleAxis (0, Vector3.forward);
-		}
-		else if(angle >= 22.5 && angle < 67.5){
-			//Top Right
-			transform.rotation = Quaternion.AngleAxis (45, Vector3.forward);
-		}
-		else if (angle >= 67.5 && angle < 112.5) {
-			//Top
-			transform.rotation = Quaternion.AngleAxis (90, Vector3.forward);
-		}
-		else if (angle >= 112.5 && angle < 157.5) {
-			//Top Left
-			transform.rotation = Quaternion.AngleAxis (135, Vector3.forward);
-		}
-		else if (angle >= 157.5 || angle <= -157.5) {
-			//Left
-			transform.rotation = Quaternion.AngleAxis (180, Vector3.forward);
-		}
-		else if (angle > -67.5 && angle <= -22.5) {
-			//Bottom Right
-			transform.rotation = Quaternion.AngleAxis (-45, Vector3.forward);
-		}
-		else if (angle > -112.5 && angle <= -67.5) {
-			//Bottom
-			transform.rotation = Quaternion.AngleAxis (-90, Vector3.forward);
-		}
-		else if (angle > -157.5 && angle <= -112.5) {
-			//Bottom Left
-			transform.rotation = Quaternion.AngleAxis (-135, Vector3.forward);
-		}*/
-		
-		
-		
-	}	
-	
 	void FixedUpdate(){
-		//do cooldown iteration here I think
 		//Hacking
 		//NOTE YOU CAN STILL HACK WHILE DEAD TAKE THAT OUT
 		// Check the energy and subtract the energy
@@ -198,10 +146,4 @@ public class HackRadius : MonoBehaviour {
 		//It'll destroy itself after being hacked
 	}
 
-	/*public void AntiFlipSword() {	//not needed for now
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		anglesign *= -1;
-		transform.localScale = theScale;
-	}*/
 }

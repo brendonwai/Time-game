@@ -66,12 +66,9 @@ public class PlayerInfo : MonoBehaviour {
 	public void SwapPlayerToEnemyHealth(int EnemyHealth) {
 		PreHackHealth = Health;
 		Health = EnemyHealth;
-		//healthBar.transform.FindChild ("Fill").GetComponent<Image> ().color = Color.white;			//This and the one under mess stuff up for some reason
-
 	}
 	public void SwapToPreHackHealth () {
 		Health = PreHackHealth;
-		//healthBar.transform.FindChild ("Fill").GetComponent<Image> ().color = Color.red;				//This breaks some stuff
 	}
 
 }
