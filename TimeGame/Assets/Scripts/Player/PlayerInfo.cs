@@ -14,22 +14,26 @@ public class PlayerInfo : MonoBehaviour {
 	public int Energy = 0;
 	public Slider energyBar;
 	public Text energyNum;
+	public Text hundred;
+	public int maxEnergy;
 	//Amount of energy regenerated per second
 	public int EnergyRegen = 1;
+	
 
 	void Start(){
-		InvokeRepeating("RegenerateEnergy", 1, 1);
+		InvokeRepeating("RegenerateEnergy", 1, 3.0f);
+		hundred.text = "/ " + maxEnergy.ToString();
 	}
 
 	void RegenerateEnergy(){
-		if (Energy < 100){
+		if (Energy < maxEnergy){
 			Energy += EnergyRegen;
 			energyBar.value = Energy;
 			energyNum.text = Energy.ToString();
 		}
 	}
 	void GainEnergyBoost(int EnergyBoost){
-		if (Energy + EnergyBoost <= 100)
+		if (Energy + EnergyBoost <= maxEnergy)
 		{
 			Energy += EnergyBoost;
 			energyBar.value = Energy;
@@ -37,7 +41,7 @@ public class PlayerInfo : MonoBehaviour {
 		}
 		else
 		{
-			Energy = 100;
+			Energy = maxEnergy;
 			energyBar.value = Energy;
 			energyNum.text = Energy.ToString();
 		}
