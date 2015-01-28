@@ -110,7 +110,6 @@ public class HackRadius : MonoBehaviour {
 		}
 		
 		int hackType = other.GetComponent<EnemyInfo>().enemyType;
-
 		if(hackType != 2){
 			other.GetComponent<TemplateEnemyAI> ().isHacked = true;	//So the enemy stops moving
 			anim.SetBool ("IsHackingEnemy", true);
@@ -136,6 +135,8 @@ public class HackRadius : MonoBehaviour {
 		GetComponentInParent<Player2DController>().hackState = hackType;
 		GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
 		GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
+		GetComponentInParent<PlayerInfo>().HealthDrainActive = true;
+		StartCoroutine(GetComponentInParent<PlayerInfo> ().HealthDrain ());			
 		Destroy (other);
 	}
 

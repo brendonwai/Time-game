@@ -154,9 +154,8 @@ public class Player2DController : MonoBehaviour {
 		hackState = -1;
 		timestamp = 0.0f;
 		if (GetComponent<PlayerInfo> ().HealthDrainActive) {
-			Debug.Log ("Killed by enemy");
-			StopCoroutine(GetComponent<PlayerInfo>().HealthDrain());
 			GetComponent<PlayerInfo> ().HealthDrainActive = false;
+			StopCoroutine(GetComponent<PlayerInfo>().HealthDrain());
 		}
 		GetComponent<PlayerInfo> ().SwapToPreHackHealth();
 		GetComponent<PlayerInfo> ().healthBar.value = GetComponent<PlayerInfo> ().Health;

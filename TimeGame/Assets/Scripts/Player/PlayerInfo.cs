@@ -48,9 +48,8 @@ public class PlayerInfo : MonoBehaviour {
 		}
 	}
 	public IEnumerator HealthDrain() {
-		HealthDrainActive = true;
 		bool notDead = true;
-		while (notDead) {
+		while (notDead && HealthDrainActive) {
 			Health -= 20;
 			if(Health <= 0) {
 				Health = 0;
