@@ -20,8 +20,8 @@ public class Player2DController : MonoBehaviour {
 	
 	float attackRate=1.0f;				//Attack handlers
 	float nextAttack=0;
-	
-	bool invincible = false;			//Makes player invincible
+
+	public bool invincible = false;		//Makes player invincible
 	float invinTime = 1.0f;				//Sets time player is invincible for
 
 	public bool inHackingAnim;			//If the player is in the middle of the Hacking animation so you don't move or change your direction while it's playing.
@@ -128,10 +128,8 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	void KnockBack(Vector2 dir){
-		//rigidbody2D.isKinematic = true;
-		rigidbody2D.AddForce (dir.normalized * KnockBackForce);
-		//yield return new WaitForSeconds (.1f);
-		//rigidbody2D.isKinematic = false;
+		if(!invincible && !inHackingAnim)
+			rigidbody2D.AddForce (dir.normalized * KnockBackForce);
 	}
 
 	IEnumerator PlayerDeath(){

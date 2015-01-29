@@ -7348,6 +7348,7 @@ MonoBehaviour:
   rangedBullet: {fileID: 5000000, guid: 84424360eedba41d8a451ed38efdafe4, type: 2}
   PushBack: {fileID: 649581857}
   GameOver: 0
+  invincible: 0
   inHackingAnim: 0
 --- !u!50 &1295061428
 Rigidbody2D:
