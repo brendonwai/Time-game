@@ -17,14 +17,11 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	bool informedGlobal = false;
 
-	public bool isHacked;
-
 	// Use this for initialization
 	void Awake () {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
 		timeCount = Time.time;
-		isHacked = false;
 	}
 	
 	// Activates when target enters trigger collider
@@ -83,7 +80,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (!isHacked) {
+		if (!GetComponent<EnemyInfo>().isHacked) {
 			if (GetComponent<EnemyInfo> ().Health <= 0) {
 				Dead ();
 			}

@@ -880,6 +880,7 @@ MonoBehaviour:
   requiredEnergy: 10
   Health: 100
   Type: Enemy
+  isHacked: 0
 --- !u!114 &131982902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,7 +895,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   stopMove: 0
-  isHacked: 0
 --- !u!95 &131982903
 Animator:
   serializedVersion: 3
@@ -1742,6 +1742,7 @@ MonoBehaviour:
   requiredEnergy: 25
   Health: 50
   Type: Enemy
+  isHacked: 0
 --- !u!114 &282108269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7688,6 +7689,7 @@ MonoBehaviour:
   requiredEnergy: 10
   Health: 100
   Type: Enemy
+  isHacked: 0
 --- !u!114 &1362221362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7702,7 +7704,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   stopMove: 0
-  isHacked: 0
 --- !u!95 &1362221363
 Animator:
   serializedVersion: 3
@@ -8049,6 +8050,7 @@ MonoBehaviour:
   requiredEnergy: 25
   Health: 50
   Type: Enemy
+  isHacked: 0
 --- !u!58 &1466807016
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9771,6 +9773,7 @@ MonoBehaviour:
   requiredEnergy: 0
   Health: 100
   Type: Enemy
+  isHacked: 0
 --- !u!58 &1560746881
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10510,7 +10513,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   stopMove: 0
-  isHacked: 0
 --- !u!50 &1615298540
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -10573,6 +10575,7 @@ MonoBehaviour:
   requiredEnergy: 10
   Health: 100
   Type: Enemy
+  isHacked: 0
 --- !u!1 &1616248382
 GameObject:
   m_ObjectHideFlags: 0
@@ -10699,6 +10702,7 @@ MonoBehaviour:
   requiredEnergy: 10
   Health: 100
   Type: Enemy
+  isHacked: 0
 --- !u!114 &1631199086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10713,7 +10717,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   stopMove: 0
-  isHacked: 0
 --- !u!95 &1631199087
 Animator:
   serializedVersion: 3
@@ -12137,6 +12140,7 @@ MonoBehaviour:
   requiredEnergy: 10
   Health: 100
   Type: Enemy
+  isHacked: 0
 --- !u!114 &1884963917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12151,7 +12155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   stopMove: 0
-  isHacked: 0
 --- !u!95 &1884963918
 Animator:
   serializedVersion: 3
@@ -12793,6 +12796,7 @@ MonoBehaviour:
   requiredEnergy: 10
   Health: 100
   Type: Enemy
+  isHacked: 0
 --- !u!114 &2002831454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12807,7 +12811,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   stopMove: 0
-  isHacked: 0
 --- !u!95 &2002831455
 Animator:
   serializedVersion: 3
@@ -13103,6 +13106,7 @@ MonoBehaviour:
   requiredEnergy: 25
   Health: 50
   Type: Enemy
+  isHacked: 0
 --- !u!58 &2130546880
 CircleCollider2D:
   m_ObjectHideFlags: 0

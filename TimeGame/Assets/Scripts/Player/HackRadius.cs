@@ -111,7 +111,7 @@ public class HackRadius : MonoBehaviour {
 		
 		int hackType = other.GetComponent<EnemyInfo>().enemyType;
 		if(hackType != 2){
-			other.GetComponent<TemplateEnemyAI> ().isHacked = true;	//So the enemy stops moving
+			other.GetComponent<EnemyInfo>().isHacked = true; //Stops enemy movement
 			anim.SetBool ("IsHackingEnemy", true);
 			anim.SetBool ("HackedEnemyDead", false);
 

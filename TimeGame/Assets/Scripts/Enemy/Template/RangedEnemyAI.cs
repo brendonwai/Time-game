@@ -85,22 +85,24 @@ public class RangedEnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
-			Dead ();
-		}
-		else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
-			ApproachTarget();
-		}
-		else{
-			if (Time.time - timeCount >= randInterval){
-				// Creates a random target point in an arbitrary rectangle to move towards
-				randX = Random.Range(-750,750);
-				randY = Random.Range(-600,600);
-				randInterval = Random.Range(1.0f, 2.5f);
-				timeCount = Time.time;
+		if(!GetComponent<EnemyInfo>().isHacked){
+			if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
+				Dead ();
+			}
+			else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
+				ApproachTarget();
 			}
 			else{
-				RandomMovement();
+				if (Time.time - timeCount >= randInterval){
+					// Creates a random target point in an arbitrary rectangle to move towards
+					randX = Random.Range(-750,750);
+					randY = Random.Range(-600,600);
+					randInterval = Random.Range(1.0f, 2.5f);
+					timeCount = Time.time;
+				}
+				else{
+					RandomMovement();
+				}
 			}
 		}
 	}
