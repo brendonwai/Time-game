@@ -39,8 +39,11 @@ public class ObjectInfo : MonoBehaviour {
 
 	//Checks if player is in front of keyboard
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.gameObject.tag == "Player"){
-			renderer.material.color = InHackRange;
+		if(other.gameObject.tag == "Player"&&!hacked){
+			if(playerscript.Energy >= EnergyCost)
+				renderer.material.color = InHackRange;
+			else
+				renderer.material.color = OutOfHackRange;
 			inRange = true;
 		}
 	}
