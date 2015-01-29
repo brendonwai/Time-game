@@ -77,7 +77,7 @@ public class ObjectInfo : MonoBehaviour {
 	}
 
 	IEnumerator GateHackAnim() {
-		player.GetComponent<Player2DController> ().inHackingAnim = true;
+		//player.GetComponent<Player2DController> ().inHackingAnim = true;
 		if (transform.position.x < player.transform.position.x) {											//If player is to the right of target
 			if (!player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the right while not facing left then flip to face left.
 				player.GetComponent<Player2DController> ().Flip();
@@ -90,7 +90,7 @@ public class ObjectInfo : MonoBehaviour {
 		}
 		player.GetComponent<Animator> ().SetBool ("IsHackingGate", true);
 		yield return new WaitForSeconds (0.433f);
-		player.GetComponent<Player2DController> ().inHackingAnim = false;
+		//player.GetComponent<Player2DController> ().inHackingAnim = false;
 		player.GetComponent<Animator> ().SetBool ("IsHackingGate", false);
 	}
 }
