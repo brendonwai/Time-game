@@ -2268,7 +2268,7 @@ GameObject:
   - 61: {fileID: 419246083}
   m_Layer: 0
   m_Name: Connector
-  m_TagString: Connector1LinkLeftBot
+  m_TagString: Connector1LinkBotLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2280,11 +2280,11 @@ Transform:
   m_PrefabInternal: {fileID: 1644708952}
   m_GameObject: {fileID: 419246081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 800, y: -256, z: 0}
+  m_LocalPosition: {x: 384, y: -256, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 580797205}
-  m_RootOrder: 10
+  m_Father: {fileID: 1184755135}
+  m_RootOrder: 0
 --- !u!61 &419246083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2360,8 +2360,8 @@ GameObject:
   - 4: {fileID: 439758205}
   - 61: {fileID: 439758206}
   m_Layer: 0
-  m_Name: Gate
-  m_TagString: GateH
+  m_Name: Connector
+  m_TagString: Connector1LinkBotRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2373,11 +2373,11 @@ Transform:
   m_PrefabInternal: {fileID: 1644708952}
   m_GameObject: {fileID: 439758204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 256, y: -256, z: 0}
+  m_LocalPosition: {x: 192, y: -256, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1184755135}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!61 &439758206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2388,8 +2388,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 96, y: 32}
-  m_Center: {x: 48, y: -16}
+  m_Size: {x: 32, y: 32}
+  m_Center: {x: 16, y: -16}
 --- !u!1 &458865747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,8 +3172,8 @@ Transform:
   - {fileID: 1663479650}
   - {fileID: 1416672677}
   - {fileID: 339773575}
-  - {fileID: 759529714}
-  - {fileID: 419246082}
+  - {fileID: 1609721446}
+  - {fileID: 1533394520}
   m_Father: {fileID: 385725165}
   m_RootOrder: 4
 --- !u!1 &616664683
@@ -3989,7 +3989,7 @@ GameObject:
   - 61: {fileID: 759529715}
   m_Layer: 0
   m_Name: Gate
-  m_TagString: GateV
+  m_TagString: GateH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4001,11 +4001,11 @@ Transform:
   m_PrefabInternal: {fileID: 1644708952}
   m_GameObject: {fileID: 759529713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 800, y: -288, z: 0}
+  m_LocalPosition: {x: 256, y: -256, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 580797205}
-  m_RootOrder: 9
+  m_Father: {fileID: 1184755135}
+  m_RootOrder: 4
 --- !u!61 &759529715
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4015,9 +4015,9 @@ BoxCollider2D:
   m_GameObject: {fileID: 759529713}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 32, y: 96}
-  m_Center: {x: 16, y: -48}
+  m_IsTrigger: 1
+  m_Size: {x: 96, y: 32}
+  m_Center: {x: 48, y: -16}
 --- !u!1 &780704057
 GameObject:
   m_ObjectHideFlags: 0
@@ -6616,11 +6616,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1533394520}
+  - {fileID: 419246082}
   - {fileID: 50028350}
   - {fileID: 1496285366}
-  - {fileID: 1609721446}
   - {fileID: 439758205}
+  - {fileID: 759529714}
   - {fileID: 1787339584}
   m_Father: {fileID: 385725165}
   m_RootOrder: 3
@@ -9650,7 +9650,7 @@ GameObject:
   - 61: {fileID: 1533394521}
   m_Layer: 0
   m_Name: Connector
-  m_TagString: Connector1LinkBotLeft
+  m_TagString: Connector1LinkLeftBot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9662,11 +9662,11 @@ Transform:
   m_PrefabInternal: {fileID: 1644708952}
   m_GameObject: {fileID: 1533394519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 384, y: -256, z: 0}
+  m_LocalPosition: {x: 800, y: -256, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1184755135}
-  m_RootOrder: 0
+  m_Father: {fileID: 580797205}
+  m_RootOrder: 10
 --- !u!61 &1533394521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10334,8 +10334,8 @@ GameObject:
   - 4: {fileID: 1609721446}
   - 61: {fileID: 1609721447}
   m_Layer: 0
-  m_Name: Connector
-  m_TagString: Connector1LinkBotRight
+  m_Name: Gate
+  m_TagString: GateV
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10347,11 +10347,11 @@ Transform:
   m_PrefabInternal: {fileID: 1644708952}
   m_GameObject: {fileID: 1609721445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 192, y: -256, z: 0}
+  m_LocalPosition: {x: 800, y: -288, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1184755135}
-  m_RootOrder: 3
+  m_Father: {fileID: 580797205}
+  m_RootOrder: 9
 --- !u!61 &1609721447
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10361,9 +10361,9 @@ BoxCollider2D:
   m_GameObject: {fileID: 1609721445}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Size: {x: 32, y: 32}
-  m_Center: {x: 16, y: -16}
+  m_IsTrigger: 0
+  m_Size: {x: 32, y: 96}
+  m_Center: {x: 16, y: -48}
 --- !u!1 &1610361638
 GameObject:
   m_ObjectHideFlags: 0
