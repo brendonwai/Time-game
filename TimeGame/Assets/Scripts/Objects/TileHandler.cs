@@ -67,9 +67,6 @@ public class TileHandler : MonoBehaviour {
 			clone.transform.parent = temp.transform.parent;
 			SetXScale(clone,x_scale);
 			SetYScale(clone,y_scale);
-			if(object_tag == "Gate")
-				Debug.Log(clone.transform.parent.name);
-
 		}
 	}
 
