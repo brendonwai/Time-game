@@ -76,6 +76,10 @@ TagManager:
     userID: 3
     uniqueID: 1684355751
     locked: 0
+  - name: Foreground
+    userID: 5
+    uniqueID: 427963823
+    locked: 0
   - name: Menu
     userID: 4
     uniqueID: 3340300203

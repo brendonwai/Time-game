@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TemplateEnemyAI : MonoBehaviour {
+	public GameObject explosionRange;
+	public GameObject explosion;
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
 	public bool stopMove = false;		//Determines if enemy can stop moving towards player
 											//Set by child script and collider
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
-	bool facingRight = true;			//Determines direction enemy facing
+	public bool facingRight = true;			//Determines direction enemy facing
 	Animator anim;						//For controlling animation
 	GameObject target;					//Enemy's target
 	float randX;                        // randX and randY is a random coordinate that 
@@ -22,6 +24,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
 		timeCount = Time.time;
+		explosionRange.SetActive (false);
 	}
 	
 	// Activates when target enters trigger collider
@@ -151,8 +154,16 @@ public class TemplateEnemyAI : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 
+	IEnumerator Explode(){
+		explosionRange.SetActive (true);
+		yield return new WaitForSeconds (.1f);
+		explosionRange.SetActive (false);
+	}
+
 	void Dead(){
 		anim.SetBool("IsDead", true);
-		Destroy (gameObject,1);
+		StartCoroutine (Explode());
+		Instantiate (explosion, transform.position, transform.rotation);
+		Destroy (gameObject,.375f);
 	}
 }
