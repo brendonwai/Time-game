@@ -8,41 +8,46 @@ public class SkillButtonHandler : MonoBehaviour {
 	public Image[] buttons;				//Stores cooldown image over buttons
 	public float[] CoolDownDuration;	//Duration of cooldown
 	public bool[] onCD;					//Determines if button is on CD
-	float timestamp = 0.0f;
-	
+	public Text[] countDown;			//Counts down seconds to cooldown
+	int i;
 
 	// Use this for initialization
 	void Start () {
-		int i = 0;
+		i = 0;
 		foreach(Image cover in buttons){
 			cover.fillAmount = 0.0f;
-			CoolDownDuration[i] = 1.0f/CoolDownDuration[i];
+			//CoolDownDuration[i] = 1.0f/CoolDownDuration[i]/100.0f;
 			onCD[i] = false;
 			i++;
 		}
+		InvokeRepeating("CheckCD", 0f, .01f);
+	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		int i = 0;
-		foreach(Image cover in buttons){
-			if(Time.time>=timestamp){
-				if(cover.fillAmount > 0.0f){
-					cover.fillAmount = cover.fillAmount - CoolDownDuration[i]/200.0f;
-				}
-				else
-					onCD[i] = false;
-				i++;
-				timestamp = Time.time + .005f;
-			}
-		}
-	}
-
 	//Starts skill cool dow 
 	public void StartCD(int skill){
 		if(!onCD[skill]){
 			buttons[skill].fillAmount = 1.0f;
 			onCD[skill] = true;
+			countDown[skill].text = CoolDownDuration[skill].ToString();
+		}
+	}
+
+	//Checks all buttons for if on CD and runs CD effect
+	void CheckCD(){
+		for(int n = 0; n<i; n++)
+			RunCD(n);
+	}
+
+	//Runs CD effect
+	void RunCD(int skill){
+		if(buttons[skill].fillAmount > 0.0f){
+			buttons[skill].fillAmount = buttons[skill].fillAmount - 1.0f/CoolDownDuration[skill]/100.0f;
+			countDown[skill].text = (CoolDownDuration[skill]*buttons[skill].fillAmount).ToString("0.0");
+		}
+		else{
+			onCD[skill] = false;
+			countDown[skill].text = "";
 		}
 	}
 
