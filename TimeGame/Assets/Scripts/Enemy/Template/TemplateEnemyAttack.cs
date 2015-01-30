@@ -3,6 +3,12 @@ using System.Collections;
 
 public class TemplateEnemyAttack : MonoBehaviour {
 
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.tag=="Player"){
+			other.SendMessage("takeDamage",100);
+		}
+	}
+/*
 	Animator anim;
 	bool TargetInRange = false;
 
@@ -18,7 +24,7 @@ public class TemplateEnemyAttack : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Player")
 			TargetInRange = false;
-			anim.SetBool("IsAttacking", false);
+			//anim.SetBool("IsAttacking", false);
 	}
 	 
 	void FixedUpdate(){
@@ -27,8 +33,8 @@ public class TemplateEnemyAttack : MonoBehaviour {
 	}
 
 	void Attack(){
-		anim.SetBool("IsAttacking", true);
+		//anim.SetBool("IsAttacking", true);
 		//INSERT ATTACKING CODE
 	}
-	
+	*/
 }
