@@ -378,7 +378,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 50488309}
-  m_HideIfInvisible: 0
 --- !u!1 &55477251
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +444,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 55477251}
-  m_HideIfInvisible: 0
 --- !u!1 &63819022
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +505,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63819022}
-  m_HideIfInvisible: 0
 --- !u!1 &67025109
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +620,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 67025109}
-  m_HideIfInvisible: 0
 --- !u!1 &90001614
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,8 +889,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596cfc9005f464946bbe632cfe4ef095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionRange: {fileID: 1742098737}
+  explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
+  facingRight: 1
 --- !u!95 &131982903
 Animator:
   serializedVersion: 3
@@ -960,7 +959,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1684355751
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af3ea3c5ba066cb439e1d6a4fed6750a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be8c2c2c0e4fd4a829abab9bfac63f58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &131982907
 MonoBehaviour:
@@ -3053,7 +3052,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565508846}
-  m_HideIfInvisible: 0
 --- !u!1 &569060688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,6 +3459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
+  m_DragThreshold: 5
 --- !u!4 &643900732
 Transform:
   m_ObjectHideFlags: 0
@@ -3717,7 +3716,7 @@ GameObject:
   - 114: {fileID: 736141042}
   - 114: {fileID: 736141033}
   m_Layer: 0
-  m_Name: OldConnector1LinkBotLeft
+  m_Name: Connector1LinkBotLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4091,7 +4090,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 802445086}
-  m_HideIfInvisible: 0
 --- !u!1 &808734934
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,7 +4211,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 843002264}
-  m_HideIfInvisible: 0
 --- !u!1 &847734812
 GameObject:
   m_ObjectHideFlags: 0
@@ -4329,7 +4326,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 852542221}
-  m_HideIfInvisible: 0
 --- !u!1 &865801531
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,7 +4454,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 870400198}
-  m_HideIfInvisible: 0
 --- !u!1 &911999918
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,7 +4647,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 943654067}
-  m_HideIfInvisible: 0
 --- !u!1 &955607713
 GameObject:
   m_ObjectHideFlags: 0
@@ -5363,7 +5357,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1059242306}
-  m_HideIfInvisible: 0
 --- !u!1 &1064389264
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,7 +5532,7 @@ GameObject:
   - 114: {fileID: 1107832349}
   - 114: {fileID: 1107832356}
   m_Layer: 0
-  m_Name: OldConnector1LinkBotLeft
+  m_Name: Connector1LinkBotLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5701,7 +5694,7 @@ GameObject:
   - 114: {fileID: 1108386953}
   - 114: {fileID: 1108386952}
   m_Layer: 0
-  m_Name: OldConnector1LinkBotLeft
+  m_Name: Connector1LinkBotLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6828,7 +6821,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1220809794}
-  m_HideIfInvisible: 0
 --- !u!1 &1223797623
 GameObject:
   m_ObjectHideFlags: 0
@@ -6887,7 +6879,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -6907,6 +6898,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!224 &1232390341
@@ -6948,7 +6940,7 @@ GameObject:
   - 114: {fileID: 1233605348}
   - 114: {fileID: 1233605355}
   m_Layer: 0
-  m_Name: OldConnector1LinkBotLeft
+  m_Name: Connector1LinkBotLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7611,7 +7603,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1398690817}
-  m_HideIfInvisible: 0
 --- !u!224 &1398690820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9266,7 +9257,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1518308464}
-  m_HideIfInvisible: 0
 --- !u!1001 &1520615178
 Prefab:
   m_ObjectHideFlags: 0
@@ -9671,7 +9661,7 @@ GameObject:
   - 114: {fileID: 1569277471}
   - 114: {fileID: 1569277462}
   m_Layer: 0
-  m_Name: OldConnector1LinkBotLeft
+  m_Name: Connector1LinkBotLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10168,7 +10158,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1610361638}
-  m_HideIfInvisible: 0
 --- !u!1 &1615298535
 GameObject:
   m_ObjectHideFlags: 0
@@ -10212,7 +10201,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1684355751
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af3ea3c5ba066cb439e1d6a4fed6750a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be8c2c2c0e4fd4a829abab9bfac63f58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1615298537
 Transform:
@@ -10254,8 +10243,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596cfc9005f464946bbe632cfe4ef095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionRange: {fileID: 616664683}
+  explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
+  facingRight: 0
 --- !u!50 &1615298540
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -10458,8 +10450,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596cfc9005f464946bbe632cfe4ef095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionRange: {fileID: 1181596629}
+  explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
+  facingRight: 1
 --- !u!95 &1631199087
 Animator:
   serializedVersion: 3
@@ -10525,7 +10520,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1684355751
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af3ea3c5ba066cb439e1d6a4fed6750a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be8c2c2c0e4fd4a829abab9bfac63f58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1631199091
 MonoBehaviour:
@@ -10793,7 +10788,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1688697230}
-  m_HideIfInvisible: 0
 --- !u!1 &1695988900
 GameObject:
   m_ObjectHideFlags: 0
@@ -10913,7 +10907,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699327095}
-  m_HideIfInvisible: 0
 --- !u!1 &1700843334
 GameObject:
   m_ObjectHideFlags: 0
@@ -11069,7 +11062,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1725016484}
-  m_HideIfInvisible: 0
 --- !u!1 &1742098737
 GameObject:
   m_ObjectHideFlags: 0
@@ -11142,7 +11134,7 @@ GameObject:
   - 114: {fileID: 1782184021}
   - 114: {fileID: 1782184012}
   m_Layer: 0
-  m_Name: OldConnector1LinkBotLeft
+  m_Name: Connector1LinkBotLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11414,7 +11406,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785269294}
-  m_HideIfInvisible: 0
 --- !u!1 &1787339583
 GameObject:
   m_ObjectHideFlags: 0
@@ -11554,7 +11545,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1798518252}
-  m_HideIfInvisible: 0
 --- !u!1 &1826682267
 GameObject:
   m_ObjectHideFlags: 0
@@ -11621,7 +11611,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1826682267}
-  m_HideIfInvisible: 0
 --- !u!1001 &1839920245
 Prefab:
   m_ObjectHideFlags: 0
@@ -11659,6 +11648,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
+      propertyPath: facingRight
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11799,8 +11792,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596cfc9005f464946bbe632cfe4ef095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionRange: {fileID: 1565013282}
+  explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
+  facingRight: 1
 --- !u!95 &1884963918
 Animator:
   serializedVersion: 3
@@ -11866,7 +11862,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1684355751
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af3ea3c5ba066cb439e1d6a4fed6750a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be8c2c2c0e4fd4a829abab9bfac63f58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1884963922
 MonoBehaviour:
@@ -12051,7 +12047,7 @@ GameObject:
   - 114: {fileID: 1912051861}
   - 114: {fileID: 1912051868}
   m_Layer: 0
-  m_Name: OldConnector1LinkBotLeft
+  m_Name: Connector1LinkBotLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12552,8 +12548,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596cfc9005f464946bbe632cfe4ef095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionRange: {fileID: 2141133666}
+  explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
+  facingRight: 1
 --- !u!95 &2002831455
 Animator:
   serializedVersion: 3
@@ -12619,7 +12618,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1684355751
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af3ea3c5ba066cb439e1d6a4fed6750a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be8c2c2c0e4fd4a829abab9bfac63f58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2018161841
 GameObject:
