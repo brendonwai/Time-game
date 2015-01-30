@@ -3,12 +3,19 @@ using System.Collections;
 
 public class TileHandler : MonoBehaviour {
 
-	//Connectors
+	//Bottom Facing Connectors
 	public GameObject Connector2LinkBot;		//For creating connector with 2 links
 	public GameObject Connector1LinkBotLeft;	//For creating connector with 1 link
+	public GameObject ConnectorNoLinkBot;
+
+	//Side Facing Connectors
+	public GameObject Connector2LinkSide;		//For creating connector with 2 links
+	public GameObject Connector1LinkSide;		//For creating connector with 1 link
+	public GameObject ConnectorNoLinkSide;
 
 	//Gate
-	public GameObject Gate;						//For creating gate
+	public GameObject GateH;						//For creating horizontal gate
+	public GameObject GateV;						//For creating vertical gate
 
 	GameObject[] connectors;
 
@@ -20,25 +27,35 @@ public class TileHandler : MonoBehaviour {
 	//Creates Gate of all types on map
 	//NOTE: NEVER CALL BEFORE CONNECTORS ARE CREATED
 	void CreateGate(){
-		CreateObjectAtTag(Gate, "GateH",1,1, Quaternion.identity,.48f,-.16f);
-		CreateObjectAtTag(Gate, "GateV",1,1, Quaternion.Euler(0,0,90),.16f,-.48f);
+		CreateObjectAtTag(GateH, "GateH",1,1, Quaternion.identity,.48f,-.04f);
+		CreateObjectAtTag(GateV, "GateV",1,1, Quaternion.Euler(0,0,90),.16f,-.48f);
 	}
 
 
 	//Creates all types on map
 	void CreateConnectors(){
-		CreateObjectAtTag(Connector2LinkBot, "Connector2LinkBot",1,1, Quaternion.identity,.16f,0f);
-		CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkBotLeft",1,1,Quaternion.identity,.16f,0f);
-		CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkBotRight",-1,1, Quaternion.identity,.16f,0f);
-		CreateObjectAtTag(Connector2LinkBot,"Connector2LinkRight",1,1, Quaternion.Euler(0,0,90),0f,-.16f);
-		CreateObjectAtTag(Connector1LinkBotLeft,"Connector1LinkRightTop",-1,1, Quaternion.Euler(0,0,90),0f,-.16f);
-		CreateObjectAtTag(Connector1LinkBotLeft,"Connector1LinkRightBot",1,1, Quaternion.Euler(0,0,90),0f,-.16f);
-		CreateObjectAtTag(Connector2LinkBot,"Connector2LinkLeft",1,-1, Quaternion.Euler(0,0,90),.32f,-.16f);
-		CreateObjectAtTag(Connector1LinkBotLeft,"Connector1LinkLeftTop",-1,-1, Quaternion.Euler(0,0,90),.32f,-.16f);
-		CreateObjectAtTag(Connector1LinkBotLeft,"Connector1LinkLeftBot",1,-1, Quaternion.Euler(0,0,90),.32f,-.16f);
-		CreateObjectAtTag(Connector2LinkBot, "Connector2LinkTop",1,-1, Quaternion.identity,.16f,-.32f);
-		CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkTopLeft",1,-1, Quaternion.identity,.16f,-.32f);
-		CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkTopRight",-1,-1, Quaternion.identity,.16f,-.32f);
+		//Creates bottom facing connectors
+		CreateObjectAtTag(Connector2LinkBot, "Connector2LinkBot",1,1, Quaternion.identity,.16f,-.04f);
+		CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkBotLeft",1,1,Quaternion.identity,.16f,-.04f);
+		CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkBotRight",-1,1, Quaternion.identity,.16f,-.04f);
+		CreateObjectAtTag(ConnectorNoLinkBot, "ConnectorNoLinkBot",1,1, Quaternion.identity,.16f,-.04f);
+
+		//Creates right facing connectors
+		CreateObjectAtTag(Connector2LinkSide,"Connector2LinkRight",1,1, Quaternion.Euler(0,0,90),.04f,-.16f);
+		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkRightTop",-1,1, Quaternion.Euler(0,0,90),.04f,-.16f);
+		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkRightBot",1,1, Quaternion.Euler(0,0,90),.04f,-.16f);
+		CreateObjectAtTag(ConnectorNoLinkSide,"ConnectorNoLinkRight",1,1, Quaternion.Euler(0,0,90),.04f,-.16f);
+
+		//Creates left facing connectors
+		CreateObjectAtTag(Connector2LinkSide,"Connector2LinkLeft",1,-1, Quaternion.Euler(0,0,90),.28f,-.16f);
+		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkLeftTop",-1,-1, Quaternion.Euler(0,0,90),.28f,-.16f);
+		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkLeftBot",1,-1, Quaternion.Euler(0,0,90),.28f,-.16f);
+		CreateObjectAtTag(ConnectorNoLinkSide,"ConnectorNoLinkLeft",1,-1, Quaternion.Euler(0,0,90),.28f,-.16f);
+
+		//No longer need? Creates top facing connectors
+		//CreateObjectAtTag(Connector2LinkBot, "Connector2LinkTop",1,-1, Quaternion.identity,.16f,-.32f);
+		//CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkTopLeft",1,-1, Quaternion.identity,.16f,-.32f);
+		//CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkTopRight",-1,-1, Quaternion.identity,.16f,-.32f);
 	}
 
 	//Instantiates given objects at given tag
