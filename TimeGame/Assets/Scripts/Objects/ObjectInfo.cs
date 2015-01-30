@@ -14,7 +14,7 @@ public class ObjectInfo : MonoBehaviour {
 	//Colors
 	Color OutOfHackRange = new Color(.6f, .1f, .1f, 1f);
 	Color InHackRange = new Color(0f, .4f, .5f, 1f);
-
+	int i = 0;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
