@@ -14,7 +14,7 @@ GameObject:
   - 61: {fileID: 6100002}
   - 61: {fileID: 6100000}
   m_Layer: 0
-  m_Name: Connector1LinkSide
+  m_Name: Connector2LinkSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.3701477, y: -7.79913282, z: -100}
+  m_LocalPosition: {x: -17.4497051, y: -7.47541523, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +63,7 @@ Animator:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a3165b8ad870d864399e82c008d35351, type: 2}
+  m_Controller: {fileID: 9100000, guid: b6a32c465cd593847a9d3fef6ddce462, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -103,7 +103,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 8b2b93fea86c59a4f977ae76518722bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5ca5352e980176439eaaef795d7cc92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
