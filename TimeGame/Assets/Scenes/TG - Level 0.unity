@@ -1004,10 +1004,10 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4281808694
+          rgba: 4283387727
         key1:
           serializedVersion: 2
-          rgba: 3176223057
+          rgba: 2353744715
         key2:
           serializedVersion: 2
           rgba: 0
@@ -1035,7 +1035,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
+        atime1: 51272
         atime2: 0
         atime3: 0
         atime4: 0
@@ -3561,6 +3561,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 468167804}
+  - 114: {fileID: 468167805}
   m_Layer: 0
   m_Name: lv 1
   m_TagString: Untagged
@@ -3589,6 +3590,22 @@ Transform:
   - {fileID: 44719586}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &468167805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: f1fda2f8d912b5547a01f4daf6a353aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 483201820}
+  m_GameObject: {fileID: 468167803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0619e460a775cc458d37cb4a214a189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumTilesWide: 60
+  NumTilesHigh: 60
+  TileWidth: 32
+  TileHeight: 32
 --- !u!1001 &483201820
 Prefab:
   m_ObjectHideFlags: 0
@@ -3626,7 +3643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: f1fda2f8d912b5547a01f4daf6a353aa, type: 2}
       propertyPath: m_LocalScale.x
@@ -5881,10 +5898,10 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4281808694
+          rgba: 4283387727
         key1:
           serializedVersion: 2
-          rgba: 3176223057
+          rgba: 2353744715
         key2:
           serializedVersion: 2
           rgba: 0
@@ -5912,7 +5929,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
+        atime1: 51272
         atime2: 0
         atime3: 0
         atime4: 0
@@ -11864,7 +11881,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 193
-        atime1: 65535
+        atime1: 51272
         atime2: 0
         atime3: 0
         atime4: 0
