@@ -273,6 +273,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400032}
+  - 114: {fileID: 11400014}
   m_Layer: 0
   m_Name: lv 1
   m_TagString: Untagged
@@ -2028,6 +2029,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1874989c5e2da094ea00112c6a895694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0619e460a775cc458d37cb4a214a189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumTilesWide: 60
+  NumTilesHigh: 60
+  TileWidth: 32
+  TileHeight: 32
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
