@@ -11950,7 +11950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76603fbc97db724ea4dee30133e05c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: .75
+  maxSpeed: 1.39999998
   facingLeft: 1
   hackState: -1
   rangedBullet: {fileID: 5000000, guid: 84424360eedba41d8a451ed38efdafe4, type: 2}
