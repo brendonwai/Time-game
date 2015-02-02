@@ -6,11 +6,11 @@ public class Player2DController : MonoBehaviour {
 	public float maxSpeed = 5f;			//Sets momvement speed
 	public bool facingLeft = true;		//Determines direction character facing
 	public int hackState = -1;			//Determines action of player depending on hacked enemy
-
 	public Rigidbody2D rangedBullet;	//Bullet from basic ranged enemy
 	int bulletspeed=10;					//Speed of bullet
 	float timestamp=0.0f;				//Variable for managing bullet release
 	public GameObject PushBack;
+	public GameObject Explosion;		// explosion prefab for hacked kamikaze robot death
 	Animator anim;						//Animation object
 	
 	public bool GameOver = false;		//For activating game over 
@@ -142,6 +142,8 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	public IEnumerator HackDeath () {
+		if(hackState==0)
+			Instantiate(Explosion,transform.position,transform.rotation);
 		HackFlip ();				//This is here because of sprite direction differences
 		rigidbody2D.velocity = new Vector2 (0,0);
 		anim.SetBool ("HackedEnemyDead", true);
