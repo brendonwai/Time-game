@@ -25,8 +25,8 @@ public class PlayerInfo : MonoBehaviour {
 		InvokeRepeating("RegenerateEnergy", 1, 10.0f);
 		hundred.text = "/ " + maxEnergy.ToString();
 	}
-
-	void Update(){
+	
+	void UpdateEnergyBar(){
 		energyBar.value = Energy;
 		energyNum.text = Energy.ToString();
 	}
@@ -34,6 +34,7 @@ public class PlayerInfo : MonoBehaviour {
 	void RegenerateEnergy(){
 		if (Energy < maxEnergy){
 			Energy += EnergyRegen;
+			UpdateEnergyBar();
 		}
 	}
 	void GainEnergyBoost(int EnergyBoost){
@@ -71,6 +72,12 @@ public class PlayerInfo : MonoBehaviour {
 	}
 	public void SwapToPreHackHealth () {
 		Health = PreHackHealth;
+	}
+
+	//Spends energy and updates Energy Bar
+	public void SpendEnergy(int cost){
+		Energy -= cost;
+		UpdateEnergyBar();
 	}
 
 }

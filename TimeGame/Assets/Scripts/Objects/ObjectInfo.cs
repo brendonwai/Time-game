@@ -64,7 +64,7 @@ public class ObjectInfo : MonoBehaviour {
 	//Player has the energy to spend for hacking
 	bool CanSpendEnergy(){
 		if(playerscript.Energy >= EnergyCost){
-			playerscript.Energy -= EnergyCost;
+			playerscript.SpendEnergy(EnergyCost);
 			return true;
 		}
 		else

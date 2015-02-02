@@ -85,7 +85,7 @@ public class HackRadius : MonoBehaviour {
 
 		if (objtag == "Enemy")
 			HackEnemy(other, otherpos);
-		GetComponentInParent<PlayerInfo>().Energy -= other.GetComponentInParent<EnemyInfo>().requiredEnergy;
+		GetComponentInParent<PlayerInfo>().SpendEnergy(other.GetComponentInParent<EnemyInfo>().requiredEnergy);
 	}
 
 	//For hacking enemies
