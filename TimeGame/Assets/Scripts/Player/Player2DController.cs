@@ -142,8 +142,13 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	public IEnumerator HackDeath () {
-		if(hackState==0)
+		if(hackState==0){
 			Instantiate(Explosion,transform.position,transform.rotation);
+
+			invincible = true;
+			yield return new WaitForSeconds(invinTime);		//Temporarily makes player invulnerable
+			invincible = false; 
+		}
 		HackFlip ();				//This is here because of sprite direction differences
 		rigidbody2D.velocity = new Vector2 (0,0);
 		anim.SetBool ("HackedEnemyDead", true);

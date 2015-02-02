@@ -160,7 +160,8 @@ public class TemplateEnemyAI : MonoBehaviour {
 	IEnumerator Explode(){
 		explosionRange.SetActive (true);
 		yield return new WaitForSeconds (.1f);
-		explosionRange.SetActive (false);
+		if(!GetComponent<EnemyInfo>().isHacked)
+			explosionRange.SetActive (false);
 	}
 
 	void Dead(){
