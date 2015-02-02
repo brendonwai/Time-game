@@ -18,20 +18,19 @@ public class PlayerInfo : MonoBehaviour {
 	public Text hundred;
 	public int maxEnergy;
 	//Amount of energy regenerated per second
-	public float EnergyRegen = 0.25f;
+	public int EnergyRegen = 1;
 	
 
 	void Start(){
-		InvokeRepeating("RegenerateEnergy", 1, 3.0f);
+		InvokeRepeating("RegenerateEnergy", 1, 10.0f);
 		hundred.text = "/ " + maxEnergy.ToString();
 	}
 
 	void RegenerateEnergy(){
 		if (Energy < maxEnergy){
 			Energy += EnergyRegen;
-			float displayedEnergy = Mathf.Floor (Energy);
-			energyBar.value = displayedEnergy;
-			energyNum.text = displayedEnergy.ToString();
+			energyBar.value = Energy;
+			energyNum.text = Energy.ToString();
 		}
 	}
 	void GainEnergyBoost(int EnergyBoost){
