@@ -26,11 +26,14 @@ public class PlayerInfo : MonoBehaviour {
 		hundred.text = "/ " + maxEnergy.ToString();
 	}
 
+	void Update(){
+		energyBar.value = Energy;
+		energyNum.text = Energy.ToString();
+	}
+
 	void RegenerateEnergy(){
 		if (Energy < maxEnergy){
 			Energy += EnergyRegen;
-			energyBar.value = Energy;
-			energyNum.text = Energy.ToString();
 		}
 	}
 	void GainEnergyBoost(int EnergyBoost){
