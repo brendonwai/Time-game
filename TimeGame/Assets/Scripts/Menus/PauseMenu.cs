@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour {
 
 	public GameObject UI_Pause;
 	public Text comment;
+	public GameObject player;
 	bool paused = false;
 		
 	int i = -1;						//Keeps track of what comment to display
@@ -17,7 +18,9 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	void Update(){
-		if(Input.GetKeyDown(KeyCode.P)&&!paused){
+		if(Input.GetKeyDown(KeyCode.P)&&!paused && !player.GetComponent<Player2DController>().GameOver){
+			player.GetComponent<Player2DController>().paused = true;
+
 			if(i<num_comments)
 				i++;
 			else
@@ -33,6 +36,7 @@ public class PauseMenu : MonoBehaviour {
 
 	public void ResumeGame(){
 		paused = false;
+		player.GetComponent<Player2DController>().paused = false;
 		UI_Pause.SetActive(false);
 		Time.timeScale = 1.0f;
 	}

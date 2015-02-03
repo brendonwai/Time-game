@@ -10813,6 +10813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI_Pause: {fileID: 1851981309}
   comment: {fileID: 1775681393}
+  player: {fileID: 1295061423}
 --- !u!1 &1115977682
 GameObject:
   m_ObjectHideFlags: 0
@@ -12478,6 +12479,7 @@ MonoBehaviour:
   GameOver: 0
   invincible: 0
   inHackingAnim: 0
+  paused: 0
 --- !u!50 &1295061428
 Rigidbody2D:
   m_ObjectHideFlags: 0

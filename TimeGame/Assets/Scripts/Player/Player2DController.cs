@@ -25,7 +25,7 @@ public class Player2DController : MonoBehaviour {
 	float invinTime = 1.0f;				//Sets time player is invincible for
 
 	public bool inHackingAnim;			//If the player is in the middle of the Hacking animation so you don't move or change your direction while it's playing.
-	
+	public bool paused = false;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -33,7 +33,7 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		if (!death){
+		if (!death&&!paused){
 			//Directional command handlers
 			float move_x = Input.GetAxis ("Horizontal");    //Get input for x-axis
 			float move_y = Input.GetAxis ("Vertical");      //Get input for y-axis
@@ -61,7 +61,8 @@ public class Player2DController : MonoBehaviour {
 	}
 
 	void Update(){
-		HackStateActions();
+		if(!death&&!paused)
+			HackStateActions();
 	}
 
 	//Handles player attack in default state
