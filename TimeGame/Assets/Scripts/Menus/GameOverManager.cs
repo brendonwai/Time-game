@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameOverManager : MonoBehaviour {
 
-	public GameObject PlayerStatus;
+	GameObject PlayerStatus;
 	GameObject UI_GameOver;
 
 	void Awake(){
@@ -18,7 +18,7 @@ public class GameOverManager : MonoBehaviour {
 			RunGameOver ();
 	}
 
-	public void RunGameOver(){
+	void RunGameOver(){
 		Time.timeScale = 0.0f;	//Pauses the game
 		UI_GameOver.active = true;		//Makes Gameover UI visible 
 
