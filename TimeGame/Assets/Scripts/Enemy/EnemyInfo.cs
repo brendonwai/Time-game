@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class EnemyInfo : MonoBehaviour {
 	//Stores enemy information to exchange with others
@@ -12,6 +13,8 @@ public class EnemyInfo : MonoBehaviour {
 	//Player Accessible
 	public int enemyType = 0;
 	public int requiredEnergy;
+
+	public Slider healthBar;
 	/*
 		*Tells the player which enemy is being hacked/interacted
 		*with.
@@ -26,6 +29,10 @@ public class EnemyInfo : MonoBehaviour {
 	public string Type = "Enemy";
 
 	public bool isHacked = false;
+
+	void start() {
+		healthBar.maxValue = Health;
+	}
 
 
 }

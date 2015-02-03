@@ -109,6 +109,8 @@ public class TemplateEnemyAI : MonoBehaviour {
 	IEnumerator takeDamage(int damage){
 		//reduce health by amount of damage
 		GetComponent<EnemyInfo>().Health -= damage;
+		GetComponent<EnemyInfo> ().healthBar.value = GetComponent<EnemyInfo> ().Health;
+
 		//sprite flashes red upon taking damage
 		renderer.material.color = Color.red;
 		yield return new WaitForSeconds (.1f);

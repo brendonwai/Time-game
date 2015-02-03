@@ -8,6 +8,7 @@ public class BasicSMessage : MonoBehaviour {
 		if(GetComponentInParent<EnemyInfo>().Health>=0){
 			//reduce health by amount of damage
 			GetComponentInParent<EnemyInfo>().Health -= damage;
+			GetComponent<EnemyInfo> ().healthBar.value = GetComponent<EnemyInfo> ().Health;
 			//sprite flashes red upon taking damage
 			GetComponentInParent<Renderer>().material.color = Color.red;
 			yield return new WaitForSeconds (.1f);
