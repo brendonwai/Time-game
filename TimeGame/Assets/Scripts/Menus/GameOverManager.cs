@@ -16,19 +16,33 @@ public class GameOverManager : MonoBehaviour {
 	int num_comments = 7;			//How many comments to cycle through
 	int d = -1;
 	int death_count = 7;
+	bool DeathPrefSet = false;
 
 	void Awake(){
 		PlayerStatus = GameObject.FindGameObjectWithTag("Player");
 		UI_GameOver = GameObject.FindGameObjectWithTag("GameOverUI");
 		UI_GameOver.active = false;		//Makes GameOver UI invisible
 		Time.timeScale = 1.0f;
+		d = PlayerPrefs.GetInt("Death Count");
 	}
 
 	void Update(){
-		if(PlayerStatus.GetComponent<Player2DController>().GameOver)
+		if(PlayerStatus.GetComponent<Player2DController>().GameOver){
+			if(!DeathPrefSet){
+				SetDeathPref();
+			}
 			RunGameOver ();
+		}
 		else
 			RunPause();
+	}
+
+
+	//Increments death count
+	void SetDeathPref(){
+		d++;
+		PlayerPrefs.SetInt("Death Count", d);
+		Debug.Log(PlayerPrefs.GetInt("Death Count"));
 	}
 
 	void RunPause(){
@@ -52,6 +66,7 @@ public class GameOverManager : MonoBehaviour {
 	}
 
 	void RunGameOver(){
+		DeathPrefSet = true;
 		MainComment.text = "Game Over";
 		comment.text = GameOverComment(d);
 		Time.timeScale = 0.0f;	//Pauses the game
