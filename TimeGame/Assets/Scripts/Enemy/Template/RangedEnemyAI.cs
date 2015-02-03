@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class RangedEnemyAI : MonoBehaviour {
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
 	public bool stopMove = false;		//Determines if enemy can stop moving towards player
+	public GameObject smoke;
 	//Set by child script and collider
 	//Made public so it's viewable by child
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
@@ -25,7 +26,16 @@ public class RangedEnemyAI : MonoBehaviour {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
 		timeCount = Time.time;
+		smoke.SetActive(false);
 	}
+
+	void Update(){
+		if(GetComponent<EnemyInfo>().Health<=50){
+			smoke.SetActive(true);
+		}
+			
+	}
+
 
 	// Activates when enemy enters trigger collider
 	void OnTriggerEnter2D(Collider2D other){
@@ -151,6 +161,8 @@ public class RangedEnemyAI : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+
 
 	//Activates death sequence
 	void Dead(){

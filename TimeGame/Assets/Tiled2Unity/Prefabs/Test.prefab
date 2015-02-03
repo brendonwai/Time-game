@@ -314,7 +314,7 @@ GameObject:
   - 61: {fileID: 6100026}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: GateH
+  m_TagString: ConnectorNoLinkRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,7 +330,7 @@ GameObject:
   - 61: {fileID: 6100028}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: ConnectorNoLinkRight
+  m_TagString: GateH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -561,7 +561,7 @@ Transform:
   - {fileID: 400004}
   - {fileID: 400002}
   - {fileID: 400000}
-  - {fileID: 400040}
+  - {fileID: 400038}
   m_Father: {fileID: 400026}
   m_RootOrder: 3
 --- !u!4 &400030
@@ -619,11 +619,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 192, y: -256, z: 0}
+  m_LocalPosition: {x: 32, y: -384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400042}
-  m_RootOrder: 0
+  m_Father: {fileID: 400028}
+  m_RootOrder: 8
 --- !u!4 &400040
 Transform:
   m_ObjectHideFlags: 1
@@ -631,11 +631,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32, y: -384, z: 0}
+  m_LocalPosition: {x: 192, y: -256, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400028}
-  m_RootOrder: 8
+  m_Father: {fileID: 400042}
+  m_RootOrder: 0
 --- !u!4 &400042
 Transform:
   m_ObjectHideFlags: 1
@@ -646,7 +646,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400038}
+  - {fileID: 400040}
   - {fileID: 400036}
   - {fileID: 400034}
   - {fileID: 400032}
@@ -919,7 +919,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100040}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 32, y: 32}
   m_Center: {x: 16, y: -16}
 --- !u!114 &11400000

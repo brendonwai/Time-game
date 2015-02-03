@@ -85,7 +85,7 @@ public class HackRadius : MonoBehaviour {
 
 		if (objtag == "Enemy")
 			HackEnemy(other, otherpos);
-		GetComponentInParent<PlayerInfo>().Energy -= other.GetComponentInParent<EnemyInfo>().requiredEnergy;
+		GetComponentInParent<PlayerInfo>().SpendEnergy(other.GetComponentInParent<EnemyInfo>().requiredEnergy);
 	}
 
 	//For hacking enemies
@@ -93,6 +93,20 @@ public class HackRadius : MonoBehaviour {
 		/*if (this.GetComponentInParent<Player2DController> ().facingLeft) {
 				this.GetComponentInParent<Player2DController> ().Flip();
 			}*/
+
+		int hackType = other.GetComponent<EnemyInfo>().enemyType;
+		if(hackType != 2){
+			other.GetComponent<EnemyInfo>().isHacked = true; //Stops enemy movement
+			anim.SetBool ("IsHackingEnemy", true);
+			anim.SetBool ("HackedEnemyDead", false);
+			
+			StartCoroutine(HackEnemyAnim(other, hackType));
+		}
+		else{
+			anim.SetBool("IsHackingEnemy", true);
+			other.GetComponent<Animator> ().SetBool("isHacked", true);
+			StartCoroutine(HackHealthDroneAnim());
+		}
 
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = true;	//Stop player from moving while hacking anim is playing
 		transform.parent.rigidbody2D.velocity = new Vector2 (0f, 0f);
@@ -108,22 +122,6 @@ public class HackRadius : MonoBehaviour {
 			}
 			transform.parent.transform.position = new Vector3(otherpos.x - HorizHackTeleport, otherpos.y, transform.position.z);
 		}
-		
-		int hackType = other.GetComponent<EnemyInfo>().enemyType;
-		if(hackType != 2){
-			other.GetComponent<EnemyInfo>().isHacked = true; //Stops enemy movement
-			anim.SetBool ("IsHackingEnemy", true);
-			anim.SetBool ("HackedEnemyDead", false);
-
-			StartCoroutine(HackEnemyAnim(other, hackType));
-		}
-		else{
-			anim.SetBool("IsHackingEnemy", true);
-			other.GetComponent<Animator> ().SetBool("isHacked", true);
-			StartCoroutine(HackHealthDroneAnim());
-		}
-	
-		
 	}
 
 	IEnumerator HackEnemyAnim (GameObject other, int hackType) {

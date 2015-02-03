@@ -29,6 +29,7 @@ TagManager:
   - ConnectorNoLinkBot
   - ConnectorNoLinkLeft
   - ConnectorNoLinkRight
+  - Floor
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

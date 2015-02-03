@@ -24,12 +24,7 @@ public class ObjectInfo : MonoBehaviour {
 
 	void OnMouseOver(){
 		if(!hacked)
-			if(inRange){
-				if(Input.GetMouseButtonDown(1))
-					Hacked();
-			}
-			else
-				renderer.material.color = OutOfHackRange;
+			renderer.material.color = OutOfHackRange;
 	}
 
 	void OnMouseExit(){
@@ -64,7 +59,7 @@ public class ObjectInfo : MonoBehaviour {
 	//Player has the energy to spend for hacking
 	bool CanSpendEnergy(){
 		if(playerscript.Energy >= EnergyCost){
-			playerscript.Energy -= EnergyCost;
+			playerscript.SpendEnergy(EnergyCost);
 			return true;
 		}
 		else

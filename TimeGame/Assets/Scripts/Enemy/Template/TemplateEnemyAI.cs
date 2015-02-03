@@ -105,15 +105,6 @@ public class TemplateEnemyAI : MonoBehaviour {
 		}
 	}
 
-	// Call this when damage dealt to enemy
-	IEnumerator takeDamage(int damage){
-		//reduce health by amount of damage
-		GetComponent<EnemyInfo>().Health -= damage;
-		//sprite flashes red upon taking damage
-		renderer.material.color = Color.red;
-		yield return new WaitForSeconds (.1f);
-		renderer.material.color=Color.white;
-	}
 
 	//Moves enemy closer to target
 	void ApproachTarget(){
@@ -157,7 +148,8 @@ public class TemplateEnemyAI : MonoBehaviour {
 	IEnumerator Explode(){
 		explosionRange.SetActive (true);
 		yield return new WaitForSeconds (.1f);
-		explosionRange.SetActive (false);
+		if(!GetComponent<EnemyInfo>().isHacked)
+			explosionRange.SetActive (false);
 	}
 
 	void Dead(){
