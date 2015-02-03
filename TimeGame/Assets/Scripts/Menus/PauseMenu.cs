@@ -18,19 +18,22 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	void Update(){
-		if(Input.GetKeyDown(KeyCode.P)&&!paused && !player.GetComponent<Player2DController>().GameOver){
-			player.GetComponent<Player2DController>().paused = true;
+		if(!player.GetComponent<Player2DController>().GameOver){
+			if(Input.GetKeyDown(KeyCode.P)&&!paused){
+				player.GetComponent<Player2DController>().paused = true;
 
-			if(i<num_comments)
-				i++;
-			else
-				i=0;
+				if(i<num_comments)
+					i++;
+				else
+					i=0;
+				comment.text = PauseComment(i);
 
-			comment.text = PauseComment(i);
-
-			paused = true;
-			UI_Pause.SetActive(true);
-			Time.timeScale = 0.0f;
+				paused = true;
+				UI_Pause.SetActive(true);
+				Time.timeScale = 0.0f;
+			}
+			else if(Input.GetKeyDown(KeyCode.P)&&paused)
+				ResumeGame();
 		}
 	}
 
@@ -40,8 +43,7 @@ public class PauseMenu : MonoBehaviour {
 		UI_Pause.SetActive(false);
 		Time.timeScale = 1.0f;
 	}
-
-
+	
 	//Sets what comment to put during pause screen
 	string PauseComment(int selection){
 		switch(selection){
