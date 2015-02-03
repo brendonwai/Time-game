@@ -42,7 +42,6 @@ public class GameOverManager : MonoBehaviour {
 	void SetDeathPref(){
 		d++;
 		PlayerPrefs.SetInt("Death Count", d);
-		Debug.Log(PlayerPrefs.GetInt("Death Count"));
 	}
 
 	void RunPause(){
