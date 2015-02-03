@@ -105,18 +105,6 @@ public class TemplateEnemyAI : MonoBehaviour {
 		}
 	}
 
-	// Call this when damage dealt to enemy
-	IEnumerator takeDamage(int damage){
-		Debug.Log("done");
-		//reduce health by amount of damage
-		GetComponent<EnemyInfo>().Health -= damage;
-		//sprite flashes red upon taking damage
-		renderer.material.color = Color.red;
-		yield return new WaitForSeconds (.1f);
-		renderer.material.color=Color.white;
-		if(GetComponent<EnemyInfo>().Health<=0)
-			StartCoroutine("Dead");
-	}
 
 	//Moves enemy closer to target
 	void ApproachTarget(){
