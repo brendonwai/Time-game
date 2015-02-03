@@ -12,7 +12,7 @@ public class PlayerInfo : MonoBehaviour {
 	public bool HealthDrainActive;
 
 	//Hacking Energy, max=100
-	public int Energy = 20;
+	public float Energy = 20;
 	public Slider energyBar;
 	public Text energyNum;
 	public Text hundred;
@@ -22,15 +22,19 @@ public class PlayerInfo : MonoBehaviour {
 	
 
 	void Start(){
-		InvokeRepeating("RegenerateEnergy", 1, 3.0f);
+		InvokeRepeating("RegenerateEnergy", 1, 10.0f);
 		hundred.text = "/ " + maxEnergy.ToString();
+	}
+	
+	void UpdateEnergyBar(){
+		energyBar.value = Energy;
+		energyNum.text = Energy.ToString();
 	}
 
 	void RegenerateEnergy(){
 		if (Energy < maxEnergy){
 			Energy += EnergyRegen;
-			energyBar.value = Energy;
-			energyNum.text = Energy.ToString();
+			UpdateEnergyBar();
 		}
 	}
 	void GainEnergyBoost(int EnergyBoost){
@@ -68,6 +72,12 @@ public class PlayerInfo : MonoBehaviour {
 	}
 	public void SwapToPreHackHealth () {
 		Health = PreHackHealth;
+	}
+
+	//Spends energy and updates Energy Bar
+	public void SpendEnergy(int cost){
+		Energy -= cost;
+		UpdateEnergyBar();
 	}
 
 }

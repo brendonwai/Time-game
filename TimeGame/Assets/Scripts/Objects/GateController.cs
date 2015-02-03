@@ -8,6 +8,7 @@ public class GateController : MonoBehaviour {
 	Transform parent;
 	int ConnectorCount = 0;
 	bool hacked = false;
+	float alpha = 1.0f;				//For making gate fade
 
 	// Use this for initialization
 	//NOTE: VERY IMPORTANT THAT THIS STAY AS Start() AND NOT Awake()
@@ -22,9 +23,29 @@ public class GateController : MonoBehaviour {
 		if(!hacked)
 			hacked = (ConnectorCount == CountHacked());
 		else
+			InvokeRepeating("OpenGate",1.0f,20.0f);
+			//this.gameObject.SetActive(false);
+
+		//renderer.material.color = new Color(1f, 1f, 1f, .5f);
+	}
+
+	void OpenGate(){
+		if(FadeOut())
 			this.gameObject.SetActive(false);
 	}
-	
+
+
+	//Makes gate fade away
+	bool FadeOut(){
+		if(alpha > 0){
+			alpha -= .1f;
+			renderer.material.color = new Color(1f, 1f, 1f, alpha);
+			return false;
+		}
+		else
+			return true;
+	}
+
 	//Counts how many gates under the same parent are hacked
 	int CountHacked(){
 		int result = 0;

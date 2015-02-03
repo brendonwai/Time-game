@@ -9,7 +9,6 @@ public class TemplateStopApproach : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player" && alreadyExplode==false){
 			alreadyExplode=true;
-			Debug.Log ("explode");
 			transform.parent.GetComponent<TemplateEnemyAI>().stopMove = true;
 			transform.parent.GetComponent<TemplateEnemyAI>().SendMessage("Dead");
 		}

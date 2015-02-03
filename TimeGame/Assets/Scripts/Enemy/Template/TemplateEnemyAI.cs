@@ -107,6 +107,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
+		Debug.Log("done");
 		//reduce health by amount of damage
 		GetComponent<EnemyInfo>().Health -= damage;
 		GetComponent<EnemyInfo> ().healthBar.value = GetComponent<EnemyInfo> ().Health;
@@ -115,6 +116,8 @@ public class TemplateEnemyAI : MonoBehaviour {
 		renderer.material.color = Color.red;
 		yield return new WaitForSeconds (.1f);
 		renderer.material.color=Color.white;
+		if(GetComponent<EnemyInfo>().Health<=0)
+			StartCoroutine("Dead");
 	}
 
 	//Moves enemy closer to target
@@ -159,7 +162,8 @@ public class TemplateEnemyAI : MonoBehaviour {
 	IEnumerator Explode(){
 		explosionRange.SetActive (true);
 		yield return new WaitForSeconds (.1f);
-		explosionRange.SetActive (false);
+		if(!GetComponent<EnemyInfo>().isHacked)
+			explosionRange.SetActive (false);
 	}
 
 	void Dead(){
