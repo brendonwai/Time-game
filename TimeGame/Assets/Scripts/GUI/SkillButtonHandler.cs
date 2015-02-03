@@ -43,7 +43,7 @@ public class SkillButtonHandler : MonoBehaviour {
 	void RunCD(int skill){
 		if(buttons[skill].fillAmount > 0.0f){
 			buttons[skill].fillAmount = buttons[skill].fillAmount - 1.0f/CoolDownDuration[skill]/100.0f;
-			countDown[skill].text = (CoolDownDuration[skill]*buttons[skill].fillAmount).ToString("0.0");
+			countDown[skill].text = (CoolDownDuration[skill]*buttons[skill].fillAmount).ToString("0");
 		}
 		else{
 			onCD[skill] = false;
