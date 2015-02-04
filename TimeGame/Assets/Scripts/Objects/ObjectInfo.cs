@@ -24,12 +24,7 @@ public class ObjectInfo : MonoBehaviour {
 
 	void OnMouseOver(){
 		if(!hacked)
-			if(inRange){
-				if(Input.GetMouseButtonDown(1))
-					Hacked();
-			}
-			else
-				renderer.material.color = OutOfHackRange;
+			renderer.material.color = OutOfHackRange;
 	}
 
 	void OnMouseExit(){

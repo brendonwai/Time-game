@@ -24,14 +24,13 @@ public class GateController : MonoBehaviour {
 			hacked = (ConnectorCount == CountHacked());
 		else
 			InvokeRepeating("OpenGate",1.0f,20.0f);
-			//this.gameObject.SetActive(false);
-
-		//renderer.material.color = new Color(1f, 1f, 1f, .5f);
 	}
 
 	void OpenGate(){
-		if(FadeOut())
+		if(FadeOut()){
+			CancelInvoke("OpenGate");
 			this.gameObject.SetActive(false);
+		}
 	}
 
 
