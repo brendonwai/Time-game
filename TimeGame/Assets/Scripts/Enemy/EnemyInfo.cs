@@ -15,6 +15,7 @@ public class EnemyInfo : MonoBehaviour {
 	public int requiredEnergy;
 
 	public Slider healthBar;
+	public Image energyBar;
 	/*
 		*Tells the player which enemy is being hacked/interacted
 		*with.
@@ -30,9 +31,14 @@ public class EnemyInfo : MonoBehaviour {
 
 	public bool isHacked = false;
 
-	void start() {
+	void Start() {
 		healthBar.maxValue = Health;
+		healthBar.value = Health;
+		Debug.Log (requiredEnergy / 100f);
+//		Debug.Log (energyBar.fillAmount + ' ' + requiredEnergy / 100f);
+		energyBar.fillAmount = (requiredEnergy / 100f);
 	}
+
 
 
 }

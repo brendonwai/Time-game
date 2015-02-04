@@ -117,7 +117,7 @@ GameObject:
   - 114: {fileID: 11400014}
   - 114: {fileID: 11400016}
   m_Layer: 0
-  m_Name: EnemyEnergyYBar
+  m_Name: EnemyEnergyBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
