@@ -40,7 +40,10 @@ public class GameOverManager : MonoBehaviour {
 
 	//Increments death count
 	void SetDeathPref(){
-		d++;
+		if(d<death_count)
+			d++;
+		else
+			d = 0;
 		PlayerPrefs.SetInt("Death Count", d);
 	}
 
