@@ -1,15 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &190720
+--- !u!1 &115150
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 490720}
-  - 58: {fileID: 5890720}
-  - 114: {fileID: 11490720}
+  - 4: {fileID: 415150}
+  - 58: {fileID: 5815150}
+  - 114: {fileID: 11415150}
   m_Layer: 0
   m_Name: damageRadius
   m_TagString: Untagged
@@ -35,14 +35,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &490720
+--- !u!4 &415150
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190720}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: -1.3842659, y: 0, z: -.168694988}
+  m_GameObject: {fileID: 115150}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490722}
@@ -54,29 +54,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190722}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: -11.8699999, y: -6.95200014, z: 0}
+  m_LocalPosition: {x: -14.0689964, y: -6.69023037, z: 0}
   m_LocalScale: {x: 1, y: .999999821, z: .999999821}
   m_Children:
-  - {fileID: 490720}
+  - {fileID: 415150}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!58 &5890720
+--- !u!58 &5815150
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190720}
+  m_GameObject: {fileID: 115150}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Radius: .800000012
   m_Center: {x: 0, y: 0}
---- !u!114 &11490720
+--- !u!114 &11415150
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190720}
+  m_GameObject: {fileID: 115150}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8b8097be399049aaa29f32a32e7bddd, type: 3}
