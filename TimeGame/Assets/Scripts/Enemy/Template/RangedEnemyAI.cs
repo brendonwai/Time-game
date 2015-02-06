@@ -30,7 +30,7 @@ public class RangedEnemyAI : MonoBehaviour {
 	}
 
 	void Update(){
-		if(GetComponent<EnemyInfo>().Health<=50){
+		if(GetComponent<EnemyInfo>().Health<=25){
 			smoke.SetActive(true);
 		}
 			

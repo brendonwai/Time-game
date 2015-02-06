@@ -12,15 +12,15 @@ Platform assembly: C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild
 Loading C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.093 seconds
+- Completed reload, in  0.044 seconds
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Arielle\Desktop\TIME GAME\Time-game\TimeGame\TGBuild_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 11.660438 ms
+UnloadTime: 11.360225 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 1405.
-Total: 1.555808 ms (FindLiveObjects: 0.106913 ms CreateObjectMapping: 0.038061 ms MarkObjects: 0.598716 ms  DeleteObjects: 0.011546 ms)
+Total: 1.510477 ms (FindLiveObjects: 0.098360 ms CreateObjectMapping: 0.037633 ms MarkObjects: 0.590163 ms  DeleteObjects: 0.011974 ms)
 
