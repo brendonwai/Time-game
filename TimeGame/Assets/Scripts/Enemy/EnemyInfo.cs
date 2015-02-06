@@ -32,8 +32,10 @@ public class EnemyInfo : MonoBehaviour {
 	public bool isHacked = false;
 
 	void Start() {
-		healthBar.maxValue = Health;
-		healthBar.value = Health;
+		if (healthBar != null) {
+			healthBar.maxValue = Health;
+			healthBar.value = Health;
+		}
 		Debug.Log (requiredEnergy / 100f);
 //		Debug.Log (energyBar.fillAmount + ' ' + requiredEnergy / 100f);
 		energyBar.fillAmount = (requiredEnergy / 100f);
