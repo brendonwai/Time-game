@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TemplateEnemyAI : MonoBehaviour {
+	//public GameObject Energy;
 	public GameObject explosionRange;
 	public GameObject explosion;
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
@@ -105,6 +106,20 @@ public class TemplateEnemyAI : MonoBehaviour {
 		}
 	}
 
+	// Call this when damage dealt to enemy
+	IEnumerator takeDamage(int damage){
+		Debug.Log("done");
+		//reduce health by amount of damage
+		GetComponent<EnemyInfo>().Health -= damage;
+		GetComponent<EnemyInfo> ().healthBar.value = GetComponent<EnemyInfo> ().Health;
+
+		//sprite flashes red upon taking damage
+		renderer.material.color = Color.red;
+		yield return new WaitForSeconds (.1f);
+		renderer.material.color=Color.white;
+		if(GetComponent<EnemyInfo>().Health<=0)
+			StartCoroutine("Dead");
+	}
 
 	//Moves enemy closer to target
 	void ApproachTarget(){
@@ -154,6 +169,11 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	void Dead(){
 		anim.SetBool("IsDead", true);
+		/*
+		for (int i=0;i<Random.Range(0,5.0f);i++){
+			Instantiate(Energy,Vector3(transform.position.x+Random.Range(-3.0f,3.0f),transform.position.y+Random.Range(-3.0f,3.0f),0),transform.rotation);
+		}
+		*/
 		StartCoroutine (Explode());
 		Instantiate (explosion, transform.position, transform.rotation);
 		Destroy (gameObject,.375f);

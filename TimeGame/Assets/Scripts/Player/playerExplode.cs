@@ -4,8 +4,9 @@ using System.Collections;
 public class playerExplode : MonoBehaviour {
 
 	
-	void OnTriggerEnter2D(Collider2D other){
+	void OnTriggerStay2D(Collider2D other){
 		if (other.tag=="Enemy"){
+			Debug.Log("somehting");
 			other.SendMessage("takeDamage",100);
 		}
 	}

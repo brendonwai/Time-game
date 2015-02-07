@@ -13,9 +13,7 @@ public class PlayerInfo : MonoBehaviour {
 
 	//Hacking Energy, max=100
 	public float Energy = 20;
-	public Slider energyBar;
-	public Text energyNum;
-	public Text hundred;
+	public Image energyBar;
 	public int maxEnergy;
 	//Amount of energy regenerated per second
 	public int EnergyRegen = 1;
@@ -23,12 +21,10 @@ public class PlayerInfo : MonoBehaviour {
 
 	void Start(){
 		InvokeRepeating("RegenerateEnergy", 1, 10.0f);
-		hundred.text = "/ " + maxEnergy.ToString();
 	}
 	
 	void UpdateEnergyBar(){
-		energyBar.value = Energy;
-		energyNum.text = Energy.ToString();
+		energyBar.fillAmount = Energy/maxEnergy;
 	}
 
 	void RegenerateEnergy(){
@@ -41,14 +37,12 @@ public class PlayerInfo : MonoBehaviour {
 		if (Energy + EnergyBoost <= maxEnergy)
 		{
 			Energy += EnergyBoost;
-			energyBar.value = Energy;
-			energyNum.text = Energy.ToString();
+			energyBar.fillAmount = Energy/maxEnergy;
 		}
 		else
 		{
 			Energy = maxEnergy;
-			energyBar.value = Energy;
-			energyNum.text = Energy.ToString(); 
+			energyBar.fillAmount = Energy/maxEnergy;
 		}
 	}
 	public IEnumerator HealthDrain() {
