@@ -8916,7 +8916,7 @@ GameObject:
   - 61: {fileID: 932677026}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: ConnectorNoLinkRight
+  m_TagString: GateH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8928,11 +8928,11 @@ Transform:
   m_PrefabInternal: {fileID: 1644708952}
   m_GameObject: {fileID: 932677024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32, y: -384, z: 0}
+  m_LocalPosition: {x: 192, y: -256, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2141157611}
-  m_RootOrder: 8
+  m_Father: {fileID: 2129108880}
+  m_RootOrder: 0
 --- !u!61 &932677026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8942,7 +8942,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 932677024}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 32, y: 32}
   m_Center: {x: 16, y: -16}
 --- !u!1 &943654067
@@ -9418,7 +9418,7 @@ GameObject:
   - 61: {fileID: 1030107541}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: GateH
+  m_TagString: ConnectorNoLinkRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9430,11 +9430,11 @@ Transform:
   m_PrefabInternal: {fileID: 1644708952}
   m_GameObject: {fileID: 1030107539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 192, y: -256, z: 0}
+  m_LocalPosition: {x: 32, y: -384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2129108880}
-  m_RootOrder: 0
+  m_Father: {fileID: 2141157611}
+  m_RootOrder: 8
 --- !u!61 &1030107541
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9444,7 +9444,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1030107539}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Size: {x: 32, y: 32}
   m_Center: {x: 16, y: -16}
 --- !u!1 &1051654950
@@ -17718,7 +17718,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1030107540}
+  - {fileID: 932677025}
   - {fileID: 1528780960}
   - {fileID: 1241315417}
   - {fileID: 385661436}
@@ -17759,7 +17759,7 @@ Transform:
   - {fileID: 2015510029}
   - {fileID: 1746896463}
   - {fileID: 997310569}
-  - {fileID: 932677025}
+  - {fileID: 1030107540}
   m_Father: {fileID: 385725165}
   m_RootOrder: 3
 --- !u!1 &2143843875
