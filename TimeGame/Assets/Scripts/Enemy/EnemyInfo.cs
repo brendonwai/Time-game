@@ -36,7 +36,6 @@ public class EnemyInfo : MonoBehaviour {
 			healthBar.maxValue = Health;
 			healthBar.value = Health;
 		}
-		Debug.Log (requiredEnergy / 100f);
 //		Debug.Log (energyBar.fillAmount + ' ' + requiredEnergy / 100f);
 		energyBar.fillAmount = (requiredEnergy / 100f);
 	}
