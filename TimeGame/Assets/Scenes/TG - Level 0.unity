@@ -4185,7 +4185,7 @@ MonoBehaviour:
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
-  facingRight: 0
+  facingRight: 1
 --- !u!95 &131982903
 Animator:
   serializedVersion: 3
@@ -4251,7 +4251,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1684355751
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: be8c2c2c0e4fd4a829abab9bfac63f58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 408a4206f4090e542b0a44e1b2f1c6b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &131982907
 MonoBehaviour:
@@ -5230,7 +5230,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 351034640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: -6.98140001, z: 0}
+  m_LocalPosition: {x: -5.51959991, y: -6.98140001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1295061425}
@@ -17191,7 +17191,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1684355751
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: be8c2c2c0e4fd4a829abab9bfac63f58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 408a4206f4090e542b0a44e1b2f1c6b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1615298537
 Transform:
@@ -17451,7 +17451,7 @@ MonoBehaviour:
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
-  facingRight: 0
+  facingRight: 1
 --- !u!95 &1631199087
 Animator:
   serializedVersion: 3
@@ -17517,7 +17517,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1684355751
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: be8c2c2c0e4fd4a829abab9bfac63f58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 408a4206f4090e542b0a44e1b2f1c6b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1631199091
 MonoBehaviour:
@@ -19391,7 +19391,7 @@ MonoBehaviour:
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
-  facingRight: 0
+  facingRight: 1
 --- !u!95 &1884963918
 Animator:
   serializedVersion: 3
@@ -19457,7 +19457,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1684355751
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: be8c2c2c0e4fd4a829abab9bfac63f58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 408a4206f4090e542b0a44e1b2f1c6b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1884963922
 MonoBehaviour:
