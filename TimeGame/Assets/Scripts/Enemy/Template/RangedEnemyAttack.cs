@@ -29,10 +29,10 @@ public class RangedEnemyAttack : MonoBehaviour {
 	void FixedUpdate(){
 		if(TargetInRange){
 			Attack ();
-			//sets fire rate to 2 shoots per second
+			//sets fire rate to 0.8 shoots per second
 			if (Time.time>=timestamp){
 				Shoot ();
-				timestamp=Time.time+.5f;
+				timestamp=Time.time+1.25f;
 			}
 		}
 	}
