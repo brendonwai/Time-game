@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  tags:
+  - Background
+  - Environment
+  - Enemy
+  - Bullet
+  - GameOverUI
+  - EnemyCollision
+  - GateConnector
+  - Connector2LinkBot
+  - Connector1LinkBotRight
+  - Connector1LinkBotLeft
+  - Gate
+  - Connector2LinkLeft
+  - Connector2LinkRight
+  - Connector2LinkTop
+  - Connector1LinkRightBot
+  - Connector1LinkRightTop
+  - Connector1LinkLeftBot
+  - Connector1LinkTop
+  - Connector1LinkTopLeft
+  - Connector1LinkTopRight
+  - Connector1LinkLeftTop
+  - GateH
+  - GateV
+  - ConnectorNoLinkBot
+  - ConnectorNoLinkLeft
+  - ConnectorNoLinkRight
+  - Floor
+  - 
+  Builtin Layer 0: Default
+  Builtin Layer 1: TransparentFX
+  Builtin Layer 2: Ignore Raycast
+  Builtin Layer 3: 
+  Builtin Layer 4: Water
+  Builtin Layer 5: UI
+  Builtin Layer 6: 
+  Builtin Layer 7: 
+  User Layer 8: GameOverUI
+  User Layer 9: Gate
+  User Layer 10: 
+  User Layer 11: 
+  User Layer 12: 
+  User Layer 13: 
+  User Layer 14: 
+  User Layer 15: 
+  User Layer 16: 
+  User Layer 17: 
+  User Layer 18: 
+  User Layer 19: 
+  User Layer 20: 
+  User Layer 21: 
+  User Layer 22: 
+  User Layer 23: 
+  User Layer 24: 
+  User Layer 25: 
+  User Layer 26: 
+  User Layer 27: 
+  User Layer 28: 
+  User Layer 29: 
+  User Layer 30: 
+  User Layer 31: 
+  m_SortingLayers:
+  - name: Background
+    userID: 2
+    uniqueID: 3508461843
+    locked: 0
+  - name: Default
+    userID: 0
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    userID: 1
+    uniqueID: 715744389
+    locked: 0
+  - name: Enemy
+    userID: 3
+    uniqueID: 1684355751
+    locked: 0
+  - name: Foreground
+    userID: 5
+    uniqueID: 427963823
+    locked: 0
+  - name: Menu
+    userID: 4
+    uniqueID: 3340300203
+    locked: 0
