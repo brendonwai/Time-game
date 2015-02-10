@@ -26,10 +26,17 @@ public class Player2DController : MonoBehaviour {
 
 	public bool inHackingAnim;			//If the player is in the middle of the Hacking animation so you don't move or change your direction while it's playing.
 	public bool paused = false;
+
+	public AudioClip SoundTakeDamage;
+
+	private AudioSource SoundSource;
+
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		PushBack.SetActive (false);
+		SoundSource = GetComponent<AudioSource>();
 	}
 
 	void FixedUpdate () {
@@ -90,6 +97,7 @@ public class Player2DController : MonoBehaviour {
 		if(!death && !invincible){
 			//trigger camera shake.
 			//shake magnitude based on damage taken
+			SoundSource.PlayOneShot(SoundTakeDamage,.7f);
 			SendMessage ("CamShakeOnDamage", damage);
 			//sprite flashes red upon taking damage
 			renderer.material.color = Color.red;
