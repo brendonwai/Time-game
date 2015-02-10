@@ -14006,6 +14006,8 @@ GameObject:
   - 114: {fileID: 1295061427}
   - 114: {fileID: 1295061430}
   - 114: {fileID: 1295061431}
+  - 81: {fileID: 1295061433}
+  - 82: {fileID: 1295061432}
   m_Layer: 0
   m_Name: playerSprite
   m_TagString: Player
@@ -14088,6 +14090,7 @@ MonoBehaviour:
   invincible: 0
   inHackingAnim: 0
   paused: 0
+  SoundTakeDamage: {fileID: 8300000, guid: 41737453a0bc7524d8476f43ab7f981b, type: 3}
 --- !u!50 &1295061428
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -14148,6 +14151,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1600957681}
+--- !u!82 &1295061432
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295061423}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!81 &1295061433
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295061423}
+  m_Enabled: 1
 --- !u!1001 &1299717492
 Prefab:
   m_ObjectHideFlags: 0
@@ -17367,7 +17435,6 @@ GameObject:
   - 20: {fileID: 1600957681}
   - 92: {fileID: 1600957680}
   - 124: {fileID: 1600957679}
-  - 81: {fileID: 1600957678}
   - 114: {fileID: 1600957683}
   m_Layer: 0
   m_Name: MainCamera
@@ -17376,14 +17443,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1600957678
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8100000, guid: 292d09dba18281148939b04067f50d4a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1600957677}
-  m_Enabled: 1
 --- !u!124 &1600957679
 Behaviour:
   m_ObjectHideFlags: 0
