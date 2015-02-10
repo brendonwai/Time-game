@@ -22,6 +22,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	//Efficiency
 	GameObject[] children;
+	bool OnScreen = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -52,6 +53,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	//For efficiency.
 	void SetActiveChildren(bool status){
+		OnScreen = status;
 		collider2D.enabled = status;
 		foreach(GameObject child in children)
 			child.SetActive(status);
@@ -118,10 +120,10 @@ public class TemplateEnemyAI : MonoBehaviour {
 				alive=false;
 				Dead ();
 			}
-			else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
+			else if((GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted) && OnScreen){
 				ApproachTarget();
 			}
-			else{
+			else if(OnScreen){
 				if (Time.time - timeCount >= randInterval){
 					// Creates a random target point in an arbitrary rectangle to move towards
 					randX = Random.Range(-750,750);

@@ -24,6 +24,7 @@ public class RangedEnemyAI : MonoBehaviour {
 
 	//Efficiency
 	GameObject[] children;
+	bool OnScreen = false;
 
 	
 	// Use this for initialization
@@ -56,6 +57,7 @@ public class RangedEnemyAI : MonoBehaviour {
 	//For efficiency.
 	void SetActiveChildren(bool status){
 		collider2D.enabled = status;
+		OnScreen = status;
 		foreach(GameObject child in children)
 			child.SetActive(status);
 	}
@@ -130,10 +132,10 @@ public class RangedEnemyAI : MonoBehaviour {
 			if (GetComponent<EnemyInfo> ().Health <= 0 && !anim.GetBool ("IsDead")) { //Delete if statement once destroy() turned on
 				Dead ();
 			}
-			else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
+			else if(OnScreen && (GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted)){
 				ApproachTarget();
 			}
-			else{
+			else if(OnScreen){
 				if (Time.time - timeCount >= randInterval){
 					// Creates a random target point in an arbitrary rectangle to move towards
 					randX = Random.Range(-750,750);
