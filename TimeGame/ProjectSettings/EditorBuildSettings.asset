@@ -12,6 +12,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TG - Level 0.unity
   - enabled: 1
-    path: Assets/Scenes/TempWin.unity
+    path: Assets/Scenes/FinalLevel.unity
   - enabled: 0
     path: Assets/Scenes/GameOverScene.unity
