@@ -8,7 +8,6 @@ public class FlipSceneVariation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("" + Random.Range(0, 2));
 		if (Random.Range (0, 2) == 1) {	//50% chance to flip the map
 			transform.position = new Vector3 (transform.position.x + GetComponent<TiledMap>().GetMapWidthInPixelsScaled(),
 			                                      transform.position.y, transform.position.z);	//Must be before the localScale change.

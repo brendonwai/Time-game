@@ -21,7 +21,7 @@ public class GameOverManager : MonoBehaviour {
 	void Awake(){
 		PlayerStatus = GameObject.FindGameObjectWithTag("Player");
 		UI_GameOver = GameObject.FindGameObjectWithTag("GameOverUI");
-		UI_GameOver.active = false;		//Makes GameOver UI invisible
+		UI_GameOver.SetActive(false);		//Makes GameOver UI invisible
 		Time.timeScale = 1.0f;
 		d = PlayerPrefs.GetInt("Death Count");
 	}
@@ -72,7 +72,7 @@ public class GameOverManager : MonoBehaviour {
 		MainComment.text = "Game Over";
 		comment.text = GameOverComment(d);
 		Time.timeScale = 0.0f;	//Pauses the game
-		UI_GameOver.active = true;		//Makes Gameover UI visible 
+		UI_GameOver.SetActive(true);		//Makes Gameover UI visible 
 
 	}
 

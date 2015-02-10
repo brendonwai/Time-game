@@ -4583,7 +4583,7 @@ Transform:
   m_Children:
   - {fileID: 1295061425}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
 --- !u!1 &364778148
 GameObject:
   m_ObjectHideFlags: 0
@@ -4982,7 +4982,7 @@ Transform:
   - {fileID: 2129108880}
   - {fileID: 2141157611}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!114 &385725166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5277,7 +5277,7 @@ Transform:
   - {fileID: 1344727940}
   - {fileID: 878871667}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!114 &468167805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11528,9 +11528,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1110550308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 741627bd061404848b1b5a97cd22c43b, type: 3}
+  m_Script: {fileID: 11500000, guid: 06855ffad0e3c934c82425358b92dfac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  updateInterval: .5
+  fpsText: {fileID: 0}
 --- !u!1 &1115977682
 GameObject:
   m_ObjectHideFlags: 0
@@ -11946,7 +11948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1152223939
 GameObject:
   m_ObjectHideFlags: 0
@@ -13823,6 +13825,7 @@ RectTransform:
   - {fileID: 2021629814}
   - {fileID: 831341157}
   - {fileID: 497187513}
+  - {fileID: 1486749895}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_AnchorMin: {x: 0, y: 0}
@@ -15322,6 +15325,72 @@ Prefab:
   m_RootGameObject: {fileID: 1752032596}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1486749894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1486749895}
+  - 222: {fileID: 1486749898}
+  - 114: {fileID: 1486749897}
+  m_Layer: 8
+  m_Name: FPSCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1486749895
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1486749894}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1232390341}
+  m_RootOrder: 7
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 558, y: 195.899994}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1486749897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1486749894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 644aefc7d2c06bb4281161ff8ad36463, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 0 FPS
+--- !u!222 &1486749898
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1486749894}
 --- !u!1 &1490559687
 GameObject:
   m_ObjectHideFlags: 0
@@ -17615,6 +17684,7 @@ GameObject:
   - 92: {fileID: 1600957680}
   - 124: {fileID: 1600957679}
   - 114: {fileID: 1600957683}
+  - 114: {fileID: 1600957678}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -17622,6 +17692,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1600957678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1600957677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06855ffad0e3c934c82425358b92dfac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateInterval: .5
+  fpsText: {fileID: 0}
 --- !u!124 &1600957679
 Behaviour:
   m_ObjectHideFlags: 0
@@ -17682,7 +17765,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1600957683
 MonoBehaviour:
   m_ObjectHideFlags: 0
