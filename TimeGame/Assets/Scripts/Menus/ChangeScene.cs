@@ -9,6 +9,6 @@ public class ChangeScene : MonoBehaviour {
 		if(index == -1)
 			Application.LoadLevel(Application.loadedLevel);
 		else
-			Application.LoadLevel(index);
+			ProgressInfo.StartingLevel(index);
 	}
 }
