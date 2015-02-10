@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 5
   ignoreReversedGraphics: 0
   blockingObjects: 0
   m_BlockingMask:
@@ -492,7 +493,7 @@ MonoBehaviour:
   moveSpeed: 1
   stopMove: 0
   smoke: {fileID: 163264, guid: aacd13c8462114cc4a6f4631ba55d808, type: 2}
-  Energy: {fileID: 154150, guid: c8c2b4aa0f3f74f1997743fce581de5b, type: 2}
+  deadBody: {fileID: 100000, guid: ffd5eb68b200cbc4db6149b4c950f83a, type: 2}
 --- !u!114 &11499566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1661,18 +1662,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
+  m_HideIfInvisible: 0
 --- !u!222 &22200002
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
+  m_HideIfInvisible: 0
 --- !u!222 &22200004
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
+  m_HideIfInvisible: 0
 --- !u!223 &22300000
 Canvas:
   m_ObjectHideFlags: 1
@@ -1687,7 +1691,6 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
   m_SortingLayerID: 1684355751
   m_SortingOrder: 5
 --- !u!224 &22400000
