@@ -22,6 +22,9 @@ public class RangedEnemyAI : MonoBehaviour {
 
 	bool informedGlobal = false;
 
+	//Efficiency
+	GameObject[] children;
+
 	
 	// Use this for initialization
 	void Awake () {
@@ -31,11 +34,37 @@ public class RangedEnemyAI : MonoBehaviour {
 		smoke.SetActive(false);
 	}
 
+	void Start(){
+		int count = 0;
+		
+		children = new GameObject[transform.childCount];
+		foreach(Transform child in transform){
+			children[count++] = child.gameObject;
+		}
+		SetActiveChildren(false);
+	}
+	
+	void OnBecameVisible(){
+		SetActiveChildren(true);
+	}
+	
+	void OnBecameInvisible(){
+		SetActiveChildren(false);
+	}
+	
+	
+	//For efficiency.
+	void SetActiveChildren(bool status){
+		collider2D.enabled = status;
+		foreach(GameObject child in children)
+			child.SetActive(status);
+	}
+
+
 	void Update(){
 		if(GetComponent<EnemyInfo>().Health<=25){
 			smoke.SetActive(true);
 		}
-			
 	}
 
 

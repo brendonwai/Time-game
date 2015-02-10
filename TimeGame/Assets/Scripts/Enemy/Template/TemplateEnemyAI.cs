@@ -20,12 +20,41 @@ public class TemplateEnemyAI : MonoBehaviour {
 	bool alive=true;
 	bool informedGlobal = false;
 
+	//Efficiency
+	GameObject[] children;
+
 	// Use this for initialization
 	void Awake () {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
 		timeCount = Time.time;
 		explosionRange.SetActive (false);
+	}
+
+	void Start(){
+		int count = 0;
+
+		children = new GameObject[transform.childCount];
+		foreach(Transform child in transform){
+			children[count++] = child.gameObject;
+		}
+		SetActiveChildren(false);
+	}
+
+	void OnBecameVisible(){
+		SetActiveChildren(true);
+	}
+
+	void OnBecameInvisible(){
+		SetActiveChildren(false);
+	}
+
+
+	//For efficiency.
+	void SetActiveChildren(bool status){
+		collider2D.enabled = status;
+		foreach(GameObject child in children)
+			child.SetActive(status);
 	}
 	
 	// Activates when target enters trigger collider
