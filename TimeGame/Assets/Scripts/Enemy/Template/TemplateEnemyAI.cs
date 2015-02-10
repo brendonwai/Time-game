@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TemplateEnemyAI : MonoBehaviour {
-	//public GameObject Energy;
+	public GameObject Energy;
 	public GameObject explosionRange;
 	public GameObject explosion;
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
@@ -17,7 +17,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 	float randY;                            // the enemy will move towards when the target is not in sight
 	float randInterval = 0;             // The interval between the points of time when the enemy changes direction
 	float timeCount;                    // Last update for random movement
-
+	bool alive=true;
 	bool informedGlobal = false;
 
 	// Use this for initialization
@@ -85,7 +85,8 @@ public class TemplateEnemyAI : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (!GetComponent<EnemyInfo>().isHacked) {
-			if (GetComponent<EnemyInfo> ().Health <= 0) {
+			if (GetComponent<EnemyInfo> ().Health <= 0 && alive) {
+				alive=false;
 				Dead ();
 			}
 			else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
@@ -169,11 +170,11 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	void Dead(){
 		anim.SetBool("IsDead", true);
-		/*
-		for (int i=0;i<Random.Range(0,5.0f);i++){
-			Instantiate(Energy,Vector3(transform.position.x+Random.Range(-3.0f,3.0f),transform.position.y+Random.Range(-3.0f,3.0f),0),transform.rotation);
+		
+		for (int i=0;i<Random.Range(5.0f,15.0f);i++){
+			Instantiate(Energy,new Vector2(transform.position.x+Random.Range(-1f,1f),transform.position.y+Random.Range(-1f,1f)),transform.rotation);
 		}
-		*/
+		
 		StartCoroutine (Explode());
 		Instantiate (explosion, transform.position, transform.rotation);
 		Destroy (gameObject,.375f);
