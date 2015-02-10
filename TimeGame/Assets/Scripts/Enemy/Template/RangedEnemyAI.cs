@@ -18,6 +18,8 @@ public class RangedEnemyAI : MonoBehaviour {
 	float randInterval = 0;             // The interval between the points of time when the enemy changes direction
 	float timeCount;                    // Last update for random movement
 
+	public GameObject deadBody;
+
 	bool informedGlobal = false;
 
 	
@@ -96,7 +98,7 @@ public class RangedEnemyAI : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if(!GetComponent<EnemyInfo>().isHacked){
-			if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
+			if (GetComponent<EnemyInfo> ().Health <= 0 && !anim.GetBool ("IsDead")) { //Delete if statement once destroy() turned on
 				Dead ();
 			}
 			else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
@@ -167,6 +169,8 @@ public class RangedEnemyAI : MonoBehaviour {
 	//Activates death sequence
 	void Dead(){
 		anim.SetBool("IsDead", true);
+		Vector2 location = transform.position;
 		Destroy (gameObject,2);
+		Instantiate(deadBody, location, Quaternion.identity);
 	}
 }

@@ -493,6 +493,7 @@ MonoBehaviour:
   moveSpeed: 1
   stopMove: 0
   smoke: {fileID: 163264, guid: aacd13c8462114cc4a6f4631ba55d808, type: 2}
+  deadBody: {fileID: 100000, guid: ffd5eb68b200cbc4db6149b4c950f83a, type: 2}
 --- !u!114 &11499566
 MonoBehaviour:
   m_ObjectHideFlags: 1
