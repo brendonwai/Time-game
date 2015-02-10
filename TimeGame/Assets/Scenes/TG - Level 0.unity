@@ -196,7 +196,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.31338644, y: 11.1120005}
+  m_AnchoredPosition: {x: -.31338644, y: 5}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &20500329
@@ -2941,6 +2941,33 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!1 &79844789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 79844790}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &79844790
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 79844789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.67966413, y: -4.75594902, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
 --- !u!1 &79908444
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,7 +3292,7 @@ GameObject:
   - 114: {fileID: 122984689}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: EnemyStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3398,7 +3425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRange: {fileID: 1742098737}
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
-  moveSpeed: .75
+  moveSpeed: 1
   stopMove: 0
   facingRight: 1
 --- !u!95 &131982903
@@ -3857,7 +3884,7 @@ GameObject:
   - 114: {fileID: 225292076}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: EnemyStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7985,7 +8012,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.31338644, y: 11.1120005}
+  m_AnchoredPosition: {x: -.31338644, y: 5}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &735730183
@@ -8600,7 +8627,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.31338644, y: 11.1120005}
+  m_AnchoredPosition: {x: -.31338644, y: 5}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &804423719
@@ -9732,7 +9759,7 @@ GameObject:
   - 114: {fileID: 1004854648}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: EnemyStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10142,7 +10169,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.31338644, y: 11.1120005}
+  m_AnchoredPosition: {x: -.31338644, y: 5}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1027216463
@@ -10713,7 +10740,7 @@ GameObject:
   - 114: {fileID: 1063053441}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: EnemyStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14624,7 +14651,7 @@ GameObject:
   - 114: {fileID: 1428757653}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: EnemyStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14826,7 +14853,7 @@ GameObject:
   - 114: {fileID: 1464409831}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: EnemyStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15244,7 +15271,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.31338644, y: 11.1120005}
+  m_AnchoredPosition: {x: -.31338644, y: 5}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1494319204
@@ -17103,7 +17130,7 @@ GameObject:
   - 114: {fileID: 1579085696}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: EnemyStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17582,7 +17609,7 @@ GameObject:
   - 114: {fileID: 1603694681}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: EnemyStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17786,7 +17813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRange: {fileID: 1181596629}
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
-  moveSpeed: .75
+  moveSpeed: 1
   stopMove: 0
   facingRight: 1
 --- !u!95 &1631199087
@@ -18943,7 +18970,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.31338644, y: 11.1120005}
+  m_AnchoredPosition: {x: -.31338644, y: 5}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1778926986
@@ -19244,7 +19271,7 @@ GameObject:
   - 114: {fileID: 1822937969}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: EnemyStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21793,7 +21820,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.31338644, y: 11.1120005}
+  m_AnchoredPosition: {x: -.31338644, y: 5}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2033855186
@@ -21916,7 +21943,7 @@ GameObject:
   - 114: {fileID: 2041818083}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: EnemyStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22203,7 +22230,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.31338644, y: 11.1120005}
+  m_AnchoredPosition: {x: -.31338644, y: 5}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2125798652
