@@ -158,6 +158,13 @@ public class TemplateEnemyAI : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+		foreach (Transform child in transform) {
+			if(child.gameObject.tag == "EnemyStats") {
+				Vector3 scale = child.gameObject.transform.localScale;
+				scale.x *= -1;
+				child.gameObject.transform.localScale = scale;
+			}
+		}
 	}
 
 	IEnumerator Explode(){
