@@ -32,15 +32,21 @@ public class RangedEnemyAI : MonoBehaviour {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
 		timeCount = Time.time;
+		foreach(Transform child in transform){
+			if(child.gameObject.name == "smoke")
+				smoke = child.gameObject;
+		}
 		smoke.SetActive(false);
 	}
 
 	void Start(){
 		int count = 0;
 		
-		children = new GameObject[transform.childCount];
+		children = new GameObject[(transform.childCount-1)];
 		foreach(Transform child in transform){
-			children[count++] = child.gameObject;
+			if(child.gameObject.name != "smoke"){
+				children[count++] = child.gameObject;
+			}
 		}
 		SetActiveChildren(false);
 	}
