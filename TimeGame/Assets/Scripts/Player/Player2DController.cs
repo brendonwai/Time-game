@@ -31,15 +31,12 @@ public class Player2DController : MonoBehaviour {
 
 	private AudioSource SoundSource;
 
-	private GameObject spawnRoom;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		PushBack.SetActive (false);
 		SoundSource = GetComponent<AudioSource>();
-		spawnRoom = GameObject.FindGameObjectWithTag("SpawnRoom");
-		transform.position = spawnRoom.transform.position;
 	}
 
 	void FixedUpdate () {
