@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596cfc9005f464946bbe632cfe4ef095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Energy: {fileID: 154150, guid: c8c2b4aa0f3f74f1997743fce581de5b, type: 2}
   explosionRange: {fileID: 100004}
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
