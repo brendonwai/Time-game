@@ -6,6 +6,7 @@ public class RangedEnemyAI : MonoBehaviour {
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
 	public bool stopMove = false;		//Determines if enemy can stop moving towards player
 	public GameObject smoke;
+	public GameObject Energy;
 	//Set by child script and collider
 	//Made public so it's viewable by child
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
@@ -19,6 +20,7 @@ public class RangedEnemyAI : MonoBehaviour {
 	float timeCount;                    // Last update for random movement
 
 	bool informedGlobal = false;
+	bool alive=true;
 
 	
 	// Use this for initialization
@@ -96,7 +98,8 @@ public class RangedEnemyAI : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if(!GetComponent<EnemyInfo>().isHacked){
-			if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
+			if (GetComponent<EnemyInfo> ().Health <= 0 && alive) { //Delete if statement once destroy() turned on
+				alive=false;
 				Dead ();
 			}
 			else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
@@ -167,6 +170,9 @@ public class RangedEnemyAI : MonoBehaviour {
 	//Activates death sequence
 	void Dead(){
 		anim.SetBool("IsDead", true);
+		for (int i=0;i<Random.Range(5.0f,15.0f);i++){
+			Instantiate(Energy,new Vector2(transform.position.x+Random.Range(-1f,1f),transform.position.y+Random.Range(-1f,1f)),transform.rotation);
+		}
 		Destroy (gameObject,2);
 	}
 }
