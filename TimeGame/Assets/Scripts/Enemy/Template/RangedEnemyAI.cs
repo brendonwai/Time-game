@@ -6,6 +6,7 @@ public class RangedEnemyAI : MonoBehaviour {
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
 	public bool stopMove = false;		//Determines if enemy can stop moving towards player
 	public GameObject smoke;
+	public GameObject Energy;
 	//Set by child script and collider
 	//Made public so it's viewable by child
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
@@ -207,6 +208,9 @@ public class RangedEnemyAI : MonoBehaviour {
 	void Dead(){
 		anim.SetBool("IsDead", true);
 		Vector2 location = transform.position;
+		for (int i=0;i<Random.Range(5.0f,15.0f);i++){
+			Instantiate(Energy,new Vector2(transform.position.x+Random.Range(-1f,1f),transform.position.y+Random.Range(-1f,1f)),transform.rotation);
+		}
 		Destroy (gameObject,2);
 		Instantiate(deadBody, location, Quaternion.identity);
 	}
