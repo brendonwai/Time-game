@@ -211,7 +211,7 @@ public class RangedEnemyAI : MonoBehaviour {
 		for (int i=0;i<Random.Range(5.0f,15.0f);i++){
 			Instantiate(Energy,new Vector2(transform.position.x+Random.Range(-1f,1f),transform.position.y+Random.Range(-1f,1f)),transform.rotation);
 		}
-		Destroy (gameObject,2);
+		Destroy (gameObject,1.0f);
 		Instantiate(deadBody, location, Quaternion.identity);
 	}
 }
