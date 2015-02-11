@@ -196,7 +196,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 	IEnumerator Explode(){
 		explosionRange.SetActive (true);
 		yield return new WaitForSeconds (.1f);
-		if(!GetComponent<EnemyInfo>().isHacked)
+		if(GetComponent<EnemyInfo>().isHacked)
 			explosionRange.SetActive (false);
 	}
 
@@ -209,6 +209,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 		
 		StartCoroutine (Explode());
 		Instantiate (explosion, transform.position, transform.rotation);
-		Destroy (gameObject,.375f);
+		if(!GetComponent<EnemyInfo>().isHacked)	//Prevents enemy from destroying itself during hacking
+			Destroy (gameObject,.375f);
 	}
 }
