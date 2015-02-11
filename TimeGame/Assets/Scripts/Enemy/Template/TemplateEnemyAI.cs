@@ -35,16 +35,16 @@ public class TemplateEnemyAI : MonoBehaviour {
 	void Start(){
 		int count = 0;
 
-		children = new GameObject[transform.childCount];
+		children = new GameObject[transform.childCount-1];
 		foreach(Transform child in transform){
-			children[count++] = child.gameObject;
+			if(child.gameObject.name != "AttackRadius")
+				children[count++] = child.gameObject;
 		}
 		SetActiveChildren(false);
 	}
 
 	void OnBecameVisible(){
 		SetActiveChildren(true);
-		explosionRange.SetActive(false); // temporary fix for kamikaze bots?
 	}
 
 	void OnBecameInvisible(){
