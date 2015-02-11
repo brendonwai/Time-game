@@ -44,6 +44,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	void OnBecameVisible(){
 		SetActiveChildren(true);
+		explosionRange.SetActive(false); // temporary fix for kamikaze bots?
 	}
 
 	void OnBecameInvisible(){
