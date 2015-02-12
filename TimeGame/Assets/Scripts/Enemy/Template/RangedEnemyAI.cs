@@ -43,9 +43,9 @@ public class RangedEnemyAI : MonoBehaviour {
 	void Start(){
 		int count = 0;
 		
-		children = new GameObject[(transform.childCount-1)];
+		children = new GameObject[(transform.childCount-2)];
 		foreach(Transform child in transform){
-			if(child.gameObject.name != "smoke"){
+			if(child.gameObject.name != "smoke"&&child.gameObject.name != "Canvas"){
 				children[count++] = child.gameObject;
 			}
 		}
