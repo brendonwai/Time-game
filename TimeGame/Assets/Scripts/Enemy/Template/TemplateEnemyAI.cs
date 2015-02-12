@@ -18,7 +18,10 @@ public class TemplateEnemyAI : MonoBehaviour {
 	float randInterval = 0;             // The interval between the points of time when the enemy changes direction
 	float timeCount;                    // Last update for random movement
 	bool alive=true;
+
 	bool informedGlobal = false;
+	bool lostSight = true;				//Keeps track if enemy lost sight of player after exiting Trigger
+	float stopFollow = 1.0f;			//Sets time after enemy gets LoS'ed that they stop following
 
 	//Efficiency
 	GameObject[] children;
@@ -68,25 +71,12 @@ public class TemplateEnemyAI : MonoBehaviour {
 				GetComponent<EnemyInfo>().Alerted = true;
 			}
 		}
-	}
-
-	// Activates while target is in trigger collider radius
-	void OnTriggerStay2D(Collider2D other){
 		if(other.tag == "Player"){
 			GetComponent<EnemyInfo>().TargetInSight = true;
 			if(!informedGlobal){
 				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer += 1;
 				informedGlobal = true;
-			}
-		}
-		if(other.tag == "Enemy"){
-			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
-				GetComponent<EnemyInfo>().Alerted = false;
-			else
-				if(other.gameObject.GetComponentInParent<EnemyInfo>().TargetInSight ||
-				   other.gameObject.GetComponentInParent<EnemyInfo>().Alerted){
-					GetComponent<EnemyInfo>().Alerted = true;	//Not redundant. Requires multiple
-																	//enemy alert states
+				lostSight = false;
 			}
 		}
 	}
@@ -94,10 +84,9 @@ public class TemplateEnemyAI : MonoBehaviour {
 	//Determines what target leaves field of view
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Player"){
-			GetComponent<EnemyInfo>().TargetInSight = false;
-			if(informedGlobal){
-				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer -= 1;
-				informedGlobal = false;
+			if(!lostSight){
+				lostSight = true;
+				StartCoroutine(LostSightManager());
 			}
 		}
 		if(other.tag == "Enemy"){
@@ -111,6 +100,18 @@ public class TemplateEnemyAI : MonoBehaviour {
 		if (col.gameObject.tag=="Player"){
 			//change amount of damage deal here
 			col.gameObject.SendMessage("takeDamage",10);
+		}
+	}
+
+	//For delaying the moment the enemy stops following the player after they exit the trigger zone
+	IEnumerator LostSightManager(){
+		yield return new WaitForSeconds(stopFollow); //Time to stop pursuit
+		if(lostSight){
+			GetComponent<EnemyInfo>().TargetInSight = false;
+			if(informedGlobal){
+				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer -= 1;
+				informedGlobal = false;
+			}
 		}
 	}
 

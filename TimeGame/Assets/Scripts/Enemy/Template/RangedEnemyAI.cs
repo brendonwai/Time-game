@@ -21,7 +21,9 @@ public class RangedEnemyAI : MonoBehaviour {
 
 	public GameObject deadBody;
 
-	bool informedGlobal = false;
+	bool informedGlobal = false;		//Keeps track if enemy already informed global of player pos
+	bool lostSight = true;				//Keeps track if enemy lost sight of player after exiting Trigger
+	float stopFollow = 1.0f;			//Sets time after enemy gets LoS'ed that they stop following
 
 	//Efficiency
 	GameObject[] children;
@@ -85,8 +87,14 @@ public class RangedEnemyAI : MonoBehaviour {
 				GetComponent<EnemyInfo>().Alerted = true;
 			}
 		}
-		if(other.tag == "Player")
-			TargetInSight = true;
+		if(other.tag == "Player"){
+			GetComponent<EnemyInfo>().TargetInSight = true;
+			if(!informedGlobal){
+				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer += 1;
+				informedGlobal = true;
+				lostSight = false;
+			}
+		}
 	}
 
 	//Deals damage to Player when touches him
@@ -97,39 +105,29 @@ public class RangedEnemyAI : MonoBehaviour {
 		}
 	}
 	
-	// Activates while target is in trigger collider radius
-	void OnTriggerStay2D(Collider2D other){
+	//Determines what target leaves field of view
+	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Player"){
-			GetComponent<EnemyInfo>().TargetInSight = true;
-			if(!informedGlobal){
-				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer += 1;
-				informedGlobal = true;
+			if(!lostSight){
+				lostSight = true;
+				StartCoroutine(LostSightManager());
 			}
 		}
 		if(other.tag == "Enemy"){
 			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
 				GetComponent<EnemyInfo>().Alerted = false;
-			else
-				if(other.gameObject.GetComponentInParent<EnemyInfo>().TargetInSight ||
-				  other.gameObject.GetComponentInParent<EnemyInfo>().Alerted){
-				GetComponent<EnemyInfo>().Alerted = true;	//Not redundant. Requires multiple
-				//enemy alert states
-			}
 		}
 	}
-	
-	//Determines what target leaves field of view
-	void OnTriggerExit2D(Collider2D other){
-		if(other.tag == "Player"){
+
+	//For delaying the moment the enemy stops following the player after they exit the trigger zone
+	IEnumerator LostSightManager(){
+		yield return new WaitForSeconds(stopFollow); //Time to stop pursuit
+		if(lostSight){
 			GetComponent<EnemyInfo>().TargetInSight = false;
 			if(informedGlobal){
 				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer -= 1;
 				informedGlobal = false;
 			}
-		}
-		if(other.tag == "Enemy"){
-			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
-				GetComponent<EnemyInfo>().Alerted = false;
 		}
 	}
 	
