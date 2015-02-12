@@ -113,10 +113,6 @@ public class RangedEnemyAI : MonoBehaviour {
 				StartCoroutine(LostSightManager());
 			}
 		}
-		if(other.tag == "Enemy"){
-			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
-				GetComponent<EnemyInfo>().Alerted = false;
-		}
 	}
 
 	//For delaying the moment the enemy stops following the player after they exit the trigger zone
@@ -133,6 +129,9 @@ public class RangedEnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer <= 0)
+			GetComponent<EnemyInfo>().Alerted = false;
+
 		if(!GetComponent<EnemyInfo>().isHacked&& !anim.GetBool ("IsDead")){
 			if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
 				Dead ();

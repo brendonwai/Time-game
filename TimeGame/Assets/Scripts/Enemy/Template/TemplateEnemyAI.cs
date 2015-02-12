@@ -117,6 +117,9 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer <= 0)
+			GetComponent<EnemyInfo>().Alerted = false;
+
 		if (!GetComponent<EnemyInfo>().isHacked) {
 			if (GetComponent<EnemyInfo> ().Health <= 0 && alive) {
 				alive=false;
