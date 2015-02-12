@@ -26,10 +26,10 @@ public class Player2DController : MonoBehaviour {
 
 	public bool inHackingAnim;			//If the player is in the middle of the Hacking animation so you don't move or change your direction while it's playing.
 	public bool paused = false;
-
-	public AudioClip SoundTakeDamage;
-
+	
+	//Sound
 	private AudioSource SoundSource;
+	public AudioClip SoundTakeDamage;	//Sound played when player takes damage
 
 	private GameObject spawnRoom;
 
