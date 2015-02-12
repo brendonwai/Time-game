@@ -96,10 +96,10 @@ GameObject:
   - 212: {fileID: 21299572}
   - 95: {fileID: 9599572}
   - 114: {fileID: 11499564}
-  - 60: {fileID: 6099572}
   - 58: {fileID: 5899568}
   - 114: {fileID: 11499566}
   - 114: {fileID: 11499568}
+  - 61: {fileID: 6100000}
   m_Layer: 0
   m_Name: ranged
   m_TagString: EnemyCollision
@@ -194,7 +194,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.07999992, y: -6.42999983, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 499568}
@@ -288,8 +288,8 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_Radius: 1
   m_Center: {x: 0, y: 0}
---- !u!60 &6099572
-PolygonCollider2D:
+--- !u!61 &6100000
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -297,23 +297,8 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Poly:
-    m_Paths:
-    - - {x: .00120159518, y: .157036424}
-      - {x: -.0681252182, y: .150429457}
-      - {x: -.166395217, y: .127836227}
-      - {x: -.176391035, y: .0504016355}
-      - {x: -.130771518, y: -.00653030258}
-      - {x: -.0709664971, y: -.0264921784}
-      - {x: -.0742356107, y: -.106000781}
-      - {x: -.0273143705, y: -.158886433}
-      - {x: .0548966192, y: -.152153015}
-      - {x: .0771239549, y: -.0233330727}
-      - {x: .130653158, y: -.0145032406}
-      - {x: .156212687, y: -.00564813614}
-      - {x: .168882072, y: .0410208702}
-      - {x: .164696425, y: .103031397}
-      - {x: .100787185, y: .132305384}
+  m_Size: {x: .200000003, y: .200000003}
+  m_Center: {x: 0, y: .0500000007}
 --- !u!61 &6199572
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -322,7 +307,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 199570}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .330000013, y: .319999993}
   m_Center: {x: 0, y: 0}
 --- !u!95 &9599572
@@ -351,6 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 0
   blockingObjects: 0
   m_BlockingMask:
@@ -1662,18 +1648,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
+  m_HideIfInvisible: 0
 --- !u!222 &22200002
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
+  m_HideIfInvisible: 0
 --- !u!222 &22200004
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
+  m_HideIfInvisible: 0
 --- !u!223 &22300000
 Canvas:
   m_ObjectHideFlags: 1
@@ -1688,7 +1677,6 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
   m_SortingLayerID: 1684355751
   m_SortingOrder: 5
 --- !u!224 &22400000

@@ -135,8 +135,8 @@ public class RangedEnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(!GetComponent<EnemyInfo>().isHacked){
-			if (GetComponent<EnemyInfo> ().Health <= 0 && !anim.GetBool ("IsDead")) { //Delete if statement once destroy() turned on
+		if(!GetComponent<EnemyInfo>().isHacked&& !anim.GetBool ("IsDead")){
+			if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
 				Dead ();
 			}
 			else if(OnScreen && (GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted)){
@@ -211,7 +211,7 @@ public class RangedEnemyAI : MonoBehaviour {
 		for (int i=0;i<Random.Range(5.0f,15.0f);i++){
 			Instantiate(Energy,new Vector2(transform.position.x+Random.Range(-1f,1f),transform.position.y+Random.Range(-1f,1f)),transform.rotation);
 		}
-		Destroy (gameObject,1.0f);
+		Destroy (gameObject,2.0f);
 		Instantiate(deadBody, location, Quaternion.identity);
 	}
 }
