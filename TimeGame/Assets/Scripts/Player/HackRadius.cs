@@ -131,6 +131,7 @@ public class HackRadius : MonoBehaviour {
 		anim.SetInteger("EnemyType", hackType);
 		this.GetComponentInParent<Player2DController> ().HackFlip();			//NOTE: this is here because player sprites are drawn to the left and enemy sprites are drawn to the right. Must add one when player exits machine.
 		GetComponentInParent<Player2DController>().hackState = hackType;
+		GetComponentInParent<Player2DController>().lastAttack = Time.time - 10f;		//Allows you to immediately attack after hacking an enemy
 		GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
 		GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
 		GetComponentInParent<PlayerInfo>().HealthDrainActive = true;
