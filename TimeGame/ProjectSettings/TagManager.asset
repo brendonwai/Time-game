@@ -30,7 +30,9 @@ TagManager:
   - ConnectorNoLinkLeft
   - ConnectorNoLinkRight
   - Floor
-  - EnemyStats
+  - PickUp
+  - Level
+  - SpawnRoom
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

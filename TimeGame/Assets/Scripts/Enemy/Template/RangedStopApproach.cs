@@ -9,11 +9,7 @@ public class RangedStopApproach : MonoBehaviour {
 			transform.parent.GetComponent<RangedEnemyAI>().stopMove = true;
 		}
 	}
-	void OnTriggerStay2D(Collider2D other){
-		if(other.tag == "Player"){
-			transform.parent.GetComponent<RangedEnemyAI>().stopMove = true;
-		}
-	}
+
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Player"){
 			transform.parent.GetComponent<RangedEnemyAI>().stopMove = false;

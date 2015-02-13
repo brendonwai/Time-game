@@ -15,7 +15,7 @@ public class RangedEnemyAttack : MonoBehaviour {
 		player = GameObject.Find ("playerSprite");
 	}
 	
-	void OnTriggerStay2D(Collider2D other){
+	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player")
 			TargetInRange = true;
 	}
@@ -27,7 +27,7 @@ public class RangedEnemyAttack : MonoBehaviour {
 	}
 	
 	void FixedUpdate(){
-		if(TargetInRange){
+		if(TargetInRange&&GetComponentInParent<EnemyInfo>().Health>0){
 			Attack ();
 			//sets fire rate to 0.8 shoots per second
 			if (Time.time>=timestamp){

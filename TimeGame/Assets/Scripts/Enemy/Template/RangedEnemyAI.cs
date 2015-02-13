@@ -6,6 +6,7 @@ public class RangedEnemyAI : MonoBehaviour {
 	public float moveSpeed = 0.1f;	 	//Sets momvement speed
 	public bool stopMove = false;		//Determines if enemy can stop moving towards player
 	public GameObject smoke;
+	public GameObject Energy;
 	//Set by child script and collider
 	//Made public so it's viewable by child
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
@@ -20,7 +21,13 @@ public class RangedEnemyAI : MonoBehaviour {
 
 	public GameObject deadBody;
 
-	bool informedGlobal = false;
+	bool informedGlobal = false;		//Keeps track if enemy already informed global of player pos
+	bool lostSight = true;				//Keeps track if enemy lost sight of player after exiting Trigger
+	float stopFollow = 1.0f;			//Sets time after enemy gets LoS'ed that they stop following
+
+	//Efficiency
+	GameObject[] children;
+	bool OnScreen = false;
 
 	
 	// Use this for initialization
@@ -28,14 +35,47 @@ public class RangedEnemyAI : MonoBehaviour {
 		target = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator>();
 		timeCount = Time.time;
+		foreach(Transform child in transform){
+			if(child.gameObject.name == "smoke")
+				smoke = child.gameObject;
+		}
 		smoke.SetActive(false);
 	}
+
+	void Start(){
+		int count = 0;
+		
+		children = new GameObject[(transform.childCount-2)];
+		foreach(Transform child in transform){
+			if(child.gameObject.name != "smoke"&&child.gameObject.name != "Canvas"){
+				children[count++] = child.gameObject;
+			}
+		}
+		SetActiveChildren(false);
+	}
+	
+	void OnBecameVisible(){
+		SetActiveChildren(true);
+	}
+	
+	void OnBecameInvisible(){
+		SetActiveChildren(false);
+	}
+	
+	
+	//For efficiency.
+	void SetActiveChildren(bool status){
+		collider2D.enabled = status;
+		OnScreen = status;
+		foreach(GameObject child in children)
+			child.SetActive(status);
+	}
+
 
 	void Update(){
 		if(GetComponent<EnemyInfo>().Health<=25){
 			smoke.SetActive(true);
 		}
-			
 	}
 
 
@@ -47,8 +87,14 @@ public class RangedEnemyAI : MonoBehaviour {
 				GetComponent<EnemyInfo>().Alerted = true;
 			}
 		}
-		if(other.tag == "Player")
-			TargetInSight = true;
+		if(other.tag == "Player"){
+			GetComponent<EnemyInfo>().TargetInSight = true;
+			if(!informedGlobal){
+				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer += 1;
+				informedGlobal = true;
+				lostSight = false;
+			}
+		}
 	}
 
 	//Deals damage to Player when touches him
@@ -59,52 +105,41 @@ public class RangedEnemyAI : MonoBehaviour {
 		}
 	}
 	
-	// Activates while target is in trigger collider radius
-	void OnTriggerStay2D(Collider2D other){
-		if(other.tag == "Player"){
-			GetComponent<EnemyInfo>().TargetInSight = true;
-			if(!informedGlobal){
-				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer += 1;
-				informedGlobal = true;
-			}
-		}
-		if(other.tag == "Enemy"){
-			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
-				GetComponent<EnemyInfo>().Alerted = false;
-			else
-				if(other.gameObject.GetComponentInParent<EnemyInfo>().TargetInSight ||
-				  other.gameObject.GetComponentInParent<EnemyInfo>().Alerted){
-				GetComponent<EnemyInfo>().Alerted = true;	//Not redundant. Requires multiple
-				//enemy alert states
-			}
-		}
-	}
-	
 	//Determines what target leaves field of view
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Player"){
+			if(!lostSight){
+				lostSight = true;
+				StartCoroutine(LostSightManager());
+			}
+		}
+	}
+
+	//For delaying the moment the enemy stops following the player after they exit the trigger zone
+	IEnumerator LostSightManager(){
+		yield return new WaitForSeconds(stopFollow); //Time to stop pursuit
+		if(lostSight){
 			GetComponent<EnemyInfo>().TargetInSight = false;
 			if(informedGlobal){
 				GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer -= 1;
 				informedGlobal = false;
 			}
 		}
-		if(other.tag == "Enemy"){
-			if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer == 0)
-				GetComponent<EnemyInfo>().Alerted = false;
-		}
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(!GetComponent<EnemyInfo>().isHacked){
-			if (GetComponent<EnemyInfo> ().Health <= 0 && !anim.GetBool ("IsDead")) { //Delete if statement once destroy() turned on
+		if(GetComponentInParent<GlobalEnemyInfo>().CanSeePlayer <= 0)
+			GetComponent<EnemyInfo>().Alerted = false;
+
+		if(!GetComponent<EnemyInfo>().isHacked&& !anim.GetBool ("IsDead")){
+			if (GetComponent<EnemyInfo> ().Health <= 0) { //Delete if statement once destroy() turned on
 				Dead ();
 			}
-			else if(GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted){
+			else if(OnScreen && (GetComponent<EnemyInfo>().TargetInSight || GetComponent<EnemyInfo>().Alerted)){
 				ApproachTarget();
 			}
-			else{
+			else if(OnScreen){
 				if (Time.time - timeCount >= randInterval){
 					// Creates a random target point in an arbitrary rectangle to move towards
 					randX = Random.Range(-750,750);
@@ -178,7 +213,10 @@ public class RangedEnemyAI : MonoBehaviour {
 	void Dead(){
 		anim.SetBool("IsDead", true);
 		Vector2 location = transform.position;
-		Destroy (gameObject,2);
+		for (int i=0;i<Random.Range(5.0f,15.0f);i++){
+			Instantiate(Energy,new Vector2(transform.position.x+Random.Range(-1f,1f),transform.position.y+Random.Range(-1f,1f)),transform.rotation);
+		}
+		Destroy (gameObject,2.0f);
 		Instantiate(deadBody, location, Quaternion.identity);
 	}
 }

@@ -17,26 +17,33 @@ public class Player2DController : MonoBehaviour {
 	bool death = false;					//Determines if player is dead
 	
 	float KnockBackForce = 500;			//Knockback distance
-	
-	float attackRate=1.0f;				//Attack handlers
-	float nextAttack=0;
+
+	//Constant attack rates
+	const float humanAttackRate = 1.0f;			//Human Pushback Attack Rate
+	const float rangedEnemyAttackRate = 0.5f;	//Ranged Enemy Attack Rate
+
+	//Attack handlers
+	public float lastAttack = 0;				//For use with timestamps for attack cooldowns.
 
 	public bool invincible = false;		//Makes player invincible
 	float invinTime = 1.0f;				//Sets time player is invincible for
 
 	public bool inHackingAnim;			//If the player is in the middle of the Hacking animation so you don't move or change your direction while it's playing.
 	public bool paused = false;
-
-	public AudioClip SoundTakeDamage;
-
+	
+	//Sound
 	private AudioSource SoundSource;
+	public AudioClip SoundTakeDamage;	//Sound played when player takes damage
 
+	private GameObject spawnRoom;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		PushBack.SetActive (false);
 		SoundSource = GetComponent<AudioSource>();
+		spawnRoom = GameObject.FindGameObjectWithTag("SpawnRoom");
+		transform.position = spawnRoom.transform.position;
 	}
 
 	void FixedUpdate () {
@@ -71,16 +78,9 @@ public class Player2DController : MonoBehaviour {
 		if(!death&&!paused)
 			HackStateActions();
 	}
-
+	
 	//Handles player attack in default state
-	void PlayerAttack(){
-		if(Input.GetMouseButtonDown(0) && Time.time>=nextAttack && !anim.GetBool("IsAttacking")){
-			nextAttack+=attackRate;
-			StartCoroutine("Attack");
-		}
-	}
-
-	IEnumerator Attack(){
+	IEnumerator HumanPushbackAttack(){
 		anim.SetBool ("IsAttacking", true);
 		yield return new WaitForSeconds (.15f);
 		PushBack.SetActive (true);
@@ -153,7 +153,7 @@ public class Player2DController : MonoBehaviour {
 	public IEnumerator HackDeath () {
 		if(hackState==0)
 			Instantiate(Explosion,transform.position,transform.rotation);
-		if(hackState!=0)
+		if(hackState==0)
 			HackFlip ();				//This is here because of sprite direction differences
 		rigidbody2D.velocity = new Vector2 (0,0);
 		anim.SetBool ("HackedEnemyDead", true);
@@ -174,7 +174,8 @@ public class Player2DController : MonoBehaviour {
 		
 		invincible = true;
 		yield return new WaitForSeconds(invinTime);		//Temporarily makes player invulnerable
-		invincible = false; 
+		invincible = false;
+		lastAttack = Time.time - 10f;		//Allows you to immediately attack after exiting the hacked enemy
 	}
 
 	//Flips character sprite to face direction of movement
@@ -194,28 +195,30 @@ public class Player2DController : MonoBehaviour {
 	//Sets player moveset based on what enemy currently hacked if any.
 	void HackStateActions(){
 		switch(hackState){
-
-			//BASIC ENEMY
 			case 0:
+			//BASIC ENEMY
 				break;
-			//BASIC RANGED ENEMY
 			case 1:
-				anim.SetBool("IsAttacking", true);
-				if (Time.time>=timestamp){
-					RangedEnemyShoot ();
-					timestamp=Time.time+.5f;
-					}
+			//BASIC RANGED ENEMY
+				if(Input.GetMouseButtonDown(0) && (Time.time >= lastAttack + rangedEnemyAttackRate) && !anim.GetBool("IsAttacking")){
+					lastAttack = Time.time;
+					StartCoroutine("RangedEnemyShoot");
+				}
 				break;
 			default:
-				PlayerAttack();
+			//HUMAN
+				if(Input.GetMouseButtonDown(0) && (Time.time >= lastAttack + humanAttackRate) && !anim.GetBool("IsAttacking")){
+					lastAttack = Time.time;
+					StartCoroutine("HumanPushbackAttack");
+				}
 				break;
 			      
 		}
 	}
-	
 
 	//Mimics ranged enemy shooting
-	void RangedEnemyShoot(){
+	IEnumerator RangedEnemyShoot() {
+		anim.SetBool("IsAttacking", true);
 		Vector2 bulletClonePos = transform.position;
 		bulletClonePos.x -= .1f;
 		Vector2 bulletClone2Pos = transform.position;
@@ -231,5 +234,9 @@ public class Player2DController : MonoBehaviour {
 		bulletClone2.AddForce (dir2*bulletspeed);
 		bulletClone.renderer.material.color = Color.red;
 		bulletClone2.renderer.material.color = Color.red;
+
+		yield return new WaitForSeconds(0.3333f);
+		anim.SetBool("IsAttacking", false);
+
 	}
 }

@@ -102,7 +102,7 @@ GameObject:
   - 114: {fileID: 11400018}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: EnemyStats
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4000001, y: 5.57999992, z: 0}
+  m_LocalPosition: {x: -4.36000013, y: -1.67999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -319,7 +319,7 @@ MonoBehaviour:
   Energy: {fileID: 154150, guid: c8c2b4aa0f3f74f1997743fce581de5b, type: 2}
   explosionRange: {fileID: 100004}
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
-  moveSpeed: 1
+  moveSpeed: .75
   stopMove: 0
   facingRight: 1
 --- !u!114 &11400006
@@ -639,7 +639,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.31338644, y: 5}
+  m_AnchoredPosition: {x: -.31338644, y: 11.1120005}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
