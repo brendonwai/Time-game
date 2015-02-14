@@ -10,7 +10,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 	public bool stopMove = false;		//Determines if enemy can stop moving towards player
 											//Set by child script and collider
 	CircleCollider2D detectRadius;		//Sets when enemy detects player
-	public bool facingRight = true;			//Determines direction enemy facing
+	public bool facingRight = false;			//Determines direction enemy facing
 	Animator anim;						//For controlling animation
 	GameObject target;					//Enemy's target
 	float randX;                        // randX and randY is a random coordinate that 
