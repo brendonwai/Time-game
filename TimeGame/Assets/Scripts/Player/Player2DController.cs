@@ -43,7 +43,7 @@ public class Player2DController : MonoBehaviour {
 		PushBack.SetActive (false);
 		SoundSource = GetComponent<AudioSource>();
 		spawnRoom = GameObject.FindGameObjectWithTag("SpawnRoom");
-		transform.position = spawnRoom.transform.position;
+		//transform.position = spawnRoom.transform.position;
 	}
 
 	void FixedUpdate () {
