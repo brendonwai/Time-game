@@ -42,7 +42,7 @@ public class Player2DController : MonoBehaviour {
 		PushBack.SetActive (false);
 		SoundSource = GetComponent<AudioSource>();
 		spawnRoom = GameObject.FindGameObjectWithTag("SpawnRoom");
-		transform.position = spawnRoom.transform.position;
+		//transform.position = spawnRoom.transform.position;
 	}
 
 	void FixedUpdate () {
@@ -152,8 +152,6 @@ public class Player2DController : MonoBehaviour {
 	public IEnumerator HackDeath () {
 		if(hackState==0)
 			Instantiate(Explosion,transform.position,transform.rotation);
-		if(hackState==0)
-			HackFlip ();				//This is here because of sprite direction differences
 		rigidbody2D.velocity = new Vector2 (0,0);
 		anim.SetBool ("HackedEnemyDead", true);
 		anim.SetBool ("IsHackingEnemy", false);
@@ -183,11 +181,6 @@ public class Player2DController : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 		GetComponentInChildren<AntiFlip> ().Flip();		//Changes direction of hacksprite
-	}
-	public void HackFlip() {
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
 	}
 
 	//Sets player moveset based on what enemy currently hacked if any.
