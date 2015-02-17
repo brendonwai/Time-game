@@ -7,7 +7,7 @@ public class MortarBotAI : MonoBehaviour {
 	private GameObject targetReticle;	//Child target reticle
 
 	private const float attackRate = 2.5f;
-	private const int attackDamage = 10;
+	private const int attackDamage = 20;
 	private const float timeUntilExplosion = 1f;
 	private float lastAttack = 0f;
 
