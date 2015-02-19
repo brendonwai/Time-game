@@ -16,7 +16,6 @@ public class HackRadius : MonoBehaviour {
 	//Keys
 	public KeyCode hackKey;							//Button to Hack an enemy
 
-	
 	void Start() {
 		anim = this.transform.parent.GetComponent<Animator> ();
 		hacksprite = GetComponentInChildren<SpriteRenderer> ();
@@ -56,12 +55,16 @@ public class HackRadius : MonoBehaviour {
 		if (other.gameObject.tag == "Enemy") {
 			objectsInRange.Add (other.transform.parent.gameObject);
 		}
+		if(other.gameObject.tag == "GateConnector")
+			other.GetComponent<ObjectInfo>().inRange = true;
 	}
 	
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.tag == "Enemy" && objectsInRange.Contains (other.transform.parent.gameObject)) {
 			objectsInRange.Remove (other.transform.parent.gameObject);
 		}
+		if(other.gameObject.tag == "GateConnector")
+			other.GetComponent<ObjectInfo>().inRange = false;
 	}
 
 	public bool enoughEnergy(GameObject other) {
