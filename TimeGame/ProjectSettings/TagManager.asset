@@ -33,6 +33,8 @@ TagManager:
   - PickUp
   - Level
   - SpawnRoom
+  - Connector
+  - EnemyStats
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -78,6 +80,10 @@ TagManager:
   - name: Player
     userID: 1
     uniqueID: 715744389
+    locked: 0
+  - name: Explosions
+    userID: 6
+    uniqueID: 3794442025
     locked: 0
   - name: Enemy
     userID: 3

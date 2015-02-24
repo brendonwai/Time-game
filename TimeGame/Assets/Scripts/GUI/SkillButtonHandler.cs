@@ -9,18 +9,19 @@ public class SkillButtonHandler : MonoBehaviour {
 	public float[] CoolDownDuration;	//Duration of cooldown
 	public bool[] onCD;					//Determines if button is on CD
 	public Text[] countDown;			//Counts down seconds to cooldown
-	int i;
+	private int buttonNum;
 
 	// Use this for initialization
 	void Start () {
-		i = 0;
+		buttonNum = 0;
 		foreach(Image cover in buttons){
 			cover.fillAmount = 0.0f;
 			//CoolDownDuration[i] = 1.0f/CoolDownDuration[i]/100.0f;
-			onCD[i] = false;
-			i++;
+			onCD[buttonNum] = false;
+			buttonNum++;
 		}
-		InvokeRepeating("CheckCD", 0f, .01f);
+
+		InvokeRepeating("CheckCD", 0f, .01f);	//The cooldown timer function
 	
 	}
 	
@@ -34,9 +35,9 @@ public class SkillButtonHandler : MonoBehaviour {
 	}
 
 	//Checks all buttons for if on CD and runs CD effect
-	void CheckCD(){
-		for(int n = 0; n<i; n++)
-			RunCD(n);
+	void CheckCD() {
+		for(int skillNum = 0; skillNum < buttonNum; skillNum++)	//buttonNum = Last Index of Buttons
+			RunCD(skillNum);
 	}
 
 	//Runs CD effect
