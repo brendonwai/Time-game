@@ -46,7 +46,7 @@ TagManager:
   Builtin Layer 7: 
   User Layer 8: GameOverUI
   User Layer 9: Gate
-  User Layer 10: 
+  User Layer 10: Foreground
   User Layer 11: 
   User Layer 12: 
   User Layer 13: 
@@ -96,4 +96,12 @@ TagManager:
   - name: Menu
     userID: 4
     uniqueID: 3340300203
+    locked: 0
+  - name: 
+    userID: 7
+    uniqueID: 1721538067
+    locked: 0
+  - name: New Layer 8
+    userID: 8
+    uniqueID: 2798625261
     locked: 0
