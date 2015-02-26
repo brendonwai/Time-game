@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="52">
+ <properties>
+  <property name="unity:scale" value=" 0.01"/>
+ </properties>
+ <tileset firstgid="1" name="tileSheet" tilewidth="32" tileheight="32">
+  <image source="../Tiles/tileSheet.png" width="352" height="288"/>
+  <tile id="66">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="67">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="68">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="69">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="71">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="72">
+   <properties>
+    <property name="unity:scale" value="1:100"/>
+   </properties>
+  </tile>
+  <tile id="77">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="78">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="79">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="80">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="82">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="88">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="89">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="90">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="91">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="93">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="100" name="tileSheet2" tilewidth="32" tileheight="32">
+  <image source="../Tiles/tileSheet.png" width="352" height="288"/>
+  <tile id="66">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="16" width="32" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="67">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="68">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="16" width="32" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="77">
+   <objectgroup draworder="index"/>
+  </tile>
+ </tileset>
+ <layer name="Floor" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2kGKg1AAA1Cv1551DtlVYTYygTrEkvcgO+FHs1J8HMfxkH9Pqt1zJal2z5Wk2j1Xkmr3XEmq3XMlqavPfd7g3u+YVLvnSlLtnitJtXuuJNXuuZJUu+dKUu2eK0m1e64k1e65ktQnZ3j3u36PZ5ifX0mub9//3ZJq91xJqt1zJal2z5Wk2j1Xkmr3XEmq3XMlqXbPlaSuPtf7x732EHt8Q1KNbu/vLu1nZA97/MUe9rDHOXvYwx7n7GEPe5yzhz3scc4e9nj/r9J+RvbYTardcyWpds+VpNo9VwIAAAAAAAAAAAAAAAAAAAAAAAAAAABwFy8Yzlnx
+  </data>
+ </layer>
+ <layer name="Wall Back" width="100" height="100">
+  <properties>
+   <property name="unity:tag" value="Background"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztmktu2zAQQHWnHKFoUWQRBejKqWH4aL1C9l34aJGgEGVYkTNDjiwRfg8g5A81JvVoakRpGGBrvhvqvg3Dn/NU3pbXq2X6/jYu22K9UHfaXt+n1z+EulL5OZXRIc6eZe7Dq9HHfPyep9e5MtcZl22x3nMU7/2zHVL9Unn59NEaZ8/yUulDqhN8aOMFHy3EPnoFH8dibx+npVz/TtvfhnasgY98Ha2Pp+Hr/NmCxsfRndX4OC/bWyjT+L6ldbQ+pLaNhZK2u8XH/PmWeVlMnAuutaPCx5c89pQc91Pmcyu1Ps6FmJfCvlvmZTFpLrjWDi25fDf9Pe38U5r/gtfcdUbOh6a0HodWvH14tasUT3OdEZPzt1bS3AEf9fFyfWmZQ/BRH2+LHAkf9fHw8Y+Q73oxxboe2YclR5ByhrW4rT6058wYqW6aF0vHW5PXWrlkfi/8luXaJJf/rcVt9fFtWNbnrfm29dxa6k9pTOTWXDTjaG3fmjXj1utSi497zLNSfyxutfvk9q2ZGx/Nxz3BBz7wkSecdyz3Ah7dh2WdRDrvp1jvBcz5Tm7NMqYnH5r+xHisuXoRX68czUdN7l4zho9EGEtzn0vt39OHlLun9wi3HsOe5K7fQ5+l/e7tQxonvZObA6Q+5/KErX1I4+SIWJ4PLM0BJbzW/Wt8SIyKOC14rgOutc0zN9/bh7ZOC1v6sOaCEj360ORsMdr1WMnHZfBxWKJXH1LOFiNdh/wa5GNrfdYl3sfyXc8+vLD4yP0v1/Kp0lrLHj40x603H6X/ZUrNOr6Xj9o8vEcfHtzLhzUPx8f/n3v7sLbrEX1Iz61qkXxYnzHIPUeQxo7Zw0fNfZBAKTfbykfNPQjLWk/MHj5a1jgtfffyUXsPQtPHp+T9Hj5asD5bc7T7URK9+bCAj/59eD4XqCXkI2Hr/WxiiOkdu6YtFh8t522KT34DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHBPPgCaOdOR
+  </data>
+ </layer>
+ <layer name="Wall Fore" width="100" height="100">
+  <properties>
+   <property name="unity:sortingLayerName" value="Foreground"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2eEJwjAQBtDsVl3CAdUl3M0iFIJoozHmCHkP7m8J5Zp+uZxTSpfGdV1rWeugHgUA7NtywzF6IQMqZa6W7zQq3+mLGKesZiTbAwCbX3JwzyxbWks+v/12lunM1t4tq3/6tCdLfQ4AxKrJpLIb0WrPUlDrueeAufW+257ZEr0AhvXqOyVGzXe8d2/gTgHi2FsBxhe9lzsLA8AYes6/3/33R3i2WT8AAAAAAAAAAAAAAAAAAAAAAAAAAAAALd0B+YVsAA==
+  </data>
+ </layer>
+ <layer name="Hidden Passage" width="100" height="100">
+  <properties>
+   <property name="unity:sortingLayerName" value="Foreground"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0qENADEMBMH0X0749xYaGr3BghnpGvB6LQAAAAAAAAAAAACYt3+MeXq0vN73u8Y8/96iR4seLXq06NGiR4seLXq06NGiR4seAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEDNAZfyMBw=
+  </data>
+ </layer>
+ <objectgroup name="Gate1">
+  <properties>
+   <property name="unity:tag" value="GateH"/>
+  </properties>
+  <object id="3" x="192" y="256" width="32" height="32">
+   <properties>
+    <property name="unity:isTrigger" value="true"/>
+    <property name="unity:tag" value="GateH"/>
+   </properties>
+  </object>
+  <object id="6" x="160" y="256" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkBot"/>
+   </properties>
+  </object>
+  <object id="8" x="160" y="256" height="32"/>
+  <object id="10" x="128" y="256" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkBotRight"/>
+   </properties>
+  </object>
+  <object id="33" x="288" y="256" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkBotLeft"/>
+   </properties>
+  </object>
+  <object id="38" x="512" y="32" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="ConnectorNoLinkBot"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate2">
+  <object id="21" x="640" y="192" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateV"/>
+   </properties>
+  </object>
+  <object id="22" x="640" y="288" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftTop"/>
+   </properties>
+  </object>
+  <object id="23" x="640" y="160" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkLeft"/>
+   </properties>
+  </object>
+  <object id="24" x="640" y="128" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftBot"/>
+   </properties>
+  </object>
+  <object id="25" x="640" y="352" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="ConnectorNoLinkLeft"/>
+   </properties>
+  </object>
+  <object id="26" x="352" y="128" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkRightBot"/>
+   </properties>
+  </object>
+  <object id="27" x="352" y="160" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkRight"/>
+   </properties>
+  </object>
+  <object id="29" x="352" y="192" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkRightTop"/>
+   </properties>
+  </object>
+  <object id="30" x="32" y="384" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="ConnectorNoLinkRight"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate3">
+  <properties>
+   <property name="unity:sortingLayerName" value="Gate"/>
+  </properties>
+  <object id="42" x="672" y="768" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateV"/>
+   </properties>
+  </object>
+  <object id="44" x="768" y="736" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="ConnectorNoLinkBot"/>
+   </properties>
+  </object>
+  <object id="47" x="672" y="864" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkRight"/>
+   </properties>
+  </object>
+  <object id="48" x="672" y="896" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkRightTop"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Misc">
+  <properties>
+   <property name="unity:tag" value=""/>
+  </properties>
+ </objectgroup>
+ <objectgroup name="Gate4">
+  <object id="49" x="928" y="1216" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateV"/>
+   </properties>
+  </object>
+  <object id="51" x="928" y="1184" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftBot"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
