@@ -90,6 +90,10 @@ public class TileHandler : MonoBehaviour {
 		foreach(GameObject temp in connectors){
 			Vector3 position = new Vector3((temp.transform.position.x+x_adjust), temp.transform.position.y+y_adjust, -100f);
 			GameObject clone = (GameObject)Instantiate(createMe, position, rotation);
+
+
+			clone.renderer.material.color = LevelColor;
+
 			clone.transform.parent = temp.transform.parent;
 			SetXScale(clone,x_scale);
 			SetYScale(clone,y_scale);
