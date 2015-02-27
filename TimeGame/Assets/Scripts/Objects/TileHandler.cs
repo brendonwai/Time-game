@@ -17,11 +17,37 @@ public class TileHandler : MonoBehaviour {
 	public GameObject GateH;						//For creating horizontal gate
 	public GameObject GateV;						//For creating vertical gate
 
+	//For Coloring
+	public GameObject[] LevelElements;
+
+	//For Randomized level coloring
+	float LowerColorRange = .3f;
+	float UpperColorRange = .7f;
+	Color LevelColor;
+
+
 	GameObject[] connectors;
 
 	void Awake(){
+		GenerateLevelColor();
+		ApplyLevelColor();
 		CreateConnectors();
 		CreateGate();
+	}
+
+	//Generates a random color
+	void GenerateLevelColor(){
+		float red = Random.Range(LowerColorRange,UpperColorRange);
+		float blue = Random.Range(LowerColorRange,UpperColorRange);
+		float green = Random.Range(LowerColorRange,UpperColorRange);
+		LevelColor = new Color(red,blue,green, 1.0f);
+	}
+
+	//Applies generated color to level elements in list
+	void ApplyLevelColor(){
+		foreach(GameObject element in LevelElements){
+			element.renderer.material.color = LevelColor;
+		}
 	}
 
 	//Creates Gate of all types on map

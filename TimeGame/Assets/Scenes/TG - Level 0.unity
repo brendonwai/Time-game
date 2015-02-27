@@ -12648,6 +12648,10 @@ MonoBehaviour:
   ConnectorNoLinkSide: {fileID: 100000, guid: 13fbc9ae70ebffa4eb39d3a93e350a82, type: 2}
   GateH: {fileID: 100000, guid: eac6190c106479840aaac61c9d24d638, type: 2}
   GateV: {fileID: 100000, guid: 59c5e98420a7639468bbccba84ee683a, type: 2}
+  LevelElements:
+  - {fileID: 1156645706}
+  - {fileID: 2143843875}
+  - {fileID: 1254587180}
 --- !u!114 &1110550313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13274,7 +13278,6 @@ GameObject:
   - 33: {fileID: 1156645710}
   - 23: {fileID: 1156645709}
   - 114: {fileID: 1156645708}
-  - 114: {fileID: 1156645711}
   m_Layer: 0
   m_Name: mesh_[00]_[00]
   m_TagString: Untagged
@@ -13335,17 +13338,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1644708952}
   m_GameObject: {fileID: 1156645706}
   m_Mesh: {fileID: 4300000, guid: 04cd028536b033f4ea57b27e96688621, type: 3}
---- !u!114 &1156645711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1156645706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 996afd4e0d386b54682aff23f6302269, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1175358614
 GameObject:
   m_ObjectHideFlags: 0
