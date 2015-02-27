@@ -5,7 +5,7 @@ public class ObjectInfo : MonoBehaviour {
 
 	public bool hacked = false;		//Determines hacked state
 	public bool inRange = false;	//Determines if object is in hacking range
-	public int EnergyCost = 5;		//How much energy needs to be spent to hack
+	int EnergyCost = 5;		//How much energy needs to be spent to hack
 
 	Animator anim;				//Sets sprite image after hack
 	GameObject player;			//Gets player info to determine if in or out of hack radius
@@ -14,10 +14,13 @@ public class ObjectInfo : MonoBehaviour {
 	//Colors
 	Color OutOfHackRange = new Color(.6f, .1f, .1f, 1f);
 	Color InHackRange = new Color(0f, .4f, .5f, 1f);
+	Color LevelColor;
+
 	int i = 0;
 
 	float HorizHackTeleport = 0.3f;
 	float VertHackTeleport = 0.0f;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +31,7 @@ public class ObjectInfo : MonoBehaviour {
 			VertHackTeleport = .3f;
 			HorizHackTeleport = 0f;
 		}
+		LevelColor = renderer.material.color;
 	}
 
 	void OnMouseOver(){
@@ -45,7 +49,7 @@ public class ObjectInfo : MonoBehaviour {
 	}
 
 	void OnMouseExit(){
-		renderer.material.color = Color.white;
+		renderer.material.color = LevelColor;
 	}
 
 
