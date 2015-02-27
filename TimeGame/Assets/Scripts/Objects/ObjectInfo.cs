@@ -5,7 +5,7 @@ public class ObjectInfo : MonoBehaviour {
 
 	public bool hacked = false;		//Determines hacked state
 	public bool inRange = false;	//Determines if object is in hacking range
-	public int EnergyCost = 5;		//How much energy needs to be spent to hack
+	int EnergyCost = 5;		//How much energy needs to be spent to hack
 
 	Animator anim;				//Sets sprite image after hack
 	GameObject player;			//Gets player info to determine if in or out of hack radius
@@ -14,56 +14,42 @@ public class ObjectInfo : MonoBehaviour {
 	//Colors
 	Color OutOfHackRange = new Color(.6f, .1f, .1f, 1f);
 	Color InHackRange = new Color(0f, .4f, .5f, 1f);
+	Color LevelColor;
+
 	int i = 0;
+
+	float HorizHackTeleport = 0.3f;
+	float VertHackTeleport = 0.0f;
+	
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerscript = player.GetComponent<PlayerInfo>();
+		if(gameObject.name.IndexOf("LinkBot")!=-1){
+			VertHackTeleport = .3f;
+			HorizHackTeleport = 0f;
+		}
+		LevelColor = renderer.material.color;
 	}
 
 	void OnMouseOver(){
-		if(!hacked)
-			renderer.material.color = OutOfHackRange;
+		if(!hacked){
+			if(playerscript.Energy>= EnergyCost){
+				renderer.material.color = InHackRange;
+				if(inRange && Input.GetMouseButtonDown(1)){
+					playerscript.SpendEnergy(EnergyCost);
+					Hacked();
+				}
+			}
+			else
+				renderer.material.color = OutOfHackRange;
+		}
 	}
 
 	void OnMouseExit(){
-		if(!inRange)	//Prevents color from turning white on mouser over while still in range
-			renderer.material.color = Color.white;
-	}
-
-	//Checks if player is in front of keyboard
-	void OnTriggerEnter2D(Collider2D other){
-		if(other.gameObject.tag == "Player"&&!hacked){
-			if(playerscript.Energy >= EnergyCost)
-				renderer.material.color = InHackRange;
-			else
-				renderer.material.color = OutOfHackRange;
-			inRange = true;
-		}
-	}
-
-	void OnTriggerStay2D(Collider2D other){
-		if(other.gameObject.tag == "Player" && !hacked)
-			if(Input.GetKeyDown(KeyCode.X) && CanSpendEnergy())
-				Hacked();
-	}
-
-	void OnTriggerExit2D(Collider2D other){
-		if(other.gameObject.tag == "Player"){
-			inRange = false;
-			renderer.material.color = Color.white;
-		}
-	}
-
-	//Player has the energy to spend for hacking
-	bool CanSpendEnergy(){
-		if(playerscript.Energy >= EnergyCost){
-			playerscript.SpendEnergy(EnergyCost);
-			return true;
-		}
-		else
-			return false;
+		renderer.material.color = LevelColor;
 	}
 
 
@@ -75,16 +61,19 @@ public class ObjectInfo : MonoBehaviour {
 	}
 
 	IEnumerator GateHackAnim() {
+
 		player.GetComponent<Player2DController> ().inHackingAnim = true;
 		if (transform.position.x < player.transform.position.x) {											//If player is to the right of target
 			if (!player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the right while not facing left then flip to face left.
 				player.GetComponent<Player2DController> ().Flip();
 			}
+			player.transform.position = new Vector3(transform.position.x + HorizHackTeleport, transform.position.y-VertHackTeleport, transform.position.z);
 		}
 		else {
 			if (player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the left while facing left then flip to face right.
 				player.GetComponent<Player2DController> ().Flip();
 			}
+			player.transform.position = new Vector3(transform.position.x - HorizHackTeleport, transform.position.y-VertHackTeleport, transform.position.z);
 		}
 		player.GetComponent<Animator> ().SetBool ("IsHackingGate", true);
 		yield return new WaitForSeconds (0.433f);

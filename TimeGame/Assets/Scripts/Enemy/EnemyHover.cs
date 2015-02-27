@@ -18,7 +18,7 @@ public class EnemyHover : MonoBehaviour {
 		anim = this.transform.parent.GetComponent<Animator>();
 		GameObject go = GameObject.Find("hackRadius");
 		hackRadius = (HackRadius) go.GetComponent(typeof(HackRadius));
-		enemyStats.active = false;
+		enemyStats.SetActive(false);
 	}
 
 	void OnMouseOver() {
@@ -37,19 +37,19 @@ public class EnemyHover : MonoBehaviour {
 							renderer.material.color = NotHackable;
 						}
 					}
-					enemyStats.active = true;					
+					enemyStats.SetActive(true);					
 					mousingOver = true;
 				}
 			}
 		}
 		if (!mousingOver) { // If the user is not mousing over the enemy but mousing over one of its larger, surrounding colliders this is true
 			renderer.material.color = Color.white;
-			enemyStats.active = false;
+			enemyStats.SetActive(false);
 		}
 	}
 	
 	void OnMouseExit() {
 		renderer.material.color = Color.white;
-		enemyStats.active = false;
+		enemyStats.SetActive(false);
 	}
 }
