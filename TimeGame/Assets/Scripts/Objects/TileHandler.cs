@@ -21,7 +21,7 @@ public class TileHandler : MonoBehaviour {
 	public GameObject[] LevelElements;
 
 	//For Randomized level coloring
-	float LowerColorRange = .5f;
+	float LowerColorRange = .4f;
 	float UpperColorRange = .8f;
 	Color LevelColor;
 
