@@ -538,7 +538,7 @@ GameObject:
   - 61: {fileID: 6100038}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: GateH
+  m_TagString: Connector1LinkLeftBot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -570,7 +570,7 @@ GameObject:
   - 61: {fileID: 6100040}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Connector1LinkLeftBot
+  m_TagString: GateH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -626,7 +626,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
-  - {fileID: 400070}
+  - {fileID: 400066}
   m_Father: {fileID: 400026}
   m_RootOrder: 8
 --- !u!4 &400006
@@ -878,7 +878,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400066}
+  - {fileID: 400070}
   - {fileID: 400064}
   - {fileID: 400062}
   - {fileID: 400060}
@@ -933,7 +933,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400048}
-  - {fileID: 400072}
+  - {fileID: 400068}
   m_Father: {fileID: 400026}
   m_RootOrder: 2
 --- !u!4 &400052
@@ -959,7 +959,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400044}
-  - {fileID: 400068}
+  - {fileID: 400072}
   m_Father: {fileID: 400026}
   m_RootOrder: 1
 --- !u!4 &400056
@@ -1030,11 +1030,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 192, y: -256, z: 0}
+  m_LocalPosition: {x: 928, y: -1184, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400042}
-  m_RootOrder: 0
+  m_Father: {fileID: 400004}
+  m_RootOrder: 1
 --- !u!4 &400068
 Transform:
   m_ObjectHideFlags: 1
@@ -1045,7 +1045,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400054}
+  m_Father: {fileID: 400050}
   m_RootOrder: 1
 --- !u!4 &400070
 Transform:
@@ -1054,11 +1054,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 928, y: -1184, z: 0}
+  m_LocalPosition: {x: 192, y: -256, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400004}
-  m_RootOrder: 1
+  m_Father: {fileID: 400042}
+  m_RootOrder: 0
 --- !u!4 &400072
 Transform:
   m_ObjectHideFlags: 1
@@ -1069,7 +1069,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400050}
+  m_Father: {fileID: 400054}
   m_RootOrder: 1
 --- !u!23 &2300000
 Renderer:
@@ -1185,29 +1185,6 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100072}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Poly:
-    m_Paths:
-    - - {x: 704, y: -16}
-      - {x: 672, y: -16}
-      - {x: 672, y: -32}
-      - {x: 704, y: -32}
-    - - {x: 32, y: -16}
-      - {x: 0, y: -16}
-      - {x: 0, y: -32}
-      - {x: 32, y: -32}
-    - - {x: 2496, y: -256}
-      - {x: 2592, y: -256}
-      - {x: 2592, y: -224}
-      - {x: 2496, y: -224}
---- !u!60 &6000002
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100068}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1353,6 +1330,29 @@ PolygonCollider2D:
       - {x: 2080, y: -1024}
       - {x: 2272, y: -1024}
       - {x: 2272, y: -832}
+--- !u!60 &6000002
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100068}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: 704, y: -16}
+      - {x: 672, y: -16}
+      - {x: 672, y: -32}
+      - {x: 704, y: -32}
+    - - {x: 32, y: -16}
+      - {x: 0, y: -16}
+      - {x: 0, y: -32}
+      - {x: 32, y: -32}
+    - - {x: 2496, y: -256}
+      - {x: 2592, y: -256}
+      - {x: 2592, y: -224}
+      - {x: 2496, y: -224}
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1570,7 +1570,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100066}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Size: {x: 32, y: 32}
   m_Center: {x: 16, y: -16}
 --- !u!61 &6100040
@@ -1581,7 +1581,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100070}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 32, y: 32}
   m_Center: {x: 16, y: -16}
 --- !u!114 &11400000
