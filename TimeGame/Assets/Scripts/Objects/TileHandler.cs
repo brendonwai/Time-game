@@ -22,7 +22,7 @@ public class TileHandler : MonoBehaviour {
 
 	//For Randomized level coloring
 	float LowerColorRange = .4f;
-	float UpperColorRange = .8f;
+	float UpperColorRange = .9f;
 	Color LevelColor;
 
 
