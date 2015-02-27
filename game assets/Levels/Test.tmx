@@ -213,6 +213,7 @@
   </properties>
   <object id="42" x="672" y="768" width="32" height="32">
    <properties>
+    <property name="unity:isTrigger" value="true"/>
     <property name="unity:tag" value="GateV"/>
    </properties>
   </object>

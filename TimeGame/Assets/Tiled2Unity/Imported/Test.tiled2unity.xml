@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 2/26/2015 10:32:23 PM-->
+<!--Last exported: 2/26/2015 10:51:27 PM-->
 <Tiled2Unity version="0.9.7.4">
   <AssignMaterial mesh="mesh_[00]_[00]" material="tileSheet" sortingLayerName="" sortingOrder="0" />
   <AssignMaterial mesh="mesh_[01]_[00]" material="tileSheet" sortingLayerName="" sortingOrder="1" />
@@ -92,7 +92,7 @@
       </GameObject>
     </GameObject>
     <GameObject name="Gate3">
-      <GameObject name="RectangleObject" x="672" y="-768" tag="GateV">
+      <GameObject name="RectangleObject" x="672" y="-768" isTrigger="true" tag="GateV">
         <BoxCollider2D width="32" height="32" />
       </GameObject>
       <GameObject name="RectangleObject" x="768" y="-736" tag="ConnectorNoLinkBot">

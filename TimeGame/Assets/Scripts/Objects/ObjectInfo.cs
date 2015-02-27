@@ -5,7 +5,7 @@ public class ObjectInfo : MonoBehaviour {
 
 	public bool hacked = false;		//Determines hacked state
 	public bool inRange = false;	//Determines if object is in hacking range
-	public int EnergyCost = 5;		//How much energy needs to be spent to hack
+	int EnergyCost = 5;		//How much energy needs to be spent to hack
 
 	Animator anim;				//Sets sprite image after hack
 	GameObject player;			//Gets player info to determine if in or out of hack radius
