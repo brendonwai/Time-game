@@ -5,6 +5,8 @@ public class ObjectInfo : MonoBehaviour {
 
 	public bool hacked = false;		//Determines hacked state
 	public bool inRange = false;	//Determines if object is in hacking range
+	public int orientation = 0;		//Gets what direction it is facing
+
 	int EnergyCost = 5;		//How much energy needs to be spent to hack
 
 	Animator anim;				//Sets sprite image after hack
@@ -18,19 +20,11 @@ public class ObjectInfo : MonoBehaviour {
 
 	int i = 0;
 
-	float HorizHackTeleport = 0.3f;
-	float VertHackTeleport = 0.0f;
-	
-
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerscript = player.GetComponent<PlayerInfo>();
-		if(gameObject.name.IndexOf("LinkBot")!=-1){
-			VertHackTeleport = .3f;
-			HorizHackTeleport = 0f;
-		}
 		LevelColor = renderer.material.color;
 	}
 
@@ -61,23 +55,51 @@ public class ObjectInfo : MonoBehaviour {
 	}
 
 	IEnumerator GateHackAnim() {
-
 		player.GetComponent<Player2DController> ().inHackingAnim = true;
+		if(orientation == 0)
+			GateHackBot();
+		else if(orientation == 1)
+			GateHackLeft();
+		else
+			GateHackRight();
+		player.GetComponent<Animator> ().SetBool ("IsHackingGate", true);
+		yield return new WaitForSeconds (0.433f);
+		player.GetComponent<Player2DController> ().inHackingAnim = false;
+		player.GetComponent<Animator> ().SetBool ("IsHackingGate", false);
+
+	}
+	
+
+	void PlayerPosition(float X_Delta, float Y_Delta){
+		player.transform.position = new Vector3(transform.position.x + X_Delta, transform.position.y + Y_Delta, transform.position.z);
+	}
+
+	//For specifying teleporting behavior
+	void GateHackBot(){
 		if (transform.position.x < player.transform.position.x) {											//If player is to the right of target
 			if (!player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the right while not facing left then flip to face left.
 				player.GetComponent<Player2DController> ().Flip();
 			}
-			player.transform.position = new Vector3(transform.position.x + HorizHackTeleport, transform.position.y-VertHackTeleport, transform.position.z);
 		}
 		else {
 			if (player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the left while facing left then flip to face right.
 				player.GetComponent<Player2DController> ().Flip();
 			}
-			player.transform.position = new Vector3(transform.position.x - HorizHackTeleport, transform.position.y-VertHackTeleport, transform.position.z);
 		}
-		player.GetComponent<Animator> ().SetBool ("IsHackingGate", true);
-		yield return new WaitForSeconds (0.433f);
-		player.GetComponent<Player2DController> ().inHackingAnim = false;
-		player.GetComponent<Animator> ().SetBool ("IsHackingGate", false);
+		PlayerPosition(0f,-0.3f);
+	}
+
+	void GateHackLeft(){
+		if (player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the left while facing left then flip to face right.
+			player.GetComponent<Player2DController> ().Flip();
+		}
+		PlayerPosition(-0.3f,0.0f);
+	}
+
+	void GateHackRight(){
+		if (!player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the left while facing left then flip to face right.
+			player.GetComponent<Player2DController> ().Flip();
+		}
+		PlayerPosition(0.3f,0.0f);
 	}
 }

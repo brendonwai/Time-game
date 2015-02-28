@@ -109,7 +109,7 @@
    <property name="unity:tag" value="Background"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Wall Fore" width="100" height="100">
@@ -117,7 +117,7 @@
    <property name="unity:sortingLayerName" value="Foreground"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2u0KgyAYBlDvre1Wt93E7m0RBDG2EjNfxHPg/RsWfjxqj5TSs3K95prmuqmlAIB9a264RzekQ0eZq+Y3vTrfbfPkVe9AvvemRiTbAwCrMzm4ZZYtzds5eceerb5WeTu3Tx71cwAgVkkmld2IVrqXglLffQ4YW+t/F0c2RTeAbv0ap8QoGcd79wbuFCCOuRWgf9Fzub0wAPSh5fn3v3W/h2c76wcAAAAAAAAAAAAAAAAAAAAAAAAAAACgpg8rvG5S
+   eJzt2u0KwiAYBlDvbXWr1U10b41AGFFOzOnEc+D9O9zw41F3CyHcK9djrWWti3oXAJAWc8O1d0MGtJe5an7To/PdNk8e9Q7ke25qRrI9ABD9k4NbZtnSvJ2Td+zZ6muVt3P75F4/BwD6Ksmkstsclt4NSCjdS0Gpzz4HzK31v4szZ68z5xHO7ds4pY+ScZy6N3CnAP2YWwHG13sud5YLAGNoef79a90f4dk12gIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0QsfCW7a
   </data>
  </layer>
  <layer name="Hidden Passage" width="100" height="100">
@@ -125,7 +125,7 @@
    <property name="unity:sortingLayerName" value="Foreground"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0qENADEMBMH0X0749xYaGr3BghnpGvB6LQAAAAAAAAAAAACYt3+MeXq0vN73u8Y8/96iR4seLXq06NGiR4seLXq06NGiR4seAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEDNAZfyMBw=
+   eJzt17EJACAMRFH3HyfW7mYbXCAHvgfXB36VtQAAAAAAAAAAAABgXrUxT48spw0AyFDP9uw539Mji38iix5Z9MiiRxY9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA0F253F8g=
   </data>
  </layer>
  <objectgroup name="Gate1">

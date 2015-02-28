@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="unity:scale" value="0.01"/>
+ </properties>
+ <tileset firstgid="1" source="../Tiles/tiles_without_collision.tsx"/>
+ <layer name="Tile Layer 1" width="80" height="80">
+  <data encoding="base64" compression="zlib">
+   eJzt0rENwlAUBMHXGwVACk5cGqW4NH/JFZgErTTB6vLRPWbmM3PoftvMvvb7XIa63+v6Hj9+/ILx48evGz9+/Lrx48evGz9+/Lrx48evGz9+/Lrx48evGz9+/Lrx48evGz9+/Lrx48evGz9+/Lrx48evGz9+/Lrx48evGz9+/Lrx48evGz9+/Lrx48evGz9+/Lrx48evGz9+/Lrx48evGz9+/Lrx4/dvv/dlqB/aVicD9C2L
+  </data>
+ </layer>
+</map>

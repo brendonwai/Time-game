@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: 329de2c93791efb4ba38e560e55edce5
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: meleeSideWalkSheet_0
+    21300002: meleeSideWalkSheet_1
+    21300004: meleeSideWalkSheet_2
+    21300006: meleeSideWalkSheet_3
+    21300008: meleeSideWalkSheet_4
+    21300010: meleeSideWalkSheet_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +31,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +48,66 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: meleeSideWalkSheet_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 18
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideWalkSheet_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 18
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideWalkSheet_2
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 18
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideWalkSheet_3
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 18
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideWalkSheet_4
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 18
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideWalkSheet_5
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 18
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

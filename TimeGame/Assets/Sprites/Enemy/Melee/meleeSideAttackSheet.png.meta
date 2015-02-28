@@ -1,7 +1,17 @@
 fileFormatVersion: 2
 guid: a5b6bdc9300ca1c45b8427591ac982f8
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: meleeSideAttackSheet_0
+    21300002: meleeSideAttackSheet_1
+    21300004: meleeSideAttackSheet_2
+    21300006: meleeSideAttackSheet_3
+    21300008: meleeSideAttackSheet_4
+    21300010: meleeSideAttackSheet_5
+    21300012: meleeSideAttackSheet_6
+    21300014: meleeSideAttackSheet_7
+    21300016: meleeSideAttackSheet_8
+    21300018: meleeSideAttackSheet_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +35,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +52,106 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: meleeSideAttackSheet_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 18
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideAttackSheet_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 18
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideAttackSheet_2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 18
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideAttackSheet_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 18
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideAttackSheet_4
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 18
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideAttackSheet_5
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 18
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideAttackSheet_6
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 18
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideAttackSheet_7
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 18
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideAttackSheet_8
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 18
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeSideAttackSheet_9
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 18
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

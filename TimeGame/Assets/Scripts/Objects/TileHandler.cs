@@ -53,30 +53,30 @@ public class TileHandler : MonoBehaviour {
 	//Creates Gate of all types on map
 	//NOTE: NEVER CALL BEFORE CONNECTORS ARE CREATED
 	void CreateGate(){
-		CreateObjectAtTag(GateH, "GateH",1,1, Quaternion.identity,.48f,-.04f);
-		CreateObjectAtTag(GateV, "GateV",1,1, Quaternion.Euler(0,0,90),.16f,-.48f);
+		CreateObjectAtTag(GateH, "GateH",1,1, Quaternion.identity,.48f,-.04f,-1);
+		CreateObjectAtTag(GateV, "GateV",1,1, Quaternion.Euler(0,0,90),.16f,-.48f,-1);
 	}
 
 
 	//Creates all types on map
 	void CreateConnectors(){
 		//Creates bottom facing connectors
-		CreateObjectAtTag(Connector2LinkBot, "Connector2LinkBot",1,1, Quaternion.identity,.16f,-.04f);
-		CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkBotLeft",1,1,Quaternion.identity,.16f,-.04f);
-		CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkBotRight",-1,1, Quaternion.identity,.16f,-.04f);
-		CreateObjectAtTag(ConnectorNoLinkBot, "ConnectorNoLinkBot",1,1, Quaternion.identity,.16f,-.04f);
+		CreateObjectAtTag(Connector2LinkBot, "Connector2LinkBot",1,1, Quaternion.identity,.16f,-.04f,0);
+		CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkBotLeft",1,1,Quaternion.identity,.16f,-.04f,0);
+		CreateObjectAtTag(Connector1LinkBotLeft, "Connector1LinkBotRight",-1,1, Quaternion.identity,.16f,-.04f,0);
+		CreateObjectAtTag(ConnectorNoLinkBot, "ConnectorNoLinkBot",1,1, Quaternion.identity,.16f,-.04f,0);
 
 		//Creates right facing connectors
-		CreateObjectAtTag(Connector2LinkSide,"Connector2LinkRight",1,1, Quaternion.Euler(0,0,90),.04f,-.16f);
-		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkRightTop",-1,1, Quaternion.Euler(0,0,90),.04f,-.16f);
-		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkRightBot",1,1, Quaternion.Euler(0,0,90),.04f,-.16f);
-		CreateObjectAtTag(ConnectorNoLinkSide,"ConnectorNoLinkRight",1,1, Quaternion.Euler(0,0,90),.04f,-.16f);
+		CreateObjectAtTag(Connector2LinkSide,"Connector2LinkRight",1,1, Quaternion.Euler(0,0,90),.04f,-.16f,2);
+		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkRightTop",-1,1, Quaternion.Euler(0,0,90),.04f,-.16f,2);
+		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkRightBot",1,1, Quaternion.Euler(0,0,90),.04f,-.16f,2);
+		CreateObjectAtTag(ConnectorNoLinkSide,"ConnectorNoLinkRight",1,1, Quaternion.Euler(0,0,90),.04f,-.16f,2);
 
 		//Creates left facing connectors
-		CreateObjectAtTag(Connector2LinkSide,"Connector2LinkLeft",1,-1, Quaternion.Euler(0,0,90),.28f,-.16f);
-		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkLeftTop",-1,-1, Quaternion.Euler(0,0,90),.28f,-.16f);
-		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkLeftBot",1,-1, Quaternion.Euler(0,0,90),.28f,-.16f);
-		CreateObjectAtTag(ConnectorNoLinkSide,"ConnectorNoLinkLeft",1,-1, Quaternion.Euler(0,0,90),.28f,-.16f);
+		CreateObjectAtTag(Connector2LinkSide,"Connector2LinkLeft",1,-1, Quaternion.Euler(0,0,90),.28f,-.16f,1);
+		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkLeftTop",-1,-1, Quaternion.Euler(0,0,90),.28f,-.16f,1);
+		CreateObjectAtTag(Connector1LinkSide,"Connector1LinkLeftBot",1,-1, Quaternion.Euler(0,0,90),.28f,-.16f,1);
+		CreateObjectAtTag(ConnectorNoLinkSide,"ConnectorNoLinkLeft",1,-1, Quaternion.Euler(0,0,90),.28f,-.16f,1);
 
 		//No longer need? Creates top facing connectors
 		//CreateObjectAtTag(Connector2LinkBot, "Connector2LinkTop",1,-1, Quaternion.identity,.16f,-.32f);
@@ -85,13 +85,14 @@ public class TileHandler : MonoBehaviour {
 	}
 
 	//Instantiates given objects at given tag
-	void CreateObjectAtTag(GameObject createMe, string object_tag, int x_scale, int y_scale, Quaternion rotation, float x_adjust, float y_adjust){
+	void CreateObjectAtTag(GameObject createMe, string object_tag, int x_scale, int y_scale, Quaternion rotation, float x_adjust, float y_adjust, int direction){
 		connectors = GameObject.FindGameObjectsWithTag(object_tag);
 		foreach(GameObject temp in connectors){
 			Vector3 position = new Vector3((temp.transform.position.x+x_adjust), temp.transform.position.y+y_adjust, -100f);
 			GameObject clone = (GameObject)Instantiate(createMe, position, rotation);
 
-
+			if(direction != -1)
+				clone.GetComponent<ObjectInfo>().orientation = direction;
 			clone.renderer.material.color = LevelColor;
 
 			clone.transform.parent = temp.transform.parent;
