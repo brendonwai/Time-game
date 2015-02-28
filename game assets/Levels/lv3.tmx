@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="unity:scale" value="0.01"/>
+ </properties>
+ <tileset firstgid="1" source="../Tiles/tiles_with_collision.tsx"/>
+ <tileset firstgid="100" source="../Tiles/tiles_without_collision.tsx"/>
+ <layer name="Floor" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt1UEKgDAMBdHe/yweUrorIiW1jfkJMxDcSJsHgq1Rli6hacMzq+HpwaEzFRxfit4Zh7Zlp+jd+a50DVZL9H6nXNH74MhvwKE3OPQGh9bg0JoKjrHoXXDUc0TvgQOH4uDQmjHreyt5nPl2ruXOk/fhmJ/rHY61c73zcvwdDq0qOFb+wcpVcfSqOHqZd6e9bqJWJHU=
+  </data>
+ </layer>
+ <layer name="Wall_Collision" width="50" height="50">
+  <properties>
+   <property name="unity:tag" value="Background"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztWdtuwyAM5d+mTdEesr6miaZ+Wt6n/UM+baSEioFtfFzSVWuPZLUiNvik+AJ17jdG55bjncurq8PrzZOXY/gOibdbEFtUP9r4z5OGx6r37r+jgtpa1oo2Wh41vRa2lrWePPTogyyI/p48JmTiBN7uhNii+tFGw2Pc8geXS8ZMf/DSBTnVdOPcUb/fbDi9VLrg00zpU9Dkklwf0V3l4N/RQaEn5TYtkDhBYyryQFBbg6vf2n2oWSOHlccUPsn6ztVvbd208kDju+Ynt7eRvLX+dm84j7NPiZ+X3OKfz3ksS36mPDj++fjg+N4nsz/nGGr/pHEeQcV/itewfwp/NDyocan3yfW4OEDH03Vb8UDQkgeHGo+R2KMoJH+p2FvjrDUPtN5QqPAg47w1jxao7R8uzpG57oGHdlx69ig8LLkjRxdqGukTF+dc7eVygIVHH+ab+63nluTL63o5DczcVJyPWy2nZGK4W+pHPO9p7gNSXe4d5XFem28S+hULD8K1AkOQYt7aMw7ce9mbx/cmFCy1iVt7bx6tYeVB5Y4pxHAxVys/PxLJ19nio0A87yV8ivMJdW5B93VjHqZzFDWu3ddSLfh05blEw4PKla37dul8lUvnyvs3LQ/OT85fNDcid81UjR2Cn5c6+pL5zPlzi76dA8VDe/eVw9ontsi9LXq3iEfnYblbzmG5v+KgyVeW/9c0Z9MDU5s46cO7W67pS5A8lPa5Eg+kb67Nm/KQ6r3kj+TjtTpam8iD+q8hiuXe56941H5PFFw/l8LSb9b6RGQuYL3z2Tevv7FmczErQep7rr0vpLDy4O6a074E5dF639QQeUiw8Lg1njzuC/+Jxx5599bQngv3Oue3AtIztcQPZooZaA==
+  </data>
+ </layer>
+ <layer name="Wall_Foreground" width="50" height="50">
+  <properties>
+   <property name="unity:sortingLayerName" value="Foreground"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2EEOhCAMQFGOOkeblc4x5miDCxPS2AoqTEv+S1gYQVhAW0wJAGJblfYR/ZbinRwr++bn13rQ/6zf0RgAMWhneWs5frxHzaXFqdr15Pffsj257rO5rPlGrQmwzJKrW875VqvI+gXxLOn5XOSFVU9fqbFb8qlnLTl2N+seASzlPf9O3V4TOzwYHcesOsJzbpL7YhctF+A/PO9t+CfjT00c0v5Pa1pq5x7/tNAfuWpud+67Ld8d4cq9FQBG6xV3EcMP99mSZQ==
+  </data>
+ </layer>
+ <objectgroup name="Gate1">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <object x="224" y="1024" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateV"/>
+   </properties>
+  </object>
+  <object x="224" y="992" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkRight"/>
+   </properties>
+  </object>
+  <object x="224" y="960" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkRightBot"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate2">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <object x="224" y="544" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateV"/>
+   </properties>
+  </object>
+  <object x="224" y="512" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkRight"/>
+   </properties>
+  </object>
+  <object x="224" y="480" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkRightBot"/>
+   </properties>
+  </object>
+  <object x="224" y="672" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkRightBot"/>
+   </properties>
+  </object>
+  <object x="224" y="704" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkRightTop"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate3">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <object x="416" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateH"/>
+   </properties>
+  </object>
+  <object x="384" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkBot"/>
+   </properties>
+  </object>
+  <object x="352" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkBot"/>
+   </properties>
+  </object>
+  <object x="320" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkBotRight"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate4">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <object x="768" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateH"/>
+   </properties>
+  </object>
+  <object x="736" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkBot"/>
+   </properties>
+  </object>
+  <object x="864" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkBotLeft"/>
+   </properties>
+  </object>
+  <object x="704" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkBot"/>
+   </properties>
+  </object>
+  <object x="672" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkBotRight"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate5">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <object x="704" y="800" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateV"/>
+   </properties>
+  </object>
+  <object x="704" y="768" width="32" height="32">
+   <properties>
+    <property name="Connector2LinkLeft" value=""/>
+    <property name="unity:tag" value="Connector2LinkLeft"/>
+   </properties>
+  </object>
+  <object x="704" y="736" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftBot"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate6">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <object x="1088" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateH"/>
+   </properties>
+  </object>
+  <object x="1184" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkBot"/>
+   </properties>
+  </object>
+  <object x="1216" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkBotLeft"/>
+   </properties>
+  </object>
+  <object x="1056" y="224" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkBotRight"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate7">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <object x="1344" y="448" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateV"/>
+   </properties>
+  </object>
+  <object x="1344" y="416" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftTop"/>
+   </properties>
+  </object>
+  <object x="1344" y="384" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkLeft"/>
+   </properties>
+  </object>
+  <object x="1344" y="352" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftBot"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate8">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <object x="1344" y="1024" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateV"/>
+   </properties>
+  </object>
+  <object x="1344" y="992" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkLeft"/>
+   </properties>
+  </object>
+  <object x="1344" y="960" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftBot"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate9">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <object x="1440" y="704" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateH"/>
+   </properties>
+  </object>
+  <object x="1376" y="672" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkRightTop"/>
+   </properties>
+  </object>
+  <object x="1376" y="640" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkRightBot"/>
+   </properties>
+  </object>
+  <object x="1536" y="672" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftTop"/>
+   </properties>
+  </object>
+  <object x="1536" y="640" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftBot"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Gate10">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <object x="928" y="800" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="GateV"/>
+   </properties>
+  </object>
+  <object x="928" y="768" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkLeft"/>
+   </properties>
+  </object>
+  <object x="928" y="736" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftBot"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
