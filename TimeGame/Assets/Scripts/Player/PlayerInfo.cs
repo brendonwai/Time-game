@@ -19,8 +19,14 @@ public class PlayerInfo : MonoBehaviour {
 	public int EnergyRegen = 1;
 	
 
-	void Start(){
+	void Awake(){
+		Health = SaveStats.GetPlayerHealth ();
+		Energy = SaveStats.GetPlayerEnergy ();
+		UpdateEnergyBar ();
+		healthBar.value = Health;
+		healthNum.text = Health.ToString ();
 		InvokeRepeating("RegenerateEnergy", 1, 10.0f);
+		Debug.Log (Health + Energy);
 	}
 	
 	void UpdateEnergyBar(){

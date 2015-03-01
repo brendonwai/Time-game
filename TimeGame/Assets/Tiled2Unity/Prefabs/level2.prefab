@@ -490,7 +490,7 @@ GameObject:
   - 4: {fileID: 400060}
   - 114: {fileID: 11400008}
   m_Layer: 0
-  m_Name: level3
+  m_Name: level2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
