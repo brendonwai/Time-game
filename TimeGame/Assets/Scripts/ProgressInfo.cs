@@ -7,7 +7,7 @@ public class ProgressInfo : MonoBehaviour {
 
 	public static GameObject player;
 
-	public const int FinalLevelNum = 5;
+	public const int FinalLevelNum = 6;
 	//Note: level 0 is at num 2 so beat 3 levels to reach the final level
 	//And please put any new scenes you make inbetween Level 0 and FinalLevel
 
