@@ -141,6 +141,9 @@ public class HackRadius : MonoBehaviour {
 			StartCoroutine(GetComponentInParent<PlayerInfo> ().HealthDrain ());
 			Destroy (other);
 		}
+		else{
+			anim.SetBool ("IsHackingEnemy", false);
+		}
 	}
 
 	IEnumerator HackHealthDroneAnim () {	//Special case because we're not taking over the HP drone just hacking it for HP
