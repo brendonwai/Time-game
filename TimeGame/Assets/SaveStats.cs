@@ -16,7 +16,6 @@ public class SaveStats : MonoBehaviour {
 	}
 	
 	public static void saveStats(int health, float energy, int score) {
-		Debug.Log ("Saving" + health + " " + energy + " " + score);
 		playerHealth = health;
 		playerEnergy = energy;
 		playerScore = score;

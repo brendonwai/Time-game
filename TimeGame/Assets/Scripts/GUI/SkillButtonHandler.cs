@@ -16,7 +16,6 @@ public class SkillButtonHandler : MonoBehaviour {
 		buttonNum = 0;
 		foreach(Image cover in buttons){
 			cover.fillAmount = 0.0f;
-			//CoolDownDuration[i] = 1.0f/CoolDownDuration[i]/100.0f;
 			onCD[buttonNum] = false;
 			buttonNum++;
 		}

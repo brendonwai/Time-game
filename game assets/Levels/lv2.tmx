@@ -17,7 +17,7 @@
    <property name="unity:tag" value="Background"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztmcFuwjAMhv1wO3HYhdtAqI+WE22FOCCuBdI3W6ykEDK7cViaFglLVkfc2N9E+uOkDUBVA8C7eGOv1cH4xfwdegugWmJ88N7MM665eKrH8h0sr6otb7Uyn0Ov7XegqBj61cSuTOwVj+W7WN47MxA2MFMxtKPzXBbLl4O5tL07c8swm3G9YGb4CeL4uXX3cDl662w81WL5wrWxCuL4+QRWW6j5J5tfm2sV80HDpPeaq5Ywc1xb5n8249UZ8miY7+tITSGzYubrM5M7tBRNXEdqSpjxewrrHV1Mypxi65Ga0rXBra2pmalYSeYv5xKbg1mqJ5w+zMWMc2L6wOWempnSpO2IvkpyF2BWBLNeMjOuDV+TjpE5S2FOmZOT+cbkvdnnW1GxPgMzlfubGR9qesxqH9TZ23GNunUN5mL/0Lt+Q8pC1adyO2bdBDkay/LUb3C/z6m/3Tje2mu1CWKdG/f1Oewnh7VB9ZlTrefO+n1PHNadW58pZoo1JfdS+o2U3B/mv7F3ZKY0Tbqv7Wdg7uBxvibZm/qOPQn2Kh1Rd0pm1Aajv2oD6edy/rySzAO3RNdS5kmZx/bmkt4hp0nPCsb25jMxszzSfmNaymfLcVawm+C8bphXE7Ed/O8ZRD3DfhR71VQ9S3W/DqWBUmZ8thvXy+Z6/yA903uVGS33+wfOJLopZV6SfZjLmM88dt9tZF+e06R1avusqlzvUUt4zneoJf0Xf7CtRA==
+   eJztme+OgjAMwPt8PsLFXHg0PgnE+MH41T/szW5Nmber69ZxY2BikwZZaftTt1JGD9B0APAu2tOxOVq92c9cB4B2CIw7NdbP6ijZczUV70i8bUe8zc6ec+3oP2hDNtS7td0F2xxNxbsR75MZAuKYQzaU06SlJBWvBHNteXfmQWC242Nt5j5iY8zwxex4PkzXSDEMqWjPlVQ8Pjd2zI7nZ6DaEvI/U/zRHpuUuhqmuRbr2UXJLHE9BP+99blAmRrmayyngb/1WWJ29xT2fSH2e3DJqYmpnBpmqyPPd5psWuYcieXUzg30l2xLModsNZldf6ORNZi19cTQ8SX2Wszoo6kPazDvA+N74ffTxq7A3Po16UZj45aZcW74NemU8NkKc45PSWbpXvmg9d2GbKYAcyi2NO5yesztgeU50PiIdevOfLF/MFO/kZOT5w/FdrWyZzF6Ymn8uSHdn3Pv3a5fwBrMea5A69Svz7yf9GulL9rnwTnz+Ur6fCbmedeuzyHmEGtO7K30GzmxP8yvtndkDtU07XOtWYH5Cr/7a6m+kys+Iw0U4yXvksy7iXvOfp3vV5PZcWvqWo7ff/sNac4tKcis2SuIPZuvwazdK4j1G1L8Q0FWJ7EeRzufvxfYr4v5xeajhhnXN/aj2Kvm1rNc9fOEaqCWGdd2P/Wypd4/aPf05jKjlH7/IImmbmqZtyQf5jriM8eue0TukyVFm6ejtdqWeo9aQ0u+Q62pPw2qvPY=
   </data>
  </layer>
  <layer name="Walls_Foreground" width="45" height="45">
@@ -25,7 +25,7 @@
    <property name="unity:sortingLayerName" value="Foreground"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2FsKgCAQBdDZW7mPdlctQmhp1Ucg4qtpRivvASHKHIO4qEQAADxzoOUYoskIzoEznnVayfjX9SjUnLG7xPlvWte0gaatRU3QNVA8D/z7veZDL2pnoATk0f/5ueOugVLPpOvWqBlz5u8SqOtnNgCA9L5WQ+m6M9YPQEOL84CUkvm8bW+uNR9urtXIw1xecc/lQu8CwPfVWqfdrbM6e0upPOPmX6rPMc/txmfBQztrCFAF
+   eJzt2VsKgCAQBVD3Zm1Cop26t+xDEPHtOCreA/OT0VTIzUoIAIA2V6BypKmb8Bxk5f7alHJKVxw/dL0tZVHeh520zJvZPVWgRpvRE8b68yQ2D/3tp+bDKbgzkIL7/Mw9O2FPfu7IwjHqvhw9Y0L562Y3AIBF/V47Qum6c8d1CexrtTlXej4rvZeP/FbQkmsceRjLq9fUkxjP5dxq8xEAaHCt02r7pPLKovr/0NPnrbgm6PcBhUE1rA==
   </data>
  </layer>
  <objectgroup name="Gate1">

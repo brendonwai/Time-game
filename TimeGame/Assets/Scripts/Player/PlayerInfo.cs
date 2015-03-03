@@ -26,7 +26,6 @@ public class PlayerInfo : MonoBehaviour {
 		healthBar.value = Health;
 		healthNum.text = Health.ToString ();
 		InvokeRepeating("RegenerateEnergy", 1, 10.0f);
-		Debug.Log (Health + Energy);
 	}
 	
 	void UpdateEnergyBar(){
