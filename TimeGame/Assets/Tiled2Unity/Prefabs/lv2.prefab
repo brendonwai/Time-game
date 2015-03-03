@@ -1493,7 +1493,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400102}
+  m_Father: {fileID: 400098}
   m_RootOrder: 1
 --- !u!4 &400096
 Transform:
@@ -1518,7 +1518,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400096}
-  - {fileID: 400104}
+  - {fileID: 400094}
   m_Father: {fileID: 400110}
   m_RootOrder: 2
 --- !u!4 &400100
@@ -1544,7 +1544,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400100}
-  - {fileID: 400094}
+  - {fileID: 400104}
   m_Father: {fileID: 400110}
   m_RootOrder: 1
 --- !u!4 &400104
@@ -1557,7 +1557,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400098}
+  m_Father: {fileID: 400102}
   m_RootOrder: 1
 --- !u!4 &400106
 Transform:
@@ -1699,6 +1699,33 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100094}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: 96, y: -224}
+      - {x: 64, y: -224}
+      - {x: 64, y: -256}
+      - {x: 96, y: -256}
+    - - {x: 224, y: -224}
+      - {x: 192, y: -224}
+      - {x: 192, y: -256}
+      - {x: 224, y: -256}
+    - - {x: 544, y: -544}
+      - {x: 512, y: -544}
+      - {x: 512, y: -576}
+      - {x: 544, y: -576}
+    - - {x: 640, y: -544}
+      - {x: 608, y: -544}
+      - {x: 608, y: -576}
+      - {x: 640, y: -576}
+--- !u!60 &6000002
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100104}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1888,33 +1915,6 @@ PolygonCollider2D:
       - {x: 32, y: -1344}
       - {x: 64, y: -1344}
       - {x: 64, y: -1088}
---- !u!60 &6000002
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100104}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Poly:
-    m_Paths:
-    - - {x: 96, y: -224}
-      - {x: 64, y: -224}
-      - {x: 64, y: -256}
-      - {x: 96, y: -256}
-    - - {x: 224, y: -224}
-      - {x: 192, y: -224}
-      - {x: 192, y: -256}
-      - {x: 224, y: -256}
-    - - {x: 544, y: -544}
-      - {x: 512, y: -544}
-      - {x: 512, y: -576}
-      - {x: 544, y: -576}
-    - - {x: 640, y: -544}
-      - {x: 608, y: -544}
-      - {x: 608, y: -576}
-      - {x: 640, y: -576}
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
