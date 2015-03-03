@@ -99,7 +99,7 @@ public class GameOverManager : MonoBehaviour {
 	//Sets what comment to put during pause screen
 	string PauseComment(int selection){
 		switch(selection){
-		case 1: return "Tofu Man used to be in the game. But now he's gone.";
+		case 1: return "!!!";
 		case 2: return "Everything comes back to shrooms.";
 		case 3: return "I really have nothing better to do.";
 		case 4: return "I'm being serious right now.";
