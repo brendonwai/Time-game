@@ -12638,6 +12638,22 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 11400030, guid: 5649893465918c14e95396995d28f9eb, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1876522096}
+    - target: {fileID: 11400030, guid: 5649893465918c14e95396995d28f9eb, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartCD
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400056, guid: 5649893465918c14e95396995d28f9eb, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1876522096}
+    - target: {fileID: 11400056, guid: 5649893465918c14e95396995d28f9eb, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartCD
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5649893465918c14e95396995d28f9eb, type: 2}
   m_RootGameObject: {fileID: 1239073502}
@@ -18059,8 +18075,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
-  - {fileID: 1936761919}
-  - {fileID: 2029520448}
+  - {fileID: 1247676735}
+  - {fileID: 41680454}
   CoolDownDuration:
   - 5
   - 8
@@ -18805,7 +18821,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1876522096}
         m_MethodName: StartCD
         m_Mode: 3
         m_Arguments:
@@ -19339,7 +19355,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1876522096}
         m_MethodName: StartCD
         m_Mode: 3
         m_Arguments:
