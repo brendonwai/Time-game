@@ -117,13 +117,13 @@ public class HackRadius : MonoBehaviour {
 			if (!transform.parent.GetComponent<Player2DController> ().facingLeft) {	//If player is on the right while not facing left then flip to face left.
 				transform.parent.GetComponent<Player2DController> ().Flip();
 			}
-			transform.parent.transform.position = new Vector3(otherpos.x + HorizHackTeleport, otherpos.y, transform.position.z);
+			transform.parent.transform.position = new Vector3(otherpos.x + HorizHackTeleport, otherpos.y, transform.parent.transform.position.z);
 		}
 		else {
 			if (transform.parent.GetComponent<Player2DController> ().facingLeft) {	//If player is on the left while facing left then flip to face right.
 				transform.parent.GetComponent<Player2DController> ().Flip();
 			}
-			transform.parent.transform.position = new Vector3(otherpos.x - HorizHackTeleport, otherpos.y, transform.position.z);
+			transform.parent.transform.position = new Vector3(otherpos.x - HorizHackTeleport, otherpos.y, transform.parent.transform.position.z);
 		}
 	}
 
