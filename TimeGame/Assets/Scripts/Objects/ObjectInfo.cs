@@ -71,7 +71,7 @@ public class ObjectInfo : MonoBehaviour {
 	
 
 	void PlayerPosition(float X_Delta, float Y_Delta){
-		player.transform.position = new Vector3(transform.position.x + X_Delta, transform.position.y + Y_Delta, transform.position.z);
+		player.transform.position = new Vector3(transform.position.x + X_Delta, transform.position.y + Y_Delta, player.transform.position.z);
 	}
 
 	//For specifying teleporting behavior
