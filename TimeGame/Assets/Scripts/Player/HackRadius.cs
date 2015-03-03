@@ -131,14 +131,16 @@ public class HackRadius : MonoBehaviour {
 		//StartCoroutine(StopHackedEnemyMovement (other));
 		yield return new WaitForSeconds (0.61f);
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = false;	//Allows player to move after hacking anim is done
-		anim.SetInteger("EnemyType", hackType);
-		GetComponentInParent<Player2DController>().hackState = hackType;
-		GetComponentInParent<Player2DController>().lastAttack = Time.time - 10f;		//Allows you to immediately attack after hacking an enemy
-		GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
-		GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
-		GetComponentInParent<PlayerInfo>().HealthDrainActive = true;
-		StartCoroutine(GetComponentInParent<PlayerInfo> ().HealthDrain ());
-		Destroy (other);
+		if(other != null){
+			anim.SetInteger("EnemyType", hackType);
+			GetComponentInParent<Player2DController>().hackState = hackType;
+			GetComponentInParent<Player2DController>().lastAttack = Time.time - 10f;		//Allows you to immediately attack after hacking an enemy
+			GetComponentInParent<PlayerInfo> ().SwapPlayerToEnemyHealth (other.GetComponent<EnemyInfo> ().Health);
+			GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
+			GetComponentInParent<PlayerInfo>().HealthDrainActive = true;
+			StartCoroutine(GetComponentInParent<PlayerInfo> ().HealthDrain ());
+			Destroy (other);
+		}
 	}
 
 	IEnumerator HackHealthDroneAnim () {	//Special case because we're not taking over the HP drone just hacking it for HP
