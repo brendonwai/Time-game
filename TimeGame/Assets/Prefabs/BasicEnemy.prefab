@@ -338,7 +338,7 @@ MonoBehaviour:
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
-  facingRight: 1
+  facingRight: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
