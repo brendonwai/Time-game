@@ -3,8 +3,8 @@ using System.Collections;
 
 public class SaveStats : MonoBehaviour {
 
-	private static int playerHealth;
-	private static float playerEnergy;
+	private static int playerHealth = 100;
+	private static float playerEnergy = 20;
 	private static int playerScore;
 
 	void Awake() {
