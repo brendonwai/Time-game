@@ -31,10 +31,10 @@ public class EnemyHover : MonoBehaviour {
 				if(hitObject.transform.tag == "Enemy") {
 					if(hackRadius.inRange(this.gameObject)) {
 						if(hackRadius.enoughEnergy(this.gameObject)) {
-							renderer.material.color = InHackRange;
+							GetComponent<Renderer>().material.color = InHackRange;
 						}
 						else {
-							renderer.material.color = NotHackable;
+							GetComponent<Renderer>().material.color = NotHackable;
 						}
 					}
 					enemyStats.SetActive(true);					
@@ -43,13 +43,13 @@ public class EnemyHover : MonoBehaviour {
 			}
 		}
 		if (!mousingOver) { // If the user is not mousing over the enemy but mousing over one of its larger, surrounding colliders this is true
-			renderer.material.color = Color.white;
+			GetComponent<Renderer>().material.color = Color.white;
 			enemyStats.SetActive(false);
 		}
 	}
 	
 	void OnMouseExit() {
-		renderer.material.color = Color.white;
+		GetComponent<Renderer>().material.color = Color.white;
 		enemyStats.SetActive(false);
 	}
 }

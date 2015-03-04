@@ -14,6 +14,6 @@ public class ColorRandomizer : MonoBehaviour {
 		float blue = Random.Range(0f,1.0f);
 		float green = Random.Range(0f,1.0f);
 
-		renderer.material.color = new Color(red,blue,green, 1.0f);
+		GetComponent<Renderer>().material.color = new Color(red,blue,green, 1.0f);
 	}
 }

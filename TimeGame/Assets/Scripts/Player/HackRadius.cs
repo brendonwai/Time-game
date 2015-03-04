@@ -112,7 +112,7 @@ public class HackRadius : MonoBehaviour {
 		}
 
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = true;	//Stop player from moving while hacking anim is playing
-		transform.parent.rigidbody2D.velocity = new Vector2 (0f, 0f);
+		transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2 (0f, 0f);
 		if (otherpos.x < transform.position.x) {											//If player is to the right of target
 			if (!transform.parent.GetComponent<Player2DController> ().facingLeft) {	//If player is on the right while not facing left then flip to face left.
 				transform.parent.GetComponent<Player2DController> ().Flip();
@@ -139,7 +139,7 @@ public class HackRadius : MonoBehaviour {
 			GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
 			GetComponentInParent<PlayerInfo>().HealthDrainActive = true;
 			StartCoroutine(GetComponentInParent<PlayerInfo> ().HealthDrain ());
-			Destroy (other);
+			Destroy (other);	//Destroys the enemy
 		}
 		else{
 			anim.SetBool ("IsHackingEnemy", false);

@@ -49,7 +49,7 @@ public class TrapHole : MonoBehaviour {
 	void ApplyDamage(Collider2D other){
 		if(other.tag == "Player"){
 			other.gameObject.SendMessage("takeDamage",3);
-			Vector2 dir=other.rigidbody2D.velocity;
+			Vector2 dir=other.GetComponent<Rigidbody2D>().velocity;
 			other.SendMessage("KnockBack",dir);
 		}
 	}

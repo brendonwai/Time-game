@@ -133,9 +133,9 @@ public class HealthDroneAI : MonoBehaviour {
 		//reduce health by amount of damage
 		GetComponent<EnemyInfo>().Health -= damage;
 		//sprite flashes red upon taking damage
-		renderer.material.color = Color.red;
+		GetComponent<Renderer>().material.color = Color.red;
 		yield return new WaitForSeconds (.1f);
-		renderer.material.color=Color.white;
+		GetComponent<Renderer>().material.color=Color.white;
 	}
 
 	//Moves enemy closer to target

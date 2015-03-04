@@ -16,14 +16,14 @@ public class EnemyHack : MonoBehaviour {
 	
 	void OnMouseOver(){
 		if(inRadius){
-			renderer.material.color = InHackRadius;
+			GetComponent<Renderer>().material.color = InHackRadius;
 			if(Input.GetMouseButtonDown(1)){}
 		}
 		else
-			renderer.material.color = OutOfHackRadius;
+			GetComponent<Renderer>().material.color = OutOfHackRadius;
 	}
 	
 	void OnMouseExit(){
-		renderer.material.color = Color.white;
+		GetComponent<Renderer>().material.color = Color.white;
 	}
 }

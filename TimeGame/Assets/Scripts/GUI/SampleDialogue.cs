@@ -25,8 +25,8 @@ public class SampleDialogue : MonoBehaviour {
 
 	void Update(){
 		if(display)
-			dialogue.renderer.enabled = true;
+			dialogue.GetComponent<Renderer>().enabled = true;
 		else
-			dialogue.renderer.enabled = false;
+			dialogue.GetComponent<Renderer>().enabled = false;
 	}
 }

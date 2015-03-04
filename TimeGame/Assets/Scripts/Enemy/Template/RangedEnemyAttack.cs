@@ -52,8 +52,8 @@ public class RangedEnemyAttack : MonoBehaviour {
 		Vector2 dir2 = (player.transform.position - bulletClone2.transform.position).normalized;
 		bulletClone.AddForce (dir*bulletspeed);
 		bulletClone2.AddForce (dir2*bulletspeed);
-		bulletClone.renderer.material.color = Color.cyan;
-		bulletClone2.renderer.material.color = Color.cyan;
+		bulletClone.GetComponent<Renderer>().material.color = Color.cyan;
+		bulletClone2.GetComponent<Renderer>().material.color = Color.cyan;
 
 	}
 }

@@ -65,7 +65,7 @@ public class RangedEnemyAI : MonoBehaviour {
 	
 	//For efficiency.
 	void SetActiveChildren(bool status){
-		collider2D.enabled = status;
+		GetComponent<Collider2D>().enabled = status;
 		OnScreen = status;
 		foreach(GameObject child in children)
 			child.SetActive(status);

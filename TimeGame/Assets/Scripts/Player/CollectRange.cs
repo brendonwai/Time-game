@@ -7,11 +7,11 @@ public class CollectRange : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 		if (other.tag=="PickUp")
-			other.rigidbody2D.velocity=(transform.position-other.transform.position).normalized*speed;
+			other.GetComponent<Rigidbody2D>().velocity=(transform.position-other.transform.position).normalized*speed;
 	}
 
 	void OnTriggerExit2D(Collider2D other){
 		if (other.tag=="PickUp")
-			other.rigidbody2D.velocity=Vector2.zero;
+			other.GetComponent<Rigidbody2D>().velocity=Vector2.zero;
 	}
 }

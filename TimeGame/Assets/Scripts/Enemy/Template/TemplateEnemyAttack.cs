@@ -2,10 +2,21 @@
 using System.Collections;
 
 public class TemplateEnemyAttack : MonoBehaviour {
+	public bool player_in_range;
+
+	void Start() {
+		player_in_range = false;
+	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.tag=="Player"){
-			other.SendMessage("takeDamage",100);
+		if(other.tag == "Player") {
+			player_in_range = true;
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.tag == "Player") {
+			player_in_range = false;
 		}
 	}
 /*

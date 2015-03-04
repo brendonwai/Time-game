@@ -38,7 +38,7 @@ public class GateController : MonoBehaviour {
 	bool FadeOut(){
 		if(alpha > 0){
 			alpha -= .1f;
-			renderer.material.color = new Color(1f, 1f, 1f, alpha);
+			GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, alpha);
 			return false;
 		}
 		else

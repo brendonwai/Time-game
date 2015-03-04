@@ -17,15 +17,15 @@ public class bullets : MonoBehaviour {
 			Destroy(gameObject);
 		}
 		if (other.tag=="Player"){
-			if (renderer.material.color==Color.cyan){
+			if (GetComponent<Renderer>().material.color==Color.cyan){
 				other.SendMessage("takeDamage",damage);
-				Vector2 dir=rigidbody2D.velocity;
+				Vector2 dir=GetComponent<Rigidbody2D>().velocity;
 				other.SendMessage("KnockBack",dir);
 				Destroy (gameObject);
 			}
 		}
 		if (other.tag=="Enemy"){
-			if (renderer.material.color==Color.red){
+			if (GetComponent<Renderer>().material.color==Color.red){
 				other.SendMessage("takeDamage",damage);
 				Destroy (gameObject);
 			}
