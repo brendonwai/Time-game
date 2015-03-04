@@ -86,8 +86,12 @@ public class HackRadius : MonoBehaviour {
 			}
 		}
 
-		if (objtag == "Enemy")
+		if (objtag == "Enemy") {
 			HackEnemy(other, otherpos);
+		}
+		else {
+			transform.parent.GetComponent<Player2DController> ().inHackingAnim = true;
+		}
 		GetComponentInParent<PlayerInfo>().SpendEnergy(other.GetComponentInParent<EnemyInfo>().requiredEnergy);
 	}
 
