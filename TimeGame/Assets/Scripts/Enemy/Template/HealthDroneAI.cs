@@ -116,6 +116,7 @@ public class HealthDroneAI : MonoBehaviour {
 	}
 
 	IEnumerator HealPlayer() {		//Heals the player
+		Debug.Log ("Runs");
 		isHacked = true;
 		if (target.GetComponent<PlayerInfo> ().Health >= (100 - HealthGain)) {	//Limits Heal to Max HP
 			target.GetComponent<PlayerInfo> ().Health = 100;

@@ -112,6 +112,7 @@ public class HackRadius : MonoBehaviour {
 		else{
 			anim.SetBool("IsHackingEnemy", true);
 			other.GetComponent<Animator> ().SetBool("isHacked", true);
+
 			StartCoroutine(HackHealthDroneAnim());
 		}
 
@@ -133,7 +134,7 @@ public class HackRadius : MonoBehaviour {
 
 	IEnumerator HackEnemyAnim (GameObject other, int hackType) {
 		//StartCoroutine(StopHackedEnemyMovement (other));
-		yield return new WaitForSeconds (0.61f);
+		yield return new WaitForSeconds (0.82f);
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = false;	//Allows player to move after hacking anim is done
 		if(other != null){
 			anim.SetInteger("EnemyType", hackType);
@@ -151,7 +152,7 @@ public class HackRadius : MonoBehaviour {
 	}
 
 	IEnumerator HackHealthDroneAnim () {	//Special case because we're not taking over the HP drone just hacking it for HP
-		yield return new WaitForSeconds (0.75f);
+		yield return new WaitForSeconds (0.82f);
 		anim.SetBool ("IsHackingEnemy", false);
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = false;	//Allows player to move after hacking anim is done
 		//It'll destroy itself after being hacked
