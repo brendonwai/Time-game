@@ -175,7 +175,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 			transform.position = Vector2.MoveTowards(transform.position,
 			                                         target.transform.position,
 			                                         moveSpeed * Time.deltaTime); 
-			anim.SetFloat ("Speed", 1);		//Tells animator enemy is moving	
+			anim.SetBool ("IsMoving", true);		//Tells animator enemy is moving	
 
 		}
 	}
@@ -186,7 +186,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 		if (!stopMove) {
 			transform.position = Vector2.MoveTowards(transform.position, new Vector2(randX, randY), 
 			                                         moveSpeed * Time.deltaTime);
-			anim.SetFloat ("Speed", 1);
+			anim.SetBool ("IsMoving", true);
 		}
 	}
 

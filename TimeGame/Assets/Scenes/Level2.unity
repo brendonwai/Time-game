@@ -200,6 +200,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2300006, guid: 9b02e23d6c8aad64aa8b709d6254ad92, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -786505453
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b02e23d6c8aad64aa8b709d6254ad92, type: 2}
   m_IsPrefabParent: 0
@@ -317,7 +321,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &438571536
 GameObject:
   m_PrefabParentObject: {fileID: 100052, guid: 9b02e23d6c8aad64aa8b709d6254ad92, type: 2}
@@ -1570,11 +1574,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400008, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22400008, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a1142077567684a95465f8e1d3bf23, type: 2}
