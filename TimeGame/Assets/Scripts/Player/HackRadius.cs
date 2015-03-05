@@ -86,8 +86,12 @@ public class HackRadius : MonoBehaviour {
 			}
 		}
 
-		if (objtag == "Enemy")
+		if (objtag == "Enemy") {
 			HackEnemy(other, otherpos);
+		}
+		else {
+			transform.parent.GetComponent<Player2DController> ().inHackingAnim = true;
+		}
 		GetComponentInParent<PlayerInfo>().SpendEnergy(other.GetComponentInParent<EnemyInfo>().requiredEnergy);
 	}
 
@@ -108,28 +112,29 @@ public class HackRadius : MonoBehaviour {
 		else{
 			anim.SetBool("IsHackingEnemy", true);
 			other.GetComponent<Animator> ().SetBool("isHacked", true);
+
 			StartCoroutine(HackHealthDroneAnim());
 		}
 
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = true;	//Stop player from moving while hacking anim is playing
-		transform.parent.rigidbody2D.velocity = new Vector2 (0f, 0f);
+		transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2 (0f, 0f);
 		if (otherpos.x < transform.position.x) {											//If player is to the right of target
 			if (!transform.parent.GetComponent<Player2DController> ().facingLeft) {	//If player is on the right while not facing left then flip to face left.
 				transform.parent.GetComponent<Player2DController> ().Flip();
 			}
-			transform.parent.transform.position = new Vector3(otherpos.x + HorizHackTeleport, otherpos.y, transform.position.z);
+			transform.parent.transform.position = new Vector3(otherpos.x + HorizHackTeleport, otherpos.y, transform.parent.transform.position.z);
 		}
 		else {
 			if (transform.parent.GetComponent<Player2DController> ().facingLeft) {	//If player is on the left while facing left then flip to face right.
 				transform.parent.GetComponent<Player2DController> ().Flip();
 			}
-			transform.parent.transform.position = new Vector3(otherpos.x - HorizHackTeleport, otherpos.y, transform.position.z);
+			transform.parent.transform.position = new Vector3(otherpos.x - HorizHackTeleport, otherpos.y, transform.parent.transform.position.z);
 		}
 	}
 
 	IEnumerator HackEnemyAnim (GameObject other, int hackType) {
 		//StartCoroutine(StopHackedEnemyMovement (other));
-		yield return new WaitForSeconds (0.61f);
+		yield return new WaitForSeconds (0.82f);
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = false;	//Allows player to move after hacking anim is done
 		if(other != null){
 			anim.SetInteger("EnemyType", hackType);
@@ -139,12 +144,15 @@ public class HackRadius : MonoBehaviour {
 			GetComponentInParent<PlayerInfo> ().healthBar.value = GetComponentInParent<PlayerInfo> ().Health;
 			GetComponentInParent<PlayerInfo>().HealthDrainActive = true;
 			StartCoroutine(GetComponentInParent<PlayerInfo> ().HealthDrain ());
-			Destroy (other);
+			Destroy (other);	//Destroys the enemy
+		}
+		else{
+			anim.SetBool ("IsHackingEnemy", false);
 		}
 	}
 
 	IEnumerator HackHealthDroneAnim () {	//Special case because we're not taking over the HP drone just hacking it for HP
-		yield return new WaitForSeconds (0.75f);
+		yield return new WaitForSeconds (0.82f);
 		anim.SetBool ("IsHackingEnemy", false);
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = false;	//Allows player to move after hacking anim is done
 		//It'll destroy itself after being hacked

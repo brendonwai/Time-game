@@ -58,7 +58,7 @@ public class Player2DController : MonoBehaviour {
 
 			//Makes character move based on inputs
 			if (!inHackingAnim) {		//So you don't move or change direction while hacking.
-				rigidbody2D.velocity = new Vector2 (move_x * maxSpeed, move_y * maxSpeed);
+				GetComponent<Rigidbody2D>().velocity = new Vector2 (move_x * maxSpeed, move_y * maxSpeed);
 				/*
 			 	* If moving in the positive x direction (right) and the character is not
 			 	* facing right, makes the character sprite flip to face the right.
@@ -69,6 +69,9 @@ public class Player2DController : MonoBehaviour {
 				else if((move_x > 0) && facingLeft){
 					Flip();
 				}
+			}
+			else {
+				GetComponent<Rigidbody2D>().velocity = new Vector2 (0, 0);
 			}
 		}
 	}
@@ -99,9 +102,9 @@ public class Player2DController : MonoBehaviour {
 			SoundSource.PlayOneShot(SoundTakeDamage,.7f);
 			SendMessage ("CamShakeOnDamage", damage);
 			//sprite flashes red upon taking damage
-			renderer.material.color = Color.red;
+			GetComponent<Renderer>().material.color = Color.red;
 			yield return new WaitForSeconds(.1f);
-			renderer.material.color = Color.white;
+			GetComponent<Renderer>().material.color = Color.white;
 			//reduce health by amount of damage
 			if (anim.GetBool ("IsHackingEnemy")){			//If you are controlling a hacked enemy
 				SubtractHealth(damage);
@@ -137,13 +140,14 @@ public class Player2DController : MonoBehaviour {
 
 	void KnockBack(Vector2 dir){
 		if(!invincible && !inHackingAnim)
-			rigidbody2D.AddForce (dir.normalized * KnockBackForce);
+			GetComponent<Rigidbody2D>().AddForce (dir.normalized * KnockBackForce);
 	}
 
 	IEnumerator PlayerDeath(){
+		Flip();
 		death = true;
-		gameObject.rigidbody2D.isKinematic = true;	//Prevents enemy from pushing player after death
-		rigidbody2D.velocity = new Vector2 (0,0);
+		gameObject.GetComponent<Rigidbody2D>().isKinematic = true;	//Prevents enemy from pushing player after death
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (0,0);
 		anim.SetBool("IsDead",true);
 		yield return new WaitForSeconds(2.583f);
 		GameOver = true;
@@ -152,7 +156,7 @@ public class Player2DController : MonoBehaviour {
 	public IEnumerator HackDeath () {
 		if(hackState==0)
 			Instantiate(Explosion,transform.position,transform.rotation);
-		rigidbody2D.velocity = new Vector2 (0,0);
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (0,0);
 		anim.SetBool ("HackedEnemyDead", true);
 		anim.SetBool ("IsHackingEnemy", false);
 		anim.SetInteger ("EnemyType", -1);
@@ -223,8 +227,8 @@ public class Player2DController : MonoBehaviour {
 
 		bulletClone.AddForce (dir*bulletspeed);
 		bulletClone2.AddForce (dir2*bulletspeed);
-		bulletClone.renderer.material.color = Color.red;
-		bulletClone2.renderer.material.color = Color.red;
+		bulletClone.GetComponent<Renderer>().material.color = Color.red;
+		bulletClone2.GetComponent<Renderer>().material.color = Color.red;
 
 		yield return new WaitForSeconds(0.3333f);
 		anim.SetBool("IsAttacking", false);

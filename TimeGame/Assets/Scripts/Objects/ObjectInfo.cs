@@ -25,25 +25,25 @@ public class ObjectInfo : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerscript = player.GetComponent<PlayerInfo>();
-		LevelColor = renderer.material.color;
+		LevelColor = GetComponent<Renderer>().material.color;
 	}
 
 	void OnMouseOver(){
 		if(!hacked){
 			if(playerscript.Energy>= EnergyCost){
-				renderer.material.color = InHackRange;
+				GetComponent<Renderer>().material.color = InHackRange;
 				if(inRange && Input.GetMouseButtonDown(1)){
 					playerscript.SpendEnergy(EnergyCost);
 					Hacked();
 				}
 			}
 			else
-				renderer.material.color = OutOfHackRange;
+				GetComponent<Renderer>().material.color = OutOfHackRange;
 		}
 	}
 
 	void OnMouseExit(){
-		renderer.material.color = LevelColor;
+		GetComponent<Renderer>().material.color = LevelColor;
 	}
 
 
@@ -71,7 +71,7 @@ public class ObjectInfo : MonoBehaviour {
 	
 
 	void PlayerPosition(float X_Delta, float Y_Delta){
-		player.transform.position = new Vector3(transform.position.x + X_Delta, transform.position.y + Y_Delta, transform.position.z);
+		player.transform.position = new Vector3(transform.position.x + X_Delta, transform.position.y + Y_Delta, player.transform.position.z);
 	}
 
 	//For specifying teleporting behavior

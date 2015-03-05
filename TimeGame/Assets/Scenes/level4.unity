@@ -3582,7 +3582,7 @@ MonoBehaviour:
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
-  facingRight: 1
+  facingRight: 0
 --- !u!95 &512264613
 Animator:
   serializedVersion: 3
@@ -6538,7 +6538,7 @@ MonoBehaviour:
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
-  facingRight: 1
+  facingRight: 0
 --- !u!95 &858973746
 Animator:
   serializedVersion: 3
@@ -6895,7 +6895,7 @@ MonoBehaviour:
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
-  facingRight: 1
+  facingRight: 0
 --- !u!95 &883042204
 Animator:
   serializedVersion: 3
@@ -12323,7 +12323,7 @@ MonoBehaviour:
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
-  facingRight: 1
+  facingRight: 0
 --- !u!95 &1155988113
 Animator:
   serializedVersion: 3
@@ -18472,7 +18472,7 @@ MonoBehaviour:
   explosion: {fileID: 100000, guid: c44e4d1c3d3208e40b696289acd71358, type: 2}
   moveSpeed: 1
   stopMove: 0
-  facingRight: 1
+  facingRight: 0
 --- !u!95 &1918030289
 Animator:
   serializedVersion: 3

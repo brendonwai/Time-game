@@ -46,7 +46,7 @@ public class TileHandler : MonoBehaviour {
 	//Applies generated color to level elements in list
 	void ApplyLevelColor(){
 		foreach(GameObject element in LevelElements){
-			element.renderer.material.color = LevelColor;
+			element.GetComponent<Renderer>().material.color = LevelColor;
 		}
 	}
 
@@ -93,7 +93,7 @@ public class TileHandler : MonoBehaviour {
 
 			if(direction != -1)
 				clone.GetComponent<ObjectInfo>().orientation = direction;
-			clone.renderer.material.color = LevelColor;
+			clone.GetComponent<Renderer>().material.color = LevelColor;
 
 			clone.transform.parent = temp.transform.parent;
 			SetXScale(clone,x_scale);
