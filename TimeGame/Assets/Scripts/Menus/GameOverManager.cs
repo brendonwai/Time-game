@@ -68,6 +68,7 @@ public class GameOverManager : MonoBehaviour {
 	}
 
 	void RunGameOver(){
+		SaveStats.ResetHealth ();
 		DeathPrefSet = true;
 		MainComment.text = "Game Over";
 		comment.text = GameOverComment(d);
@@ -79,6 +80,7 @@ public class GameOverManager : MonoBehaviour {
 	public void ResumeGame(){
 		paused = false;
 		PlayerStatus.GetComponent<Player2DController>().paused = false;
+		SaveStats.ResetHealth();
 		UI_GameOver.SetActive(false);
 		Time.timeScale = 1.0f;
 	}

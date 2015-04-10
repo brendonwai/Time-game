@@ -19,6 +19,8 @@ public class ObjectInfo : MonoBehaviour {
 	Color LevelColor;
 
 	int i = 0;
+	float XDelta;
+	float YDelta;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +28,24 @@ public class ObjectInfo : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerscript = player.GetComponent<PlayerInfo>();
 		LevelColor = GetComponent<Renderer>().material.color;
+		AssignDelta();
+	}
+
+
+	//For getting position of keyboards 
+	void AssignDelta(){
+		if(orientation == 0){
+			XDelta = 0.0f;
+			YDelta = -.3f;
+		}
+		else if(orientation == 1){
+			XDelta = -.3f;
+			YDelta = 0.0f;
+		}
+		else{
+			XDelta = .3f;
+			YDelta = 0.0f;
+		}
 	}
 
 	void OnMouseOver(){
@@ -70,8 +90,8 @@ public class ObjectInfo : MonoBehaviour {
 	}
 	
 
-	void PlayerPosition(float X_Delta, float Y_Delta){
-		player.transform.position = new Vector3(transform.position.x + X_Delta, transform.position.y + Y_Delta, player.transform.position.z);
+	void PlayerPosition(){
+		player.transform.position = new Vector3(transform.position.x + XDelta, transform.position.y + YDelta, player.transform.position.z);
 	}
 
 	//For specifying teleporting behavior
@@ -86,20 +106,20 @@ public class ObjectInfo : MonoBehaviour {
 				player.GetComponent<Player2DController> ().Flip();
 			}
 		}
-		PlayerPosition(0f,-0.3f);
+		PlayerPosition();
 	}
 
 	void GateHackLeft(){
 		if (player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the left while facing left then flip to face right.
 			player.GetComponent<Player2DController> ().Flip();
 		}
-		PlayerPosition(-0.3f,0.0f);
+		PlayerPosition();
 	}
 
 	void GateHackRight(){
 		if (!player.GetComponent<Player2DController> ().facingLeft) {	//If player is on the left while facing left then flip to face right.
 			player.GetComponent<Player2DController> ().Flip();
 		}
-		PlayerPosition(0.3f,0.0f);
+		PlayerPosition();
 	}
 }

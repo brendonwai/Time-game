@@ -21,6 +21,10 @@ public class SaveStats : MonoBehaviour {
 		playerScore = score;
 	}
 
+	public static void ResetHealth() {
+		playerHealth = 100;
+	}
+
 	public static int GetPlayerHealth() {
 		return playerHealth;
 	}
