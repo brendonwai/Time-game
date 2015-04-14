@@ -51,10 +51,15 @@ public class ObjectInfo : MonoBehaviour {
 	void OnMouseOver(){
 		if(!hacked){
 			if(playerscript.Energy>= EnergyCost){
+				Vector3 difference = player.transform.position - transform.position;
+				RaycastHit2D hit = Physics2D.Raycast(transform.position + difference.normalized*10f,player.transform.position - transform.position, 1000f);
+
 				GetComponent<Renderer>().material.color = InHackRange;
 				if(inRange && Input.GetMouseButtonDown(1)){
-					playerscript.SpendEnergy(EnergyCost);
-					Hacked();
+					if(hit== null || hit.transform.gameObject.tag != "Background"){
+						playerscript.SpendEnergy(EnergyCost);
+						Hacked();
+					}
 				}
 			}
 			else
