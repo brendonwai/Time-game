@@ -65,7 +65,6 @@ public class ObjectInfo : MonoBehaviour {
 							Hacked();
 							break;
 						}
-						Debug.Log(r.transform.gameObject.tag); 
 					}
 				}
 			}
