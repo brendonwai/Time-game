@@ -52,15 +52,13 @@ public class ObjectInfo : MonoBehaviour {
 		if(!hacked){
 			if(playerscript.Energy>= EnergyCost){
 				Vector3 difference = player.transform.position - transform.position;
-				RaycastHit2D hit = Physics2D.Raycast(transform.position + difference.normalized*10f,player.transform.position - transform.position, 1000f);
-
 
 				GetComponent<Renderer>().material.color = InHackRange;
 				if(inRange && Input.GetMouseButtonDown(1)){
 					RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position + difference.normalized*10f,player.transform.position - transform.position, 1000f);
 					foreach(RaycastHit2D r in hits){
-						if(hit.transform.gameObject.tag == "Background"){break;}
-						else if(hit.transform.gameObject.tag.StartsWith("GateC")){
+						if(r.transform.gameObject.tag == "Background"){break;}
+						else if(r.transform.gameObject.tag.StartsWith("GateC")){
 							playerscript.SpendEnergy(EnergyCost);
 							Hacked();
 							break;
