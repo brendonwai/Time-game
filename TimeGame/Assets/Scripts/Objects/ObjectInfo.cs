@@ -56,7 +56,7 @@ public class ObjectInfo : MonoBehaviour {
 
 				GetComponent<Renderer>().material.color = InHackRange;
 				if(inRange && Input.GetMouseButtonDown(1)){
-					if(hit== null || hit.transform.gameObject.tag != "Background"){
+					if(hit== null || (hit.transform.gameObject.tag != "Background" && hit.transform.gameObject.tag != "Gate")){
 						playerscript.SpendEnergy(EnergyCost);
 						Hacked();
 					}
