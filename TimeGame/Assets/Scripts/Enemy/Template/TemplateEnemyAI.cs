@@ -169,7 +169,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	//Moves enemy closer to target
 	void ApproachTarget(){
-		FaceTarget();
+		FaceTarget(target.transform.position);
 	
 		if(!stopMove){
 			transform.position = Vector2.MoveTowards(transform.position,
@@ -182,19 +182,20 @@ public class TemplateEnemyAI : MonoBehaviour {
 
 	// Enemy moves towards arbitrary point
 	void RandomMovement() {
-		FaceTarget ();
+		Vector2 tempPos = new Vector2(randX, randY);
+		FaceTarget(tempPos);
 		if (!stopMove) {
-			transform.position = Vector2.MoveTowards(transform.position, new Vector2(randX, randY), 
+			transform.position = Vector2.MoveTowards(transform.position, tempPos, 
 			                                         moveSpeed * Time.deltaTime);
-			anim.SetBool ("IsMoving", true);
+			anim.SetFloat ("Speed", 1);
 		}
 	}
 
 	//Faces enemy towards target
-	void FaceTarget(){
-		if((target.transform.position.x >= transform.position.x) && !facingRight)
+	void FaceTarget(Vector2 pos){
+		if((pos.x >= transform.position.x) && !facingRight)
 			Flip();
-		if((target.transform.position.x < transform.position.x) && facingRight)
+		if((pos.x < transform.position.x) && facingRight)
 			Flip ();
 	}
 
