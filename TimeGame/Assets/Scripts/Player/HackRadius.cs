@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using System.Collections;
 
 public class HackRadius : MonoBehaviour {
-	
+
 	Animator anim;								     
 	public int HackCD;								//Hacking ability Cooldown
 	SpriteRenderer hacksprite;						//CHILD. Hacking sprite displayed above player head
 	ArrayList objectsInRange;
 
 	float HorizHackTeleport = 0.3f;
-	
-	
+
+
 	//Keys
 	public KeyCode hackKey;							//Button to Hack an enemy
 
@@ -22,7 +22,7 @@ public class HackRadius : MonoBehaviour {
 		objectsInRange = new ArrayList ();
 		HackCD = 10;
 	}
-	
+
 	void FixedUpdate(){
 		//Hacking
 		//NOTE YOU CAN STILL HACK WHILE DEAD TAKE THAT OUT
@@ -48,7 +48,7 @@ public class HackRadius : MonoBehaviour {
 	}
 	
 	public bool inRange(GameObject hitObject) {
-		return objectsInRange.Contains (hitObject);
+		return objectsInRange.Contains (hitObject) && !Physics2D.Linecast(transform.parent.gameObject.transform.position, hitObject.transform.position);
 	}
 	
 	void OnTriggerEnter2D(Collider2D other) {
