@@ -77,14 +77,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 715744389
-    locked: 0
   - name: Explosions
     uniqueID: 3794442025
     locked: 0
   - name: Enemy
     uniqueID: 1684355751
+    locked: 0
+  - name: Player
+    uniqueID: 715744389
     locked: 0
   - name: Foreground
     uniqueID: 427963823
