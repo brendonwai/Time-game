@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Player2DController : MonoBehaviour {
 
+	public bool invincibleMode;
+
 	public float maxSpeed = 5f;			//Sets momvement speed
 	public bool facingLeft = true;		//Determines direction character facing
 	public int hackState = -1;			//Determines action of player depending on hacked enemy
@@ -96,7 +98,7 @@ public class Player2DController : MonoBehaviour {
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
 		
-		if(!death && !invincible){
+		if(!death && !invincible && !invincibleMode){
 			//trigger camera shake.
 			//shake magnitude based on damage taken
 			SoundSource.PlayOneShot(SoundTakeDamage,.7f);

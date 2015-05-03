@@ -48,7 +48,8 @@ public class HackRadius : MonoBehaviour {
 	}
 	
 	public bool inRange(GameObject hitObject) {
-		return objectsInRange.Contains (hitObject) && !Physics2D.Linecast(transform.parent.gameObject.transform.position, hitObject.transform.position);
+		RaycastHit2D hit = Physics2D.Linecast(transform.parent.gameObject.transform.position, hitObject.transform.position, 1 << LayerMask.NameToLayer("Walls"));
+		return objectsInRange.Contains(hitObject) && hit.collider == null;
 	}
 	
 	void OnTriggerEnter2D(Collider2D other) {
