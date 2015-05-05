@@ -31,7 +31,12 @@ public class Player2DController : MonoBehaviour {
 
 	public bool inHackingAnim;			//If the player is in the middle of the Hacking animation so you don't move or change your direction while it's playing.
 	public bool paused = false;
-	
+
+	//Attack and Button CD handlers
+	bool canHack = true;
+	bool canSlash = true;
+	public GameObject buttonController;
+
 	//Sound
 	private AudioSource SoundSource;
 	public AudioClip SoundTakeDamage;	//Sound played when player takes damage
@@ -92,6 +97,8 @@ public class Player2DController : MonoBehaviour {
 		PushBack.SetActive (false);
 		yield return new WaitForSeconds (.15f);
 		anim.SetBool ("IsAttacking", false);
+		yield return new WaitForSeconds(1.0f);
+		canSlash = true;
 	}
 	
 
@@ -204,7 +211,9 @@ public class Player2DController : MonoBehaviour {
 				break;
 			default:
 			//HUMAN
-				if(Input.GetMouseButtonDown(0) && (Time.time >= lastAttack + humanAttackRate) && !anim.GetBool("IsAttacking")){
+				if(Input.GetMouseButtonDown(0) && canSlash){
+					canSlash = false;
+				buttonController.GetComponent<SkillButtonHandler>().StartCD(1);
 					lastAttack = Time.time;
 					StartCoroutine("HumanPushbackAttack");
 				}

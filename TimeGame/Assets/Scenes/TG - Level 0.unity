@@ -1158,7 +1158,7 @@ MonoBehaviour:
   - {fileID: 7879486}
   CoolDownDuration:
   - 5
-  - 8
+  - 1.41999996
   onCD: 0000
   countDown:
   - {fileID: 2049561629}
@@ -1638,6 +1638,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -.127000004
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 458f14e3e3c61b24fb12955f99ae610b, type: 2}
+      propertyPath: buttonController
+      value: 
+      objectReference: {fileID: 1110550308}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 458f14e3e3c61b24fb12955f99ae610b, type: 2}
   m_IsPrefabParent: 0
@@ -2055,23 +2059,23 @@ Prefab:
       objectReference: {fileID: 1110550309}
     - target: {fileID: 22400018, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400018, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400024, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400024, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400024, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400056, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_Colors.m_NormalColor.a
