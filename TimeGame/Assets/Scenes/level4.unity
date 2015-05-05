@@ -1432,7 +1432,7 @@ MonoBehaviour:
   - {fileID: 41680454}
   CoolDownDuration:
   - 5
-  - 8
+  - 1.41999996
   onCD: 0000
   countDown:
   - {fileID: 1183189661}
