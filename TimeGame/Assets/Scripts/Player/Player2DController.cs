@@ -33,7 +33,7 @@ public class Player2DController : MonoBehaviour {
 	public bool paused = false;
 
 	//Attack and Button CD handlers
-	bool canHack = true;
+	public bool canHack = true;
 	bool canSlash = true;
 	public GameObject buttonController;
 
@@ -162,6 +162,13 @@ public class Player2DController : MonoBehaviour {
 		GameOver = true;
 	}
 
+	//Recover ability to hack
+	public IEnumerator HackRecovery(){
+		canHack = false;
+		yield return new WaitForSeconds(5.0f);
+		canHack = true;
+	}
+
 	public IEnumerator HackDeath () {
 		if(hackState==0)
 			Instantiate(Explosion,transform.position,transform.rotation);
@@ -213,7 +220,7 @@ public class Player2DController : MonoBehaviour {
 			//HUMAN
 				if(Input.GetMouseButtonDown(0) && canSlash){
 					canSlash = false;
-				buttonController.GetComponent<SkillButtonHandler>().StartCD(1);
+					buttonController.GetComponent<SkillButtonHandler>().StartCD(1);
 					lastAttack = Time.time;
 					StartCoroutine("HumanPushbackAttack");
 				}

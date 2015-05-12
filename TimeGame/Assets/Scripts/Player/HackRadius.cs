@@ -12,6 +12,8 @@ public class HackRadius : MonoBehaviour {
 
 	float HorizHackTeleport = 0.3f;
 
+	SkillButtonHandler buttonController;
+	Player2DController playerScript;
 
 	//Keys
 	public KeyCode hackKey;							//Button to Hack an enemy
@@ -21,6 +23,8 @@ public class HackRadius : MonoBehaviour {
 		hacksprite = GetComponentInChildren<SpriteRenderer> ();
 		objectsInRange = new ArrayList ();
 		HackCD = 10;
+		playerScript = GetComponentInParent<Player2DController>();
+		buttonController = playerScript.buttonController.GetComponent<SkillButtonHandler>();
 	}
 
 	void FixedUpdate(){
@@ -28,7 +32,7 @@ public class HackRadius : MonoBehaviour {
 		//NOTE YOU CAN STILL HACK WHILE DEAD TAKE THAT OUT
 		// Check the energy and subtract the energy
 		if (!anim.GetBool ("IsHackingEnemy")) {				//If you aren't controlling an enemy			
-			if (Input.GetKeyDown(hackKey)) {
+			if (Input.GetKeyDown(hackKey) && playerScript.canHack) {
 				// Checks whether you click on the enemy and not one of its larger, surrounding colliders
 				RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 				for(int i = 0; i < hits.Length; i++) {
@@ -107,14 +111,15 @@ public class HackRadius : MonoBehaviour {
 			other.GetComponent<EnemyInfo>().isHacked = true; //Stops enemy movement
 			anim.SetBool ("IsHackingEnemy", true);
 			anim.SetBool ("HackedEnemyDead", false);
-			
 			StartCoroutine(HackEnemyAnim(other, hackType));
 		}
 		else{
 			anim.SetBool("IsHackingEnemy", true);
 			other.GetComponent<Animator> ().SetBool("isHacked", true);
-
 			StartCoroutine(HackHealthDroneAnim());
+			buttonController.StartCD(0);
+			playerScript.StartCoroutine("HackRecovery");
+
 		}
 
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = true;	//Stop player from moving while hacking anim is playing
