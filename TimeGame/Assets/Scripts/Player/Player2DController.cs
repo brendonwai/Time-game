@@ -187,7 +187,8 @@ public class Player2DController : MonoBehaviour {
 		GetComponent<PlayerInfo> ().healthNum.text = GetComponent<PlayerInfo> ().Health.ToString();
 		yield return new WaitForSeconds(.1f);
 		anim.SetBool ("HackedEnemyDead", false);
-		
+		buttonController.GetComponent<SkillButtonHandler>().StartCD(0);
+		StartCoroutine("HackRecovery");
 		invincible = true;
 		yield return new WaitForSeconds(invinTime);		//Temporarily makes player invulnerable
 		invincible = false;
