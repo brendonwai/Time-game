@@ -2056,23 +2056,23 @@ Prefab:
       objectReference: {fileID: 1110550309}
     - target: {fileID: 22400018, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400018, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400024, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400024, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400024, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5649893465918c14e95396995d28f9eb, type: 2}
