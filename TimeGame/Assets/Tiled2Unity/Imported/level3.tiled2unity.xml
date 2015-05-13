@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 2/27/2015 6:02:24 PM-->
-<Tiled2Unity version="0.9.8.0">
+<!--Last exported: 5/2/2015 5:48:32 PM-->
+<Tiled2Unity version="0.9.6.1">
   <AssignMaterial mesh="mesh_[00]_[00]" material="tileSheet" sortingLayerName="" sortingOrder="0" />
   <AssignMaterial mesh="mesh_[01]_[00]" material="tileSheet" sortingLayerName="Foreground" sortingOrder="1" />
   <AssignMaterial mesh="mesh_[02]_[00]" material="tileSheet" sortingLayerName="" sortingOrder="2" />
   <AssignMaterial mesh="mesh_[03]_[00]" material="tileSheet" sortingLayerName="" sortingOrder="3" />
-  <Prefab name="level3" numTilesWide="105" numTilesHigh="62" tileWidth="32" tileHeight="32" exportScale="1" scale=".01">
+  <Prefab name="level3" scale=".01">
     <GameObject name="floor_00">
       <GameObject copy="mesh_[00]_[00]" />
     </GameObject>
@@ -27,13 +27,10 @@
       <GameObject copy="mesh_[03]_[00]" />
     </GameObject>
     <GameObject name="gate1" tag="GateV">
-      <GameObject name="RectangleObject" x="608" y="-608" isTrigger="True">
-        <BoxCollider2D width="32" height="32" />
+      <GameObject name="RectangleObject" x="608" y="-608" tag="GateV">
+        <BoxCollider2D width="32" height="96" />
       </GameObject>
-      <GameObject name="RectangleObject" x="608" y="-704" tag="Connector2LinkLeft">
-        <BoxCollider2D width="32" height="32" />
-      </GameObject>
-      <GameObject name="RectangleObject" x="608" y="-736" tag="Connector1LinkLeftTop">
+      <GameObject name="RectangleObject" x="608" y="-704" tag="Connector1LinkLeftTop">
         <BoxCollider2D width="32" height="32" />
       </GameObject>
     </GameObject>

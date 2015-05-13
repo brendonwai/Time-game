@@ -14,6 +14,7 @@
  </layer>
  <layer name="Walls_Collision" width="45" height="45">
   <properties>
+   <property name="unity:layer" value="Walls"/>
    <property name="unity:tag" value="Background"/>
   </properties>
   <data encoding="base64" compression="zlib">
