@@ -30,21 +30,22 @@
  </layer>
  <layer name="stuffs" width="105" height="62">
   <data encoding="base64" compression="zlib">
-   eJzt2jsKgDAQBNBcxg9pPZR4/wuYgIWFRFDIpngPBlJOO2xSAmAqWaJL0JRLtugSAAAAPKq7ek629cjqps5XgD7223sNawFAL24YAAAAAAB8dUQX4JU7AADAf/7RAQAAAAAAAAAAIzsBDosDKQ==
+   eJzt2jsKgDAQBcBU3sQPaT2UeP8LmICFhR9QyFrMwIMtX7vspgRAX9JFl+BWLpmjSwAAAHCq7tVDyRhdhEt1p857gDaWwzyFtQCgFTcMAAAAAADeWqML8MgdAADgO390AAAAAAAAAADAn22YIAMI
   </data>
  </layer>
  <objectgroup name="gate1">
   <properties>
    <property name="unity:tag" value="GateV"/>
   </properties>
-  <object x="608" y="608" width="32" height="96">
-   <properties>
-    <property name="unity:tag" value="GateV"/>
-   </properties>
-  </object>
   <object x="608" y="704" width="32" height="32">
    <properties>
     <property name="unity:tag" value="Connector1LinkLeftTop"/>
+   </properties>
+  </object>
+  <object x="608" y="672" width="32" height="32">
+   <properties>
+    <property name="unity:isTrigger" value="True"/>
+    <property name="unity:tag" value="GateV"/>
    </properties>
   </object>
  </objectgroup>
@@ -126,5 +127,18 @@
     <property name="unity:tag" value="Connector1LinkRightTop"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="gate5">
+  <properties>
+   <property name="unity:isTrigger" value="True"/>
+   <property name="unity:tag" value="GateV"/>
+  </properties>
+  <object x="256" y="96" width="32" height="64">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkBotRight"/>
+   </properties>
+  </object>
+  <object x="288" y="128" width="32" height="32"/>
+  <object x="2272" y="1216" width="32"/>
  </objectgroup>
 </map>
