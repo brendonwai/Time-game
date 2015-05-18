@@ -12,6 +12,8 @@ public class ObjectInfo : MonoBehaviour {
 	Animator anim;				//Sets sprite image after hack
 	GameObject player;			//Gets player info to determine if in or out of hack radius
 	PlayerInfo playerscript;
+	Player2DController playerControlScript;
+	SkillButtonHandler buttonController;
 
 	//Colors
 	Color OutOfHackRange = new Color(.6f, .1f, .1f, 1f);
@@ -27,6 +29,8 @@ public class ObjectInfo : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerscript = player.GetComponent<PlayerInfo>();
+		playerControlScript = player.GetComponent<Player2DController>();
+		buttonController = playerControlScript.buttonController.GetComponent<SkillButtonHandler>();
 		LevelColor = GetComponent<Renderer>().material.color;
 		AssignDelta();
 	}
@@ -50,7 +54,7 @@ public class ObjectInfo : MonoBehaviour {
 
 	void OnMouseOver(){
 		if(!hacked){
-			if(playerscript.Energy>= EnergyCost){
+			if(playerscript.Energy>= EnergyCost && playerControlScript.canHack){
 				Vector3 difference = player.transform.position - transform.position;
 
 				GetComponent<Renderer>().material.color = InHackRange;
@@ -60,6 +64,8 @@ public class ObjectInfo : MonoBehaviour {
 						if(r.transform.gameObject.tag == "Background"){break;}
 						else if(r.transform.gameObject.tag.StartsWith("GateC")){
 							playerscript.SpendEnergy(EnergyCost);
+							buttonController.StartCD(0);
+							playerControlScript.StartCoroutine("HackRecovery");
 							Hacked();
 							break;
 						}

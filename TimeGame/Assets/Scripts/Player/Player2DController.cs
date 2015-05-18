@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Player2DController : MonoBehaviour {
 
+	public bool invincibleMode;
+
 	public float maxSpeed = 5f;			//Sets momvement speed
 	public bool facingLeft = true;		//Determines direction character facing
 	public int hackState = -1;			//Determines action of player depending on hacked enemy
@@ -29,7 +31,12 @@ public class Player2DController : MonoBehaviour {
 
 	public bool inHackingAnim;			//If the player is in the middle of the Hacking animation so you don't move or change your direction while it's playing.
 	public bool paused = false;
-	
+
+	//Attack and Button CD handlers
+	public bool canHack = true;
+	bool canSlash = true;
+	public GameObject buttonController;
+
 	//Sound
 	private AudioSource SoundSource;
 	public AudioClip SoundTakeDamage;	//Sound played when player takes damage
@@ -90,13 +97,15 @@ public class Player2DController : MonoBehaviour {
 		PushBack.SetActive (false);
 		yield return new WaitForSeconds (.15f);
 		anim.SetBool ("IsAttacking", false);
+		yield return new WaitForSeconds(1.0f);
+		canSlash = true;
 	}
 	
 
 	// Call this when damage dealt to enemy
 	IEnumerator takeDamage(int damage){
 		
-		if(!death && !invincible){
+		if(!death && !invincible && !invincibleMode){
 			//trigger camera shake.
 			//shake magnitude based on damage taken
 			SoundSource.PlayOneShot(SoundTakeDamage,.7f);
@@ -153,6 +162,13 @@ public class Player2DController : MonoBehaviour {
 		GameOver = true;
 	}
 
+	//Recover ability to hack
+	public IEnumerator HackRecovery(){
+		canHack = false;
+		yield return new WaitForSeconds(5.0f);
+		canHack = true;
+	}
+
 	public IEnumerator HackDeath () {
 		if(hackState==0)
 			Instantiate(Explosion,transform.position,transform.rotation);
@@ -171,7 +187,8 @@ public class Player2DController : MonoBehaviour {
 		GetComponent<PlayerInfo> ().healthNum.text = GetComponent<PlayerInfo> ().Health.ToString();
 		yield return new WaitForSeconds(.1f);
 		anim.SetBool ("HackedEnemyDead", false);
-		
+		buttonController.GetComponent<SkillButtonHandler>().StartCD(0);
+		StartCoroutine("HackRecovery");
 		invincible = true;
 		yield return new WaitForSeconds(invinTime);		//Temporarily makes player invulnerable
 		invincible = false;
@@ -202,7 +219,9 @@ public class Player2DController : MonoBehaviour {
 				break;
 			default:
 			//HUMAN
-				if(Input.GetMouseButtonDown(0) && (Time.time >= lastAttack + humanAttackRate) && !anim.GetBool("IsAttacking")){
+				if(Input.GetMouseButtonDown(0) && canSlash){
+					canSlash = false;
+					buttonController.GetComponent<SkillButtonHandler>().StartCD(1);
 					lastAttack = Time.time;
 					StartCoroutine("HumanPushbackAttack");
 				}

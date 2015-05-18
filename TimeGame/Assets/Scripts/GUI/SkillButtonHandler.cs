@@ -19,11 +19,11 @@ public class SkillButtonHandler : MonoBehaviour {
 			onCD[buttonNum] = false;
 			buttonNum++;
 		}
-
 		InvokeRepeating("CheckCD", 0f, .01f);	//The cooldown timer function
 	
 	}
 	
+
 	//Starts skill cool dow 
 	public void StartCD(int skill){
 		if(!onCD[skill]){

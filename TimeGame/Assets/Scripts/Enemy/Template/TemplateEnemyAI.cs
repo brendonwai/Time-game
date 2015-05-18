@@ -187,7 +187,7 @@ public class TemplateEnemyAI : MonoBehaviour {
 		if (!stopMove) {
 			transform.position = Vector2.MoveTowards(transform.position, tempPos, 
 			                                         moveSpeed * Time.deltaTime);
-			anim.SetFloat ("Speed", 1);
+			anim.SetBool("IsMoving", true);
 		}
 	}
 
