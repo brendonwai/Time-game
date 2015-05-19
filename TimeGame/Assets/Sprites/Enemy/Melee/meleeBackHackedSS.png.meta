@@ -1,18 +1,9 @@
 fileFormatVersion: 2
-guid: 11ebbe2ccf0e71f46816eeddd3cb28ab
-timeCreated: 1431999418
+guid: 1698e962bddf4fa4d99000b57352f32f
+timeCreated: 1431999448
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: meleeBackHackedSS_0
-    21300002: meleeBackHackedSS_1
-    21300004: meleeBackHackedSS_2
-    21300006: meleeBackHackedSS_3
-    21300008: meleeBackHackedSS_4
-    21300010: meleeBackHackedSS_5
-    21300012: meleeBackHackedSS_6
-    21300014: meleeBackHackedSS_7
-    21300016: meleeBackHackedSS_8
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -39,14 +30,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -57,97 +48,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: meleeBackHackedSS_0
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 19
-        width: 26
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeBackHackedSS_1
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 19
-        width: 28
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeBackHackedSS_2
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 19
-        width: 30
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeBackHackedSS_3
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 19
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeBackHackedSS_4
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 19
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeBackHackedSS_5
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 19
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeBackHackedSS_6
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 19
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeBackHackedSS_7
-      rect:
-        serializedVersion: 2
-        x: 464
-        y: 19
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeBackHackedSS_8
-      rect:
-        serializedVersion: 2
-        x: 522
-        y: 19
-        width: 44
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

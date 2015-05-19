@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: d5ded94d99d8add4a86a2f533a2d6c05
-timeCreated: 1431999511
+guid: a6af9b6677eab324b9ae87d1f23ef0e0
+timeCreated: 1431999448
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: meleeSideHackedSS_0
-    21300002: meleeSideHackedSS_1
-    21300004: meleeSideHackedSS_2
-    21300006: meleeSideHackedSS_3
-    21300008: meleeSideHackedSS_4
-    21300010: meleeSideHackedSS_5
-    21300012: meleeSideHackedSS_6
-    21300014: meleeSideHackedSS_7
-    21300016: meleeSideHackedSS_8
-    21300018: meleeSideHackedSS_9
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -40,14 +30,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,107 +48,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: meleeSideHackedSS_0
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 18
-        width: 24
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeSideHackedSS_1
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 18
-        width: 24
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeSideHackedSS_2
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 18
-        width: 24
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeSideHackedSS_3
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 18
-        width: 24
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeSideHackedSS_4
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 18
-        width: 24
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeSideHackedSS_5
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 18
-        width: 24
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeSideHackedSS_6
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 18
-        width: 24
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeSideHackedSS_7
-      rect:
-        serializedVersion: 2
-        x: 469
-        y: 18
-        width: 32
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeSideHackedSS_8
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 18
-        width: 38
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeSideHackedSS_9
-      rect:
-        serializedVersion: 2
-        x: 594
-        y: 18
-        width: 28
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
