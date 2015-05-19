@@ -447,13 +447,16 @@ MonoBehaviour:
   buttons:
   - {fileID: 727013443}
   - {fileID: 421685787}
+  - {fileID: 1563348122}
   CoolDownDuration:
   - 5
   - 1.41999996
-  onCD: 0000
+  - 5
+  onCD: 000000
   countDown:
   - {fileID: 1275408866}
   - {fileID: 305513994}
+  - {fileID: 1563348121}
 --- !u!114 &707882688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,6 +1116,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5649893465918c14e95396995d28f9eb, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1563348121 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400012, guid: 5649893465918c14e95396995d28f9eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1563348120}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1563348122 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400018, guid: 5649893465918c14e95396995d28f9eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1563348120}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1568860422 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100048, guid: 9b02e23d6c8aad64aa8b709d6254ad92, type: 2}
