@@ -34,6 +34,7 @@ public class Player2DController : MonoBehaviour {
 
 	//Attack and Button CD handlers
 	public bool canHack = true;
+	public bool canHackComp = true;
 	bool canSlash = true;
 	public GameObject buttonController;
 
@@ -167,6 +168,12 @@ public class Player2DController : MonoBehaviour {
 		canHack = false;
 		yield return new WaitForSeconds(5.0f);
 		canHack = true;
+	}
+
+	public IEnumerator HackCompRecovery(){
+		canHackComp = false;
+		yield return new WaitForSeconds(5.0f);
+		canHackComp = true;
 	}
 
 	public IEnumerator HackDeath () {
