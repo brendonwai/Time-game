@@ -119,7 +119,6 @@ public class HackRadius : MonoBehaviour {
 			StartCoroutine(HackHealthDroneAnim());
 			buttonController.StartCD(0);
 			playerScript.StartCoroutine("HackRecovery");
-
 		}
 
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = true;	//Stop player from moving while hacking anim is playing
@@ -140,6 +139,10 @@ public class HackRadius : MonoBehaviour {
 
 	IEnumerator HackEnemyAnim (GameObject other, int hackType) {
 		//StartCoroutine(StopHackedEnemyMovement (other));
+		if(other != null && hackType == 1) {
+				other.GetComponent<Animator>().SetBool("BeingHacked", true);
+				other.GetComponent<EnemyAI>().Flip();
+		}
 		yield return new WaitForSeconds (0.82f);
 		transform.parent.GetComponent<Player2DController> ().inHackingAnim = false;	//Allows player to move after hacking anim is done
 		if(other != null){
