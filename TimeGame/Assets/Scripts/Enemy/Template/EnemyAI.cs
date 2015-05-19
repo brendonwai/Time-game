@@ -171,7 +171,7 @@ public abstract class EnemyAI : MonoBehaviour {
 	}
 
 	// Enemy moves towards arbitrary point
-	void RandomMovement() {
+	protected virtual void RandomMovement() {
 		Vector2 tempPos = new Vector2(randX, randY);
 		FaceTarget(tempPos);
 		if (!stopMove) {

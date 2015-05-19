@@ -23,8 +23,14 @@ public class MeleeAI : EnemyAI {
 	}
 
 	protected override void Move() {
-		if(!anim.GetBool("IsAttacking")) {
+		if(!anim.GetBool("IsAttacking") && !GetComponentInChildren<MeleeAttack>().charging && !GetComponentInChildren<MeleeAttack>().onCoolDown) {
 			ApproachTarget();
+		}
+	}
+
+	protected override void RandomMovement() {
+		if(!anim.GetBool("IsAttacking") && !GetComponentInChildren<MeleeAttack>().charging && !GetComponentInChildren<MeleeAttack>().onCoolDown) {
+			base.RandomMovement();
 		}
 	}
 
@@ -32,16 +38,15 @@ public class MeleeAI : EnemyAI {
 		if(anim.GetBool("IsAttacking")) {			
 			ApproachTarget();
 			if(attackStart == 0) {
-				Debug.Log("Start attack");
 				attackStart = Time.time;
 				moveSpeed = chargeSpeed;
 			}
 			attackTime += Time.deltaTime;
 			if(attackTime >= attackLength || inContact) {
-				Debug.Log("End Attack");
+				anim.SetTrigger("Attack");
 				if(inContact) {
 					target.GetComponent<Player2DController>().SendMessage("takeDamage", 20);
-					StartCoroutine(PlayAttack());
+					//StartCoroutine(PlayAttack());
 				}
 				//anim.SetBool("Attack", false);
 				attackTime = 0f;
