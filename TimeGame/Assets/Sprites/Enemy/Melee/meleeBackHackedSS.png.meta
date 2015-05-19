@@ -1,19 +1,18 @@
 fileFormatVersion: 2
-guid: e0a36501851ed1c4995cf65bbccc060a
-timeCreated: 1431999439
+guid: 11ebbe2ccf0e71f46816eeddd3cb28ab
+timeCreated: 1431999418
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: meleeFrontAttackSheet_0
-    21300002: meleeFrontAttackSheet_1
-    21300004: meleeFrontAttackSheet_2
-    21300006: meleeFrontAttackSheet_3
-    21300008: meleeFrontAttackSheet_4
-    21300010: meleeFrontAttackSheet_5
-    21300012: meleeFrontAttackSheet_6
-    21300014: meleeFrontAttackSheet_7
-    21300016: meleeFrontAttackSheet_8
-    21300018: meleeFrontAttackSheet_9
+    21300000: meleeBackHackedSS_0
+    21300002: meleeBackHackedSS_1
+    21300004: meleeBackHackedSS_2
+    21300006: meleeBackHackedSS_3
+    21300008: meleeBackHackedSS_4
+    21300010: meleeBackHackedSS_5
+    21300012: meleeBackHackedSS_6
+    21300014: meleeBackHackedSS_7
+    21300016: meleeBackHackedSS_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -37,7 +36,7 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -59,103 +58,93 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: meleeFrontAttackSheet_0
+    - name: meleeBackHackedSS_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 19
+        y: 19
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meleeBackHackedSS_1
+      rect:
+        serializedVersion: 2
+        x: 82
         y: 19
         width: 28
         height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeFrontAttackSheet_1
+    - name: meleeBackHackedSS_2
       rect:
         serializedVersion: 2
-        x: 81
+        x: 145
         y: 19
         width: 30
         height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeFrontAttackSheet_2
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 17
-        width: 32
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeFrontAttackSheet_3
+    - name: meleeBackHackedSS_3
       rect:
         serializedVersion: 2
         x: 208
-        y: 17
+        y: 19
         width: 32
-        height: 27
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeFrontAttackSheet_4
+    - name: meleeBackHackedSS_4
       rect:
         serializedVersion: 2
         x: 272
-        y: 16
+        y: 19
         width: 32
-        height: 28
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeFrontAttackSheet_5
+    - name: meleeBackHackedSS_5
       rect:
         serializedVersion: 2
-        x: 333
-        y: 14
-        width: 38
-        height: 30
+        x: 336
+        y: 19
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeFrontAttackSheet_6
+    - name: meleeBackHackedSS_6
       rect:
         serializedVersion: 2
-        x: 392
-        y: 11
-        width: 48
-        height: 33
+        x: 400
+        y: 19
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeFrontAttackSheet_7
+    - name: meleeBackHackedSS_7
       rect:
         serializedVersion: 2
-        x: 456
-        y: 11
-        width: 48
-        height: 33
+        x: 464
+        y: 19
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeFrontAttackSheet_8
+    - name: meleeBackHackedSS_8
       rect:
         serializedVersion: 2
-        x: 520
-        y: 11
-        width: 48
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: meleeFrontAttackSheet_9
-      rect:
-        serializedVersion: 2
-        x: 586
-        y: 11
+        x: 522
+        y: 19
         width: 44
-        height: 33
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
