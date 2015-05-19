@@ -87,12 +87,6 @@ NavMeshSettings:
     cellSize: .166666657
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &41680454 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11400018, guid: 5649893465918c14e95396995d28f9eb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1185095285}
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!114 &156920149 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400038, guid: 5649893465918c14e95396995d28f9eb,
@@ -207,6 +201,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d474593d9b8c24419a31f03a0d05b26f, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &279421719 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11418642, guid: 5649893465918c14e95396995d28f9eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1185095285}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &301317639
 Prefab:
   m_ObjectHideFlags: 0
@@ -1157,6 +1157,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d474593d9b8c24419a31f03a0d05b26f, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1369700336 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11480460, guid: 5649893465918c14e95396995d28f9eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1185095285}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1377438954
 Prefab:
   m_ObjectHideFlags: 0
@@ -1315,12 +1321,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 458f14e3e3c61b24fb12955f99ae610b, type: 2}
   m_PrefabInternal: {fileID: 675598765}
---- !u!114 &1857822641 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11400012, guid: 5649893465918c14e95396995d28f9eb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1185095285}
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1863683956
 Prefab:
   m_ObjectHideFlags: 0
@@ -1417,14 +1417,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 1247676735}
-  - {fileID: 41680454}
+  - {fileID: 1369700336}
   CoolDownDuration:
   - 5
   - 1.41999996
   onCD: 0000
   countDown:
   - {fileID: 1183189661}
-  - {fileID: 1857822641}
+  - {fileID: 279421719}
 --- !u!114 &1876522097
 MonoBehaviour:
   m_ObjectHideFlags: 0
