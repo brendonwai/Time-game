@@ -154,6 +154,10 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 56597322}
+    - target: {fileID: 11400000, guid: 458f14e3e3c61b24fb12955f99ae610b, type: 2}
+      propertyPath: buttonController
+      value: 
+      objectReference: {fileID: 278358565}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 458f14e3e3c61b24fb12955f99ae610b, type: 2}
   m_IsPrefabParent: 0
@@ -374,7 +378,7 @@ MonoBehaviour:
   - {fileID: 2075567783}
   CoolDownDuration:
   - 5
-  - 8
+  - 1.41999996
   onCD: 0000
   countDown:
   - {fileID: 533343999}
@@ -1010,18 +1014,6 @@ Prefab:
     - target: {fileID: 400110, guid: b0bd7f5789813e34b82799cd7463a632, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 182220, guid: b0bd7f5789813e34b82799cd7463a632, type: 2}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 100102, guid: b0bd7f5789813e34b82799cd7463a632, type: 2}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 100100, guid: b0bd7f5789813e34b82799cd7463a632, type: 2}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0bd7f5789813e34b82799cd7463a632, type: 2}

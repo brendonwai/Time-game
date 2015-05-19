@@ -582,6 +582,10 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 539498667}
+    - target: {fileID: 11400000, guid: 458f14e3e3c61b24fb12955f99ae610b, type: 2}
+      propertyPath: buttonController
+      value: 
+      objectReference: {fileID: 1876522094}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 458f14e3e3c61b24fb12955f99ae610b, type: 2}
   m_IsPrefabParent: 0
@@ -1192,18 +1196,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100102, guid: 46924331da21aa24cb820a9487441e5f, type: 2}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 100106, guid: 46924331da21aa24cb820a9487441e5f, type: 2}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 100104, guid: 46924331da21aa24cb820a9487441e5f, type: 2}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46924331da21aa24cb820a9487441e5f, type: 2}
   m_IsPrefabParent: 0
@@ -1428,7 +1420,7 @@ MonoBehaviour:
   - {fileID: 41680454}
   CoolDownDuration:
   - 5
-  - 8
+  - 1.41999996
   onCD: 0000
   countDown:
   - {fileID: 1183189661}
