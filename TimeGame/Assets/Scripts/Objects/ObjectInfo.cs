@@ -54,7 +54,7 @@ public class ObjectInfo : MonoBehaviour {
 
 	void OnMouseOver(){
 		if(!hacked){
-			if(playerscript.Energy>= EnergyCost && playerControlScript.canHack){
+			if(playerscript.Energy>= EnergyCost && playerControlScript.canHackComp){
 				Vector3 difference = player.transform.position - transform.position;
 
 				GetComponent<Renderer>().material.color = InHackRange;
@@ -64,8 +64,8 @@ public class ObjectInfo : MonoBehaviour {
 						if(r.transform.gameObject.tag == "Background"){break;}
 						else if(r.transform.gameObject.tag.StartsWith("GateC")){
 							playerscript.SpendEnergy(EnergyCost);
-							buttonController.StartCD(0);
-							playerControlScript.StartCoroutine("HackRecovery");
+							buttonController.StartCD(2);
+							playerControlScript.StartCoroutine("HackCompRecovery");
 							Hacked();
 							break;
 						}
