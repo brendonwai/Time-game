@@ -89,7 +89,7 @@ NavMeshSettings:
   m_NavMeshData: {fileID: 0}
 --- !u!114 &7879486 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11400018, guid: 5649893465918c14e95396995d28f9eb,
+  m_PrefabParentObject: {fileID: 11480460, guid: 5649893465918c14e95396995d28f9eb,
     type: 2}
   m_PrefabInternal: {fileID: 1621350309}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -534,7 +534,7 @@ Transform:
   m_PrefabInternal: {fileID: 278204274}
 --- !u!114 &423138323 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11400012, guid: 5649893465918c14e95396995d28f9eb,
+  m_PrefabParentObject: {fileID: 11418642, guid: 5649893465918c14e95396995d28f9eb,
     type: 2}
   m_PrefabInternal: {fileID: 1621350309}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -2476,7 +2476,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400030, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 22400030, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -2518,11 +2518,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 5649893465918c14e95396995d28f9eb, type: 2}
+    - target: {fileID: 11400024, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1110550309}
-    - target: {fileID: 11400024, guid: 5649893465918c14e95396995d28f9eb, type: 2}
+    - target: {fileID: 11400000, guid: 5649893465918c14e95396995d28f9eb, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1110550309}
