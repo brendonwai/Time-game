@@ -209,6 +209,8 @@ public class Player2DController : MonoBehaviour {
 		switch(hackState){
 			case 0:
 			//BASIC ENEMY
+				if(Input.GetMouseButtonDown(0))
+					StartCoroutine("HackDeath");
 				break;
 			case 1:
 			//BASIC RANGED ENEMY
