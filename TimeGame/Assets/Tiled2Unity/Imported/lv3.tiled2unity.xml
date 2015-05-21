@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 2/28/2015 4:08:16 PM-->
-<Tiled2Unity version="0.9.8.0">
+<!--Last exported: 5/18/2015 3:26:55 PM-->
+<Tiled2Unity version="0.9.6.1">
   <AssignMaterial mesh="mesh_[00]_[00]" material="tileSheet" sortingLayerName="" sortingOrder="0" />
   <AssignMaterial mesh="mesh_[01]_[00]" material="tileSheet" sortingLayerName="" sortingOrder="1" />
   <AssignMaterial mesh="mesh_[02]_[00]" material="tileSheet" sortingLayerName="Foreground" sortingOrder="2" />
-  <Prefab name="lv3" numTilesWide="50" numTilesHigh="50" tileWidth="32" tileHeight="32" exportScale="1" scale="0.01">
+  <Prefab name="lv3" scale="0.01">
     <GameObject name="Floor_00">
       <GameObject copy="mesh_[00]_[00]" />
     </GameObject>

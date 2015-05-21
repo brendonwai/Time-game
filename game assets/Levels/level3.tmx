@@ -9,7 +9,7 @@
  <tileset firstgid="100" source="../Tiles/tiles_with_collision.tsx"/>
  <layer name="floor" width="105" height="62">
   <data encoding="base64" compression="zlib">
-   eJztnMuOgzAQwPp7u///QT2gPayikGSYSVzVlnJkMLgC0dfrJSK7+J1cq9tG91nF7HGecBvxM7lWt43us4rZ4zzh9kfvtWEjTqMKPxuxHFdnRl2qsJGNsh0j7qOZ9EYrLqew0bzLKSodorMznJ4+89ioZrvejKx1Cht9T6PR9SLqFH3vxUb3c54eX8YsG93PsVEuo+tK1rUl6pTRKAK10clzkj3fRvdzKrDR/Vp95qv23OFDatSDdm/d7WMjvo+N+D6f0KgHzbnKx0Z52KiF5myjFpqzjVpozjZqoTnbqIXmbKMWmrONWmjOtEaE7+7baH273efrmxtFv/Nlo32Nnq5d2MhGq9jo3p0A2cdGF2QfG12QfQiNMn6Tnfn7BrmouJd+2j2ZzukONhpzuoONxpzuYKM9eH752IiPjfjYiI+N+NiIj4342IhN7zP/k/95Kf/xfQI+NuJjIz424mMjPjYSkR28AdryejA=
+   eJztnMuOgzAQwPp7u///QT2gPayikAczGVe1pRyZGlyBaGlfLxE5xe/kWt129zWzmN3PCrcRP5Nrddvd18xidj8r3P7ovTdsxGmU4WcjluPqzF2XLGxko2jHHffRTHqjFZcqbDTvUkWmw+7sCKen9zw2ytmuNyNqVWGj72k0Ol/sOu1+9mKj+zlP9y9ilo3u59goltF5Jercsuu0OuvpefbOoYqo90/2vszOjzq2NlrHRvdr9Z4v2/PEvSepUQ/atfW0j434Pjbi+3xCox405ywfG8Vhoxaas41aaM42aqE526iF5myjFpqzjVpozjZqoTnTGhGe3bfR+nanj9c3N9p95stG5xo9XaewkY1WsdG9OwGyj40uyD42uiD7EBpF/CY78vcNcpFxLf20azKd6g42GlPdwUZjqjvY6AweXz424mMjPjbiYyM+NuJjIz42YtP7zr/yPy/lP35OwMdGfGzEx0Z8bMTHRiJygje6KXvm
   </data>
  </layer>
  <layer name="foreground" width="105" height="62">
@@ -17,7 +17,7 @@
    <property name="unity:sortingLayerName" value="Foreground"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt21sKgCAQBdD2Vu1/S9VHEDFCFj1szoH7l6AySGZ2HQAA8LZ+zjBnfLsjsDEEKdVoX3i+RdE41/Hd0S6rqF7+UkMAAJHSO3MpGfaH0ZzUyDhnwL2yrscAiyNr4JPfgb/WHwAAAAAAaEnNPyrORoFs3F8AAFpxZm935T5wTQAAAAAAAPacLfAHE7CFJ1M=
+   eJzt21sKgCAQBdD2Vu1/S9VHEDFC9iTnHLh/BSqDpGbXAQAAX+vnDHPGrxsCG0OQUo32hef/KOrn2r8n3ssqqpdWaggAIFL6Zi4lw/owGpMaGccMeFbW+RhgcXQOfGsP70h7WtqXBgAAAACAO9X8o+JsFMjG/QUA4C/OrO2u3AeuCQAAAAAAwJ6zBVowAZaKJxA=
   </data>
  </layer>
  <layer name="wall" width="105" height="62">
@@ -25,12 +25,12 @@
    <property name="unity:tag" value="Background"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt3UluwzAMhWHf/yCdsmpadNXxZrHRdmNIFimSNpX8BN4ulil9iREPTafpt+7mfBO33AvzMMnrec65ksc5H8KclNuuX2/dzpJln08O0fT2IsH5qy0jyzitbWv77d3OEs08vXrTrm3tvftp6O9V+XqMtsf16BGjWKPWevb0hxFGGNn7wyjW6H9flu91Ixl9iWe5XT+KfWYwas27Np/e7UqxnvfUvtd6vE+8jDTvr9ra1cZupXe7iGPYujIZeQSjXEalc2Evo/fC2K1rLxj17bfXqGcsjGLWFaPy/iTHFcmxBaP9jHp7k4wj/e4s+U6pNdKubW0+12Tkfb6pHf8WjWrHwNq9jGijpR/NOejIRl7XQkpjRxpF95PJKMuaYKTfH0Zx8/Iysh4DNdc/Jdm7nxGMpL1H3C+wzNerH4wwkhZGGGGEEUYYea0ZRjH9YHS9Rq1nXU6FnrcKI38jyfNnGMUaaa+3rwujeCNrYYQRRvbCyK+fyHufGOXqZ10Y5etnXUcYtZ5FiU70sy7aSP72Y2+jbHW0kcdnzTofjDCyFkYYYWQvjOLO7bzK+5mxEY0iexzhM4DR8euHEUYYjRGM8gej/MlutDw3U7vnv1yfjfg9zmzJbtQ6B347oCeMMMJovGCUPxjlD0b5g1H+ZDfy/D3OUaMxOvqZnluN5H8QXADkyUdT
+   eJztnUluwzAMRXO3Al30CO39OmXVAV11vFltNAUKQ7JIkayp5BH4m8CSPvUcQZIVZ7f7ietJn8hNN0Ld7uTxMOmxortJb0LtlWWX11vLWTS3ee8gjbcnCZxDrDGy1NMqW2u3t5xFmjy9vGn7tnbvvhv8PSuvh9F6vR4eYRTLqNWfPf5gBCMY2f3BKJbRb1uWed1IjD7EWa7Hl6LNDIxaedfy6S1XknXdU5vXetwnXow091et72p1t9RbLmIMW0YmRh6CUS5GpbXwcrzoZfRaqLu19wKjvnZ7GfXUBaOYfoVRuT3JuCIZW7IwOp90OelKUEdPZGDU601Sj3TuLJlTrq2xLg7S+Jfmc0yMvNeb0vpr+Z8Co9oYaJ3D9fbZ7Cdy7ZmJkddeSKnuSEbRfjIxytInMNK3B6O4vLwYScfAs8rnmv1PiaxjstbPCIyk3iOeF1jy9fIDIxhJA0YwghGMYAQjrz6DUYwfGB0vo9ZZl33B81rAyJ+R5PwZjGIZ1fbbW/vuf/3BKJaRNWAEIxjZA0Z+fiKffcIol59lwCifn2Vswah1FiVa0WddtJL89uO/GWWLrRl5fNes+cAIRtaAEYxgZA8Yxa3tvML7zNiIjCI9jvAdgNH2/QcjGMFoDMEov2CUX9kZzedmas/85/3ZiPdxZlN2Rq018MsGnmAEIxiNJxjlF4zyC0b5BaP8ys7I832co0rDaOszPacqyX8QfAPLBkL8
   </data>
  </layer>
  <layer name="stuffs" width="105" height="62">
   <data encoding="base64" compression="zlib">
-   eJzt2jsKgDAQBcBU3sQPaT2UeP8LmICFhR9QyFrMwIMtX7vspgRAX9JFl+BWLpmjSwAAAHCq7tVDyRhdhEt1p857gDaWwzyFtQCgFTcMAAAAAADeWqML8MgdAADgO390AAAAAAAAAADAn22YIAMI
+   eJzt2rENACAMA8GMAzX778YOoMgp7ib42nIVAAAAAAAAXVY6AIB2Jx0AAAAAAAA8s/PDv50OAGA8PzoAAAAAAAAAAGCyCzLgAOA=
   </data>
  </layer>
  <objectgroup name="gate1">
@@ -42,7 +42,7 @@
     <property name="unity:tag" value="Connector1LinkLeftTop"/>
    </properties>
   </object>
-  <object x="608" y="672" width="32" height="32">
+  <object x="608" y="608" width="32" height="32">
    <properties>
     <property name="unity:isTrigger" value="True"/>
     <property name="unity:tag" value="GateV"/>
@@ -50,40 +50,23 @@
   </object>
  </objectgroup>
  <objectgroup name="gate2">
-  <object x="2784" y="1056" width="32" height="32">
+  <properties>
+   <property name="unity:tag" value="Connector2LinkLeft"/>
+  </properties>
+  <object x="2528" y="1024" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkLeft"/>
+   </properties>
+  </object>
+  <object x="2528" y="992" width="32" height="32">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkLeftBot"/>
+   </properties>
+  </object>
+  <object x="2528" y="1056" width="32" height="32">
    <properties>
     <property name="unity:isTrigger" value="True"/>
     <property name="unity:tag" value="GateV"/>
-   </properties>
-  </object>
-  <object x="2752" y="1024" width="32" height="32">
-   <properties>
-    <property name="unity:tag" value="Connector2LinkBot"/>
-   </properties>
-  </object>
-  <object x="2720" y="1024" width="32" height="32">
-   <properties>
-    <property name="unity:tag" value="Connector2LinkBot"/>
-   </properties>
-  </object>
-  <object x="2688" y="1024" width="32" height="32">
-   <properties>
-    <property name="unity:tag" value="Connnector2LinkBot"/>
-   </properties>
-  </object>
-  <object x="2656" y="1024" width="32" height="32">
-   <properties>
-    <property name="unity:tag" value="Connnector2LinkBot"/>
-   </properties>
-  </object>
-  <object x="2624" y="1024" width="32" height="32">
-   <properties>
-    <property name="unity:tag" value="Connnector2LinkBot"/>
-   </properties>
-  </object>
-  <object x="2592" y="1024" width="32" height="32">
-   <properties>
-    <property name="unity:tag" value="Connector1LinkBotRight"/>
    </properties>
   </object>
  </objectgroup>
@@ -111,20 +94,20 @@
   </object>
  </objectgroup>
  <objectgroup name="gate4">
+  <object x="1792" y="480" width="32" height="64">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkBotRight"/>
+   </properties>
+  </object>
+  <object x="1824" y="480" width="32" height="64">
+   <properties>
+    <property name="unity:tag" value="Connector2LinkBot"/>
+   </properties>
+  </object>
   <object x="1856" y="480" width="32" height="32">
    <properties>
     <property name="unity:isTrigger" value="True"/>
     <property name="unity:tag" value="GateH"/>
-   </properties>
-  </object>
-  <object x="1824" y="512" width="32" height="32">
-   <properties>
-    <property name="unity:tag" value="Connector2LinkRight"/>
-   </properties>
-  </object>
-  <object x="1824" y="544" width="32" height="32">
-   <properties>
-    <property name="unity:tag" value="Connector1LinkRightTop"/>
    </properties>
   </object>
  </objectgroup>
@@ -133,12 +116,30 @@
    <property name="unity:isTrigger" value="True"/>
    <property name="unity:tag" value="GateV"/>
   </properties>
-  <object x="256" y="96" width="32" height="64">
+  <object x="2272" y="1216" width="32"/>
+  <object x="224" y="480" width="32" height="64">
    <properties>
-    <property name="unity:tag" value="Connector1LinkBotRight"/>
+    <property name="unity:tag" value="Connector1LinkBotLeft"/>
    </properties>
   </object>
-  <object x="288" y="128" width="32" height="32"/>
-  <object x="2272" y="1216" width="32"/>
+  <object x="128" y="480" width="32" height="32">
+   <properties>
+    <property name="unity:isTrigger" value="True"/>
+    <property name="unity:tag" value="GateH"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="gate6">
+  <object x="1408" y="384" width="32" height="64">
+   <properties>
+    <property name="unity:tag" value="Connector1LinkBotLeft"/>
+   </properties>
+  </object>
+  <object x="1312" y="384" width="32" height="32">
+   <properties>
+    <property name="unity:isTrigger" value="True"/>
+    <property name="unity:tag" value="GateH"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
