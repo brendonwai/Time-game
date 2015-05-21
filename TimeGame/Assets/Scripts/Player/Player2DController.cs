@@ -34,6 +34,7 @@ public class Player2DController : MonoBehaviour {
 
 	//Attack and Button CD handlers
 	public bool canHack = true;
+	public bool canHackComp = true;
 	bool canSlash = true;
 	public GameObject buttonController;
 
@@ -169,6 +170,12 @@ public class Player2DController : MonoBehaviour {
 		canHack = true;
 	}
 
+	public IEnumerator HackCompRecovery(){
+		canHackComp = false;
+		yield return new WaitForSeconds(3.0f);
+		canHackComp = true;
+	}
+
 	public IEnumerator HackDeath () {
 		if(hackState==0)
 			Instantiate(Explosion,transform.position,transform.rotation);
@@ -209,6 +216,8 @@ public class Player2DController : MonoBehaviour {
 		switch(hackState){
 			case 0:
 			//BASIC ENEMY
+				if(Input.GetMouseButtonDown(0))
+					StartCoroutine("HackDeath");
 				break;
 			case 1:
 			//BASIC RANGED ENEMY
