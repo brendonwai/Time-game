@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 2/28/2015 5:31:25 PM-->
+<!--Last exported: 5/2/2015 5:59:25 PM-->
 <Tiled2Unity version="0.9.6.1">
   <AssignMaterial mesh="mesh_[00]_[00]" material="tileSheet" sortingLayerName="" sortingOrder="0" />
   <AssignMaterial mesh="mesh_[01]_[00]" material="tileSheet" sortingLayerName="" sortingOrder="1" />
@@ -10,7 +10,7 @@
     <GameObject name="Floor_00">
       <GameObject copy="mesh_[00]_[00]" />
     </GameObject>
-    <GameObject name="Walls_Collision_01" tag="Background">
+    <GameObject name="Walls_Collision_01" layer="Walls" tag="Background">
       <GameObject copy="mesh_[01]_[00]" />
       <GameObject name="Collision">
         <PolygonCollider2D>

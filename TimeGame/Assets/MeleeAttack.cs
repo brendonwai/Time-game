@@ -7,13 +7,13 @@ public class MeleeAttack : MonoBehaviour {
 	bool TargetInRange;
 	GameObject player;
 
-	bool charging;
+	public bool charging;
 	float chargeTime;
 	public float chargeMax;
 
 	public float coolDownLength;
 	float coolDownTime;
-	bool onCoolDown;
+	public bool onCoolDown;
 
 	void Awake() {
 		anim = GetComponentInParent<Animator>();
@@ -44,7 +44,6 @@ public class MeleeAttack : MonoBehaviour {
 				GetComponentInParent<MeleeAI>().stopMove = false;
 				anim.SetBool("IsAttacking", true);
 				onCoolDown = true;
-				coolDownTime = Time.time;
 			}
 		}
 		else if(onCoolDown) {

@@ -29,19 +29,14 @@ namespace Tiled2Unity
             return String.Format("Assets/Tiled2Unity/Meshes/{0}.obj", Path.GetFileNameWithoutExtension(filename));
         }
 
-        public static string GetXmlPathFromFile(string objFile)
+        public static string GetXmlPath(string objName)
         {
-            return String.Format("Assets/Tiled2Unity/Imported/{0}.tiled2unity.xml", Path.GetFileNameWithoutExtension(objFile));
+            return String.Format("Assets/Tiled2Unity/Imported/{0}.tiled2unity.xml", Path.GetFileNameWithoutExtension(objName));
         }
 
-        public static string GetXmlPathFromName(string objName)
+        public static string GetPrefabPath(string objName)
         {
-            return String.Format("Assets/Tiled2Unity/Imported/{0}.tiled2unity.xml", objName);
-        }
-
-        public static string GetPrefabPathFromName(string objName)
-        {
-            return String.Format("Assets/Tiled2Unity/Prefabs/{0}.prefab", objName);
+            return String.Format("Assets/Tiled2Unity/Prefabs/{0}.prefab", Path.GetFileNameWithoutExtension(objName));
         }
 
         public static string GetAttributeAsString(XElement elem, string attrName)
