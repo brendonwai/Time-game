@@ -1141,8 +1141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b750be761a49144cac14392e630d8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charging: 0
   chargeMax: 1
   coolDownLength: 5
+  onCoolDown: 0
 --- !u!58 &955321781
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1521,23 +1523,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 487856, guid: 546bcb1e7fe1bc54498cfef8b7fd0f82, type: 2}
       propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 487856, guid: 546bcb1e7fe1bc54498cfef8b7fd0f82, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 487856, guid: 546bcb1e7fe1bc54498cfef8b7fd0f82, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 487856, guid: 546bcb1e7fe1bc54498cfef8b7fd0f82, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 21287856, guid: 546bcb1e7fe1bc54498cfef8b7fd0f82, type: 2}
-      propertyPath: m_SortingOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 546bcb1e7fe1bc54498cfef8b7fd0f82, type: 2}
